@@ -31,6 +31,9 @@ func TestRoom_Start_beginsFirstQuestion(t *testing.T) {
 	if qs.Question.ID != "q1" {
 		t.Errorf("started question = %q, want q1", qs.Question.ID)
 	}
+	if qs.Index != 1 || qs.Total != 2 {
+		t.Errorf("Index/Total = %d/%d, want 1/2", qs.Index, qs.Total)
+	}
 	wantDeadline := now.Add(10 * time.Second)
 	if !qs.Deadline.Equal(wantDeadline) {
 		t.Errorf("deadline = %v, want %v", qs.Deadline, wantDeadline)
@@ -315,6 +318,50 @@ func TestRoom_AddPlayer_rejectedOnceGameStarted(t *testing.T) {
 
 	if err == nil {
 		t.Fatal("expected error adding player after game started, got nil")
+	}
+}
+
+func TestRoom_Reset_clearsScoresAndReturnsToLobby(t *testing.T) {
+	players, questions := twoPlayerQuiz()
+	r := NewRoom(players, questions)
+	now := time.Date(2026, 1, 1, 0, 0, 0, 0, time.UTC)
+	r.Start(now)
+	r.SubmitAnswer("alice", 1, now)
+	r.SubmitAnswer("bob", 2, now)
+	if r.players["alice"].Score == 0 {
+		t.Fatalf("test setup: alice should have scored before reset")
+	}
+
+	newQuestions := []Question{{ID: "q9", Choices: []string{"a", "b", "c", "d"}, Correct: 0, Duration: 5 * time.Second}}
+	events := r.Reset(newQuestions)
+
+	if r.Phase() != PhaseLobby {
+		t.Fatalf("Phase() = %v, want PhaseLobby", r.Phase())
+	}
+	findEvent[GameReset](t, events)
+	if r.players["alice"].Score != 0 || r.players["alice"].Streak != 0 {
+		t.Errorf("alice = %+v, want Score/Streak reset to 0", r.players["alice"])
+	}
+	if r.players["bob"].Score != 0 {
+		t.Errorf("bob score = %d, want 0", r.players["bob"].Score)
+	}
+
+	// The new question set actually takes effect.
+	startEvents := r.Start(now)
+	qs := findEvent[QuestionStarted](t, startEvents)
+	if qs.Question.ID != "q9" {
+		t.Errorf("started question = %q, want q9 (the reset question set)", qs.Question.ID)
+	}
+}
+
+func TestRoom_Reset_keepsRoster(t *testing.T) {
+	players, questions := twoPlayerQuiz()
+	r := NewRoom(players, questions)
+
+	r.Reset(questions)
+
+	if len(r.Players()) != 2 {
+		t.Errorf("len(Players()) = %d, want 2 (roster preserved across reset)", len(r.Players()))
 	}
 }
 

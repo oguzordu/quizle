@@ -148,7 +148,29 @@ func (r *Room) beginQuestion(idx int, now time.Time) []Event {
 	q := r.questions[idx]
 	r.questionStarted = now
 	r.questionEnds = now.Add(q.Duration)
-	return []Event{QuestionStarted{Question: q, Deadline: r.questionEnds}}
+	return []Event{QuestionStarted{
+		Question: q,
+		Deadline: r.questionEnds,
+		Index:    idx + 1,
+		Total:    len(r.questions),
+	}}
+}
+
+// Reset returns a finished (or in-progress) Room to PhaseLobby with the same
+// roster but every player's score, streak, and speed stats cleared, ready
+// for a "play again" with a fresh question set.
+func (r *Room) Reset(questions []Question) []Event {
+	r.phase = PhaseLobby
+	r.questions = questions
+	r.currentIdx = 0
+	r.answers = make(map[PlayerID]answer)
+	for _, p := range r.players {
+		p.Score = 0
+		p.Streak = 0
+		p.totalElapsedCorrect = 0
+		p.correctAnswerCount = 0
+	}
+	return []Event{GameReset{}}
 }
 
 // SubmitAnswer records a player's choice for the current question.

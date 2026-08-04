@@ -10,11 +10,21 @@ type PlayerJoined struct {
 	Avatar   string
 }
 
-// QuestionStarted is emitted when a new question begins.
+// QuestionStarted is emitted when a new question begins. Index is 1-based
+// ("question 4 of 16") so clients can show progress without tracking it
+// themselves.
 type QuestionStarted struct {
 	Question Question
 	Deadline time.Time
+	Index    int
+	Total    int
 }
+
+// GameReset is emitted when a finished game is restarted in the same room
+// with the same roster (a "play again"). Everyone's score, streak, and
+// speed stats are cleared; the room returns to PhaseLobby with a fresh
+// question set.
+type GameReset struct{}
 
 // AnswerAccepted is emitted in direct response to a player's SubmitAnswer
 // call, confirming correctness immediately. Points aren't included here:
