@@ -94,11 +94,10 @@ func TestServer_TwoPlayersPlayFullRoundOverRealWebSockets(t *testing.T) {
 	if err := json.Unmarshal(revealed.Payload, &payload); err != nil {
 		t.Fatalf("unmarshal reveal payload: %v", err)
 	}
-	// A localhost round trip takes milliseconds, comfortably within the top
-	// speed tier's generous 40%-of-the-window threshold, so this lands
-	// exactly on the top tier rather than needing a tolerance band.
-	if payload.Scores[aliceID] != 100 {
-		t.Errorf("alice score = %d, want 100", payload.Scores[aliceID])
+	// Alice is the sole correct answerer, so she's trivially also the
+	// fastest correct answerer and gets the small speed bonus on top.
+	if payload.Scores[aliceID] != 110 {
+		t.Errorf("alice score = %d, want 110", payload.Scores[aliceID])
 	}
 	if payload.Scores[bobID] != 0 {
 		t.Errorf("bob score = %d, want 0", payload.Scores[bobID])
