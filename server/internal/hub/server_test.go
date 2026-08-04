@@ -94,10 +94,10 @@ func TestServer_TwoPlayersPlayFullRoundOverRealWebSockets(t *testing.T) {
 	if err := json.Unmarshal(revealed.Payload, &payload); err != nil {
 		t.Fatalf("unmarshal reveal payload: %v", err)
 	}
-	// Alice is the sole correct answerer, so she's trivially also the
-	// fastest correct answerer and gets the small speed bonus on top.
-	if payload.Scores[aliceID] != 110 {
-		t.Errorf("alice score = %d, want 110", payload.Scores[aliceID])
+	// Per-question scoring is flat — speed only matters for the separate
+	// end-of-game fastest-player bonus, not here.
+	if payload.Scores[aliceID] != 100 {
+		t.Errorf("alice score = %d, want 100", payload.Scores[aliceID])
 	}
 	if payload.Scores[bobID] != 0 {
 		t.Errorf("bob score = %d, want 0", payload.Scores[bobID])

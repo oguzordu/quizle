@@ -33,7 +33,9 @@ type questionRevealedPayload struct {
 }
 
 type gameFinishedPayload struct {
-	FinalScores map[game.PlayerID]int `json:"final_scores"`
+	FinalScores      map[game.PlayerID]int `json:"final_scores"`
+	HasFastestPlayer bool                  `json:"has_fastest_player"`
+	FastestPlayerID  game.PlayerID         `json:"fastest_player_id,omitempty"`
 }
 
 // joinedPayload is sent once, immediately after a WebSocket connection joins
@@ -79,7 +81,11 @@ func EncodeEvent(ev game.Event) []byte {
 		}
 	case game.GameFinished:
 		msgType = "game_finished"
-		payload = gameFinishedPayload{FinalScores: e.FinalScores}
+		payload = gameFinishedPayload{
+			FinalScores:      e.FinalScores,
+			HasFastestPlayer: e.HasFastestPlayer,
+			FastestPlayerID:  e.FastestPlayerID,
+		}
 	default:
 		msgType = "unknown"
 		payload = struct{}{}
