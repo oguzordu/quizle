@@ -94,10 +94,12 @@ func TestServer_TwoPlayersPlayFullRoundOverRealWebSockets(t *testing.T) {
 	if err := json.Unmarshal(revealed.Payload, &payload); err != nil {
 		t.Fatalf("unmarshal reveal payload: %v", err)
 	}
-	// Per-question scoring is flat — speed only matters for the separate
-	// end-of-game fastest-player bonus, not here.
-	if payload.Scores[aliceID] != 100 {
-		t.Errorf("alice score = %d, want 100", payload.Scores[aliceID])
+	// A real (if localhost-fast) network round trip takes a few
+	// milliseconds, so the speed bonus lands just under its theoretical max
+	// rather than exactly at it — assert a realistic band instead of an
+	// exact value.
+	if payload.Scores[aliceID] < 145 || payload.Scores[aliceID] > 150 {
+		t.Errorf("alice score = %d, want in [145, 150]", payload.Scores[aliceID])
 	}
 	if payload.Scores[bobID] != 0 {
 		t.Errorf("bob score = %d, want 0", payload.Scores[bobID])
