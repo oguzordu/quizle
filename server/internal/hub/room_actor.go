@@ -81,6 +81,14 @@ func (a *RoomActor) AddPlayer(id game.PlayerID, name, avatar string) error {
 	return err
 }
 
+// Reset restarts the room in place (same roster, same actor, same join
+// code) with a fresh question set, for a "play again" flow.
+func (a *RoomActor) Reset(questions []game.Question) {
+	a.exec(func(now time.Time) []game.Event {
+		return a.room.Reset(questions)
+	})
+}
+
 // exec runs fn on the actor's goroutine and blocks until it has completed,
 // so callers observe a consistent room state immediately after this returns.
 func (a *RoomActor) exec(fn func(now time.Time) []game.Event) {

@@ -27,6 +27,8 @@ type questionStartedPayload struct {
 	Image      string    `json:"image,omitempty"`
 	Choices    []string  `json:"choices"`
 	Deadline   time.Time `json:"deadline"`
+	Index      int       `json:"index"`
+	Total      int       `json:"total"`
 }
 
 type answerAcceptedPayload struct {
@@ -78,6 +80,8 @@ func EncodeEvent(ev game.Event) []byte {
 			Image:      e.Question.Image,
 			Choices:    e.Question.Choices,
 			Deadline:   e.Deadline,
+			Index:      e.Index,
+			Total:      e.Total,
 		}
 	case game.AnswerAccepted:
 		msgType = "answer_accepted"
@@ -92,6 +96,9 @@ func EncodeEvent(ev game.Event) []byte {
 			PointsAwarded: e.PointsAwarded,
 			Scores:        e.Scores,
 		}
+	case game.GameReset:
+		msgType = "game_reset"
+		payload = struct{}{}
 	case game.GameFinished:
 		msgType = "game_finished"
 		payload = gameFinishedPayload{

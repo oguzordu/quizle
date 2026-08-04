@@ -98,6 +98,20 @@ func (s *Server) StartRoomHandler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 }
 
+// RematchRoomHandler handles POST /rooms/{code}/rematch, resetting the named
+// room back to its lobby with the same roster and a freshly sampled
+// question set, for a "play again" flow.
+func (s *Server) RematchRoomHandler(w http.ResponseWriter, r *http.Request) {
+	code := r.PathValue("code")
+	actor, ok := s.hub.GetRoom(code)
+	if !ok {
+		http.Error(w, "room not found", http.StatusNotFound)
+		return
+	}
+	actor.Reset(s.pickQuestions())
+	w.WriteHeader(http.StatusOK)
+}
+
 // ServeWS handles GET /ws?code=XXXXXX&name=Alice[&token=...].
 // A request with a valid token rejoins the same PlayerID (reconnect); a
 // request without one is treated as a fresh join.

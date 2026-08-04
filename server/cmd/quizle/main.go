@@ -28,6 +28,7 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/rooms", srv.CreateRoomHandler)
 	mux.HandleFunc("POST /rooms/{code}/start", srv.StartRoomHandler)
+	mux.HandleFunc("POST /rooms/{code}/rematch", srv.RematchRoomHandler)
 	mux.HandleFunc("/ws", srv.ServeWS)
 	mux.HandleFunc("/", serveTestPage)
 
