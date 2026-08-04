@@ -1,139 +1,34 @@
 package game
 
-import (
-	"testing"
-	"time"
-)
+import "testing"
 
-func TestScore(t *testing.T) {
+func TestRankScore(t *testing.T) {
 	tests := []struct {
-		name          string
-		correct       bool
-		timeTotal     time.Duration
-		timeRemaining time.Duration
-		streak        int
-		want          int
+		name         string
+		rank         int
+		totalCorrect int
+		streak       int
+		want         int
 	}{
-		{
-			name:          "correct within first 40% of time (fast) gets top tier",
-			correct:       true,
-			timeTotal:     10 * time.Second,
-			timeRemaining: 10 * time.Second, // used 0%
-			streak:        0,
-			want:          100,
-		},
-		{
-			name:          "correct right at the 40% boundary still gets top tier",
-			correct:       true,
-			timeTotal:     10 * time.Second,
-			timeRemaining: 6 * time.Second, // used exactly 40%
-			streak:        0,
-			want:          100,
-		},
-		{
-			name:          "correct just past the 40% boundary drops to second tier",
-			correct:       true,
-			timeTotal:     10 * time.Second,
-			timeRemaining: 5900 * time.Millisecond, // used just over 40%
-			streak:        0,
-			want:          80,
-		},
-		{
-			name:          "correct at the 70% boundary still gets second tier",
-			correct:       true,
-			timeTotal:     10 * time.Second,
-			timeRemaining: 3 * time.Second, // used exactly 70%
-			streak:        0,
-			want:          80,
-		},
-		{
-			name:          "correct just past the 70% boundary drops to third tier",
-			correct:       true,
-			timeTotal:     10 * time.Second,
-			timeRemaining: 2900 * time.Millisecond,
-			streak:        0,
-			want:          60,
-		},
-		{
-			name:          "correct at the 90% boundary still gets third tier",
-			correct:       true,
-			timeTotal:     10 * time.Second,
-			timeRemaining: 1 * time.Second, // used exactly 90%
-			streak:        0,
-			want:          60,
-		},
-		{
-			name:          "correct in the last 10% gets the bottom tier",
-			correct:       true,
-			timeTotal:     10 * time.Second,
-			timeRemaining: 500 * time.Millisecond,
-			streak:        0,
-			want:          40,
-		},
-		{
-			name:          "correct answered at the very last instant still gets bottom tier",
-			correct:       true,
-			timeTotal:     10 * time.Second,
-			timeRemaining: 0,
-			streak:        0,
-			want:          40,
-		},
-		{
-			name:          "wrong answer scores zero regardless of speed",
-			correct:       false,
-			timeTotal:     10 * time.Second,
-			timeRemaining: 10 * time.Second,
-			streak:        5,
-			want:          0,
-		},
-		{
-			name:          "streak of 3 applies 1.2x multiplier",
-			correct:       true,
-			timeTotal:     10 * time.Second,
-			timeRemaining: 10 * time.Second,
-			streak:        3,
-			want:          120,
-		},
-		{
-			name:          "streak of 5 applies 1.35x multiplier",
-			correct:       true,
-			timeTotal:     10 * time.Second,
-			timeRemaining: 10 * time.Second,
-			streak:        5,
-			want:          135,
-		},
-		{
-			name:          "streak of 7 applies 1.5x cap",
-			correct:       true,
-			timeTotal:     10 * time.Second,
-			timeRemaining: 10 * time.Second,
-			streak:        7,
-			want:          150,
-		},
-		{
-			name:          "streak of 20 stays capped at 1.5x",
-			correct:       true,
-			timeTotal:     10 * time.Second,
-			timeRemaining: 10 * time.Second,
-			streak:        20,
-			want:          150,
-		},
-		{
-			name:          "streak of 2 stays at 1.0x below threshold",
-			correct:       true,
-			timeTotal:     10 * time.Second,
-			timeRemaining: 10 * time.Second,
-			streak:        2,
-			want:          100,
-		},
+		{name: "sole correct answerer gets top points", rank: 1, totalCorrect: 1, streak: 0, want: 100},
+		{name: "first of two correct gets top points", rank: 1, totalCorrect: 2, streak: 0, want: 100},
+		{name: "second (last) of two correct gets the floor", rank: 2, totalCorrect: 2, streak: 0, want: 50},
+		{name: "first of five correct gets top points", rank: 1, totalCorrect: 5, streak: 0, want: 100},
+		{name: "middle of five correct gets an interpolated value", rank: 3, totalCorrect: 5, streak: 0, want: 75},
+		{name: "last of five correct still gets the floor, never zero", rank: 5, totalCorrect: 5, streak: 0, want: 50},
+		{name: "nobody answered correctly scores zero", rank: 1, totalCorrect: 0, streak: 0, want: 0},
+		{name: "streak of 3 applies 1.2x multiplier", rank: 1, totalCorrect: 1, streak: 3, want: 120},
+		{name: "streak of 5 applies 1.35x multiplier", rank: 1, totalCorrect: 1, streak: 5, want: 135},
+		{name: "streak of 7 applies 1.5x cap", rank: 1, totalCorrect: 1, streak: 7, want: 150},
+		{name: "streak of 20 stays capped at 1.5x", rank: 1, totalCorrect: 1, streak: 20, want: 150},
+		{name: "streak of 2 stays at 1.0x below threshold", rank: 1, totalCorrect: 1, streak: 2, want: 100},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := Score(tt.correct, tt.timeTotal, tt.timeRemaining, tt.streak)
+			got := RankScore(tt.rank, tt.totalCorrect, tt.streak)
 			if got != tt.want {
-				t.Errorf("Score(%v, %v, %v, %d) = %d, want %d",
-					tt.correct, tt.timeTotal, tt.timeRemaining, tt.streak, got, tt.want)
+				t.Errorf("RankScore(%d, %d, %d) = %d, want %d", tt.rank, tt.totalCorrect, tt.streak, got, tt.want)
 			}
 		})
 	}
