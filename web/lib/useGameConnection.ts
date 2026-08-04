@@ -18,6 +18,13 @@ function tokenKey(code: string) {
   return `quizle:token:${code}`;
 }
 
+// How long to keep showing the question screen (with the player's own
+// correct/wrong button already colored in) after the round closes, before
+// switching to the shared reveal screen. Without this, the last person to
+// answer never gets to see their own feedback — the screen jumps straight
+// to results the instant they click.
+const REVEAL_TRANSITION_DELAY_MS = 1300;
+
 function applyMessage(state: GameState, msg: ServerMessage): GameState {
   switch (msg.type) {
     case "joined": {
@@ -74,6 +81,20 @@ function applyMessage(state: GameState, msg: ServerMessage): GameState {
         fastestPlayerId: p.fastest_player_id ?? null,
       };
     }
+    case "game_reset": {
+      return {
+        ...state,
+        phase: "lobby",
+        question: null,
+        myAnswerChoice: null,
+        myAnswerCorrect: null,
+        correctChoice: null,
+        pointsAwarded: {},
+        scores: {},
+        hasFastestPlayer: false,
+        fastestPlayerId: null,
+      };
+    }
     default:
       return state;
   }
@@ -87,6 +108,7 @@ export function useGameConnection(code: string, name: string, avatar: string) {
     if (!code) return;
     let cancelled = false;
     let retryTimer: ReturnType<typeof setTimeout> | undefined;
+    const pendingTimers = new Set<ReturnType<typeof setTimeout>>();
 
     function connect() {
       if (cancelled) return;
@@ -98,6 +120,7 @@ export function useGameConnection(code: string, name: string, avatar: string) {
 
       ws.onmessage = (evt) => {
         const msg = JSON.parse(evt.data) as ServerMessage;
+
         if (msg.type === "joined") {
           // The server never echoes our own join as a player_joined
           // broadcast (it only notifies other, already-connected clients),
@@ -112,6 +135,20 @@ export function useGameConnection(code: string, name: string, avatar: string) {
           });
           return;
         }
+
+        if (msg.type === "question_revealed") {
+          // Hold the question screen a beat longer so whoever just answered
+          // (their own button already red/green from answer_accepted) sees
+          // that feedback instead of being yanked straight to the results.
+          const timer = setTimeout(() => {
+            pendingTimers.delete(timer);
+            if (cancelled) return;
+            setState((prev) => applyMessage(prev, msg));
+          }, REVEAL_TRANSITION_DELAY_MS);
+          pendingTimers.add(timer);
+          return;
+        }
+
         setState((prev) => applyMessage(prev, msg));
       };
       ws.onclose = () => {
@@ -138,6 +175,7 @@ export function useGameConnection(code: string, name: string, avatar: string) {
       cancelled = true;
       clearTimeout(initialConnectTimer);
       if (retryTimer) clearTimeout(retryTimer);
+      pendingTimers.forEach(clearTimeout);
       wsRef.current?.close();
     };
   }, [code, name, avatar]);
@@ -149,5 +187,9 @@ export function useGameConnection(code: string, name: string, avatar: string) {
     ws.send(JSON.stringify({ type: "submit_answer", choice }));
   }, []);
 
-  return { state, submitAnswer };
+  const rematch = useCallback(async () => {
+    await fetch(`${config.apiBase}/rooms/${code}/rematch`, { method: "POST" });
+  }, [code]);
+
+  return { state, submitAnswer, rematch };
 }
