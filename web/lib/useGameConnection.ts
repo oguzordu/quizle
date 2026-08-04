@@ -63,13 +63,20 @@ function applyMessage(state: GameState, msg: ServerMessage): GameState {
     }
     case "question_revealed": {
       const p = msg.payload as QuestionRevealedPayload;
+      // Only the answer data lands here — correctChoice becomes visible
+      // right away so the correct button can turn green even before
+      // whoever just answered. The phase itself flips to "reveal" a beat
+      // later (see useGameConnection), so that green highlight is visible
+      // on the question screen instead of being skipped straight past.
       return {
         ...state,
-        phase: "reveal",
         correctChoice: p.correct_choice,
         pointsAwarded: p.points_awarded,
         scores: p.scores,
       };
+    }
+    case "__enter_reveal_phase": {
+      return { ...state, phase: "reveal" };
     }
     case "game_finished": {
       const p = msg.payload as GameFinishedPayload;
@@ -137,13 +144,16 @@ export function useGameConnection(code: string, name: string, avatar: string) {
         }
 
         if (msg.type === "question_revealed") {
-          // Hold the question screen a beat longer so whoever just answered
-          // (their own button already red/green from answer_accepted) sees
-          // that feedback instead of being yanked straight to the results.
+          // Apply the answer data (including which choice was correct)
+          // immediately, so the correct button can turn green right away —
+          // but hold the phase transition a beat longer so whoever just
+          // answered sees that feedback instead of being yanked straight to
+          // the results screen.
+          setState((prev) => applyMessage(prev, msg));
           const timer = setTimeout(() => {
             pendingTimers.delete(timer);
             if (cancelled) return;
-            setState((prev) => applyMessage(prev, msg));
+            setState((prev) => applyMessage(prev, { type: "__enter_reveal_phase", payload: null }));
           }, REVEAL_TRANSITION_DELAY_MS);
           pendingTimers.add(timer);
           return;
