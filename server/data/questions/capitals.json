@@ -514,7 +514,7 @@
         "Varşova",
         "Lizbon",
         "Buenos Aires",
-        "Ankara"
+        "Kiev"
       ]
     },
     "en": {
@@ -523,7 +523,7 @@
         "Warsaw",
         "Lisbon",
         "Buenos Aires",
-        "Ankara"
+        "Kyiv"
       ]
     }
   },
@@ -536,18 +536,18 @@
       "text": "Polonya ülkesinin başkenti neresidir?",
       "choices": [
         "Buenos Aires",
-        "Ankara",
+        "Kiev",
         "Varşova",
-        "Berlin"
+        "Bern"
       ]
     },
     "en": {
       "text": "What is the capital of Poland?",
       "choices": [
         "Buenos Aires",
-        "Ankara",
+        "Kyiv",
         "Warsaw",
-        "Berlin"
+        "Bern"
       ]
     }
   },
@@ -559,19 +559,691 @@
     "tr": {
       "text": "Arjantin ülkesinin başkenti neresidir?",
       "choices": [
-        "Ankara",
-        "Berlin",
-        "Paris",
+        "Kiev",
+        "Bern",
+        "Viyana",
         "Buenos Aires"
       ]
     },
     "en": {
       "text": "What is the capital of Argentina?",
       "choices": [
+        "Kyiv",
+        "Bern",
+        "Vienna",
+        "Buenos Aires"
+      ]
+    }
+  },
+  {
+    "id": "capital-UA",
+    "category": "capitals",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Ukraine",
+    "tr": {
+      "text": "Ukrayna ülkesinin başkenti neresidir?",
+      "choices": [
+        "Kiev",
+        "Bern",
+        "Viyana",
+        "Brüksel"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Ukraine?",
+      "choices": [
+        "Kyiv",
+        "Bern",
+        "Vienna",
+        "Brussels"
+      ]
+    }
+  },
+  {
+    "id": "capital-CH",
+    "category": "capitals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Switzerland",
+    "tr": {
+      "text": "İsviçre ülkesinin başkenti neresidir?",
+      "choices": [
+        "Viyana",
+        "Bern",
+        "Brüksel",
+        "Dublin"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Switzerland?",
+      "choices": [
+        "Vienna",
+        "Bern",
+        "Brussels",
+        "Dublin"
+      ]
+    }
+  },
+  {
+    "id": "capital-AT",
+    "category": "capitals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Austria",
+    "tr": {
+      "text": "Avusturya ülkesinin başkenti neresidir?",
+      "choices": [
+        "Brüksel",
+        "Dublin",
+        "Viyana",
+        "Kopenhag"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Austria?",
+      "choices": [
+        "Brussels",
+        "Dublin",
+        "Vienna",
+        "Copenhagen"
+      ]
+    }
+  },
+  {
+    "id": "capital-BE",
+    "category": "capitals",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Belgium",
+    "tr": {
+      "text": "Belçika ülkesinin başkenti neresidir?",
+      "choices": [
+        "Dublin",
+        "Kopenhag",
+        "Helsinki",
+        "Brüksel"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Belgium?",
+      "choices": [
+        "Dublin",
+        "Copenhagen",
+        "Helsinki",
+        "Brussels"
+      ]
+    }
+  },
+  {
+    "id": "capital-IE",
+    "category": "capitals",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Ireland",
+    "tr": {
+      "text": "İrlanda ülkesinin başkenti neresidir?",
+      "choices": [
+        "Dublin",
+        "Kopenhag",
+        "Helsinki",
+        "Reykjavik"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Ireland?",
+      "choices": [
+        "Dublin",
+        "Copenhagen",
+        "Helsinki",
+        "Reykjavik"
+      ]
+    }
+  },
+  {
+    "id": "capital-DK",
+    "category": "capitals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Denmark",
+    "tr": {
+      "text": "Danimarka ülkesinin başkenti neresidir?",
+      "choices": [
+        "Helsinki",
+        "Kopenhag",
+        "Reykjavik",
+        "Wellington"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Denmark?",
+      "choices": [
+        "Helsinki",
+        "Copenhagen",
+        "Reykjavik",
+        "Wellington"
+      ]
+    }
+  },
+  {
+    "id": "capital-FI",
+    "category": "capitals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Finland",
+    "tr": {
+      "text": "Finlandiya ülkesinin başkenti neresidir?",
+      "choices": [
+        "Reykjavik",
+        "Wellington",
+        "Helsinki",
+        "Cakarta"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Finland?",
+      "choices": [
+        "Reykjavik",
+        "Wellington",
+        "Helsinki",
+        "Jakarta"
+      ]
+    }
+  },
+  {
+    "id": "capital-IS",
+    "category": "capitals",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Iceland",
+    "tr": {
+      "text": "İzlanda ülkesinin başkenti neresidir?",
+      "choices": [
+        "Wellington",
+        "Cakarta",
+        "Bangkok",
+        "Reykjavik"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Iceland?",
+      "choices": [
+        "Wellington",
+        "Jakarta",
+        "Bangkok",
+        "Reykjavik"
+      ]
+    }
+  },
+  {
+    "id": "capital-NZ",
+    "category": "capitals",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/New_Zealand",
+    "tr": {
+      "text": "Yeni Zelanda ülkesinin başkenti neresidir?",
+      "choices": [
+        "Wellington",
+        "Cakarta",
+        "Bangkok",
+        "Hanoi"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of New Zealand?",
+      "choices": [
+        "Wellington",
+        "Jakarta",
+        "Bangkok",
+        "Hanoi"
+      ]
+    }
+  },
+  {
+    "id": "capital-ID",
+    "category": "capitals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Indonesia",
+    "tr": {
+      "text": "Endonezya ülkesinin başkenti neresidir?",
+      "choices": [
+        "Bangkok",
+        "Cakarta",
+        "Hanoi",
+        "Manila"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Indonesia?",
+      "choices": [
+        "Bangkok",
+        "Jakarta",
+        "Hanoi",
+        "Manila"
+      ]
+    }
+  },
+  {
+    "id": "capital-TH",
+    "category": "capitals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Thailand",
+    "tr": {
+      "text": "Tayland ülkesinin başkenti neresidir?",
+      "choices": [
+        "Hanoi",
+        "Manila",
+        "Bangkok",
+        "Kuala Lumpur"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Thailand?",
+      "choices": [
+        "Hanoi",
+        "Manila",
+        "Bangkok",
+        "Kuala Lumpur"
+      ]
+    }
+  },
+  {
+    "id": "capital-VN",
+    "category": "capitals",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Vietnam",
+    "tr": {
+      "text": "Vietnam ülkesinin başkenti neresidir?",
+      "choices": [
+        "Manila",
+        "Kuala Lumpur",
+        "Singapur",
+        "Hanoi"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Vietnam?",
+      "choices": [
+        "Manila",
+        "Kuala Lumpur",
+        "Singapore",
+        "Hanoi"
+      ]
+    }
+  },
+  {
+    "id": "capital-PH",
+    "category": "capitals",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Philippines",
+    "tr": {
+      "text": "Filipinler ülkesinin başkenti neresidir?",
+      "choices": [
+        "Manila",
+        "Kuala Lumpur",
+        "Singapur",
+        "İslamabad"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Philippines?",
+      "choices": [
+        "Manila",
+        "Kuala Lumpur",
+        "Singapore",
+        "Islamabad"
+      ]
+    }
+  },
+  {
+    "id": "capital-MY",
+    "category": "capitals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Malaysia",
+    "tr": {
+      "text": "Malezya ülkesinin başkenti neresidir?",
+      "choices": [
+        "Singapur",
+        "Kuala Lumpur",
+        "İslamabad",
+        "Riyad"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Malaysia?",
+      "choices": [
+        "Singapore",
+        "Kuala Lumpur",
+        "Islamabad",
+        "Riyadh"
+      ]
+    }
+  },
+  {
+    "id": "capital-SG",
+    "category": "capitals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Singapore",
+    "tr": {
+      "text": "Singapur ülkesinin başkenti neresidir?",
+      "choices": [
+        "İslamabad",
+        "Riyad",
+        "Singapur",
+        "Abu Dabi"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Singapore?",
+      "choices": [
+        "Islamabad",
+        "Riyadh",
+        "Singapore",
+        "Abu Dhabi"
+      ]
+    }
+  },
+  {
+    "id": "capital-PK",
+    "category": "capitals",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Pakistan",
+    "tr": {
+      "text": "Pakistan ülkesinin başkenti neresidir?",
+      "choices": [
+        "Riyad",
+        "Abu Dabi",
+        "Kudüs",
+        "İslamabad"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Pakistan?",
+      "choices": [
+        "Riyadh",
+        "Abu Dhabi",
+        "Jerusalem",
+        "Islamabad"
+      ]
+    }
+  },
+  {
+    "id": "capital-SA",
+    "category": "capitals",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Saudi_Arabia",
+    "tr": {
+      "text": "Suudi Arabistan ülkesinin başkenti neresidir?",
+      "choices": [
+        "Riyad",
+        "Abu Dabi",
+        "Kudüs",
+        "Tahran"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Saudi Arabia?",
+      "choices": [
+        "Riyadh",
+        "Abu Dhabi",
+        "Jerusalem",
+        "Tehran"
+      ]
+    }
+  },
+  {
+    "id": "capital-AE",
+    "category": "capitals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/United_Arab_Emirates",
+    "tr": {
+      "text": "Birleşik Arap Emirlikleri ülkesinin başkenti neresidir?",
+      "choices": [
+        "Kudüs",
+        "Abu Dabi",
+        "Tahran",
+        "Abuja"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of United Arab Emirates?",
+      "choices": [
+        "Jerusalem",
+        "Abu Dhabi",
+        "Tehran",
+        "Abuja"
+      ]
+    }
+  },
+  {
+    "id": "capital-IL",
+    "category": "capitals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Israel",
+    "tr": {
+      "text": "İsrail ülkesinin başkenti neresidir?",
+      "choices": [
+        "Tahran",
+        "Abuja",
+        "Kudüs",
+        "Pretoria"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Israel?",
+      "choices": [
+        "Tehran",
+        "Abuja",
+        "Jerusalem",
+        "Pretoria"
+      ]
+    }
+  },
+  {
+    "id": "capital-IR",
+    "category": "capitals",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Iran",
+    "tr": {
+      "text": "İran ülkesinin başkenti neresidir?",
+      "choices": [
+        "Abuja",
+        "Pretoria",
+        "Nairobi",
+        "Tahran"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Iran?",
+      "choices": [
+        "Abuja",
+        "Pretoria",
+        "Nairobi",
+        "Tehran"
+      ]
+    }
+  },
+  {
+    "id": "capital-NG",
+    "category": "capitals",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Nigeria",
+    "tr": {
+      "text": "Nijerya ülkesinin başkenti neresidir?",
+      "choices": [
+        "Abuja",
+        "Pretoria",
+        "Nairobi",
+        "Rabat"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Nigeria?",
+      "choices": [
+        "Abuja",
+        "Pretoria",
+        "Nairobi",
+        "Rabat"
+      ]
+    }
+  },
+  {
+    "id": "capital-ZA",
+    "category": "capitals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/South_Africa",
+    "tr": {
+      "text": "Güney Afrika ülkesinin başkenti neresidir?",
+      "choices": [
+        "Nairobi",
+        "Pretoria",
+        "Rabat",
+        "Bogota"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of South Africa?",
+      "choices": [
+        "Nairobi",
+        "Pretoria",
+        "Rabat",
+        "Bogotá"
+      ]
+    }
+  },
+  {
+    "id": "capital-KE",
+    "category": "capitals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Kenya",
+    "tr": {
+      "text": "Kenya ülkesinin başkenti neresidir?",
+      "choices": [
+        "Rabat",
+        "Bogota",
+        "Nairobi",
+        "Santiago"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Kenya?",
+      "choices": [
+        "Rabat",
+        "Bogotá",
+        "Nairobi",
+        "Santiago"
+      ]
+    }
+  },
+  {
+    "id": "capital-MA",
+    "category": "capitals",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Morocco",
+    "tr": {
+      "text": "Fas ülkesinin başkenti neresidir?",
+      "choices": [
+        "Bogota",
+        "Santiago",
+        "Lima",
+        "Rabat"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Morocco?",
+      "choices": [
+        "Bogotá",
+        "Santiago",
+        "Lima",
+        "Rabat"
+      ]
+    }
+  },
+  {
+    "id": "capital-CO",
+    "category": "capitals",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Colombia",
+    "tr": {
+      "text": "Kolombiya ülkesinin başkenti neresidir?",
+      "choices": [
+        "Bogota",
+        "Santiago",
+        "Lima",
+        "Havana"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Colombia?",
+      "choices": [
+        "Bogotá",
+        "Santiago",
+        "Lima",
+        "Havana"
+      ]
+    }
+  },
+  {
+    "id": "capital-CL",
+    "category": "capitals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Chile",
+    "tr": {
+      "text": "Şili ülkesinin başkenti neresidir?",
+      "choices": [
+        "Lima",
+        "Santiago",
+        "Havana",
+        "Ankara"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Chile?",
+      "choices": [
+        "Lima",
+        "Santiago",
+        "Havana",
+        "Ankara"
+      ]
+    }
+  },
+  {
+    "id": "capital-PE",
+    "category": "capitals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Peru",
+    "tr": {
+      "text": "Peru ülkesinin başkenti neresidir?",
+      "choices": [
+        "Havana",
+        "Ankara",
+        "Lima",
+        "Berlin"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Peru?",
+      "choices": [
+        "Havana",
+        "Ankara",
+        "Lima",
+        "Berlin"
+      ]
+    }
+  },
+  {
+    "id": "capital-CU",
+    "category": "capitals",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Cuba",
+    "tr": {
+      "text": "Küba ülkesinin başkenti neresidir?",
+      "choices": [
         "Ankara",
         "Berlin",
         "Paris",
-        "Buenos Aires"
+        "Havana"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Cuba?",
+      "choices": [
+        "Ankara",
+        "Berlin",
+        "Paris",
+        "Havana"
       ]
     }
   }

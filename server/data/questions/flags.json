@@ -536,7 +536,7 @@
         "Polonya",
         "Portekiz",
         "Arjantin",
-        "Türkiye"
+        "Ukrayna"
       ]
     },
     "en": {
@@ -545,7 +545,7 @@
         "Poland",
         "Portugal",
         "Argentina",
-        "Turkey"
+        "Ukraine"
       ]
     }
   },
@@ -559,18 +559,18 @@
       "text": "Bu hangi ülkenin bayrağı?",
       "choices": [
         "Arjantin",
-        "Türkiye",
+        "Ukrayna",
         "Polonya",
-        "Almanya"
+        "İsviçre"
       ]
     },
     "en": {
       "text": "Which country does this flag belong to?",
       "choices": [
         "Argentina",
-        "Turkey",
+        "Ukraine",
         "Poland",
-        "Germany"
+        "Switzerland"
       ]
     }
   },
@@ -583,10 +583,710 @@
     "tr": {
       "text": "Bu hangi ülkenin bayrağı?",
       "choices": [
+        "Ukrayna",
+        "İsviçre",
+        "Avusturya",
+        "Arjantin"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Ukraine",
+        "Switzerland",
+        "Austria",
+        "Argentina"
+      ]
+    }
+  },
+  {
+    "id": "flag-UA",
+    "category": "flags",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Ukraine",
+    "image": "flag:UA",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Ukrayna",
+        "İsviçre",
+        "Avusturya",
+        "Belçika"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Ukraine",
+        "Switzerland",
+        "Austria",
+        "Belgium"
+      ]
+    }
+  },
+  {
+    "id": "flag-CH",
+    "category": "flags",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Switzerland",
+    "image": "flag:CH",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Avusturya",
+        "İsviçre",
+        "Belçika",
+        "İrlanda"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Austria",
+        "Switzerland",
+        "Belgium",
+        "Ireland"
+      ]
+    }
+  },
+  {
+    "id": "flag-AT",
+    "category": "flags",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Austria",
+    "image": "flag:AT",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Belçika",
+        "İrlanda",
+        "Avusturya",
+        "Danimarka"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Belgium",
+        "Ireland",
+        "Austria",
+        "Denmark"
+      ]
+    }
+  },
+  {
+    "id": "flag-BE",
+    "category": "flags",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Belgium",
+    "image": "flag:BE",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "İrlanda",
+        "Danimarka",
+        "Finlandiya",
+        "Belçika"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Ireland",
+        "Denmark",
+        "Finland",
+        "Belgium"
+      ]
+    }
+  },
+  {
+    "id": "flag-IE",
+    "category": "flags",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Ireland",
+    "image": "flag:IE",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "İrlanda",
+        "Danimarka",
+        "Finlandiya",
+        "İzlanda"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Ireland",
+        "Denmark",
+        "Finland",
+        "Iceland"
+      ]
+    }
+  },
+  {
+    "id": "flag-DK",
+    "category": "flags",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Denmark",
+    "image": "flag:DK",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Finlandiya",
+        "Danimarka",
+        "İzlanda",
+        "Yeni Zelanda"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Finland",
+        "Denmark",
+        "Iceland",
+        "New Zealand"
+      ]
+    }
+  },
+  {
+    "id": "flag-FI",
+    "category": "flags",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Finland",
+    "image": "flag:FI",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "İzlanda",
+        "Yeni Zelanda",
+        "Finlandiya",
+        "Endonezya"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Iceland",
+        "New Zealand",
+        "Finland",
+        "Indonesia"
+      ]
+    }
+  },
+  {
+    "id": "flag-IS",
+    "category": "flags",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Iceland",
+    "image": "flag:IS",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Yeni Zelanda",
+        "Endonezya",
+        "Tayland",
+        "İzlanda"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "New Zealand",
+        "Indonesia",
+        "Thailand",
+        "Iceland"
+      ]
+    }
+  },
+  {
+    "id": "flag-NZ",
+    "category": "flags",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_New_Zealand",
+    "image": "flag:NZ",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Yeni Zelanda",
+        "Endonezya",
+        "Tayland",
+        "Vietnam"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "New Zealand",
+        "Indonesia",
+        "Thailand",
+        "Vietnam"
+      ]
+    }
+  },
+  {
+    "id": "flag-ID",
+    "category": "flags",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Indonesia",
+    "image": "flag:ID",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Tayland",
+        "Endonezya",
+        "Vietnam",
+        "Filipinler"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Thailand",
+        "Indonesia",
+        "Vietnam",
+        "Philippines"
+      ]
+    }
+  },
+  {
+    "id": "flag-TH",
+    "category": "flags",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Thailand",
+    "image": "flag:TH",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Vietnam",
+        "Filipinler",
+        "Tayland",
+        "Malezya"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Vietnam",
+        "Philippines",
+        "Thailand",
+        "Malaysia"
+      ]
+    }
+  },
+  {
+    "id": "flag-VN",
+    "category": "flags",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Vietnam",
+    "image": "flag:VN",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Filipinler",
+        "Malezya",
+        "Singapur",
+        "Vietnam"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Philippines",
+        "Malaysia",
+        "Singapore",
+        "Vietnam"
+      ]
+    }
+  },
+  {
+    "id": "flag-PH",
+    "category": "flags",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_the_Philippines",
+    "image": "flag:PH",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Filipinler",
+        "Malezya",
+        "Singapur",
+        "Pakistan"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Philippines",
+        "Malaysia",
+        "Singapore",
+        "Pakistan"
+      ]
+    }
+  },
+  {
+    "id": "flag-MY",
+    "category": "flags",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Malaysia",
+    "image": "flag:MY",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Singapur",
+        "Malezya",
+        "Pakistan",
+        "Suudi Arabistan"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Singapore",
+        "Malaysia",
+        "Pakistan",
+        "Saudi Arabia"
+      ]
+    }
+  },
+  {
+    "id": "flag-SG",
+    "category": "flags",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Singapore",
+    "image": "flag:SG",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Pakistan",
+        "Suudi Arabistan",
+        "Singapur",
+        "Birleşik Arap Emirlikleri"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Pakistan",
+        "Saudi Arabia",
+        "Singapore",
+        "United Arab Emirates"
+      ]
+    }
+  },
+  {
+    "id": "flag-PK",
+    "category": "flags",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Pakistan",
+    "image": "flag:PK",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Suudi Arabistan",
+        "Birleşik Arap Emirlikleri",
+        "İsrail",
+        "Pakistan"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Saudi Arabia",
+        "United Arab Emirates",
+        "Israel",
+        "Pakistan"
+      ]
+    }
+  },
+  {
+    "id": "flag-SA",
+    "category": "flags",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Saudi_Arabia",
+    "image": "flag:SA",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Suudi Arabistan",
+        "Birleşik Arap Emirlikleri",
+        "İsrail",
+        "İran"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Saudi Arabia",
+        "United Arab Emirates",
+        "Israel",
+        "Iran"
+      ]
+    }
+  },
+  {
+    "id": "flag-AE",
+    "category": "flags",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_the_United_Arab_Emirates",
+    "image": "flag:AE",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "İsrail",
+        "Birleşik Arap Emirlikleri",
+        "İran",
+        "Nijerya"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Israel",
+        "United Arab Emirates",
+        "Iran",
+        "Nigeria"
+      ]
+    }
+  },
+  {
+    "id": "flag-IL",
+    "category": "flags",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Israel",
+    "image": "flag:IL",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "İran",
+        "Nijerya",
+        "İsrail",
+        "Güney Afrika"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Iran",
+        "Nigeria",
+        "Israel",
+        "South Africa"
+      ]
+    }
+  },
+  {
+    "id": "flag-IR",
+    "category": "flags",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Iran",
+    "image": "flag:IR",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Nijerya",
+        "Güney Afrika",
+        "Kenya",
+        "İran"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Nigeria",
+        "South Africa",
+        "Kenya",
+        "Iran"
+      ]
+    }
+  },
+  {
+    "id": "flag-NG",
+    "category": "flags",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Nigeria",
+    "image": "flag:NG",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Nijerya",
+        "Güney Afrika",
+        "Kenya",
+        "Fas"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Nigeria",
+        "South Africa",
+        "Kenya",
+        "Morocco"
+      ]
+    }
+  },
+  {
+    "id": "flag-ZA",
+    "category": "flags",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_South_Africa",
+    "image": "flag:ZA",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Kenya",
+        "Güney Afrika",
+        "Fas",
+        "Kolombiya"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Kenya",
+        "South Africa",
+        "Morocco",
+        "Colombia"
+      ]
+    }
+  },
+  {
+    "id": "flag-KE",
+    "category": "flags",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Kenya",
+    "image": "flag:KE",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Fas",
+        "Kolombiya",
+        "Kenya",
+        "Şili"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Morocco",
+        "Colombia",
+        "Kenya",
+        "Chile"
+      ]
+    }
+  },
+  {
+    "id": "flag-MA",
+    "category": "flags",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Morocco",
+    "image": "flag:MA",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Kolombiya",
+        "Şili",
+        "Peru",
+        "Fas"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Colombia",
+        "Chile",
+        "Peru",
+        "Morocco"
+      ]
+    }
+  },
+  {
+    "id": "flag-CO",
+    "category": "flags",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Colombia",
+    "image": "flag:CO",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Kolombiya",
+        "Şili",
+        "Peru",
+        "Küba"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Colombia",
+        "Chile",
+        "Peru",
+        "Cuba"
+      ]
+    }
+  },
+  {
+    "id": "flag-CL",
+    "category": "flags",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Chile",
+    "image": "flag:CL",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Peru",
+        "Şili",
+        "Küba",
+        "Türkiye"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Peru",
+        "Chile",
+        "Cuba",
+        "Turkey"
+      ]
+    }
+  },
+  {
+    "id": "flag-PE",
+    "category": "flags",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Peru",
+    "image": "flag:PE",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
+        "Küba",
+        "Türkiye",
+        "Peru",
+        "Almanya"
+      ]
+    },
+    "en": {
+      "text": "Which country does this flag belong to?",
+      "choices": [
+        "Cuba",
+        "Turkey",
+        "Peru",
+        "Germany"
+      ]
+    }
+  },
+  {
+    "id": "flag-CU",
+    "category": "flags",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Flag_of_Cuba",
+    "image": "flag:CU",
+    "tr": {
+      "text": "Bu hangi ülkenin bayrağı?",
+      "choices": [
         "Türkiye",
         "Almanya",
         "Fransa",
-        "Arjantin"
+        "Küba"
       ]
     },
     "en": {
@@ -595,7 +1295,7 @@
         "Turkey",
         "Germany",
         "France",
-        "Argentina"
+        "Cuba"
       ]
     }
   }
