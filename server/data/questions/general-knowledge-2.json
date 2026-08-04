@@ -1,0 +1,162 @@
+[
+  {
+    "id": "geo-largest-ocean",
+    "category": "geography",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Pacific_Ocean",
+    "tr": { "text": "Dünyanın en büyük okyanusu hangisidir?", "choices": ["Atlas Okyanusu", "Hint Okyanusu", "Pasifik Okyanusu", "Arktik Okyanus"] },
+    "en": { "text": "What is the largest ocean in the world?", "choices": ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"] }
+  },
+  {
+    "id": "geo-sahara-desert",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Sahara",
+    "tr": { "text": "Dünyanın en büyük sıcak çölü hangisidir?", "choices": ["Gobi Çölü", "Sahra Çölü", "Kalahari Çölü", "Atacama Çölü"] },
+    "en": { "text": "What is the largest hot desert in the world?", "choices": ["Gobi Desert", "Sahara Desert", "Kalahari Desert", "Atacama Desert"] }
+  },
+  {
+    "id": "geo-tallest-mountain",
+    "category": "geography",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Mount_Everest",
+    "tr": { "text": "Deniz seviyesinden en yüksek dağ hangisidir?", "choices": ["K2", "Kilimanjaro", "Everest", "Mont Blanc"] },
+    "en": { "text": "Which mountain is the tallest above sea level?", "choices": ["K2", "Kilimanjaro", "Everest", "Mont Blanc"] }
+  },
+  {
+    "id": "geo-smallest-country",
+    "category": "geography",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Vatican_City",
+    "tr": { "text": "Dünyanın yüzölçümü en küçük ülkesi hangisidir?", "choices": ["Monako", "San Marino", "Malta", "Vatikan"] },
+    "en": { "text": "What is the smallest country in the world by area?", "choices": ["Monaco", "San Marino", "Malta", "Vatican City"] }
+  },
+  {
+    "id": "history-columbus-discovery",
+    "category": "history",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Christopher_Columbus",
+    "tr": { "text": "1492'de Amerika kıtasına ulaşan kaşif kimdir?", "choices": ["Christopher Columbus", "Vasco da Gama", "Ferdinand Magellan", "Marco Polo"] },
+    "en": { "text": "Which explorer reached the Americas in 1492?", "choices": ["Christopher Columbus", "Vasco da Gama", "Ferdinand Magellan", "Marco Polo"] }
+  },
+  {
+    "id": "history-french-revolution",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/French_Revolution",
+    "tr": { "text": "Fransız Devrimi hangi yıl başladı?", "choices": ["1776", "1789", "1804", "1815"] },
+    "en": { "text": "In which year did the French Revolution begin?", "choices": ["1776", "1789", "1804", "1815"] }
+  },
+  {
+    "id": "history-great-wall",
+    "category": "history",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Great_Wall_of_China",
+    "tr": { "text": "Büyük Çin Seddi hangi ülkeyi korumak için inşa edilmiştir?", "choices": ["Japonya", "Moğolistan", "Çin", "Kore"] },
+    "en": { "text": "The Great Wall was built to protect which country?", "choices": ["Japan", "Mongolia", "China", "Korea"] }
+  },
+  {
+    "id": "science-planets-count",
+    "category": "science",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Solar_System",
+    "tr": { "text": "Güneş Sistemi'nde kaç gezegen vardır?", "choices": ["7", "8", "9", "10"] },
+    "en": { "text": "How many planets are in the Solar System?", "choices": ["7", "8", "9", "10"] }
+  },
+  {
+    "id": "science-water-formula",
+    "category": "science",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Water",
+    "tr": { "text": "Suyun kimyasal formülü nedir?", "choices": ["CO2", "NaCl", "H2O", "O2"] },
+    "en": { "text": "What is the chemical formula of water?", "choices": ["CO2", "NaCl", "H2O", "O2"] }
+  },
+  {
+    "id": "science-relativity",
+    "category": "science",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Albert_Einstein",
+    "tr": { "text": "Görelilik teorisini kim geliştirmiştir?", "choices": ["Isaac Newton", "Albert Einstein", "Nikola Tesla", "Stephen Hawking"] },
+    "en": { "text": "Who developed the theory of relativity?", "choices": ["Isaac Newton", "Albert Einstein", "Nikola Tesla", "Stephen Hawking"] }
+  },
+  {
+    "id": "science-photosynthesis-gas",
+    "category": "science",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Photosynthesis",
+    "tr": { "text": "Bitkiler fotosentez için hangi gazı kullanır?", "choices": ["Karbondioksit", "Oksijen", "Azot", "Hidrojen"] },
+    "en": { "text": "Which gas do plants use for photosynthesis?", "choices": ["Carbon dioxide", "Oxygen", "Nitrogen", "Hydrogen"] }
+  },
+  {
+    "id": "arts-romeo-juliet-author",
+    "category": "arts",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Romeo_and_Juliet",
+    "tr": { "text": "\"Romeo ve Juliet\" oyununu kim yazmıştır?", "choices": ["Charles Dickens", "Oscar Wilde", "William Shakespeare", "Mark Twain"] },
+    "en": { "text": "Who wrote \"Romeo and Juliet\"?", "choices": ["Charles Dickens", "Oscar Wilde", "William Shakespeare", "Mark Twain"] }
+  },
+  {
+    "id": "arts-van-gogh-ear",
+    "category": "arts",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Vincent_van_Gogh",
+    "tr": { "text": "Kendi kulağının bir kısmını kesen ünlü ressam kimdir?", "choices": ["Claude Monet", "Vincent van Gogh", "Paul Cézanne", "Edgar Degas"] },
+    "en": { "text": "Which famous painter cut off part of his own ear?", "choices": ["Claude Monet", "Vincent van Gogh", "Paul Cézanne", "Edgar Degas"] }
+  },
+  {
+    "id": "arts-the-scream",
+    "category": "arts",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/The_Scream",
+    "tr": { "text": "\"Çığlık\" (The Scream) tablosunun ressamı kimdir?", "choices": ["Gustav Klimt", "Henri Matisse", "Paul Gauguin", "Edvard Munch"] },
+    "en": { "text": "Who painted \"The Scream\"?", "choices": ["Gustav Klimt", "Henri Matisse", "Paul Gauguin", "Edvard Munch"] }
+  },
+  {
+    "id": "sports-basketball-players",
+    "category": "sports",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Basketball",
+    "tr": { "text": "Bir basketbol takımının sahada aynı anda kaç oyuncusu bulunur?", "choices": ["4", "5", "6", "7"] },
+    "en": { "text": "How many players does a basketball team have on the court at once?", "choices": ["4", "5", "6", "7"] }
+  },
+  {
+    "id": "sports-most-world-cups",
+    "category": "sports",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/FIFA_World_Cup",
+    "tr": { "text": "FIFA Dünya Kupası'nı en çok kazanan ülke hangisidir?", "choices": ["Almanya", "Arjantin", "Brezilya", "İtalya"] },
+    "en": { "text": "Which country has won the FIFA World Cup the most times?", "choices": ["Germany", "Argentina", "Brazil", "Italy"] }
+  },
+  {
+    "id": "sports-slam-dunk-sport",
+    "category": "sports",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Slam_dunk",
+    "tr": { "text": "\"Slam dunk\" hareketi hangi spor dalında yapılır?", "choices": ["Voleybol", "Basketbol", "Hentbol", "Amerikan Futbolu"] },
+    "en": { "text": "In which sport would you perform a \"slam dunk\"?", "choices": ["Volleyball", "Basketball", "Handball", "American Football"] }
+  },
+  {
+    "id": "movies-star-wars-force",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Star_Wars",
+    "tr": { "text": "\"Güç\" (the Force) kavramı hangi film serisinde geçer?", "choices": ["Yıldız Geçidi", "Star Trek", "Star Wars", "Dune"] },
+    "en": { "text": "Which movie franchise features \"the Force\"?", "choices": ["Stargate", "Star Trek", "Star Wars", "Dune"] }
+  },
+  {
+    "id": "movies-iron-man-actor",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Robert_Downey_Jr.",
+    "tr": { "text": "Marvel filmlerinde Iron Man'i kim canlandırmıştır?", "choices": ["Chris Evans", "Robert Downey Jr.", "Chris Hemsworth", "Mark Ruffalo"] },
+    "en": { "text": "Who played Iron Man in the Marvel films?", "choices": ["Chris Evans", "Robert Downey Jr.", "Chris Hemsworth", "Mark Ruffalo"] }
+  },
+  {
+    "id": "geo-longest-wall-location",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Great_Wall_of_China",
+    "tr": { "text": "Büyük Çin Seddi hangi kıtada bulunur?", "choices": ["Avrupa", "Asya", "Afrika", "Okyanusya"] },
+    "en": { "text": "On which continent is the Great Wall of China located?", "choices": ["Europe", "Asia", "Africa", "Oceania"] }
+  }
+]
