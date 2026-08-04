@@ -1,23 +1,38 @@
 "use client";
 
-import { Suspense, useState } from "react";
+import { Suspense, useMemo, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import { useGameConnection } from "@/lib/useGameConnection";
 import { config } from "@/lib/config";
+import { Player } from "@/lib/gameTypes";
+import { Avatar } from "@/components/Avatar";
+import { finalTitleFor, randomEveryoneWrongQuip, randomLobbyQuip } from "@/lib/quips";
 
-function nameFor(id: string | null, roster: { id: string; name: string }[], selfId: string | null) {
+function nameFor(id: string | null, roster: Player[], selfId: string | null) {
   if (!id) return "?";
   if (id === selfId) return "Sen";
   return roster.find((p) => p.id === id)?.name ?? id.slice(0, 6);
+}
+
+function avatarFor(id: string, roster: Player[]) {
+  return roster.find((p) => p.id === id)?.avatar;
 }
 
 function RoomScreen() {
   const params = useParams<{ code: string }>();
   const searchParams = useSearchParams();
   const name = searchParams.get("name") ?? "Oyuncu";
+  const avatar = searchParams.get("avatar") ?? "";
   const code = params.code.toUpperCase();
-  const { state, submitAnswer } = useGameConnection(code, name);
+  const { state, submitAnswer } = useGameConnection(code, name, avatar);
   const [starting, setStarting] = useState(false);
+
+  const lobbyQuip = useMemo(() => randomLobbyQuip(), []);
+  const revealQuip = useMemo(() => {
+    if (state.phase !== "reveal") return null;
+    const nobodyScored = Object.keys(state.pointsAwarded).length === 0;
+    return nobodyScored ? randomEveryoneWrongQuip() : null;
+  }, [state.phase, state.pointsAwarded]);
 
   async function startGame() {
     setStarting(true);
@@ -51,16 +66,17 @@ function RoomScreen() {
             Bu kodu paylaş, herkes katılınca oyunu başlat:
           </p>
           <p className="text-3xl font-bold tracking-[0.3em]">{code}</p>
-          <ul className="flex flex-wrap justify-center gap-2">
+          <ul className="flex flex-wrap justify-center gap-3">
             {state.roster.map((p) => (
-              <li
-                key={p.id}
-                className="rounded-full bg-zinc-100 px-3 py-1 text-sm dark:bg-zinc-800"
-              >
-                {p.id === state.selfId ? `${p.name} (sen)` : p.name}
+              <li key={p.id} className="flex flex-col items-center gap-1">
+                <Avatar avatar={p.avatar} size={40} />
+                <span className="text-xs text-zinc-600 dark:text-zinc-400">
+                  {p.id === state.selfId ? `${p.name} (sen)` : p.name}
+                </span>
               </li>
             ))}
           </ul>
+          <p className="text-center text-xs italic text-zinc-400">{lobbyQuip}</p>
           <button
             className="w-full rounded-lg bg-zinc-900 px-4 py-3 font-medium text-white transition hover:bg-zinc-700 disabled:opacity-50 dark:bg-zinc-50 dark:text-zinc-900"
             onClick={startGame}
@@ -106,6 +122,9 @@ function RoomScreen() {
           <p className="text-center text-sm text-zinc-500">
             Doğru cevap: <b>{state.question?.choices[state.correctChoice ?? -1]}</b>
           </p>
+          {revealQuip && (
+            <p className="text-center text-xs italic text-zinc-400">{revealQuip}</p>
+          )}
           <ScoreTable
             sortedScores={sortedScores}
             pointsAwarded={state.pointsAwarded}
@@ -118,17 +137,32 @@ function RoomScreen() {
       {state.phase === "finished" && (
         <section className="flex flex-col gap-4">
           <p className="text-center text-2xl font-semibold">🏁 Oyun bitti!</p>
-          {state.hasFastestPlayer && (
-            <p className="text-center text-sm text-amber-600">
-              ⚡ En Hızlı Oyuncu: {nameFor(state.fastestPlayerId, state.roster, state.selfId)}
-            </p>
-          )}
-          <ScoreTable
-            sortedScores={sortedScores}
-            pointsAwarded={{}}
-            roster={state.roster}
-            selfId={state.selfId}
-          />
+          <ul className="flex flex-col gap-2">
+            {sortedScores.map(([id, score], i) => {
+              const t = finalTitleFor(
+                id,
+                i + 1,
+                sortedScores.length,
+                score,
+                state.hasFastestPlayer && state.fastestPlayerId === id
+              );
+              return (
+                <li
+                  key={id}
+                  className="flex items-center justify-between rounded-lg bg-zinc-100 px-4 py-3 dark:bg-zinc-900"
+                >
+                  <span className="flex items-center gap-2">
+                    <Avatar avatar={avatarFor(id, state.roster)} size={28} />
+                    #{i + 1} {nameFor(id, state.roster, state.selfId)}
+                    <span className="text-xs text-zinc-500">
+                      {t.emoji} {t.title}
+                    </span>
+                  </span>
+                  <span className="font-medium">{score}</span>
+                </li>
+              );
+            })}
+          </ul>
         </section>
       )}
     </div>
@@ -143,7 +177,7 @@ function ScoreTable({
 }: {
   sortedScores: [string, number][];
   pointsAwarded: Record<string, number>;
-  roster: { id: string; name: string }[];
+  roster: Player[];
   selfId: string | null;
 }) {
   return (
@@ -153,7 +187,8 @@ function ScoreTable({
           key={id}
           className="flex items-center justify-between rounded-lg bg-zinc-100 px-4 py-3 dark:bg-zinc-900"
         >
-          <span>
+          <span className="flex items-center gap-2">
+            <Avatar avatar={avatarFor(id, roster)} size={28} />
             #{i + 1} {nameFor(id, roster, selfId)}
           </span>
           <span className="font-medium">
