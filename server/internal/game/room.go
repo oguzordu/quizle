@@ -43,10 +43,13 @@ func (p Phase) String() string {
 // PlayerID uniquely identifies a player within a Room.
 type PlayerID string
 
-// Player tracks a participant's identity and running game state.
+// Player tracks a participant's identity and running game state. Avatar is
+// an opaque string the frontend knows how to render (e.g. "emoji|#hexcolor")
+// — the server never interprets it, just relays it.
 type Player struct {
 	ID     PlayerID
 	Name   string
+	Avatar string
 	Score  int
 	Streak int
 
@@ -121,12 +124,12 @@ func (r *Room) Players() []Player {
 // AddPlayer enrolls a new player while the Room is still in the lobby. It is
 // rejected once the game has started so mid-game joiners can't dodge
 // questions everyone else already answered.
-func (r *Room) AddPlayer(id PlayerID, name string) ([]Event, error) {
+func (r *Room) AddPlayer(id PlayerID, name, avatar string) ([]Event, error) {
 	if r.phase != PhaseLobby {
 		return nil, ErrGameAlreadyStarted
 	}
-	r.players[id] = &Player{ID: id, Name: name}
-	return []Event{PlayerJoined{PlayerID: id, Name: name}}, nil
+	r.players[id] = &Player{ID: id, Name: name, Avatar: avatar}
+	return []Event{PlayerJoined{PlayerID: id, Name: name, Avatar: avatar}}, nil
 }
 
 // Start moves the Room from PhaseLobby into the first question.

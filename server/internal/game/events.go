@@ -7,6 +7,7 @@ import "time"
 type PlayerJoined struct {
 	PlayerID PlayerID
 	Name     string
+	Avatar   string
 }
 
 // QuestionStarted is emitted when a new question begins.
