@@ -1,0 +1,226 @@
+[
+  {
+    "id": "history-ww2-end",
+    "category": "history",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/World_War_II",
+    "tr": {
+      "text": "İkinci Dünya Savaşı hangi yıl sona erdi?",
+      "choices": ["1939", "1943", "1945", "1950"]
+    },
+    "en": {
+      "text": "In which year did World War II end?",
+      "choices": ["1939", "1943", "1945", "1950"]
+    }
+  },
+  {
+    "id": "history-first-us-president",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/George_Washington",
+    "tr": {
+      "text": "Amerika Birleşik Devletleri'nin ilk başkanı kimdir?",
+      "choices": ["Abraham Lincoln", "George Washington", "Thomas Jefferson", "John Adams"]
+    },
+    "en": {
+      "text": "Who was the first President of the United States?",
+      "choices": ["Abraham Lincoln", "George Washington", "Thomas Jefferson", "John Adams"]
+    }
+  },
+  {
+    "id": "history-turkey-republic",
+    "category": "history",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Republic_of_Turkey",
+    "tr": {
+      "text": "Türkiye Cumhuriyeti hangi yıl kuruldu?",
+      "choices": ["1919", "1920", "1923", "1938"]
+    },
+    "en": {
+      "text": "In which year was the Republic of Turkey founded?",
+      "choices": ["1919", "1920", "1923", "1938"]
+    }
+  },
+  {
+    "id": "history-berlin-wall",
+    "category": "history",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Berlin_Wall",
+    "tr": {
+      "text": "Berlin Duvarı hangi yıl yıkıldı?",
+      "choices": ["1975", "1985", "1987", "1989"]
+    },
+    "en": {
+      "text": "In which year did the Berlin Wall fall?",
+      "choices": ["1975", "1985", "1987", "1989"]
+    }
+  },
+  {
+    "id": "science-red-planet",
+    "category": "science",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Mars",
+    "tr": {
+      "text": "\"Kızıl Gezegen\" olarak bilinen gezegen hangisidir?",
+      "choices": ["Venüs", "Mars", "Jüpiter", "Satürn"]
+    },
+    "en": {
+      "text": "Which planet is known as the Red Planet?",
+      "choices": ["Venus", "Mars", "Jupiter", "Saturn"]
+    }
+  },
+  {
+    "id": "science-gold-symbol",
+    "category": "science",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Gold",
+    "tr": {
+      "text": "Altının periyodik tablodaki simgesi nedir?",
+      "choices": ["Au", "Ag", "Fe", "Al"]
+    },
+    "en": {
+      "text": "What is the chemical symbol for gold?",
+      "choices": ["Au", "Ag", "Fe", "Al"]
+    }
+  },
+  {
+    "id": "science-human-bones",
+    "category": "science",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Human_skeleton",
+    "tr": {
+      "text": "Yetişkin bir insan vücudunda kaç kemik bulunur?",
+      "choices": ["186", "196", "206", "216"]
+    },
+    "en": {
+      "text": "How many bones are in the adult human body?",
+      "choices": ["186", "196", "206", "216"]
+    }
+  },
+  {
+    "id": "science-largest-planet",
+    "category": "science",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Jupiter",
+    "tr": {
+      "text": "Güneş Sistemi'ndeki en büyük gezegen hangisidir?",
+      "choices": ["Dünya", "Satürn", "Neptün", "Jüpiter"]
+    },
+    "en": {
+      "text": "What is the largest planet in the Solar System?",
+      "choices": ["Earth", "Saturn", "Neptune", "Jupiter"]
+    }
+  },
+  {
+    "id": "arts-mona-lisa",
+    "category": "arts",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Mona_Lisa",
+    "tr": {
+      "text": "Mona Lisa tablosunu kim yapmıştır?",
+      "choices": ["Michelangelo", "Leonardo da Vinci", "Rafael", "Vincent van Gogh"]
+    },
+    "en": {
+      "text": "Who painted the Mona Lisa?",
+      "choices": ["Michelangelo", "Leonardo da Vinci", "Raphael", "Vincent van Gogh"]
+    }
+  },
+  {
+    "id": "arts-beethoven-ninth",
+    "category": "arts",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Ludwig_van_Beethoven",
+    "tr": {
+      "text": "\"Neşeye Övgü\" temasını içeren 9. Senfoni'yi hangi besteci yazmıştır?",
+      "choices": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Franz Schubert"]
+    },
+    "en": {
+      "text": "Which composer wrote the Ninth Symphony, featuring \"Ode to Joy\"?",
+      "choices": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Franz Schubert"]
+    }
+  },
+  {
+    "id": "arts-starry-night",
+    "category": "arts",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/The_Starry_Night",
+    "tr": {
+      "text": "\"Yıldızlı Gece\" tablosunun ressamı kimdir?",
+      "choices": ["Claude Monet", "Pablo Picasso", "Vincent van Gogh", "Salvador Dalí"]
+    },
+    "en": {
+      "text": "Who painted \"The Starry Night\"?",
+      "choices": ["Claude Monet", "Pablo Picasso", "Vincent van Gogh", "Salvador Dalí"]
+    }
+  },
+  {
+    "id": "sports-football-players",
+    "category": "sports",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Association_football",
+    "tr": {
+      "text": "Bir futbol takımının sahada aynı anda kaç oyuncusu bulunur?",
+      "choices": ["10", "11", "12", "9"]
+    },
+    "en": {
+      "text": "How many players does a football (soccer) team have on the field at once?",
+      "choices": ["10", "11", "12", "9"]
+    }
+  },
+  {
+    "id": "sports-first-modern-olympics",
+    "category": "sports",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/1896_Summer_Olympics",
+    "tr": {
+      "text": "İlk modern Olimpiyat Oyunları 1896'da hangi ülkede yapılmıştır?",
+      "choices": ["İtalya", "Fransa", "Yunanistan", "İngiltere"]
+    },
+    "en": {
+      "text": "The first modern Olympic Games in 1896 were held in which country?",
+      "choices": ["Italy", "France", "Greece", "England"]
+    }
+  },
+  {
+    "id": "sports-olympic-rings",
+    "category": "sports",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Olympic_symbols",
+    "tr": {
+      "text": "Olimpiyat bayrağında kaç halka bulunur?",
+      "choices": ["4", "6", "5", "7"]
+    },
+    "en": {
+      "text": "How many rings appear on the Olympic flag?",
+      "choices": ["4", "6", "5", "7"]
+    }
+  },
+  {
+    "id": "movies-inception-director",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Inception",
+    "tr": {
+      "text": "\"Inception\" (Başlangıç) filminin yönetmeni kimdir?",
+      "choices": ["Steven Spielberg", "James Cameron", "Ridley Scott", "Christopher Nolan"]
+    },
+    "en": {
+      "text": "Who directed the movie \"Inception\"?",
+      "choices": ["Steven Spielberg", "James Cameron", "Ridley Scott", "Christopher Nolan"]
+    }
+  },
+  {
+    "id": "movies-titanic-director",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+    "tr": {
+      "text": "1997 yapımı \"Titanic\" filminin yönetmeni kimdir?",
+      "choices": ["Steven Spielberg", "James Cameron", "Peter Jackson", "Christopher Nolan"]
+    },
+    "en": {
+      "text": "Who directed the 1997 movie \"Titanic\"?",
+      "choices": ["Steven Spielberg", "James Cameron", "Peter Jackson", "Christopher Nolan"]
+    }
+  }
+]
