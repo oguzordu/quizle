@@ -49,11 +49,11 @@ func TestRoom_SubmitAnswer_correctAwardsFullPointsWhenInstant(t *testing.T) {
 	if !aa.Correct {
 		t.Errorf("Correct = false, want true")
 	}
-	if aa.PointsAwarded != 1000 {
-		t.Errorf("PointsAwarded = %d, want 1000", aa.PointsAwarded)
+	if aa.PointsAwarded != 100 {
+		t.Errorf("PointsAwarded = %d, want 100", aa.PointsAwarded)
 	}
-	if r.players["alice"].Score != 1000 {
-		t.Errorf("player score = %d, want 1000", r.players["alice"].Score)
+	if r.players["alice"].Score != 100 {
+		t.Errorf("player score = %d, want 100", r.players["alice"].Score)
 	}
 }
 
@@ -165,8 +165,8 @@ func TestRoom_NextQuestion_afterLastQuestionFinishesGame(t *testing.T) {
 		t.Fatalf("Phase() = %v, want PhaseFinished", r.Phase())
 	}
 	gf := findEvent[GameFinished](t, events)
-	if gf.FinalScores["alice"] != 1000 {
-		t.Errorf("alice final score = %d, want 1000", gf.FinalScores["alice"])
+	if gf.FinalScores["alice"] != 100 {
+		t.Errorf("alice final score = %d, want 100", gf.FinalScores["alice"])
 	}
 }
 

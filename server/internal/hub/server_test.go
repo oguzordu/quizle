@@ -94,13 +94,11 @@ func TestServer_TwoPlayersPlayFullRoundOverRealWebSockets(t *testing.T) {
 	if err := json.Unmarshal(revealed.Payload, &payload); err != nil {
 		t.Fatalf("unmarshal reveal payload: %v", err)
 	}
-	// Over a real (if localhost-fast) network round trip, a few
-	// milliseconds elapse between question start and answer submission, so
-	// the speed-scaled score lands just under the theoretical max rather
-	// than exactly at it. That's the scoring design working correctly, not
-	// a bug — assert a realistic tolerance instead of an exact value.
-	if payload.Scores[aliceID] < 950 || payload.Scores[aliceID] > 1000 {
-		t.Errorf("alice score = %d, want in [950, 1000]", payload.Scores[aliceID])
+	// A localhost round trip takes milliseconds, comfortably within the top
+	// speed tier's generous 40%-of-the-window threshold, so this lands
+	// exactly on the top tier rather than needing a tolerance band.
+	if payload.Scores[aliceID] != 100 {
+		t.Errorf("alice score = %d, want 100", payload.Scores[aliceID])
 	}
 	if payload.Scores[bobID] != 0 {
 		t.Errorf("bob score = %d, want 0", payload.Scores[bobID])
