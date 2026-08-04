@@ -1,0 +1,578 @@
+[
+  {
+    "id": "capital-TR",
+    "category": "capitals",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Turkey",
+    "tr": {
+      "text": "Türkiye ülkesinin başkenti neresidir?",
+      "choices": [
+        "Ankara",
+        "Berlin",
+        "Paris",
+        "Roma"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Turkey?",
+      "choices": [
+        "Ankara",
+        "Berlin",
+        "Paris",
+        "Rome"
+      ]
+    }
+  },
+  {
+    "id": "capital-DE",
+    "category": "capitals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Germany",
+    "tr": {
+      "text": "Almanya ülkesinin başkenti neresidir?",
+      "choices": [
+        "Paris",
+        "Berlin",
+        "Roma",
+        "Madrid"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Germany?",
+      "choices": [
+        "Paris",
+        "Berlin",
+        "Rome",
+        "Madrid"
+      ]
+    }
+  },
+  {
+    "id": "capital-FR",
+    "category": "capitals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/France",
+    "tr": {
+      "text": "Fransa ülkesinin başkenti neresidir?",
+      "choices": [
+        "Roma",
+        "Madrid",
+        "Paris",
+        "Londra"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of France?",
+      "choices": [
+        "Rome",
+        "Madrid",
+        "Paris",
+        "London"
+      ]
+    }
+  },
+  {
+    "id": "capital-IT",
+    "category": "capitals",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Italy",
+    "tr": {
+      "text": "İtalya ülkesinin başkenti neresidir?",
+      "choices": [
+        "Madrid",
+        "Londra",
+        "Washington D.C.",
+        "Roma"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Italy?",
+      "choices": [
+        "Madrid",
+        "London",
+        "Washington, D.C.",
+        "Rome"
+      ]
+    }
+  },
+  {
+    "id": "capital-ES",
+    "category": "capitals",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Spain",
+    "tr": {
+      "text": "İspanya ülkesinin başkenti neresidir?",
+      "choices": [
+        "Madrid",
+        "Londra",
+        "Washington D.C.",
+        "Tokyo"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Spain?",
+      "choices": [
+        "Madrid",
+        "London",
+        "Washington, D.C.",
+        "Tokyo"
+      ]
+    }
+  },
+  {
+    "id": "capital-GB",
+    "category": "capitals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/United_Kingdom",
+    "tr": {
+      "text": "Birleşik Krallık ülkesinin başkenti neresidir?",
+      "choices": [
+        "Washington D.C.",
+        "Londra",
+        "Tokyo",
+        "Pekin"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of United Kingdom?",
+      "choices": [
+        "Washington, D.C.",
+        "London",
+        "Tokyo",
+        "Beijing"
+      ]
+    }
+  },
+  {
+    "id": "capital-US",
+    "category": "capitals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/United_States",
+    "tr": {
+      "text": "Amerika Birleşik Devletleri ülkesinin başkenti neresidir?",
+      "choices": [
+        "Tokyo",
+        "Pekin",
+        "Washington D.C.",
+        "Moskova"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of United States?",
+      "choices": [
+        "Tokyo",
+        "Beijing",
+        "Washington, D.C.",
+        "Moscow"
+      ]
+    }
+  },
+  {
+    "id": "capital-JP",
+    "category": "capitals",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Japan",
+    "tr": {
+      "text": "Japonya ülkesinin başkenti neresidir?",
+      "choices": [
+        "Pekin",
+        "Moskova",
+        "Brasília",
+        "Tokyo"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Japan?",
+      "choices": [
+        "Beijing",
+        "Moscow",
+        "Brasília",
+        "Tokyo"
+      ]
+    }
+  },
+  {
+    "id": "capital-CN",
+    "category": "capitals",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/China",
+    "tr": {
+      "text": "Çin ülkesinin başkenti neresidir?",
+      "choices": [
+        "Pekin",
+        "Moskova",
+        "Brasília",
+        "Ottawa"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of China?",
+      "choices": [
+        "Beijing",
+        "Moscow",
+        "Brasília",
+        "Ottawa"
+      ]
+    }
+  },
+  {
+    "id": "capital-RU",
+    "category": "capitals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Russia",
+    "tr": {
+      "text": "Rusya ülkesinin başkenti neresidir?",
+      "choices": [
+        "Brasília",
+        "Moskova",
+        "Ottawa",
+        "Canberra"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Russia?",
+      "choices": [
+        "Brasília",
+        "Moscow",
+        "Ottawa",
+        "Canberra"
+      ]
+    }
+  },
+  {
+    "id": "capital-BR",
+    "category": "capitals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Brazil",
+    "tr": {
+      "text": "Brezilya ülkesinin başkenti neresidir?",
+      "choices": [
+        "Ottawa",
+        "Canberra",
+        "Brasília",
+        "Kahire"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Brazil?",
+      "choices": [
+        "Ottawa",
+        "Canberra",
+        "Brasília",
+        "Cairo"
+      ]
+    }
+  },
+  {
+    "id": "capital-CA",
+    "category": "capitals",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Canada",
+    "tr": {
+      "text": "Kanada ülkesinin başkenti neresidir?",
+      "choices": [
+        "Canberra",
+        "Kahire",
+        "Yeni Delhi",
+        "Ottawa"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Canada?",
+      "choices": [
+        "Canberra",
+        "Cairo",
+        "New Delhi",
+        "Ottawa"
+      ]
+    }
+  },
+  {
+    "id": "capital-AU",
+    "category": "capitals",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Australia",
+    "tr": {
+      "text": "Avustralya ülkesinin başkenti neresidir?",
+      "choices": [
+        "Canberra",
+        "Kahire",
+        "Yeni Delhi",
+        "Meksika City"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Australia?",
+      "choices": [
+        "Canberra",
+        "Cairo",
+        "New Delhi",
+        "Mexico City"
+      ]
+    }
+  },
+  {
+    "id": "capital-EG",
+    "category": "capitals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Egypt",
+    "tr": {
+      "text": "Mısır ülkesinin başkenti neresidir?",
+      "choices": [
+        "Yeni Delhi",
+        "Kahire",
+        "Meksika City",
+        "Seul"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Egypt?",
+      "choices": [
+        "New Delhi",
+        "Cairo",
+        "Mexico City",
+        "Seoul"
+      ]
+    }
+  },
+  {
+    "id": "capital-IN",
+    "category": "capitals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/India",
+    "tr": {
+      "text": "Hindistan ülkesinin başkenti neresidir?",
+      "choices": [
+        "Meksika City",
+        "Seul",
+        "Yeni Delhi",
+        "Amsterdam"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of India?",
+      "choices": [
+        "Mexico City",
+        "Seoul",
+        "New Delhi",
+        "Amsterdam"
+      ]
+    }
+  },
+  {
+    "id": "capital-MX",
+    "category": "capitals",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Mexico",
+    "tr": {
+      "text": "Meksika ülkesinin başkenti neresidir?",
+      "choices": [
+        "Seul",
+        "Amsterdam",
+        "Stockholm",
+        "Meksika City"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Mexico?",
+      "choices": [
+        "Seoul",
+        "Amsterdam",
+        "Stockholm",
+        "Mexico City"
+      ]
+    }
+  },
+  {
+    "id": "capital-KR",
+    "category": "capitals",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/South_Korea",
+    "tr": {
+      "text": "Güney Kore ülkesinin başkenti neresidir?",
+      "choices": [
+        "Seul",
+        "Amsterdam",
+        "Stockholm",
+        "Oslo"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of South Korea?",
+      "choices": [
+        "Seoul",
+        "Amsterdam",
+        "Stockholm",
+        "Oslo"
+      ]
+    }
+  },
+  {
+    "id": "capital-NL",
+    "category": "capitals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Netherlands",
+    "tr": {
+      "text": "Hollanda ülkesinin başkenti neresidir?",
+      "choices": [
+        "Stockholm",
+        "Amsterdam",
+        "Oslo",
+        "Atina"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Netherlands?",
+      "choices": [
+        "Stockholm",
+        "Amsterdam",
+        "Oslo",
+        "Athens"
+      ]
+    }
+  },
+  {
+    "id": "capital-SE",
+    "category": "capitals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Sweden",
+    "tr": {
+      "text": "İsveç ülkesinin başkenti neresidir?",
+      "choices": [
+        "Oslo",
+        "Atina",
+        "Stockholm",
+        "Lizbon"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Sweden?",
+      "choices": [
+        "Oslo",
+        "Athens",
+        "Stockholm",
+        "Lisbon"
+      ]
+    }
+  },
+  {
+    "id": "capital-NO",
+    "category": "capitals",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Norway",
+    "tr": {
+      "text": "Norveç ülkesinin başkenti neresidir?",
+      "choices": [
+        "Atina",
+        "Lizbon",
+        "Varşova",
+        "Oslo"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Norway?",
+      "choices": [
+        "Athens",
+        "Lisbon",
+        "Warsaw",
+        "Oslo"
+      ]
+    }
+  },
+  {
+    "id": "capital-GR",
+    "category": "capitals",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Greece",
+    "tr": {
+      "text": "Yunanistan ülkesinin başkenti neresidir?",
+      "choices": [
+        "Atina",
+        "Lizbon",
+        "Varşova",
+        "Buenos Aires"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Greece?",
+      "choices": [
+        "Athens",
+        "Lisbon",
+        "Warsaw",
+        "Buenos Aires"
+      ]
+    }
+  },
+  {
+    "id": "capital-PT",
+    "category": "capitals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Portugal",
+    "tr": {
+      "text": "Portekiz ülkesinin başkenti neresidir?",
+      "choices": [
+        "Varşova",
+        "Lizbon",
+        "Buenos Aires",
+        "Ankara"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Portugal?",
+      "choices": [
+        "Warsaw",
+        "Lisbon",
+        "Buenos Aires",
+        "Ankara"
+      ]
+    }
+  },
+  {
+    "id": "capital-PL",
+    "category": "capitals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Poland",
+    "tr": {
+      "text": "Polonya ülkesinin başkenti neresidir?",
+      "choices": [
+        "Buenos Aires",
+        "Ankara",
+        "Varşova",
+        "Berlin"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Poland?",
+      "choices": [
+        "Buenos Aires",
+        "Ankara",
+        "Warsaw",
+        "Berlin"
+      ]
+    }
+  },
+  {
+    "id": "capital-AR",
+    "category": "capitals",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Argentina",
+    "tr": {
+      "text": "Arjantin ülkesinin başkenti neresidir?",
+      "choices": [
+        "Ankara",
+        "Berlin",
+        "Paris",
+        "Buenos Aires"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Argentina?",
+      "choices": [
+        "Ankara",
+        "Berlin",
+        "Paris",
+        "Buenos Aires"
+      ]
+    }
+  }
+]
