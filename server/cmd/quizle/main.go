@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path/filepath"
 	"time"
 
 	"github.com/oguzordu/quizle/internal/game"
@@ -15,14 +16,14 @@ import (
 )
 
 func main() {
-	questions, err := loadQuestionPack("data/questions/general-knowledge.json")
+	pool, err := loadQuestionPool("data/questions")
 	if err != nil {
 		log.Fatalf("soru paketi yüklenemedi: %v", err)
 	}
 
 	h := hub.NewHub()
 	srv := hub.NewServer(h)
-	srv.SetDefaultQuestions(questions, 4*time.Second)
+	srv.SetQuestionPool(pool, 20, 4*time.Second)
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("/rooms", srv.CreateRoomHandler)
@@ -35,7 +36,7 @@ func main() {
 		port = "8080"
 	}
 	addr := ":" + port
-	log.Printf("Quizle sunucusu %s portunda çalışıyor (%d soru yüklendi)", addr, len(questions))
+	log.Printf("Quizle sunucusu %s portunda çalışıyor (%d soru havuzda)", addr, len(pool))
 	log.Fatal(http.ListenAndServe(addr, withCORS(mux)))
 }
 
@@ -54,6 +55,28 @@ func withCORS(next http.Handler) http.Handler {
 		}
 		next.ServeHTTP(w, r)
 	})
+}
+
+// loadQuestionPool reads every *.json pack in dir into one combined pool.
+// CreateRoomHandler draws a random sample from this pool for each new room.
+func loadQuestionPool(dir string) ([]game.Question, error) {
+	entries, err := os.ReadDir(dir)
+	if err != nil {
+		return nil, err
+	}
+
+	var pool []game.Question
+	for _, entry := range entries {
+		if entry.IsDir() || filepath.Ext(entry.Name()) != ".json" {
+			continue
+		}
+		qs, err := loadQuestionPack(filepath.Join(dir, entry.Name()))
+		if err != nil {
+			return nil, err
+		}
+		pool = append(pool, qs...)
+	}
+	return pool, nil
 }
 
 func loadQuestionPack(path string) ([]game.Question, error) {

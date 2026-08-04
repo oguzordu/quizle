@@ -2,6 +2,7 @@ package hub
 
 import (
 	"encoding/json"
+	"math/rand"
 	"net/http"
 	"time"
 
@@ -17,7 +18,8 @@ type Server struct {
 	hub      *Hub
 	upgrader gorilla.Upgrader
 
-	defaultQuestions   []game.Question
+	questionPool       []game.Question
+	sampleSize         int // 0 means "use the whole pool, no sampling"
 	defaultRevealDelay time.Duration
 }
 
@@ -34,10 +36,20 @@ func NewServer(h *Hub) *Server {
 	}
 }
 
-// SetDefaultQuestions configures the question set and reveal delay used by
-// CreateRoomHandler for every new room.
+// SetDefaultQuestions configures a fixed question set used verbatim (no
+// sampling) by CreateRoomHandler for every new room.
 func (s *Server) SetDefaultQuestions(questions []game.Question, revealDelay time.Duration) {
-	s.defaultQuestions = questions
+	s.questionPool = questions
+	s.sampleSize = 0
+	s.defaultRevealDelay = revealDelay
+}
+
+// SetQuestionPool configures a large pool of questions, from which
+// CreateRoomHandler draws a fresh random sample of sampleSize for each new
+// room — so replays don't repeat the same quiz in the same order.
+func (s *Server) SetQuestionPool(pool []game.Question, sampleSize int, revealDelay time.Duration) {
+	s.questionPool = pool
+	s.sampleSize = sampleSize
 	s.defaultRevealDelay = revealDelay
 }
 
@@ -45,18 +57,32 @@ type createRoomResponse struct {
 	Code string `json:"code"`
 }
 
-// CreateRoomHandler handles POST /rooms, creating a fresh room with the
-// server's configured default question set and returning its join code.
+// CreateRoomHandler handles POST /rooms, creating a fresh room with a
+// (possibly randomly sampled) question set and returning its join code.
 func (s *Server) CreateRoomHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
 		http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
 		return
 	}
 
-	code, _ := s.hub.CreateRoom(s.defaultQuestions, s.defaultRevealDelay)
+	code, _ := s.hub.CreateRoom(s.pickQuestions(), s.defaultRevealDelay)
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(createRoomResponse{Code: code})
+}
+
+// pickQuestions returns the configured question set, or a random sample of
+// it when a sampleSize smaller than the pool has been configured.
+func (s *Server) pickQuestions() []game.Question {
+	n := s.sampleSize
+	if n <= 0 || n >= len(s.questionPool) {
+		return s.questionPool
+	}
+
+	shuffled := make([]game.Question, len(s.questionPool))
+	copy(shuffled, s.questionPool)
+	rand.Shuffle(len(shuffled), func(i, j int) { shuffled[i], shuffled[j] = shuffled[j], shuffled[i] })
+	return shuffled[:n]
 }
 
 // StartRoomHandler handles POST /rooms/{code}/start, moving the named room

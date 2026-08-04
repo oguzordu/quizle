@@ -37,6 +37,50 @@ func TestServer_CreateRoomHandler_returnsJoinCode(t *testing.T) {
 	}
 }
 
+func TestServer_CreateRoomHandler_samplesFromPool(t *testing.T) {
+	h := NewHub()
+	pool := make([]game.Question, 10)
+	for i := range pool {
+		pool[i] = game.Question{ID: string(rune('a' + i)), Choices: []string{"a", "b", "c", "d"}, Correct: 0, Duration: 20 * time.Millisecond}
+	}
+	srv := NewServer(h)
+	srv.SetQuestionPool(pool, 3, 10*time.Millisecond)
+
+	req := httptest.NewRequest(http.MethodPost, "/rooms", nil)
+	w := httptest.NewRecorder()
+	srv.CreateRoomHandler(w, req)
+
+	var resp createRoomResponse
+	json.Unmarshal(w.Body.Bytes(), &resp)
+	actor, ok := h.GetRoom(resp.Code)
+	if !ok {
+		t.Fatalf("room %q not found", resp.Code)
+	}
+	t.Cleanup(actor.Stop)
+
+	sub, unsub := actor.Subscribe()
+	defer unsub()
+	actor.Start()
+
+	started := 0
+	for {
+		select {
+		case ev := <-sub:
+			switch ev.(type) {
+			case game.QuestionStarted:
+				started++
+			case game.GameFinished:
+				if started != 3 {
+					t.Errorf("QuestionStarted fired %d times, want 3 (sampled from pool of 10)", started)
+				}
+				return
+			}
+		case <-time.After(testTimeout):
+			t.Fatal("timed out waiting for game to finish")
+		}
+	}
+}
+
 func TestServer_CreateRoomHandler_rejectsNonPost(t *testing.T) {
 	h := NewHub()
 	srv := NewServer(h)
