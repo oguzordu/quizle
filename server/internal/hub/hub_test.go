@@ -65,7 +65,7 @@ func TestHub_JoinRoom_addsPlayerAndReturnsToken(t *testing.T) {
 	code, actor := h.CreateRoom(questions, 3*time.Second)
 	t.Cleanup(actor.Stop)
 
-	id, token, err := h.JoinRoom(code, "Alice")
+	id, token, err := h.JoinRoom(code, "Alice", "🦊|#FF5733")
 	if err != nil {
 		t.Fatalf("JoinRoom: %v", err)
 	}
@@ -82,7 +82,7 @@ func TestHub_JoinRoom_addsPlayerAndReturnsToken(t *testing.T) {
 func TestHub_JoinRoom_unknownCodeErrors(t *testing.T) {
 	h := NewHub()
 
-	_, _, err := h.JoinRoom("ZZZZZZ", "Alice")
+	_, _, err := h.JoinRoom("ZZZZZZ", "Alice", "")
 	if err == nil {
 		t.Fatal("expected error joining unknown room code, got nil")
 	}

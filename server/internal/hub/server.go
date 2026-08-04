@@ -78,6 +78,7 @@ func (s *Server) StartRoomHandler(w http.ResponseWriter, r *http.Request) {
 func (s *Server) ServeWS(w http.ResponseWriter, r *http.Request) {
 	code := r.URL.Query().Get("code")
 	name := r.URL.Query().Get("name")
+	avatar := r.URL.Query().Get("avatar")
 	tok := r.URL.Query().Get("token")
 
 	actor, ok := s.hub.GetRoom(code)
@@ -94,7 +95,7 @@ func (s *Server) ServeWS(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	if playerID == "" {
-		id, newToken, err := s.hub.JoinRoom(code, name)
+		id, newToken, err := s.hub.JoinRoom(code, name, avatar)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusBadRequest)
 			return
@@ -120,7 +121,7 @@ func (s *Server) ServeWS(w http.ResponseWriter, r *http.Request) {
 		if p.ID == playerID {
 			continue
 		}
-		if err := conn.WriteMessage(gorilla.TextMessage, EncodeEvent(game.PlayerJoined{PlayerID: p.ID, Name: p.Name})); err != nil {
+		if err := conn.WriteMessage(gorilla.TextMessage, EncodeEvent(game.PlayerJoined{PlayerID: p.ID, Name: p.Name, Avatar: p.Avatar})); err != nil {
 			return
 		}
 	}

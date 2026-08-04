@@ -18,6 +18,7 @@ type ServerMessage struct {
 type playerJoinedPayload struct {
 	PlayerID game.PlayerID `json:"player_id"`
 	Name     string        `json:"name"`
+	Avatar   string        `json:"avatar,omitempty"`
 }
 
 type questionStartedPayload struct {
@@ -66,7 +67,7 @@ func EncodeEvent(ev game.Event) []byte {
 	switch e := ev.(type) {
 	case game.PlayerJoined:
 		msgType = "player_joined"
-		payload = playerJoinedPayload{PlayerID: e.PlayerID, Name: e.Name}
+		payload = playerJoinedPayload{PlayerID: e.PlayerID, Name: e.Name, Avatar: e.Avatar}
 	case game.QuestionStarted:
 		msgType = "question_started"
 		payload = questionStartedPayload{

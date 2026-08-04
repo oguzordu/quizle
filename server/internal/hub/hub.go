@@ -56,14 +56,14 @@ func (h *Hub) GetRoom(code string) (*RoomActor, bool) {
 // JoinRoom enrolls a new player in the room identified by code, returning
 // their assigned PlayerID and a reconnect token the client must present to
 // resume the same identity after a dropped connection.
-func (h *Hub) JoinRoom(code string, name string) (game.PlayerID, string, error) {
+func (h *Hub) JoinRoom(code string, name, avatar string) (game.PlayerID, string, error) {
 	actor, ok := h.GetRoom(code)
 	if !ok {
 		return "", "", fmt.Errorf("room %q not found", code)
 	}
 
 	id := game.PlayerID(generateToken(8))
-	if err := actor.AddPlayer(id, name); err != nil {
+	if err := actor.AddPlayer(id, name, avatar); err != nil {
 		return "", "", err
 	}
 

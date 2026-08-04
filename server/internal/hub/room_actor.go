@@ -71,11 +71,11 @@ func (a *RoomActor) Roster() []game.Player {
 }
 
 // AddPlayer enrolls a new player while the room is still in its lobby.
-func (a *RoomActor) AddPlayer(id game.PlayerID, name string) error {
+func (a *RoomActor) AddPlayer(id game.PlayerID, name, avatar string) error {
 	var err error
 	a.exec(func(now time.Time) []game.Event {
 		var events []game.Event
-		events, err = a.room.AddPlayer(id, name)
+		events, err = a.room.AddPlayer(id, name, avatar)
 		return events
 	})
 	return err
