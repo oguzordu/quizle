@@ -1,13 +1,14 @@
 package game
 
+import "time"
+
 const (
-	basePoints = 100
+	basePoints    = 100
+	speedBonusMax = 50
 
 	// FastestPlayerBonus is a one-time bonus added at game end (not per
 	// question) to whoever had the best average response time among their
-	// correct answers. Speed is rewarded as a separate, bounded prize
-	// rather than a per-question multiplier, so it can never make up for
-	// knowing fewer answers than an opponent.
+	// correct answers, on top of the per-question speed bonus below.
 	FastestPlayerBonus = 50
 
 	streakTierHigh   = 7
@@ -20,13 +21,25 @@ const (
 	streakMultNone   = 1.0
 )
 
-// Score computes points for a single answer. Every correct answer is worth
-// the same basePoints, regardless of speed — knowing the answer is what
-// counts. A streak multiplier (capped at streakMultHigh) applies on top.
-func Score(correct bool, streak int) int {
-	if !correct {
+// Score computes points for a single answer. Every correct answer is
+// guaranteed basePoints regardless of speed — knowing the answer always pays
+// off — plus a speed bonus of up to speedBonusMax that scales continuously
+// with how much time was left when the answer was submitted. A streak
+// multiplier (capped at streakMultHigh) applies to the combined total.
+func Score(correct bool, timeTotal, timeRemaining time.Duration, streak int) int {
+	if !correct || timeTotal <= 0 {
 		return 0
 	}
+
+	speedFactor := float64(timeRemaining) / float64(timeTotal)
+	if speedFactor < 0 {
+		speedFactor = 0
+	}
+	if speedFactor > 1 {
+		speedFactor = 1
+	}
+
+	raw := float64(basePoints) + float64(speedBonusMax)*speedFactor
 
 	mult := streakMultNone
 	switch {
@@ -38,5 +51,5 @@ func Score(correct bool, streak int) int {
 		mult = streakMultLow
 	}
 
-	return int(float64(basePoints)*mult + 0.5)
+	return int(raw*mult + 0.5)
 }
