@@ -1,0 +1,2138 @@
+[
+  {
+    "id": "oscar-director-Q463620",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q463620",
+    "tr": {
+      "text": "\"Broadway Melodisi\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Harry Beaumont",
+        "Lewis Milestone",
+        "Wesley Ruggles",
+        "Frank Lloyd"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Broadway Melody\"?",
+      "choices": [
+        "Harry Beaumont",
+        "Lewis Milestone",
+        "Wesley Ruggles",
+        "Frank Lloyd"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q272599",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q272599",
+    "tr": {
+      "text": "\"Batı Cephesinde Yeni Bir Şey Yok\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Wesley Ruggles",
+        "Lewis Milestone",
+        "Frank Lloyd",
+        "Edmund Goulding"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"All Quiet on the Western Front\"?",
+      "choices": [
+        "Wesley Ruggles",
+        "Lewis Milestone",
+        "Frank Lloyd",
+        "Edmund Goulding"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q251997",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q251997",
+    "tr": {
+      "text": "\"Cimarron\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Frank Lloyd",
+        "Edmund Goulding",
+        "Wesley Ruggles",
+        "Frank Capra"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Cimarron\"?",
+      "choices": [
+        "Frank Lloyd",
+        "Edmund Goulding",
+        "Wesley Ruggles",
+        "Frank Capra"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q753107",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q753107",
+    "tr": {
+      "text": "\"Cavalcade\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Edmund Goulding",
+        "Frank Capra",
+        "Robert Z. Leonard",
+        "Frank Lloyd"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Cavalcade\"?",
+      "choices": [
+        "Edmund Goulding",
+        "Frank Capra",
+        "Robert Z. Leonard",
+        "Frank Lloyd"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q246656",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q246656",
+    "tr": {
+      "text": "\"Büyük Otel\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Edmund Goulding",
+        "Frank Capra",
+        "Frank Lloyd",
+        "Robert Z. Leonard"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Grand Hotel\"?",
+      "choices": [
+        "Edmund Goulding",
+        "Frank Capra",
+        "Frank Lloyd",
+        "Robert Z. Leonard"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q208632",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q208632",
+    "tr": {
+      "text": "\"It Happened One Night\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Frank Lloyd",
+        "Frank Capra",
+        "Robert Z. Leonard",
+        "William Dieterle"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"It Happened One Night\"?",
+      "choices": [
+        "Frank Lloyd",
+        "Frank Capra",
+        "Robert Z. Leonard",
+        "William Dieterle"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q329709",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q329709",
+    "tr": {
+      "text": "\"Mutiny on the Bounty\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Robert Z. Leonard",
+        "William Dieterle",
+        "Frank Lloyd",
+        "Frank Capra"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Mutiny on the Bounty\"?",
+      "choices": [
+        "Robert Z. Leonard",
+        "William Dieterle",
+        "Frank Lloyd",
+        "Frank Capra"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q470218",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q470218",
+    "tr": {
+      "text": "\"Büyük Ziegfeld\" filminin yönetmeni kimdir?",
+      "choices": [
+        "William Dieterle",
+        "Frank Capra",
+        "Alfred Hitchcock",
+        "Robert Z. Leonard"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Great Ziegfeld\"?",
+      "choices": [
+        "William Dieterle",
+        "Frank Capra",
+        "Alfred Hitchcock",
+        "Robert Z. Leonard"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q738552",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q738552",
+    "tr": {
+      "text": "\"Emile Zola'nın Hayatı\" filminin yönetmeni kimdir?",
+      "choices": [
+        "William Dieterle",
+        "Frank Capra",
+        "Alfred Hitchcock",
+        "William Wyler"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Life of Emile Zola\"?",
+      "choices": [
+        "William Dieterle",
+        "Frank Capra",
+        "Alfred Hitchcock",
+        "William Wyler"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q637835",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q637835",
+    "tr": {
+      "text": "\"You Can't Take it With You\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Alfred Hitchcock",
+        "Frank Capra",
+        "William Wyler",
+        "John Ford"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"You Can't Take It With You\"?",
+      "choices": [
+        "Alfred Hitchcock",
+        "Frank Capra",
+        "William Wyler",
+        "John Ford"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q204212",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q204212",
+    "tr": {
+      "text": "\"Rebecca\" filminin yönetmeni kimdir?",
+      "choices": [
+        "William Wyler",
+        "John Ford",
+        "Alfred Hitchcock",
+        "Leo McCarey"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Rebecca\"?",
+      "choices": [
+        "William Wyler",
+        "John Ford",
+        "Alfred Hitchcock",
+        "Leo McCarey"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q478371",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q478371",
+    "tr": {
+      "text": "\"Bayan Miniver\" filminin yönetmeni kimdir?",
+      "choices": [
+        "John Ford",
+        "Leo McCarey",
+        "Billy Wilder",
+        "William Wyler"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Mrs. Miniver\"?",
+      "choices": [
+        "John Ford",
+        "Leo McCarey",
+        "Billy Wilder",
+        "William Wyler"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q244448",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q244448",
+    "tr": {
+      "text": "\"Vadim O Kadar Yeşildi Ki\" filminin yönetmeni kimdir?",
+      "choices": [
+        "John Ford",
+        "Leo McCarey",
+        "Billy Wilder",
+        "Michael Curtiz"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"How Green Was My Valley\"?",
+      "choices": [
+        "John Ford",
+        "Leo McCarey",
+        "Billy Wilder",
+        "Michael Curtiz"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q468877",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q468877",
+    "tr": {
+      "text": "\"Yolumda Giderken\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Billy Wilder",
+        "Leo McCarey",
+        "Michael Curtiz",
+        "William Wyler"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Going My Way\"?",
+      "choices": [
+        "Billy Wilder",
+        "Leo McCarey",
+        "Michael Curtiz",
+        "William Wyler"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q237134",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q237134",
+    "tr": {
+      "text": "\"Yaratılan Adam\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Michael Curtiz",
+        "William Wyler",
+        "Billy Wilder",
+        "Elia Kazan"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Lost Weekend\"?",
+      "choices": [
+        "Michael Curtiz",
+        "William Wyler",
+        "Billy Wilder",
+        "Elia Kazan"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q132689",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q132689",
+    "tr": {
+      "text": "\"Kazablanka\" filminin yönetmeni kimdir?",
+      "choices": [
+        "William Wyler",
+        "Elia Kazan",
+        "Laurence Olivier",
+        "Michael Curtiz"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Casablanca\"?",
+      "choices": [
+        "William Wyler",
+        "Elia Kazan",
+        "Laurence Olivier",
+        "Michael Curtiz"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q645094",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q645094",
+    "tr": {
+      "text": "\"Hayatımızın En Güzel Yılları\" filminin yönetmeni kimdir?",
+      "choices": [
+        "William Wyler",
+        "Elia Kazan",
+        "Laurence Olivier",
+        "Robert Rossen"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Best Years of Our Lives\"?",
+      "choices": [
+        "William Wyler",
+        "Elia Kazan",
+        "Laurence Olivier",
+        "Robert Rossen"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q898840",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q898840",
+    "tr": {
+      "text": "\"Centilmenlik Anlaşması\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Laurence Olivier",
+        "Elia Kazan",
+        "Robert Rossen",
+        "Joseph L. Mankiewicz"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Gentleman's Agreement\"?",
+      "choices": [
+        "Laurence Olivier",
+        "Elia Kazan",
+        "Robert Rossen",
+        "Joseph L. Mankiewicz"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q27178",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q27178",
+    "tr": {
+      "text": "\"Hamlet\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Robert Rossen",
+        "Joseph L. Mankiewicz",
+        "Laurence Olivier",
+        "Vincente Minnelli"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Hamlet\"?",
+      "choices": [
+        "Robert Rossen",
+        "Joseph L. Mankiewicz",
+        "Laurence Olivier",
+        "Vincente Minnelli"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q817159",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q817159",
+    "tr": {
+      "text": "\"All the King's Men\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Joseph L. Mankiewicz",
+        "Vincente Minnelli",
+        "Cecil B. DeMille",
+        "Robert Rossen"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"All the King's Men\"?",
+      "choices": [
+        "Joseph L. Mankiewicz",
+        "Vincente Minnelli",
+        "Cecil B. DeMille",
+        "Robert Rossen"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q200299",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q200299",
+    "tr": {
+      "text": "\"Perde Açılıyor\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Joseph L. Mankiewicz",
+        "Vincente Minnelli",
+        "Cecil B. DeMille",
+        "Fred Zinnemann"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"All About Eve\"?",
+      "choices": [
+        "Joseph L. Mankiewicz",
+        "Vincente Minnelli",
+        "Cecil B. DeMille",
+        "Fred Zinnemann"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q747570",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q747570",
+    "tr": {
+      "text": "\"An American in Paris\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Cecil B. DeMille",
+        "Vincente Minnelli",
+        "Fred Zinnemann",
+        "Elia Kazan"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"An American in Paris\"?",
+      "choices": [
+        "Cecil B. DeMille",
+        "Vincente Minnelli",
+        "Fred Zinnemann",
+        "Elia Kazan"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q641061",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q641061",
+    "tr": {
+      "text": "\"The Greatest Show on Earth (film, 1953)\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Fred Zinnemann",
+        "Elia Kazan",
+        "Cecil B. DeMille",
+        "David Lean"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Greatest Show on Earth\"?",
+      "choices": [
+        "Fred Zinnemann",
+        "Elia Kazan",
+        "Cecil B. DeMille",
+        "David Lean"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q207588",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q207588",
+    "tr": {
+      "text": "\"İnsanlar Yaşadıkça\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Elia Kazan",
+        "David Lean",
+        "Delbert Mann",
+        "Fred Zinnemann"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"From Here to Eternity\"?",
+      "choices": [
+        "Elia Kazan",
+        "David Lean",
+        "Delbert Mann",
+        "Fred Zinnemann"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q211372",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q211372",
+    "tr": {
+      "text": "\"Rıhtımlar Üzerinde\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Elia Kazan",
+        "David Lean",
+        "Delbert Mann",
+        "William Wyler"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"On the Waterfront\"?",
+      "choices": [
+        "Elia Kazan",
+        "David Lean",
+        "Delbert Mann",
+        "William Wyler"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q188718",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q188718",
+    "tr": {
+      "text": "\"Kwai Köprüsü\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Delbert Mann",
+        "David Lean",
+        "William Wyler",
+        "Billy Wilder"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Bridge on the River Kwai\"?",
+      "choices": [
+        "Delbert Mann",
+        "David Lean",
+        "William Wyler",
+        "Billy Wilder"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q237116",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q237116",
+    "tr": {
+      "text": "\"Marty\" filminin yönetmeni kimdir?",
+      "choices": [
+        "William Wyler",
+        "Billy Wilder",
+        "Delbert Mann",
+        "Tony Richardson"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Marty\"?",
+      "choices": [
+        "William Wyler",
+        "Billy Wilder",
+        "Delbert Mann",
+        "Tony Richardson"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q180098",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q180098",
+    "tr": {
+      "text": "\"Ben-Hur\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Billy Wilder",
+        "Tony Richardson",
+        "David Lean",
+        "William Wyler"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Ben-Hur\"?",
+      "choices": [
+        "Billy Wilder",
+        "Tony Richardson",
+        "David Lean",
+        "William Wyler"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q270510",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q270510",
+    "tr": {
+      "text": "\"Garsoniyer\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Billy Wilder",
+        "Tony Richardson",
+        "David Lean",
+        "George Cukor"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Apartment\"?",
+      "choices": [
+        "Billy Wilder",
+        "Tony Richardson",
+        "David Lean",
+        "George Cukor"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q313315",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q313315",
+    "tr": {
+      "text": "\"Tom Jones\" filminin yönetmeni kimdir?",
+      "choices": [
+        "David Lean",
+        "Tony Richardson",
+        "George Cukor",
+        "Robert Wise"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Tom Jones\"?",
+      "choices": [
+        "David Lean",
+        "Tony Richardson",
+        "George Cukor",
+        "Robert Wise"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q228186",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q228186",
+    "tr": {
+      "text": "\"Arabistanlı Lawrence\" filminin yönetmeni kimdir?",
+      "choices": [
+        "George Cukor",
+        "Robert Wise",
+        "David Lean",
+        "Fred Zinnemann"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Lawrence of Arabia\"?",
+      "choices": [
+        "George Cukor",
+        "Robert Wise",
+        "David Lean",
+        "Fred Zinnemann"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q201215",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q201215",
+    "tr": {
+      "text": "\"Benim Güzel Meleğim\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Robert Wise",
+        "Fred Zinnemann",
+        "Norman Jewison",
+        "George Cukor"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"My Fair Lady\"?",
+      "choices": [
+        "Robert Wise",
+        "Fred Zinnemann",
+        "Norman Jewison",
+        "George Cukor"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q60072",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q60072",
+    "tr": {
+      "text": "\"Neşeli Günler\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Robert Wise",
+        "Fred Zinnemann",
+        "Norman Jewison",
+        "Carol Reed"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Sound of Music\"?",
+      "choices": [
+        "Robert Wise",
+        "Fred Zinnemann",
+        "Norman Jewison",
+        "Carol Reed"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q218999",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q218999",
+    "tr": {
+      "text": "\"Her Devrin Adamı\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Norman Jewison",
+        "Fred Zinnemann",
+        "Carol Reed",
+        "John Schlesinger"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"A Man for All Seasons\"?",
+      "choices": [
+        "Norman Jewison",
+        "Fred Zinnemann",
+        "Carol Reed",
+        "John Schlesinger"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q622240",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q622240",
+    "tr": {
+      "text": "\"Gecenin Sıcağında\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Carol Reed",
+        "John Schlesinger",
+        "Norman Jewison",
+        "Franklin J. Schaffner"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"In the Heat of the Night\"?",
+      "choices": [
+        "Carol Reed",
+        "John Schlesinger",
+        "Norman Jewison",
+        "Franklin J. Schaffner"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q141359",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q141359",
+    "tr": {
+      "text": "\"Oliver!\" filminin yönetmeni kimdir?",
+      "choices": [
+        "John Schlesinger",
+        "Franklin J. Schaffner",
+        "Francis Ford Coppola",
+        "Carol Reed"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Oliver!\"?",
+      "choices": [
+        "John Schlesinger",
+        "Franklin J. Schaffner",
+        "Francis Ford Coppola",
+        "Carol Reed"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q61696",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q61696",
+    "tr": {
+      "text": "\"Geceyarısı Kovboyu\" filminin yönetmeni kimdir?",
+      "choices": [
+        "John Schlesinger",
+        "Franklin J. Schaffner",
+        "Francis Ford Coppola",
+        "William Friedkin"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Midnight Cowboy\"?",
+      "choices": [
+        "John Schlesinger",
+        "Franklin J. Schaffner",
+        "Francis Ford Coppola",
+        "William Friedkin"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q217220",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q217220",
+    "tr": {
+      "text": "\"General Patton\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Francis Ford Coppola",
+        "Franklin J. Schaffner",
+        "William Friedkin",
+        "George Roy Hill"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Patton\"?",
+      "choices": [
+        "Francis Ford Coppola",
+        "Franklin J. Schaffner",
+        "William Friedkin",
+        "George Roy Hill"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q47703",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q47703",
+    "tr": {
+      "text": "\"Baba\" filminin yönetmeni kimdir?",
+      "choices": [
+        "William Friedkin",
+        "George Roy Hill",
+        "Francis Ford Coppola",
+        "John G. Avildsen"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Godfather\"?",
+      "choices": [
+        "William Friedkin",
+        "George Roy Hill",
+        "Francis Ford Coppola",
+        "John G. Avildsen"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q220735",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q220735",
+    "tr": {
+      "text": "\"Kanunun Kuvveti\" filminin yönetmeni kimdir?",
+      "choices": [
+        "George Roy Hill",
+        "Francis Ford Coppola",
+        "John G. Avildsen",
+        "William Friedkin"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The French Connection\"?",
+      "choices": [
+        "George Roy Hill",
+        "Francis Ford Coppola",
+        "John G. Avildsen",
+        "William Friedkin"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q62665",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q62665",
+    "tr": {
+      "text": "\"Belalılar\" filminin yönetmeni kimdir?",
+      "choices": [
+        "George Roy Hill",
+        "Francis Ford Coppola",
+        "John G. Avildsen",
+        "Miloš Forman"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Sting\"?",
+      "choices": [
+        "George Roy Hill",
+        "Francis Ford Coppola",
+        "John G. Avildsen",
+        "Miloš Forman"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q184768",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q184768",
+    "tr": {
+      "text": "\"Baba II\" filminin yönetmeni kimdir?",
+      "choices": [
+        "John G. Avildsen",
+        "Francis Ford Coppola",
+        "Miloš Forman",
+        "Robert Benton"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Godfather Part II\"?",
+      "choices": [
+        "John G. Avildsen",
+        "Francis Ford Coppola",
+        "Miloš Forman",
+        "Robert Benton"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q188652",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q188652",
+    "tr": {
+      "text": "\"Rocky\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Miloš Forman",
+        "Robert Benton",
+        "John G. Avildsen",
+        "Michael Cimino"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Rocky\"?",
+      "choices": [
+        "Miloš Forman",
+        "Robert Benton",
+        "John G. Avildsen",
+        "Michael Cimino"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q171669",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q171669",
+    "tr": {
+      "text": "\"Guguk Kuşu\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Robert Benton",
+        "Michael Cimino",
+        "Woody Allen",
+        "Miloš Forman"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"One Flew Over the Cuckoo's Nest\"?",
+      "choices": [
+        "Robert Benton",
+        "Michael Cimino",
+        "Woody Allen",
+        "Miloš Forman"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q193577",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q193577",
+    "tr": {
+      "text": "\"Kramer Kramer'e Karşı\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Robert Benton",
+        "Michael Cimino",
+        "Woody Allen",
+        "Robert Redford"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Kramer vs. Kramer\"?",
+      "choices": [
+        "Robert Benton",
+        "Michael Cimino",
+        "Woody Allen",
+        "Robert Redford"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q201674",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q201674",
+    "tr": {
+      "text": "\"Avcı\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Woody Allen",
+        "Michael Cimino",
+        "Robert Redford",
+        "Hugh Hudson"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Deer Hunter\"?",
+      "choices": [
+        "Woody Allen",
+        "Michael Cimino",
+        "Robert Redford",
+        "Hugh Hudson"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q233464",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q233464",
+    "tr": {
+      "text": "\"Annie Hall\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Robert Redford",
+        "Hugh Hudson",
+        "Woody Allen",
+        "Richard Attenborough"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Annie Hall\"?",
+      "choices": [
+        "Robert Redford",
+        "Hugh Hudson",
+        "Woody Allen",
+        "Richard Attenborough"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q503313",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q503313",
+    "tr": {
+      "text": "\"Sıradan İnsanlar\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Hugh Hudson",
+        "Richard Attenborough",
+        "James L. Brooks",
+        "Robert Redford"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Ordinary People\"?",
+      "choices": [
+        "Hugh Hudson",
+        "Richard Attenborough",
+        "James L. Brooks",
+        "Robert Redford"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q207921",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q207921",
+    "tr": {
+      "text": "\"Ateş Arabaları\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Hugh Hudson",
+        "Richard Attenborough",
+        "James L. Brooks",
+        "Sydney Pollack"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Chariots of Fire\"?",
+      "choices": [
+        "Hugh Hudson",
+        "Richard Attenborough",
+        "James L. Brooks",
+        "Sydney Pollack"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q202211",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q202211",
+    "tr": {
+      "text": "\"Gandhi\" filminin yönetmeni kimdir?",
+      "choices": [
+        "James L. Brooks",
+        "Richard Attenborough",
+        "Sydney Pollack",
+        "Bernardo Bertolucci"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Gandhi\"?",
+      "choices": [
+        "James L. Brooks",
+        "Richard Attenborough",
+        "Sydney Pollack",
+        "Bernardo Bertolucci"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q185071",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q185071",
+    "tr": {
+      "text": "\"Sevgi Sözcükleri\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Sydney Pollack",
+        "Bernardo Bertolucci",
+        "James L. Brooks",
+        "Oliver Stone"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Terms of Endearment\"?",
+      "choices": [
+        "Sydney Pollack",
+        "Bernardo Bertolucci",
+        "James L. Brooks",
+        "Oliver Stone"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q208266",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q208266",
+    "tr": {
+      "text": "\"Benim Afrikam\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Bernardo Bertolucci",
+        "Oliver Stone",
+        "Barry Levinson",
+        "Sydney Pollack"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Out of Africa\"?",
+      "choices": [
+        "Bernardo Bertolucci",
+        "Oliver Stone",
+        "Barry Levinson",
+        "Sydney Pollack"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q212775",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q212775",
+    "tr": {
+      "text": "\"Son İmparator\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Bernardo Bertolucci",
+        "Oliver Stone",
+        "Barry Levinson",
+        "Bruce Beresford"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Last Emperor\"?",
+      "choices": [
+        "Bernardo Bertolucci",
+        "Oliver Stone",
+        "Barry Levinson",
+        "Bruce Beresford"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q190643",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q190643",
+    "tr": {
+      "text": "\"Müfreze\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Barry Levinson",
+        "Oliver Stone",
+        "Bruce Beresford",
+        "Kevin Costner"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Platoon\"?",
+      "choices": [
+        "Barry Levinson",
+        "Oliver Stone",
+        "Bruce Beresford",
+        "Kevin Costner"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q188845",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q188845",
+    "tr": {
+      "text": "\"Yağmur Adam\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Bruce Beresford",
+        "Kevin Costner",
+        "Barry Levinson",
+        "Jonathan Demme"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Rain Man\"?",
+      "choices": [
+        "Bruce Beresford",
+        "Kevin Costner",
+        "Barry Levinson",
+        "Jonathan Demme"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q211373",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q211373",
+    "tr": {
+      "text": "\"Bayan Daisy'nin Şoförü\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Kevin Costner",
+        "Jonathan Demme",
+        "Clint Eastwood",
+        "Bruce Beresford"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Driving Miss Daisy\"?",
+      "choices": [
+        "Kevin Costner",
+        "Jonathan Demme",
+        "Clint Eastwood",
+        "Bruce Beresford"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q20456",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q20456",
+    "tr": {
+      "text": "\"Kurtlarla Dans\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Kevin Costner",
+        "Jonathan Demme",
+        "Clint Eastwood",
+        "Steven Spielberg"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Dances with Wolves\"?",
+      "choices": [
+        "Kevin Costner",
+        "Jonathan Demme",
+        "Clint Eastwood",
+        "Steven Spielberg"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q133654",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q133654",
+    "tr": {
+      "text": "\"Kuzuların Sessizliği\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Clint Eastwood",
+        "Jonathan Demme",
+        "Steven Spielberg",
+        "Mel Gibson"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Silence of the Lambs\"?",
+      "choices": [
+        "Clint Eastwood",
+        "Jonathan Demme",
+        "Steven Spielberg",
+        "Mel Gibson"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q104137",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q104137",
+    "tr": {
+      "text": "\"Affedilmeyen\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Steven Spielberg",
+        "Mel Gibson",
+        "Clint Eastwood",
+        "Anthony Minghella"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Unforgiven\"?",
+      "choices": [
+        "Steven Spielberg",
+        "Mel Gibson",
+        "Clint Eastwood",
+        "Anthony Minghella"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q483941",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q483941",
+    "tr": {
+      "text": "\"Schindler'in Listesi\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Mel Gibson",
+        "Anthony Minghella",
+        "James Cameron",
+        "Steven Spielberg"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Schindler's List\"?",
+      "choices": [
+        "Mel Gibson",
+        "Anthony Minghella",
+        "James Cameron",
+        "Steven Spielberg"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q162729",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q162729",
+    "tr": {
+      "text": "\"Cesur Yürek\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Mel Gibson",
+        "Anthony Minghella",
+        "James Cameron",
+        "John Madden"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Braveheart\"?",
+      "choices": [
+        "Mel Gibson",
+        "Anthony Minghella",
+        "James Cameron",
+        "John Madden"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q63026",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q63026",
+    "tr": {
+      "text": "\"İngiliz Hasta\" filminin yönetmeni kimdir?",
+      "choices": [
+        "James Cameron",
+        "Anthony Minghella",
+        "John Madden",
+        "Sam Mendes"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The English Patient\"?",
+      "choices": [
+        "James Cameron",
+        "Anthony Minghella",
+        "John Madden",
+        "Sam Mendes"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q44578",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q44578",
+    "tr": {
+      "text": "\"Titanik\" filminin yönetmeni kimdir?",
+      "choices": [
+        "John Madden",
+        "Sam Mendes",
+        "James Cameron",
+        "Ron Howard"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Titanic\"?",
+      "choices": [
+        "John Madden",
+        "Sam Mendes",
+        "James Cameron",
+        "Ron Howard"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q182944",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q182944",
+    "tr": {
+      "text": "\"Aşık Shakespeare\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Sam Mendes",
+        "Ron Howard",
+        "Rob Marshall",
+        "John Madden"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Shakespeare in Love\"?",
+      "choices": [
+        "Sam Mendes",
+        "Ron Howard",
+        "Rob Marshall",
+        "John Madden"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q25139",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q25139",
+    "tr": {
+      "text": "\"Amerikan Güzeli\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Sam Mendes",
+        "Ron Howard",
+        "Rob Marshall",
+        "Peter Jackson"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"American Beauty\"?",
+      "choices": [
+        "Sam Mendes",
+        "Ron Howard",
+        "Rob Marshall",
+        "Peter Jackson"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q164103",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q164103",
+    "tr": {
+      "text": "\"Akıl Oyunları\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Rob Marshall",
+        "Ron Howard",
+        "Peter Jackson",
+        "Paul Haggis"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"A Beautiful Mind\"?",
+      "choices": [
+        "Rob Marshall",
+        "Ron Howard",
+        "Peter Jackson",
+        "Paul Haggis"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q189889",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q189889",
+    "tr": {
+      "text": "\"Chicago\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Peter Jackson",
+        "Paul Haggis",
+        "Rob Marshall",
+        "Clint Eastwood"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Chicago\"?",
+      "choices": [
+        "Peter Jackson",
+        "Paul Haggis",
+        "Rob Marshall",
+        "Clint Eastwood"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q131074",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q131074",
+    "tr": {
+      "text": "\"Yüzüklerin Efendisi: Kralın Dönüşü\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Paul Haggis",
+        "Clint Eastwood",
+        "Martin Scorsese",
+        "Peter Jackson"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Lord of the Rings: The Return of the King\"?",
+      "choices": [
+        "Paul Haggis",
+        "Clint Eastwood",
+        "Martin Scorsese",
+        "Peter Jackson"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q188000",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q188000",
+    "tr": {
+      "text": "\"Çarpışma\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Paul Haggis",
+        "Clint Eastwood",
+        "Martin Scorsese",
+        "Kathryn Bigelow"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Crash\"?",
+      "choices": [
+        "Paul Haggis",
+        "Clint Eastwood",
+        "Martin Scorsese",
+        "Kathryn Bigelow"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q184255",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q184255",
+    "tr": {
+      "text": "\"Milyonluk Bebek\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Martin Scorsese",
+        "Clint Eastwood",
+        "Kathryn Bigelow",
+        "Tom Hooper"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Million Dollar Baby\"?",
+      "choices": [
+        "Martin Scorsese",
+        "Clint Eastwood",
+        "Kathryn Bigelow",
+        "Tom Hooper"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q172975",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q172975",
+    "tr": {
+      "text": "\"Köstebek\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Kathryn Bigelow",
+        "Tom Hooper",
+        "Martin Scorsese",
+        "Ben Affleck"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Departed\"?",
+      "choices": [
+        "Kathryn Bigelow",
+        "Tom Hooper",
+        "Martin Scorsese",
+        "Ben Affleck"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q183066",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q183066",
+    "tr": {
+      "text": "\"Ölümcül Tuzak\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Tom Hooper",
+        "Ben Affleck",
+        "Miloš Forman",
+        "Kathryn Bigelow"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Hurt Locker\"?",
+      "choices": [
+        "Tom Hooper",
+        "Ben Affleck",
+        "Miloš Forman",
+        "Kathryn Bigelow"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q160060",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q160060",
+    "tr": {
+      "text": "\"Zoraki Kral\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Tom Hooper",
+        "Ben Affleck",
+        "Miloš Forman",
+        "Steve McQueen"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The King's Speech\"?",
+      "choices": [
+        "Tom Hooper",
+        "Ben Affleck",
+        "Miloš Forman",
+        "Steve McQueen"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q59653",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q59653",
+    "tr": {
+      "text": "\"Argo\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Miloš Forman",
+        "Ben Affleck",
+        "Steve McQueen",
+        "Alejandro González Iñárritu"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Argo\"?",
+      "choices": [
+        "Miloš Forman",
+        "Ben Affleck",
+        "Steve McQueen",
+        "Alejandro González Iñárritu"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q190956",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q190956",
+    "tr": {
+      "text": "\"Amadeus\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Steve McQueen",
+        "Alejandro González Iñárritu",
+        "Miloš Forman",
+        "Tom McCarthy"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Amadeus\"?",
+      "choices": [
+        "Steve McQueen",
+        "Alejandro González Iñárritu",
+        "Miloš Forman",
+        "Tom McCarthy"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q3023357",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q3023357",
+    "tr": {
+      "text": "\"12 Yıllık Esaret\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Alejandro González Iñárritu",
+        "Tom McCarthy",
+        "Barry Jenkins",
+        "Steve McQueen"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"12 Years a Slave\"?",
+      "choices": [
+        "Alejandro González Iñárritu",
+        "Tom McCarthy",
+        "Barry Jenkins",
+        "Steve McQueen"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q13255497",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q13255497",
+    "tr": {
+      "text": "\"Birdman\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Alejandro González Iñárritu",
+        "Tom McCarthy",
+        "Barry Jenkins",
+        "Guillermo del Toro"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Birdman\"?",
+      "choices": [
+        "Alejandro González Iñárritu",
+        "Tom McCarthy",
+        "Barry Jenkins",
+        "Guillermo del Toro"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q18154496",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q18154496",
+    "tr": {
+      "text": "\"Spotlight\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Barry Jenkins",
+        "Tom McCarthy",
+        "Guillermo del Toro",
+        "Peter Farrelly"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Spotlight\"?",
+      "choices": [
+        "Barry Jenkins",
+        "Tom McCarthy",
+        "Guillermo del Toro",
+        "Peter Farrelly"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q21527875",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q21527875",
+    "tr": {
+      "text": "\"Ay Işığı\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Guillermo del Toro",
+        "Peter Farrelly",
+        "Barry Jenkins",
+        "Bong Joon-ho"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Moonlight\"?",
+      "choices": [
+        "Guillermo del Toro",
+        "Peter Farrelly",
+        "Barry Jenkins",
+        "Bong Joon-ho"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q26698156",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q26698156",
+    "tr": {
+      "text": "\"Suyun Sesi\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Peter Farrelly",
+        "Bong Joon-ho",
+        "Michel Hazanavicius",
+        "Guillermo del Toro"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Shape of Water\"?",
+      "choices": [
+        "Peter Farrelly",
+        "Bong Joon-ho",
+        "Michel Hazanavicius",
+        "Guillermo del Toro"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q48673898",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q48673898",
+    "tr": {
+      "text": "\"Yeşil Rehber\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Peter Farrelly",
+        "Bong Joon-ho",
+        "Michel Hazanavicius",
+        "Chloé Zhao"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Green Book\"?",
+      "choices": [
+        "Peter Farrelly",
+        "Bong Joon-ho",
+        "Michel Hazanavicius",
+        "Chloé Zhao"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q61448040",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q61448040",
+    "tr": {
+      "text": "\"Parazit\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Michel Hazanavicius",
+        "Bong Joon-ho",
+        "Chloé Zhao",
+        "Siân Héder"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Parasite\"?",
+      "choices": [
+        "Michel Hazanavicius",
+        "Bong Joon-ho",
+        "Chloé Zhao",
+        "Siân Héder"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q171861",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q171861",
+    "tr": {
+      "text": "\"Artist\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Chloé Zhao",
+        "Siân Héder",
+        "Michel Hazanavicius",
+        "Ridley Scott"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"The Artist\"?",
+      "choices": [
+        "Chloé Zhao",
+        "Siân Héder",
+        "Michel Hazanavicius",
+        "Ridley Scott"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q61740820",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q61740820",
+    "tr": {
+      "text": "\"Nomadland\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Siân Héder",
+        "Ridley Scott",
+        "Christopher Nolan",
+        "Chloé Zhao"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Nomadland\"?",
+      "choices": [
+        "Siân Héder",
+        "Ridley Scott",
+        "Christopher Nolan",
+        "Chloé Zhao"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q104686893",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q104686893",
+    "tr": {
+      "text": "\"CODA\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Siân Héder",
+        "Ridley Scott",
+        "Christopher Nolan",
+        "Sean Baker"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"CODA\"?",
+      "choices": [
+        "Siân Héder",
+        "Ridley Scott",
+        "Christopher Nolan",
+        "Sean Baker"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q128518",
+    "category": "movies",
+    "correct": 1,
+    "source_url": "https://www.wikidata.org/wiki/Q128518",
+    "tr": {
+      "text": "\"Gladyatör\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Christopher Nolan",
+        "Ridley Scott",
+        "Sean Baker",
+        "Paul Thomas Anderson"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Gladiator\"?",
+      "choices": [
+        "Christopher Nolan",
+        "Ridley Scott",
+        "Sean Baker",
+        "Paul Thomas Anderson"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q108839994",
+    "category": "movies",
+    "correct": 2,
+    "source_url": "https://www.wikidata.org/wiki/Q108839994",
+    "tr": {
+      "text": "\"Oppenheimer\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Sean Baker",
+        "Paul Thomas Anderson",
+        "Christopher Nolan",
+        "Harry Beaumont"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Oppenheimer\"?",
+      "choices": [
+        "Sean Baker",
+        "Paul Thomas Anderson",
+        "Christopher Nolan",
+        "Harry Beaumont"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q123185887",
+    "category": "movies",
+    "correct": 3,
+    "source_url": "https://www.wikidata.org/wiki/Q123185887",
+    "tr": {
+      "text": "\"Anora\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Paul Thomas Anderson",
+        "Harry Beaumont",
+        "Lewis Milestone",
+        "Sean Baker"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"Anora\"?",
+      "choices": [
+        "Paul Thomas Anderson",
+        "Harry Beaumont",
+        "Lewis Milestone",
+        "Sean Baker"
+      ]
+    }
+  },
+  {
+    "id": "oscar-director-Q117085614",
+    "category": "movies",
+    "correct": 0,
+    "source_url": "https://www.wikidata.org/wiki/Q117085614",
+    "tr": {
+      "text": "\"Savaş Üstüne Savaş\" filminin yönetmeni kimdir?",
+      "choices": [
+        "Paul Thomas Anderson",
+        "Harry Beaumont",
+        "Lewis Milestone",
+        "Wesley Ruggles"
+      ]
+    },
+    "en": {
+      "text": "Who directed \"One Battle After Another\"?",
+      "choices": [
+        "Paul Thomas Anderson",
+        "Harry Beaumont",
+        "Lewis Milestone",
+        "Wesley Ruggles"
+      ]
+    }
+  }
+]
