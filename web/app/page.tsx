@@ -1,15 +1,44 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { config } from "@/lib/config";
+import { randomAvatar, randomNickname } from "@/lib/quips";
+import { AvatarPicker } from "@/components/AvatarPicker";
+
+const NAME_KEY = "quizle:profile:name";
+const AVATAR_KEY = "quizle:profile:avatar";
 
 export default function Home() {
   const router = useRouter();
   const [name, setName] = useState("");
+  const [avatar, setAvatar] = useState("");
   const [joinCode, setJoinCode] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Reading a saved profile from localStorage is inherently client-only
+    // (unavailable during server render), so this has to run after mount
+    // rather than as a lazy useState initializer.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setName(localStorage.getItem(NAME_KEY) ?? randomNickname());
+    setAvatar(localStorage.getItem(AVATAR_KEY) ?? randomAvatar());
+  }, []);
+
+  function saveName(v: string) {
+    setName(v);
+    localStorage.setItem(NAME_KEY, v);
+  }
+
+  function saveAvatar(v: string) {
+    setAvatar(v);
+    localStorage.setItem(AVATAR_KEY, v);
+  }
+
+  function profileQuery() {
+    return `name=${encodeURIComponent(name.trim())}&avatar=${encodeURIComponent(avatar)}`;
+  }
 
   async function createRoom() {
     if (!name.trim()) {
@@ -22,7 +51,7 @@ export default function Home() {
       const res = await fetch(`${config.apiBase}/rooms`, { method: "POST" });
       if (!res.ok) throw new Error("Oda oluşturulamadı");
       const data = (await res.json()) as { code: string };
-      router.push(`/room/${data.code}?name=${encodeURIComponent(name.trim())}`);
+      router.push(`/room/${data.code}?${profileQuery()}`);
     } catch {
       setError("Oda oluşturulamadı. Sunucu çalışıyor mu?");
       setBusy(false);
@@ -38,7 +67,7 @@ export default function Home() {
       setError("Bir oda kodu gir.");
       return;
     }
-    router.push(`/room/${joinCode.trim().toUpperCase()}?name=${encodeURIComponent(name.trim())}`);
+    router.push(`/room/${joinCode.trim().toUpperCase()}?${profileQuery()}`);
   }
 
   return (
@@ -51,13 +80,25 @@ export default function Home() {
           Arkadaşlarınla çok oyunculu bilgi yarışması
         </p>
 
-        <input
-          className="w-full rounded-lg border border-zinc-300 px-4 py-3 text-base dark:border-zinc-700 dark:bg-zinc-900"
-          placeholder="İsmin"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          maxLength={20}
-        />
+        <AvatarPicker value={avatar} onChange={saveAvatar} />
+
+        <div className="flex gap-2">
+          <input
+            className="w-full rounded-lg border border-zinc-300 px-4 py-3 text-base dark:border-zinc-700 dark:bg-zinc-900"
+            placeholder="İsmin"
+            value={name}
+            onChange={(e) => saveName(e.target.value)}
+            maxLength={20}
+          />
+          <button
+            type="button"
+            title="Rastgele takma ad"
+            className="rounded-lg border border-zinc-300 px-3 text-lg dark:border-zinc-700"
+            onClick={() => saveName(randomNickname())}
+          >
+            🎲
+          </button>
+        </div>
 
         <button
           className="w-full rounded-lg bg-zinc-900 px-4 py-3 text-base font-medium text-white transition hover:bg-zinc-700 disabled:opacity-50 dark:bg-zinc-50 dark:text-zinc-900"
