@@ -11,7 +11,7 @@ Oğuz ve kız arkadaşı internette Kahoot tarzı çok oyunculu bilgi yarışmas
 | Backend | Go + ham WebSocket + Redis + PostgreSQL |
 | Frontend | Next.js 15 (App Router) + TypeScript + Tailwind |
 | v1 kapsamı | Oda kodu ile davet, 2–20 kişi, küratörlü paketler, TR+EN, canlı skor |
-| Profil | Fotoğraf yükleme + avatar üreteci |
+| Profil | Fotoğraf yükleme, alternatif olarak DiceBear tarzı özelleştirilebilir avatar (göz/kaş/saç/renk parça parça seçilebilir, insansı veya şirin/emoji tarzı) |
 | İsim | Quizle |
 | Streak | ×1.5 tavanlı çarpan |
 
