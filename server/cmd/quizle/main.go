@@ -23,7 +23,7 @@ func main() {
 
 	h := hub.NewHub()
 	srv := hub.NewServer(h)
-	srv.SetQuestionPool(pool, 20, 4*time.Second)
+	srv.SetQuestionPool(pool, 10, 4*time.Second)
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("/rooms", srv.CreateRoomHandler)
