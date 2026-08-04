@@ -23,6 +23,7 @@ type playerJoinedPayload struct {
 
 type questionStartedPayload struct {
 	QuestionID string    `json:"question_id"`
+	Text       string    `json:"text"`
 	Choices    []string  `json:"choices"`
 	Deadline   time.Time `json:"deadline"`
 }
@@ -72,6 +73,7 @@ func EncodeEvent(ev game.Event) []byte {
 		msgType = "question_started"
 		payload = questionStartedPayload{
 			QuestionID: e.Question.ID,
+			Text:       e.Question.Text,
 			Choices:    e.Question.Choices,
 			Deadline:   e.Deadline,
 		}

@@ -11,7 +11,7 @@ import (
 func TestEncodeEvent_QuestionStarted(t *testing.T) {
 	deadline := time.Date(2026, 1, 1, 0, 0, 10, 0, time.UTC)
 	ev := game.QuestionStarted{
-		Question: game.Question{ID: "q1", Choices: []string{"a", "b", "c", "d"}, Correct: 1},
+		Question: game.Question{ID: "q1", Text: "Bu hangi ülkenin bayrağı?", Choices: []string{"a", "b", "c", "d"}, Correct: 1},
 		Deadline: deadline,
 	}
 
@@ -31,6 +31,9 @@ func TestEncodeEvent_QuestionStarted(t *testing.T) {
 	}
 	if payload.QuestionID != "q1" {
 		t.Errorf("QuestionID = %q, want q1", payload.QuestionID)
+	}
+	if payload.Text != "Bu hangi ülkenin bayrağı?" {
+		t.Errorf("Text = %q, want the question text (regression: this used to be dropped entirely)", payload.Text)
 	}
 	if len(payload.Choices) != 4 {
 		t.Errorf("len(Choices) = %d, want 4", len(payload.Choices))

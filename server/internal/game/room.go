@@ -64,6 +64,7 @@ type Player struct {
 // Question is one round of the quiz. Correct is the index into Choices.
 type Question struct {
 	ID       string
+	Text     string
 	Choices  []string
 	Correct  int
 	Duration time.Duration

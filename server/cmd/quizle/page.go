@@ -90,7 +90,7 @@ function handleMessage(msg) {
       btn.onclick = () => ws.send(JSON.stringify({ type: 'submit_answer', choice: i }));
       choicesDiv.appendChild(btn);
     });
-    document.getElementById('question').textContent = 'Soru: ' + msg.payload.question_id;
+    document.getElementById('question').textContent = msg.payload.text;
   }
   if (msg.type === 'answer_accepted') {
     document.getElementById('result').textContent =

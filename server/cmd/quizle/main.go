@@ -100,6 +100,7 @@ func loadQuestionPack(path string) ([]game.Question, error) {
 	for _, q := range raw {
 		questions = append(questions, game.Question{
 			ID:       q.ID,
+			Text:     q.TR.Text,
 			Choices:  q.TR.Choices,
 			Correct:  q.Correct,
 			Duration: 15 * time.Second,
