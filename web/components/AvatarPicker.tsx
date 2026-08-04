@@ -1,6 +1,7 @@
 "use client";
 
 import { EMOJI_CHOICES, COLOR_CHOICES } from "@/lib/quips";
+import { useLocale } from "@/lib/i18n";
 import { Avatar } from "./Avatar";
 
 export function AvatarPicker({
@@ -10,13 +11,14 @@ export function AvatarPicker({
   value: string;
   onChange: (avatar: string) => void;
 }) {
+  const { t } = useLocale();
   const [emoji, color] = value.includes("|") ? value.split("|") : ["🙂", "#94A3B8"];
 
   return (
     <div className="flex flex-col gap-3">
       <div className="flex items-center gap-3">
         <Avatar avatar={value} size={48} />
-        <span className="text-sm text-zinc-500">Avatarını seç</span>
+        <span className="text-sm text-zinc-500">{t("pickAvatar")}</span>
       </div>
       <div className="flex flex-wrap gap-2">
         {EMOJI_CHOICES.map((e) => (

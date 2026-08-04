@@ -7,6 +7,7 @@ import { config } from "@/lib/config";
 import { Player } from "@/lib/gameTypes";
 import { Avatar } from "@/components/Avatar";
 import { finalTitleFor, randomEveryoneWrongQuip, randomLobbyQuip } from "@/lib/quips";
+import { useLocale } from "@/lib/i18n";
 
 function nameFor(id: string | null, roster: Player[], selfId: string | null) {
   if (!id) return "?";
@@ -25,6 +26,7 @@ function RoomScreen() {
   const avatar = searchParams.get("avatar") ?? "";
   const code = params.code.toUpperCase();
   const { state, submitAnswer } = useGameConnection(code, name, avatar);
+  const { t } = useLocale();
   const [starting, setStarting] = useState(false);
 
   const lobbyQuip = useMemo(() => randomLobbyQuip(), []);
@@ -49,29 +51,27 @@ function RoomScreen() {
     <div className="mx-auto flex min-h-screen max-w-lg flex-col gap-6 px-4 py-10">
       <header className="flex items-center justify-between">
         <span className="text-sm text-zinc-500">
-          Oda kodu <b className="tracking-widest text-zinc-900 dark:text-zinc-50">{code}</b>
+          {t("roomCode")} <b className="tracking-widest text-zinc-900 dark:text-zinc-50">{code}</b>
         </span>
         <span className={`text-xs ${state.connected ? "text-green-600" : "text-amber-600"}`}>
-          {state.connected ? "● bağlı" : "○ bağlanıyor..."}
+          {state.connected ? `● ${t("connected")}` : `○ ${t("connecting")}`}
         </span>
       </header>
 
       {state.phase === "connecting" && (
-        <p className="text-center text-zinc-500">Odaya bağlanılıyor...</p>
+        <p className="text-center text-zinc-500">{t("connectingToRoom")}</p>
       )}
 
       {state.phase === "lobby" && (
         <section className="flex flex-col items-center gap-4 rounded-xl border border-zinc-200 p-6 dark:border-zinc-800">
-          <p className="text-sm text-zinc-500">
-            Bu kodu paylaş, herkes katılınca oyunu başlat:
-          </p>
+          <p className="text-sm text-zinc-500">{t("shareCode")}</p>
           <p className="text-3xl font-bold tracking-[0.3em]">{code}</p>
           <ul className="flex flex-wrap justify-center gap-3">
             {state.roster.map((p) => (
               <li key={p.id} className="flex flex-col items-center gap-1">
                 <Avatar avatar={p.avatar} size={40} />
                 <span className="text-xs text-zinc-600 dark:text-zinc-400">
-                  {p.id === state.selfId ? `${p.name} (sen)` : p.name}
+                  {p.id === state.selfId ? `${p.name} (${t("you")})` : p.name}
                 </span>
               </li>
             ))}
@@ -82,7 +82,7 @@ function RoomScreen() {
             onClick={startGame}
             disabled={starting}
           >
-            Oyunu Başlat
+            {t("startGame")}
           </button>
         </section>
       )}
@@ -111,7 +111,7 @@ function RoomScreen() {
           </div>
           {state.myAnswerCorrect !== null && (
             <p className="text-center text-sm text-zinc-500">
-              {state.myAnswerCorrect ? "✅ Doğru! Sonuç bekleniyor..." : "❌ Yanlış. Sonuç bekleniyor..."}
+              {state.myAnswerCorrect ? t("correctFeedback") : t("wrongFeedback")} {t("waitingForResult")}
             </p>
           )}
         </section>
@@ -120,7 +120,7 @@ function RoomScreen() {
       {state.phase === "reveal" && (
         <section className="flex flex-col gap-4">
           <p className="text-center text-sm text-zinc-500">
-            Doğru cevap: <b>{state.question?.choices[state.correctChoice ?? -1]}</b>
+            {t("correctAnswer")}: <b>{state.question?.choices[state.correctChoice ?? -1]}</b>
           </p>
           {revealQuip && (
             <p className="text-center text-xs italic text-zinc-400">{revealQuip}</p>
@@ -136,10 +136,10 @@ function RoomScreen() {
 
       {state.phase === "finished" && (
         <section className="flex flex-col gap-4">
-          <p className="text-center text-2xl font-semibold">🏁 Oyun bitti!</p>
+          <p className="text-center text-2xl font-semibold">{t("gameOver")}</p>
           <ul className="flex flex-col gap-2">
             {sortedScores.map(([id, score], i) => {
-              const t = finalTitleFor(
+              const title = finalTitleFor(
                 id,
                 i + 1,
                 sortedScores.length,
@@ -155,7 +155,7 @@ function RoomScreen() {
                     <Avatar avatar={avatarFor(id, state.roster)} size={28} />
                     #{i + 1} {nameFor(id, state.roster, state.selfId)}
                     <span className="text-xs text-zinc-500">
-                      {t.emoji} {t.title}
+                      {title.emoji} {title.title}
                     </span>
                   </span>
                   <span className="font-medium">{score}</span>
