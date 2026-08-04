@@ -73,80 +73,93 @@ export default function Home() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-zinc-50 px-4 dark:bg-black">
-      <div className="w-full max-w-sm space-y-6">
-        <div className="flex justify-end gap-1 text-xs">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-indigo-50 via-white to-white px-4 py-10 dark:from-zinc-950 dark:via-black dark:to-black">
+      <div className="w-full max-w-sm">
+        <div className="mb-3 flex justify-end gap-1 text-xs">
           <button
             onClick={() => setLocale("tr")}
-            className={locale === "tr" ? "font-semibold underline" : "text-zinc-400"}
+            className={`rounded px-2 py-1 transition ${
+              locale === "tr"
+                ? "bg-indigo-600 font-semibold text-white"
+                : "text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+            }`}
           >
             TR
           </button>
-          <span className="text-zinc-300">/</span>
           <button
             onClick={() => setLocale("en")}
-            className={locale === "en" ? "font-semibold underline" : "text-zinc-400"}
+            className={`rounded px-2 py-1 transition ${
+              locale === "en"
+                ? "bg-indigo-600 font-semibold text-white"
+                : "text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+            }`}
           >
             EN
           </button>
         </div>
 
-        <h1 className="text-center text-4xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-          {t("appTitle")}
-        </h1>
-        <p className="text-center text-sm text-zinc-500 dark:text-zinc-400">{t("tagline")}</p>
+        <div className="rounded-2xl border border-zinc-200/80 bg-white p-6 shadow-xl shadow-indigo-950/5 dark:border-zinc-800 dark:bg-zinc-900 sm:p-8">
+          <h1 className="text-center text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 to-fuchsia-600">
+            {t("appTitle")}
+          </h1>
+          <p className="mt-2 text-center text-sm text-zinc-500 dark:text-zinc-400">
+            {t("tagline")}
+          </p>
 
-        <AvatarPicker value={avatar} onChange={saveAvatar} />
+          <div className="mt-6">
+            <AvatarPicker value={avatar} onChange={saveAvatar} />
+          </div>
 
-        <div className="flex gap-2">
-          <input
-            className="w-full rounded-lg border border-zinc-300 px-4 py-3 text-base dark:border-zinc-700 dark:bg-zinc-900"
-            placeholder={t("namePlaceholder")}
-            value={name}
-            onChange={(e) => saveName(e.target.value)}
-            maxLength={20}
-          />
+          <div className="mt-5 flex gap-2">
+            <input
+              className="w-full rounded-xl border border-zinc-300 px-4 py-3 text-base outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 dark:border-zinc-700 dark:bg-zinc-800"
+              placeholder={t("namePlaceholder")}
+              value={name}
+              onChange={(e) => saveName(e.target.value)}
+              maxLength={20}
+            />
+            <button
+              type="button"
+              title={t("randomName")}
+              className="shrink-0 rounded-xl border border-zinc-300 px-3 text-lg transition hover:bg-zinc-100 active:scale-95 dark:border-zinc-700 dark:hover:bg-zinc-800"
+              onClick={() => saveName(randomNickname())}
+            >
+              🎲
+            </button>
+          </div>
+
           <button
-            type="button"
-            title={t("randomName")}
-            className="rounded-lg border border-zinc-300 px-3 text-lg dark:border-zinc-700"
-            onClick={() => saveName(randomNickname())}
+            className="mt-4 w-full rounded-xl bg-gradient-to-br from-indigo-600 to-fuchsia-600 px-4 py-3.5 text-base font-semibold text-white shadow-lg shadow-indigo-600/25 transition hover:brightness-110 active:scale-[0.98] disabled:opacity-50"
+            onClick={createRoom}
+            disabled={busy}
           >
-            🎲
+            {t("createRoom")}
           </button>
+
+          <div className="my-5 flex items-center gap-3 text-xs text-zinc-400">
+            <div className="h-px flex-1 bg-zinc-200 dark:bg-zinc-800" />
+            {t("orJoin")}
+            <div className="h-px flex-1 bg-zinc-200 dark:bg-zinc-800" />
+          </div>
+
+          <div className="flex gap-2">
+            <input
+              className="w-full rounded-xl border border-zinc-300 px-4 py-3 text-base uppercase tracking-widest outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 dark:border-zinc-700 dark:bg-zinc-800"
+              placeholder={t("roomCodePlaceholder")}
+              value={joinCode}
+              onChange={(e) => setJoinCode(e.target.value)}
+              maxLength={6}
+            />
+            <button
+              className="shrink-0 rounded-xl border border-zinc-300 px-5 py-3 text-base font-medium transition hover:bg-zinc-100 active:scale-95 dark:border-zinc-700 dark:hover:bg-zinc-800"
+              onClick={joinRoom}
+            >
+              {t("join")}
+            </button>
+          </div>
+
+          {error && <p className="mt-4 text-center text-sm text-red-600">{error}</p>}
         </div>
-
-        <button
-          className="w-full rounded-lg bg-zinc-900 px-4 py-3 text-base font-medium text-white transition hover:bg-zinc-700 disabled:opacity-50 dark:bg-zinc-50 dark:text-zinc-900"
-          onClick={createRoom}
-          disabled={busy}
-        >
-          {t("createRoom")}
-        </button>
-
-        <div className="flex items-center gap-3 text-xs text-zinc-400">
-          <div className="h-px flex-1 bg-zinc-200 dark:bg-zinc-800" />
-          {t("orJoin")}
-          <div className="h-px flex-1 bg-zinc-200 dark:bg-zinc-800" />
-        </div>
-
-        <div className="flex gap-2">
-          <input
-            className="w-full rounded-lg border border-zinc-300 px-4 py-3 text-base uppercase tracking-widest dark:border-zinc-700 dark:bg-zinc-900"
-            placeholder={t("roomCodePlaceholder")}
-            value={joinCode}
-            onChange={(e) => setJoinCode(e.target.value)}
-            maxLength={6}
-          />
-          <button
-            className="rounded-lg border border-zinc-300 px-5 py-3 text-base font-medium transition hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-900"
-            onClick={joinRoom}
-          >
-            {t("join")}
-          </button>
-        </div>
-
-        {error && <p className="text-center text-sm text-red-600">{error}</p>}
       </div>
     </div>
   );
