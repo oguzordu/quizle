@@ -1,7 +1,9 @@
 package hub
 
 import (
+	"encoding/json"
 	"net/http"
+	"time"
 
 	gorilla "github.com/gorilla/websocket"
 	"github.com/oguzordu/quizle/internal/game"
@@ -14,6 +16,9 @@ import (
 type Server struct {
 	hub      *Hub
 	upgrader gorilla.Upgrader
+
+	defaultQuestions   []game.Question
+	defaultRevealDelay time.Duration
 }
 
 // NewServer creates a Server backed by h.
@@ -27,6 +32,44 @@ func NewServer(h *Hub) *Server {
 			CheckOrigin: func(r *http.Request) bool { return true },
 		},
 	}
+}
+
+// SetDefaultQuestions configures the question set and reveal delay used by
+// CreateRoomHandler for every new room.
+func (s *Server) SetDefaultQuestions(questions []game.Question, revealDelay time.Duration) {
+	s.defaultQuestions = questions
+	s.defaultRevealDelay = revealDelay
+}
+
+type createRoomResponse struct {
+	Code string `json:"code"`
+}
+
+// CreateRoomHandler handles POST /rooms, creating a fresh room with the
+// server's configured default question set and returning its join code.
+func (s *Server) CreateRoomHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	code, _ := s.hub.CreateRoom(s.defaultQuestions, s.defaultRevealDelay)
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(createRoomResponse{Code: code})
+}
+
+// StartRoomHandler handles POST /rooms/{code}/start, moving the named room
+// out of its lobby and into the first question.
+func (s *Server) StartRoomHandler(w http.ResponseWriter, r *http.Request) {
+	code := r.PathValue("code")
+	actor, ok := s.hub.GetRoom(code)
+	if !ok {
+		http.Error(w, "room not found", http.StatusNotFound)
+		return
+	}
+	actor.Start()
+	w.WriteHeader(http.StatusOK)
 }
 
 // ServeWS handles GET /ws?code=XXXXXX&name=Alice[&token=...].
