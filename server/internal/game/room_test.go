@@ -37,7 +37,7 @@ func TestRoom_Start_beginsFirstQuestion(t *testing.T) {
 	}
 }
 
-func TestRoom_SubmitAnswer_correctAwardsFullPointsWhenInstant(t *testing.T) {
+func TestRoom_SubmitAnswer_correctIsConfirmedImmediatelyButUnscoredUntilReveal(t *testing.T) {
 	players, questions := twoPlayerQuiz()
 	r := NewRoom(players, questions)
 	now := time.Date(2026, 1, 1, 0, 0, 0, 0, time.UTC)
@@ -49,15 +49,13 @@ func TestRoom_SubmitAnswer_correctAwardsFullPointsWhenInstant(t *testing.T) {
 	if !aa.Correct {
 		t.Errorf("Correct = false, want true")
 	}
-	if aa.PointsAwarded != 100 {
-		t.Errorf("PointsAwarded = %d, want 100", aa.PointsAwarded)
-	}
-	if r.players["alice"].Score != 100 {
-		t.Errorf("player score = %d, want 100", r.players["alice"].Score)
+	// Points depend on the final answer order, so nothing is awarded yet.
+	if r.players["alice"].Score != 0 {
+		t.Errorf("player score = %d, want 0 before reveal", r.players["alice"].Score)
 	}
 }
 
-func TestRoom_SubmitAnswer_incorrectAwardsZeroAndResetsStreak(t *testing.T) {
+func TestRoom_SubmitAnswer_incorrectResetsStreakImmediately(t *testing.T) {
 	players, questions := twoPlayerQuiz()
 	r := NewRoom(players, questions)
 	now := time.Date(2026, 1, 1, 0, 0, 0, 0, time.UTC)
@@ -70,11 +68,59 @@ func TestRoom_SubmitAnswer_incorrectAwardsZeroAndResetsStreak(t *testing.T) {
 	if aa.Correct {
 		t.Errorf("Correct = true, want false")
 	}
-	if aa.PointsAwarded != 0 {
-		t.Errorf("PointsAwarded = %d, want 0", aa.PointsAwarded)
-	}
 	if r.players["alice"].Streak != 0 {
 		t.Errorf("streak = %d, want 0 after wrong answer", r.players["alice"].Streak)
+	}
+}
+
+func TestRoom_Reveal_soleCorrectAnswererGetsTopRankPoints(t *testing.T) {
+	players, questions := twoPlayerQuiz()
+	r := NewRoom(players, questions)
+	now := time.Date(2026, 1, 1, 0, 0, 0, 0, time.UTC)
+	r.Start(now)
+	r.SubmitAnswer("alice", 1, now)
+
+	events := r.SubmitAnswer("bob", 2, now) // wrong, and last player -> triggers reveal
+
+	qr := findEvent[QuestionRevealed](t, events)
+	if qr.PointsAwarded["alice"] != 100 {
+		t.Errorf("alice PointsAwarded = %d, want 100 (sole correct answerer)", qr.PointsAwarded["alice"])
+	}
+	if _, wrongPlayerScored := qr.PointsAwarded["bob"]; wrongPlayerScored {
+		t.Errorf("bob should not appear in PointsAwarded, got %d", qr.PointsAwarded["bob"])
+	}
+}
+
+func TestRoom_Reveal_firstCorrectAnswererOutscoresLaterOne(t *testing.T) {
+	players, questions := twoPlayerQuiz()
+	r := NewRoom(players, questions)
+	now := time.Date(2026, 1, 1, 0, 0, 0, 0, time.UTC)
+	r.Start(now)
+	r.SubmitAnswer("alice", 1, now) // correct, first
+
+	events := r.SubmitAnswer("bob", 1, now.Add(time.Second)) // correct, a full second later
+
+	qr := findEvent[QuestionRevealed](t, events)
+	if qr.PointsAwarded["alice"] != 100 {
+		t.Errorf("alice PointsAwarded = %d, want 100 (answered first)", qr.PointsAwarded["alice"])
+	}
+	if qr.PointsAwarded["bob"] != 50 {
+		t.Errorf("bob PointsAwarded = %d, want 50 (answered second, still correct)", qr.PointsAwarded["bob"])
+	}
+}
+
+func TestRoom_Reveal_nearSimultaneousCorrectAnswersTie(t *testing.T) {
+	players, questions := twoPlayerQuiz()
+	r := NewRoom(players, questions)
+	now := time.Date(2026, 1, 1, 0, 0, 0, 0, time.UTC)
+	r.Start(now)
+	r.SubmitAnswer("alice", 1, now)
+
+	events := r.SubmitAnswer("bob", 1, now.Add(100*time.Millisecond)) // within the tie window
+
+	qr := findEvent[QuestionRevealed](t, events)
+	if qr.PointsAwarded["alice"] != 100 || qr.PointsAwarded["bob"] != 100 {
+		t.Errorf("PointsAwarded = %+v, want both at 100 (tied)", qr.PointsAwarded)
 	}
 }
 

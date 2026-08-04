@@ -8,8 +8,16 @@ package game
 
 import (
 	"errors"
+	"sort"
 	"time"
 )
+
+// answerTieWindow is how close together two correct answers must land to be
+// treated as the same rank. It exists so that on a question everyone knows,
+// a few milliseconds of network jitter between players doesn't produce a
+// harsh, arbitrary-feeling point gap — only a genuinely earlier answer moves
+// you up in rank.
+const answerTieWindow = 300 * time.Millisecond
 
 // ErrGameAlreadyStarted is returned by AddPlayer once the Room has left
 // PhaseLobby.
@@ -64,8 +72,9 @@ type Question struct {
 type Event interface{}
 
 type answer struct {
-	choice int
-	at     time.Time
+	choice       int
+	at           time.Time
+	streakBefore int // player's streak going into this answer, for scoring at reveal
 }
 
 // Room is the state machine for one game. Zero value is not usable; create
@@ -124,8 +133,11 @@ func (r *Room) beginQuestion(idx int, now time.Time) []Event {
 	return []Event{QuestionStarted{Question: q, Deadline: r.questionEnds}}
 }
 
-// SubmitAnswer records a player's choice for the current question. If every
-// player has now answered, the question is revealed immediately.
+// SubmitAnswer records a player's choice for the current question.
+// Correctness (and its effect on streak) is decided immediately, but the
+// points it earns depend on this round's final answer order, so they aren't
+// computed until reveal. If every player has now answered, the question is
+// revealed immediately.
 func (r *Room) SubmitAnswer(id PlayerID, choice int, now time.Time) []Event {
 	if r.phase != PhaseQuestion {
 		return nil
@@ -134,21 +146,18 @@ func (r *Room) SubmitAnswer(id PlayerID, choice int, now time.Time) []Event {
 		return nil
 	}
 
-	r.answers[id] = answer{choice: choice, at: now}
+	player := r.players[id]
+	r.answers[id] = answer{choice: choice, at: now, streakBefore: player.Streak}
 
 	q := r.questions[r.currentIdx]
 	correct := choice == q.Correct
-	player := r.players[id]
-
-	points := Score(correct, q.Duration, r.questionEnds.Sub(now), player.Streak)
-	player.Score += points
 	if correct {
 		player.Streak++
 	} else {
 		player.Streak = 0
 	}
 
-	events := []Event{AnswerAccepted{PlayerID: id, Correct: correct, PointsAwarded: points}}
+	events := []Event{AnswerAccepted{PlayerID: id, Correct: correct}}
 
 	if len(r.answers) >= len(r.players) {
 		events = append(events, r.reveal()...)
@@ -171,12 +180,46 @@ func (r *Room) Tick(now time.Time) []Event {
 
 func (r *Room) reveal() []Event {
 	r.phase = PhaseReveal
+	q := r.questions[r.currentIdx]
+
+	type correctAnswer struct {
+		id           PlayerID
+		at           time.Time
+		streakBefore int
+	}
+	var correctAnswers []correctAnswer
+	for id, a := range r.answers {
+		if a.choice == q.Correct {
+			correctAnswers = append(correctAnswers, correctAnswer{id: id, at: a.at, streakBefore: a.streakBefore})
+		}
+	}
+	sort.Slice(correctAnswers, func(i, j int) bool { return correctAnswers[i].at.Before(correctAnswers[j].at) })
+
+	pointsAwarded := make(map[PlayerID]int, len(correctAnswers))
+	if len(correctAnswers) > 0 {
+		ranks := make(map[PlayerID]int, len(correctAnswers))
+		rank := 1
+		for i, ca := range correctAnswers {
+			if i > 0 && ca.at.Sub(correctAnswers[i-1].at) > answerTieWindow {
+				rank++
+			}
+			ranks[ca.id] = rank
+		}
+		totalRanks := rank
+
+		for _, ca := range correctAnswers {
+			points := RankScore(ranks[ca.id], totalRanks, ca.streakBefore)
+			pointsAwarded[ca.id] = points
+			r.players[ca.id].Score += points
+		}
+	}
+
 	scores := make(map[PlayerID]int, len(r.players))
 	for id, p := range r.players {
 		scores[id] = p.Score
 	}
-	q := r.questions[r.currentIdx]
-	return []Event{QuestionRevealed{CorrectChoice: q.Correct, Scores: scores}}
+
+	return []Event{QuestionRevealed{CorrectChoice: q.Correct, PointsAwarded: pointsAwarded, Scores: scores}}
 }
 
 // NextQuestion advances from PhaseReveal to the next question, or to
