@@ -11,6 +11,7 @@ import { AnimatedScore } from "@/components/AnimatedScore";
 import { finalTitleFor, randomEveryoneWrongQuip, randomLobbyQuip } from "@/lib/quips";
 import { useLocale } from "@/lib/i18n";
 import { playCorrect, playTick, playWrong } from "@/lib/sound";
+import { flagFromImageHint } from "@/lib/flag";
 
 function nameFor(id: string | null, roster: Player[], selfId: string | null) {
   if (!id) return "?";
@@ -114,6 +115,11 @@ function RoomScreen() {
         {state.phase === "question" && state.question && (
           <section className="flex flex-col gap-4 rounded-2xl border border-zinc-200/80 bg-white p-5 shadow-xl shadow-indigo-950/5 dark:border-zinc-800 dark:bg-zinc-900 sm:p-6">
             <CountdownBar deadline={state.question.deadline} />
+            {flagFromImageHint(state.question.image) && (
+              <p className="text-center text-7xl leading-none">
+                {flagFromImageHint(state.question.image)}
+              </p>
+            )}
             <p className="text-lg font-semibold">{state.question.text}</p>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {state.question.choices.map((choice, i) => {

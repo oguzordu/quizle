@@ -19,6 +19,7 @@ export interface PlayerJoinedPayload {
 export interface QuestionStartedPayload {
   question_id: string;
   text: string;
+  image?: string; // e.g. "flag:TR"
   choices: string[];
   deadline: string; // RFC3339
 }
