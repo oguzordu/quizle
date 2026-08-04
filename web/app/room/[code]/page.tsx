@@ -6,6 +6,7 @@ import { useGameConnection } from "@/lib/useGameConnection";
 import { config } from "@/lib/config";
 import { Player } from "@/lib/gameTypes";
 import { Avatar } from "@/components/Avatar";
+import { CountdownBar } from "@/components/CountdownBar";
 import { finalTitleFor, randomEveryoneWrongQuip, randomLobbyQuip } from "@/lib/quips";
 import { useLocale } from "@/lib/i18n";
 
@@ -48,123 +49,151 @@ function RoomScreen() {
   const sortedScores = Object.entries(state.scores).sort(([, a], [, b]) => b - a);
 
   return (
-    <div className="mx-auto flex min-h-screen max-w-lg flex-col gap-6 px-4 py-10">
-      <header className="flex items-center justify-between">
-        <span className="text-sm text-zinc-500">
-          {t("roomCode")} <b className="tracking-widest text-zinc-900 dark:text-zinc-50">{code}</b>
-        </span>
-        <span className={`text-xs ${state.connected ? "text-green-600" : "text-amber-600"}`}>
-          {state.connected ? `● ${t("connected")}` : `○ ${t("connecting")}`}
-        </span>
-      </header>
-
-      {state.phase === "connecting" && (
-        <p className="text-center text-zinc-500">{t("connectingToRoom")}</p>
-      )}
-
-      {state.phase === "lobby" && (
-        <section className="flex flex-col items-center gap-4 rounded-xl border border-zinc-200 p-6 dark:border-zinc-800">
-          <p className="text-sm text-zinc-500">{t("shareCode")}</p>
-          <p className="text-3xl font-bold tracking-[0.3em]">{code}</p>
-          <ul className="flex flex-wrap justify-center gap-3">
-            {state.roster.map((p) => (
-              <li key={p.id} className="flex flex-col items-center gap-1">
-                <Avatar avatar={p.avatar} size={40} />
-                <span className="text-xs text-zinc-600 dark:text-zinc-400">
-                  {p.id === state.selfId ? `${p.name} (${t("you")})` : p.name}
-                </span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-center text-xs italic text-zinc-400">{lobbyQuip}</p>
-          <button
-            className="w-full rounded-lg bg-zinc-900 px-4 py-3 font-medium text-white transition hover:bg-zinc-700 disabled:opacity-50 dark:bg-zinc-50 dark:text-zinc-900"
-            onClick={startGame}
-            disabled={starting}
+    <div className="min-h-screen bg-gradient-to-b from-indigo-50 via-white to-white px-4 py-6 dark:from-zinc-950 dark:via-black dark:to-black sm:py-10">
+      <div className="mx-auto flex max-w-lg flex-col gap-5">
+        <header className="flex items-center justify-between rounded-xl bg-white/70 px-4 py-2.5 shadow-sm backdrop-blur dark:bg-zinc-900/70">
+          <span className="text-sm text-zinc-500">
+            {t("roomCode")}{" "}
+            <b className="tracking-widest text-zinc-900 dark:text-zinc-50">{code}</b>
+          </span>
+          <span
+            className={`flex items-center gap-1.5 text-xs font-medium ${
+              state.connected ? "text-emerald-600" : "text-amber-600"
+            }`}
           >
-            {t("startGame")}
-          </button>
-        </section>
-      )}
+            <span
+              className={`h-1.5 w-1.5 rounded-full ${
+                state.connected ? "bg-emerald-500" : "animate-pulse bg-amber-500"
+              }`}
+            />
+            {state.connected ? t("connected") : t("connecting")}
+          </span>
+        </header>
 
-      {state.phase === "question" && state.question && (
-        <section className="flex flex-col gap-4">
-          <p className="text-lg font-medium">{state.question.question_id}</p>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {state.question.choices.map((choice, i) => {
-              const picked = state.myAnswerChoice === i;
-              return (
-                <button
-                  key={i}
-                  onClick={() => submitAnswer(i)}
-                  disabled={state.myAnswerChoice !== null}
-                  className={`rounded-lg border px-4 py-4 text-left text-base transition disabled:opacity-60 ${
-                    picked
-                      ? "border-zinc-900 bg-zinc-900 text-white dark:border-zinc-50 dark:bg-zinc-50 dark:text-zinc-900"
-                      : "border-zinc-300 hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-900"
-                  }`}
-                >
-                  {choice}
-                </button>
-              );
-            })}
-          </div>
-          {state.myAnswerCorrect !== null && (
-            <p className="text-center text-sm text-zinc-500">
-              {state.myAnswerCorrect ? t("correctFeedback") : t("wrongFeedback")} {t("waitingForResult")}
+        {state.phase === "connecting" && (
+          <p className="py-10 text-center text-zinc-500">{t("connectingToRoom")}</p>
+        )}
+
+        {state.phase === "lobby" && (
+          <section className="flex flex-col items-center gap-4 rounded-2xl border border-zinc-200/80 bg-white p-6 shadow-xl shadow-indigo-950/5 dark:border-zinc-800 dark:bg-zinc-900 sm:p-8">
+            <p className="text-sm text-zinc-500">{t("shareCode")}</p>
+            <p className="bg-gradient-to-br from-indigo-600 to-fuchsia-600 bg-clip-text text-4xl font-extrabold tracking-[0.3em] text-transparent">
+              {code}
             </p>
-          )}
-        </section>
-      )}
-
-      {state.phase === "reveal" && (
-        <section className="flex flex-col gap-4">
-          <p className="text-center text-sm text-zinc-500">
-            {t("correctAnswer")}: <b>{state.question?.choices[state.correctChoice ?? -1]}</b>
-          </p>
-          {revealQuip && (
-            <p className="text-center text-xs italic text-zinc-400">{revealQuip}</p>
-          )}
-          <ScoreTable
-            sortedScores={sortedScores}
-            pointsAwarded={state.pointsAwarded}
-            roster={state.roster}
-            selfId={state.selfId}
-          />
-        </section>
-      )}
-
-      {state.phase === "finished" && (
-        <section className="flex flex-col gap-4">
-          <p className="text-center text-2xl font-semibold">{t("gameOver")}</p>
-          <ul className="flex flex-col gap-2">
-            {sortedScores.map(([id, score], i) => {
-              const title = finalTitleFor(
-                id,
-                i + 1,
-                sortedScores.length,
-                score,
-                state.hasFastestPlayer && state.fastestPlayerId === id
-              );
-              return (
-                <li
-                  key={id}
-                  className="flex items-center justify-between rounded-lg bg-zinc-100 px-4 py-3 dark:bg-zinc-900"
-                >
-                  <span className="flex items-center gap-2">
-                    <Avatar avatar={avatarFor(id, state.roster)} size={28} />
-                    #{i + 1} {nameFor(id, state.roster, state.selfId)}
-                    <span className="text-xs text-zinc-500">
-                      {title.emoji} {title.title}
-                    </span>
+            <ul className="flex flex-wrap justify-center gap-4 py-2">
+              {state.roster.map((p) => (
+                <li key={p.id} className="flex flex-col items-center gap-1.5">
+                  <Avatar avatar={p.avatar} size={44} />
+                  <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400">
+                    {p.id === state.selfId ? `${p.name} (${t("you")})` : p.name}
                   </span>
-                  <span className="font-medium">{score}</span>
                 </li>
-              );
-            })}
-          </ul>
-        </section>
-      )}
+              ))}
+            </ul>
+            <p className="text-center text-xs italic text-zinc-400">{lobbyQuip}</p>
+            <button
+              className="w-full rounded-xl bg-gradient-to-br from-indigo-600 to-fuchsia-600 px-4 py-3.5 font-semibold text-white shadow-lg shadow-indigo-600/25 transition hover:brightness-110 active:scale-[0.98] disabled:opacity-50"
+              onClick={startGame}
+              disabled={starting}
+            >
+              {t("startGame")}
+            </button>
+          </section>
+        )}
+
+        {state.phase === "question" && state.question && (
+          <section className="flex flex-col gap-4 rounded-2xl border border-zinc-200/80 bg-white p-5 shadow-xl shadow-indigo-950/5 dark:border-zinc-800 dark:bg-zinc-900 sm:p-6">
+            <CountdownBar deadline={state.question.deadline} />
+            <p className="text-lg font-semibold">{state.question.question_id}</p>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {state.question.choices.map((choice, i) => {
+                const picked = state.myAnswerChoice === i;
+                return (
+                  <button
+                    key={i}
+                    onClick={() => submitAnswer(i)}
+                    disabled={state.myAnswerChoice !== null}
+                    className={`rounded-xl border-2 px-4 py-4 text-left text-base font-medium transition disabled:opacity-60 ${
+                      picked
+                        ? "border-indigo-600 bg-indigo-600 text-white shadow-md shadow-indigo-600/25"
+                        : "border-zinc-200 hover:border-indigo-300 hover:bg-indigo-50/50 active:scale-[0.98] dark:border-zinc-700 dark:hover:border-indigo-800 dark:hover:bg-indigo-950/30"
+                    }`}
+                  >
+                    {choice}
+                  </button>
+                );
+              })}
+            </div>
+            {state.myAnswerCorrect !== null && (
+              <p className="text-center text-sm font-medium text-zinc-500">
+                {state.myAnswerCorrect ? t("correctFeedback") : t("wrongFeedback")}{" "}
+                {t("waitingForResult")}
+              </p>
+            )}
+          </section>
+        )}
+
+        {state.phase === "reveal" && (
+          <section className="flex flex-col gap-4">
+            <div className="rounded-2xl border border-zinc-200/80 bg-white p-5 text-center shadow-xl shadow-indigo-950/5 dark:border-zinc-800 dark:bg-zinc-900">
+              <p className="text-sm text-zinc-500">
+                {t("correctAnswer")}:{" "}
+                <b className="text-emerald-600 dark:text-emerald-400">
+                  {state.question?.choices[state.correctChoice ?? -1]}
+                </b>
+              </p>
+              {revealQuip && <p className="mt-1 text-xs italic text-zinc-400">{revealQuip}</p>}
+            </div>
+            <ScoreTable
+              sortedScores={sortedScores}
+              pointsAwarded={state.pointsAwarded}
+              roster={state.roster}
+              selfId={state.selfId}
+            />
+          </section>
+        )}
+
+        {state.phase === "finished" && (
+          <section className="flex flex-col gap-4">
+            <p className="text-center text-3xl font-extrabold">{t("gameOver")}</p>
+            <ul className="flex flex-col gap-2">
+              {sortedScores.map(([id, score], i) => {
+                const title = finalTitleFor(
+                  id,
+                  i + 1,
+                  sortedScores.length,
+                  score,
+                  state.hasFastestPlayer && state.fastestPlayerId === id
+                );
+                const isFirst = i === 0;
+                return (
+                  <li
+                    key={id}
+                    className={`flex items-center justify-between rounded-xl border px-4 py-3 shadow-sm ${
+                      isFirst
+                        ? "border-amber-300 bg-gradient-to-r from-amber-50 to-white dark:border-amber-800 dark:from-amber-950/40 dark:to-zinc-900"
+                        : "border-zinc-200/80 bg-white dark:border-zinc-800 dark:bg-zinc-900"
+                    }`}
+                  >
+                    <span className="flex items-center gap-2.5">
+                      <Avatar avatar={avatarFor(id, state.roster)} size={32} />
+                      <span className="flex flex-col">
+                        <span className="font-medium">
+                          #{i + 1} {nameFor(id, state.roster, state.selfId)}
+                        </span>
+                        <span className="text-xs text-zinc-500">
+                          {title.emoji} {title.title}
+                        </span>
+                      </span>
+                    </span>
+                    <span className="text-lg font-bold">{score}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        )}
+      </div>
     </div>
   );
 }
@@ -185,16 +214,20 @@ function ScoreTable({
       {sortedScores.map(([id, score], i) => (
         <li
           key={id}
-          className="flex items-center justify-between rounded-lg bg-zinc-100 px-4 py-3 dark:bg-zinc-900"
+          className="flex items-center justify-between rounded-xl border border-zinc-200/80 bg-white px-4 py-3 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
         >
-          <span className="flex items-center gap-2">
-            <Avatar avatar={avatarFor(id, roster)} size={28} />
-            #{i + 1} {nameFor(id, roster, selfId)}
+          <span className="flex items-center gap-2.5">
+            <Avatar avatar={avatarFor(id, roster)} size={30} />
+            <span className="font-medium">
+              #{i + 1} {nameFor(id, roster, selfId)}
+            </span>
           </span>
-          <span className="font-medium">
+          <span className="font-bold">
             {score}
             {pointsAwarded[id] ? (
-              <span className="ml-2 text-sm text-green-600">+{pointsAwarded[id]}</span>
+              <span className="ml-2 text-sm font-medium text-emerald-600 dark:text-emerald-400">
+                +{pointsAwarded[id]}
+              </span>
             ) : null}
           </span>
         </li>
@@ -205,7 +238,9 @@ function ScoreTable({
 
 export default function RoomPage() {
   return (
-    <Suspense fallback={<p className="p-10 text-center text-zinc-500">Yükleniyor...</p>}>
+    <Suspense
+      fallback={<p className="p-10 text-center text-zinc-500">Yükleniyor...</p>}
+    >
       <RoomScreen />
     </Suspense>
   );
