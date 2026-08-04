@@ -94,11 +94,13 @@ function handleMessage(msg) {
   }
   if (msg.type === 'answer_accepted') {
     document.getElementById('result').textContent =
-      (msg.payload.correct ? '✅ Doğru! ' : '❌ Yanlış. ') + '+' + msg.payload.points_awarded + ' puan';
+      msg.payload.correct ? '✅ Doğru! Puan sıralamaya göre belli olacak.' : '❌ Yanlış.';
   }
   if (msg.type === 'question_revealed') {
+    const points = Object.entries(msg.payload.points_awarded).map(([id, p]) => id + ': +' + p).join(', ');
     const scores = Object.entries(msg.payload.scores).map(([id, s]) => id + ': ' + s).join(', ');
-    document.getElementById('question').textContent = 'Doğru cevap açıklandı. Skorlar: ' + scores;
+    document.getElementById('question').textContent =
+      'Doğru cevap açıklandı. Bu turda kazanılan: ' + points + ' | Toplam: ' + scores;
   }
   if (msg.type === 'game_finished') {
     const scores = Object.entries(msg.payload.final_scores).map(([id, s]) => id + ': ' + s).join(', ');
