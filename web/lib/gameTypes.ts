@@ -22,6 +22,8 @@ export interface QuestionStartedPayload {
   image?: string; // e.g. "flag:TR"
   choices: string[];
   deadline: string; // RFC3339
+  index: number;
+  total: number;
 }
 
 export interface AnswerAcceptedPayload {

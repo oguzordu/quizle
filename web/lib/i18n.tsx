@@ -30,6 +30,9 @@ const dict = {
     correctFeedback: "✅ Doğru!",
     wrongFeedback: "❌ Yanlış.",
     gameOver: "🏁 Oyun bitti!",
+    question: "Soru",
+    playAgain: "🔁 Tekrar Oyna",
+    backToHome: "🏠 Ana Menü",
   },
   en: {
     appTitle: "Quizle",
@@ -56,6 +59,9 @@ const dict = {
     correctFeedback: "✅ Correct!",
     wrongFeedback: "❌ Wrong.",
     gameOver: "🏁 Game over!",
+    question: "Question",
+    playAgain: "🔁 Play Again",
+    backToHome: "🏠 Home",
   },
 } as const;
 
