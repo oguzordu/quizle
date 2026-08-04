@@ -5,9 +5,10 @@ import { useEffect, useRef, useState } from "react";
 const BASE_POINTS = 100;
 
 /**
- * Shows a score that just changed as "100 + 45" for a beat, then counts up
- * from the previous total to the new one. When nothing was awarded this
- * round (pointsThisRound is 0/undefined), it just renders the flat number.
+ * Shows a score that just changed as two chips — "+100" then, a beat later,
+ * "+45 hız" — before counting up from the previous total to the new one.
+ * When nothing was awarded this round (pointsThisRound is 0/undefined), it
+ * just renders the flat number.
  */
 export function AnimatedScore({
   previousTotal,
@@ -18,27 +19,28 @@ export function AnimatedScore({
   newTotal: number;
   pointsThisRound?: number;
 }) {
-  const [phase, setPhase] = useState<"breakdown" | "counting" | "done">(
-    pointsThisRound ? "breakdown" : "done"
+  const [step, setStep] = useState<"base" | "bonus" | "counting" | "done">(
+    pointsThisRound ? "base" : "done"
   );
   const [display, setDisplay] = useState(pointsThisRound ? previousTotal : newTotal);
   const raf = useRef<number>(0);
 
   useEffect(() => {
-    // This effect drives a requestAnimationFrame-based animation timeline in
-    // response to new props arriving (a fresh reveal) — it's synchronizing
-    // with an external animation clock, not just deriving render output, so
-    // the setState calls inside are intentional.
+    // This effect drives a staged animation timeline (chip -> chip -> count
+    // up) in response to a fresh reveal arriving as props — it's
+    // synchronizing with an external animation clock, not deriving render
+    // output, so the setState calls inside are intentional.
     if (!pointsThisRound) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setDisplay(newTotal);
       return;
     }
-    setPhase("breakdown");
+    setStep("base");
     setDisplay(previousTotal);
 
-    const breakdownTimer = setTimeout(() => {
-      setPhase("counting");
+    const bonusTimer = setTimeout(() => setStep("bonus"), 500);
+    const countTimer = setTimeout(() => {
+      setStep("counting");
       const start = performance.now();
       const duration = 500;
       function tick(now: number) {
@@ -47,27 +49,32 @@ export function AnimatedScore({
         if (progress < 1) {
           raf.current = requestAnimationFrame(tick);
         } else {
-          setPhase("done");
+          setStep("done");
         }
       }
       raf.current = requestAnimationFrame(tick);
-    }, 900);
+    }, 1100);
 
     return () => {
-      clearTimeout(breakdownTimer);
+      clearTimeout(bonusTimer);
+      clearTimeout(countTimer);
       cancelAnimationFrame(raf.current);
     };
   }, [previousTotal, newTotal, pointsThisRound]);
 
-  if (phase === "breakdown" && pointsThisRound) {
-    const bonus = pointsThisRound - BASE_POINTS;
+  const bonus = pointsThisRound ? pointsThisRound - BASE_POINTS : 0;
+
+  if ((step === "base" || step === "bonus") && pointsThisRound) {
     return (
-      <span className="font-bold tabular-nums">
-        {display}{" "}
-        <span className="text-sm font-medium text-emerald-600 dark:text-emerald-400">
-          ({BASE_POINTS}
-          {bonus > 0 ? ` + ${bonus}` : ""})
+      <span className="flex items-center gap-1.5">
+        <span className="animate-[pop_0.25s_ease-out] rounded-md bg-emerald-100 px-1.5 py-0.5 text-sm font-bold text-emerald-700 dark:bg-emerald-950 dark:text-emerald-400">
+          +{BASE_POINTS}
         </span>
+        {step === "bonus" && bonus > 0 && (
+          <span className="animate-[pop_0.25s_ease-out] rounded-md bg-amber-100 px-1.5 py-0.5 text-sm font-bold text-amber-700 dark:bg-amber-950 dark:text-amber-400">
+            +{bonus} ⚡
+          </span>
+        )}
       </span>
     );
   }
