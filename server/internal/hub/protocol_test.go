@@ -47,7 +47,7 @@ func TestEncodeEvent_QuestionStarted(t *testing.T) {
 }
 
 func TestEncodeEvent_AnswerAccepted(t *testing.T) {
-	ev := game.AnswerAccepted{PlayerID: "alice", Correct: true, PointsAwarded: 950}
+	ev := game.AnswerAccepted{PlayerID: "alice", Correct: true}
 
 	raw := EncodeEvent(ev)
 
@@ -63,14 +63,15 @@ func TestEncodeEvent_AnswerAccepted(t *testing.T) {
 	if err := json.Unmarshal(msg.Payload, &payload); err != nil {
 		t.Fatalf("unmarshal payload: %v", err)
 	}
-	if payload.PlayerID != "alice" || !payload.Correct || payload.PointsAwarded != 950 {
-		t.Errorf("payload = %+v, want alice/true/950", payload)
+	if payload.PlayerID != "alice" || !payload.Correct {
+		t.Errorf("payload = %+v, want alice/true", payload)
 	}
 }
 
 func TestEncodeEvent_QuestionRevealed(t *testing.T) {
 	ev := game.QuestionRevealed{
 		CorrectChoice: 2,
+		PointsAwarded: map[game.PlayerID]int{"alice": 100},
 		Scores:        map[game.PlayerID]int{"alice": 950, "bob": 0},
 	}
 
@@ -90,6 +91,9 @@ func TestEncodeEvent_QuestionRevealed(t *testing.T) {
 	}
 	if payload.CorrectChoice != 2 {
 		t.Errorf("CorrectChoice = %d, want 2", payload.CorrectChoice)
+	}
+	if payload.PointsAwarded["alice"] != 100 {
+		t.Errorf("PointsAwarded[alice] = %d, want 100", payload.PointsAwarded["alice"])
 	}
 	if payload.Scores["alice"] != 950 {
 		t.Errorf("Scores[alice] = %d, want 950", payload.Scores["alice"])

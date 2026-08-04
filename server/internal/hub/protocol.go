@@ -22,13 +22,13 @@ type questionStartedPayload struct {
 }
 
 type answerAcceptedPayload struct {
-	PlayerID      game.PlayerID `json:"player_id"`
-	Correct       bool          `json:"correct"`
-	PointsAwarded int           `json:"points_awarded"`
+	PlayerID game.PlayerID `json:"player_id"`
+	Correct  bool          `json:"correct"`
 }
 
 type questionRevealedPayload struct {
 	CorrectChoice int                   `json:"correct_choice"`
+	PointsAwarded map[game.PlayerID]int `json:"points_awarded"`
 	Scores        map[game.PlayerID]int `json:"scores"`
 }
 
@@ -67,14 +67,14 @@ func EncodeEvent(ev game.Event) []byte {
 	case game.AnswerAccepted:
 		msgType = "answer_accepted"
 		payload = answerAcceptedPayload{
-			PlayerID:      e.PlayerID,
-			Correct:       e.Correct,
-			PointsAwarded: e.PointsAwarded,
+			PlayerID: e.PlayerID,
+			Correct:  e.Correct,
 		}
 	case game.QuestionRevealed:
 		msgType = "question_revealed"
 		payload = questionRevealedPayload{
 			CorrectChoice: e.CorrectChoice,
+			PointsAwarded: e.PointsAwarded,
 			Scores:        e.Scores,
 		}
 	case game.GameFinished:
