@@ -104,7 +104,10 @@ function handleMessage(msg) {
   }
   if (msg.type === 'game_finished') {
     const scores = Object.entries(msg.payload.final_scores).map(([id, s]) => id + ': ' + s).join(', ');
-    document.getElementById('question').textContent = '🏁 Oyun bitti! ' + scores;
+    const speedNote = msg.payload.has_fastest_player
+      ? ' | ⚡ En Hızlı Oyuncu: ' + msg.payload.fastest_player_id
+      : '';
+    document.getElementById('question').textContent = '🏁 Oyun bitti! ' + scores + speedNote;
     document.getElementById('choices').innerHTML = '';
   }
 }
