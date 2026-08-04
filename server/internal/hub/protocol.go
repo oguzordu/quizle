@@ -15,6 +15,11 @@ type ServerMessage struct {
 	Payload json.RawMessage `json:"payload"`
 }
 
+type playerJoinedPayload struct {
+	PlayerID game.PlayerID `json:"player_id"`
+	Name     string        `json:"name"`
+}
+
 type questionStartedPayload struct {
 	QuestionID string    `json:"question_id"`
 	Choices    []string  `json:"choices"`
@@ -59,6 +64,9 @@ func EncodeEvent(ev game.Event) []byte {
 	var payload any
 
 	switch e := ev.(type) {
+	case game.PlayerJoined:
+		msgType = "player_joined"
+		payload = playerJoinedPayload{PlayerID: e.PlayerID, Name: e.Name}
 	case game.QuestionStarted:
 		msgType = "question_started"
 		payload = questionStartedPayload{

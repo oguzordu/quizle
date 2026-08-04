@@ -116,6 +116,15 @@ func (s *Server) ServeWS(w http.ResponseWriter, r *http.Request) {
 	sub, unsubscribe := actor.Subscribe()
 	defer unsubscribe()
 
+	for _, p := range actor.Roster() {
+		if p.ID == playerID {
+			continue
+		}
+		if err := conn.WriteMessage(gorilla.TextMessage, EncodeEvent(game.PlayerJoined{PlayerID: p.ID, Name: p.Name})); err != nil {
+			return
+		}
+	}
+
 	readerDone := make(chan struct{})
 	go func() {
 		defer close(readerDone)

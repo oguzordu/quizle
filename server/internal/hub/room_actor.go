@@ -59,12 +59,24 @@ func (a *RoomActor) SubmitAnswer(id game.PlayerID, choice int) {
 	})
 }
 
+// Roster returns a snapshot of every currently enrolled player, so a newly
+// connecting client can render everyone who joined before it did.
+func (a *RoomActor) Roster() []game.Player {
+	var roster []game.Player
+	a.exec(func(now time.Time) []game.Event {
+		roster = a.room.Players()
+		return nil
+	})
+	return roster
+}
+
 // AddPlayer enrolls a new player while the room is still in its lobby.
 func (a *RoomActor) AddPlayer(id game.PlayerID, name string) error {
 	var err error
 	a.exec(func(now time.Time) []game.Event {
-		err = a.room.AddPlayer(id, name)
-		return nil
+		var events []game.Event
+		events, err = a.room.AddPlayer(id, name)
+		return events
 	})
 	return err
 }
