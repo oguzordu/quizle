@@ -30,8 +30,12 @@ func main() {
 	mux.HandleFunc("/ws", srv.ServeWS)
 	mux.HandleFunc("/", serveTestPage)
 
-	addr := ":8080"
-	log.Printf("Quizle test sunucusu http://localhost%s adresinde çalışıyor (%d soru yüklendi)", addr, len(questions))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	addr := ":" + port
+	log.Printf("Quizle sunucusu %s portunda çalışıyor (%d soru yüklendi)", addr, len(questions))
 	log.Fatal(http.ListenAndServe(addr, withCORS(mux)))
 }
 
