@@ -18,6 +18,7 @@ export interface PlayerJoinedPayload {
 
 export interface QuestionStartedPayload {
   question_id: string;
+  text: string;
   choices: string[];
   deadline: string; // RFC3339
 }

@@ -1,14 +1,16 @@
 "use client";
 
-import { Suspense, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import { useGameConnection } from "@/lib/useGameConnection";
 import { config } from "@/lib/config";
 import { Player } from "@/lib/gameTypes";
 import { Avatar } from "@/components/Avatar";
 import { CountdownBar } from "@/components/CountdownBar";
+import { AnimatedScore } from "@/components/AnimatedScore";
 import { finalTitleFor, randomEveryoneWrongQuip, randomLobbyQuip } from "@/lib/quips";
 import { useLocale } from "@/lib/i18n";
+import { playCorrect, playTick, playWrong } from "@/lib/sound";
 
 function nameFor(id: string | null, roster: Player[], selfId: string | null) {
   if (!id) return "?";
@@ -36,6 +38,14 @@ function RoomScreen() {
     const nobodyScored = Object.keys(state.pointsAwarded).length === 0;
     return nobodyScored ? randomEveryoneWrongQuip() : null;
   }, [state.phase, state.pointsAwarded]);
+
+  const lastAnnouncedCorrect = useRef<boolean | null>(null);
+  useEffect(() => {
+    if (state.myAnswerCorrect === lastAnnouncedCorrect.current) return;
+    lastAnnouncedCorrect.current = state.myAnswerCorrect;
+    if (state.myAnswerCorrect === true) playCorrect();
+    if (state.myAnswerCorrect === false) playWrong();
+  }, [state.myAnswerCorrect]);
 
   async function startGame() {
     setStarting(true);
@@ -104,14 +114,17 @@ function RoomScreen() {
         {state.phase === "question" && state.question && (
           <section className="flex flex-col gap-4 rounded-2xl border border-zinc-200/80 bg-white p-5 shadow-xl shadow-indigo-950/5 dark:border-zinc-800 dark:bg-zinc-900 sm:p-6">
             <CountdownBar deadline={state.question.deadline} />
-            <p className="text-lg font-semibold">{state.question.question_id}</p>
+            <p className="text-lg font-semibold">{state.question.text}</p>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {state.question.choices.map((choice, i) => {
                 const picked = state.myAnswerChoice === i;
                 return (
                   <button
                     key={i}
-                    onClick={() => submitAnswer(i)}
+                    onClick={() => {
+                      playTick();
+                      submitAnswer(i);
+                    }}
                     disabled={state.myAnswerChoice !== null}
                     className={`rounded-xl border-2 px-4 py-4 text-left text-base font-medium transition disabled:opacity-60 ${
                       picked
@@ -222,14 +235,11 @@ function ScoreTable({
               #{i + 1} {nameFor(id, roster, selfId)}
             </span>
           </span>
-          <span className="font-bold">
-            {score}
-            {pointsAwarded[id] ? (
-              <span className="ml-2 text-sm font-medium text-emerald-600 dark:text-emerald-400">
-                +{pointsAwarded[id]}
-              </span>
-            ) : null}
-          </span>
+          <AnimatedScore
+            previousTotal={score - (pointsAwarded[id] ?? 0)}
+            newTotal={score}
+            pointsThisRound={pointsAwarded[id]}
+          />
         </li>
       ))}
     </ul>
