@@ -108,15 +108,25 @@ func (r *Room) Phase() Phase {
 	return r.phase
 }
 
+// Players returns a snapshot of every enrolled player, for building an
+// initial roster when a new connection joins mid-lobby.
+func (r *Room) Players() []Player {
+	out := make([]Player, 0, len(r.players))
+	for _, p := range r.players {
+		out = append(out, *p)
+	}
+	return out
+}
+
 // AddPlayer enrolls a new player while the Room is still in the lobby. It is
 // rejected once the game has started so mid-game joiners can't dodge
 // questions everyone else already answered.
-func (r *Room) AddPlayer(id PlayerID, name string) error {
+func (r *Room) AddPlayer(id PlayerID, name string) ([]Event, error) {
 	if r.phase != PhaseLobby {
-		return ErrGameAlreadyStarted
+		return nil, ErrGameAlreadyStarted
 	}
 	r.players[id] = &Player{ID: id, Name: name}
-	return nil
+	return []Event{PlayerJoined{PlayerID: id, Name: name}}, nil
 }
 
 // Start moves the Room from PhaseLobby into the first question.

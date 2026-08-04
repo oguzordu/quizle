@@ -2,6 +2,13 @@ package game
 
 import "time"
 
+// PlayerJoined is emitted when a new player is enrolled during the lobby
+// phase, so already-connected clients can show a live roster.
+type PlayerJoined struct {
+	PlayerID PlayerID
+	Name     string
+}
+
 // QuestionStarted is emitted when a new question begins.
 type QuestionStarted struct {
 	Question Question

@@ -269,13 +269,37 @@ func TestRoom_AddPlayer_succeedsDuringLobby(t *testing.T) {
 	_, questions := twoPlayerQuiz()
 	r := NewRoom(nil, questions)
 
-	err := r.AddPlayer("alice", "Alice")
+	events, err := r.AddPlayer("alice", "Alice")
 
 	if err != nil {
 		t.Fatalf("AddPlayer: %v", err)
 	}
 	if _, ok := r.players["alice"]; !ok {
 		t.Fatalf("player alice not present after AddPlayer")
+	}
+	pj := findEvent[PlayerJoined](t, events)
+	if pj.PlayerID != "alice" || pj.Name != "Alice" {
+		t.Errorf("PlayerJoined = %+v, want alice/Alice", pj)
+	}
+}
+
+func TestRoom_Players_returnsCurrentRoster(t *testing.T) {
+	_, questions := twoPlayerQuiz()
+	r := NewRoom(nil, questions)
+	r.AddPlayer("alice", "Alice")
+	r.AddPlayer("bob", "Bob")
+
+	roster := r.Players()
+
+	if len(roster) != 2 {
+		t.Fatalf("len(roster) = %d, want 2", len(roster))
+	}
+	names := map[PlayerID]string{}
+	for _, p := range roster {
+		names[p.ID] = p.Name
+	}
+	if names["alice"] != "Alice" || names["bob"] != "Bob" {
+		t.Errorf("roster = %+v, want alice/Alice and bob/Bob", roster)
 	}
 }
 
@@ -284,7 +308,7 @@ func TestRoom_AddPlayer_rejectedOnceGameStarted(t *testing.T) {
 	r := NewRoom(players, questions)
 	r.Start(time.Date(2026, 1, 1, 0, 0, 0, 0, time.UTC))
 
-	err := r.AddPlayer("carol", "Carol")
+	_, err := r.AddPlayer("carol", "Carol")
 
 	if err == nil {
 		t.Fatal("expected error adding player after game started, got nil")
