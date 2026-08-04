@@ -6,7 +6,14 @@
 // makes it deterministically testable.
 package game
 
-import "time"
+import (
+	"errors"
+	"time"
+)
+
+// ErrGameAlreadyStarted is returned by AddPlayer once the Room has left
+// PhaseLobby.
+var ErrGameAlreadyStarted = errors.New("game already started")
 
 // Phase is where a Room currently sits in its lifecycle.
 type Phase int
@@ -90,6 +97,17 @@ func NewRoom(players []Player, questions []Question) *Room {
 // Phase reports the Room's current phase.
 func (r *Room) Phase() Phase {
 	return r.phase
+}
+
+// AddPlayer enrolls a new player while the Room is still in the lobby. It is
+// rejected once the game has started so mid-game joiners can't dodge
+// questions everyone else already answered.
+func (r *Room) AddPlayer(id PlayerID, name string) error {
+	if r.phase != PhaseLobby {
+		return ErrGameAlreadyStarted
+	}
+	r.players[id] = &Player{ID: id, Name: name}
+	return nil
 }
 
 // Start moves the Room from PhaseLobby into the first question.

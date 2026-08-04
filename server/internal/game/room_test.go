@@ -186,6 +186,32 @@ func TestRoom_StreakBuildsAcrossQuestions(t *testing.T) {
 	}
 }
 
+func TestRoom_AddPlayer_succeedsDuringLobby(t *testing.T) {
+	_, questions := twoPlayerQuiz()
+	r := NewRoom(nil, questions)
+
+	err := r.AddPlayer("alice", "Alice")
+
+	if err != nil {
+		t.Fatalf("AddPlayer: %v", err)
+	}
+	if _, ok := r.players["alice"]; !ok {
+		t.Fatalf("player alice not present after AddPlayer")
+	}
+}
+
+func TestRoom_AddPlayer_rejectedOnceGameStarted(t *testing.T) {
+	players, questions := twoPlayerQuiz()
+	r := NewRoom(players, questions)
+	r.Start(time.Date(2026, 1, 1, 0, 0, 0, 0, time.UTC))
+
+	err := r.AddPlayer("carol", "Carol")
+
+	if err == nil {
+		t.Fatal("expected error adding player after game started, got nil")
+	}
+}
+
 // findEvent returns the first event of type T in events, failing the test if none found.
 func findEvent[T any](t *testing.T, events []Event) T {
 	t.Helper()
