@@ -73,36 +73,41 @@ func TestRoom_SubmitAnswer_incorrectResetsStreakImmediately(t *testing.T) {
 	}
 }
 
-func TestRoom_Reveal_soleCorrectAnswererGetsFlatPoints(t *testing.T) {
+func TestRoom_Reveal_instantCorrectAnswerGetsBaseplusMaxSpeedBonus(t *testing.T) {
 	players, questions := twoPlayerQuiz()
 	r := NewRoom(players, questions)
 	now := time.Date(2026, 1, 1, 0, 0, 0, 0, time.UTC)
 	r.Start(now)
-	r.SubmitAnswer("alice", 1, now)
+	r.SubmitAnswer("alice", 1, now) // answered the instant the question opened
 
 	events := r.SubmitAnswer("bob", 2, now) // wrong, and last player -> triggers reveal
 
 	qr := findEvent[QuestionRevealed](t, events)
-	if qr.PointsAwarded["alice"] != 100 {
-		t.Errorf("alice PointsAwarded = %d, want 100", qr.PointsAwarded["alice"])
+	if qr.PointsAwarded["alice"] != 150 {
+		t.Errorf("alice PointsAwarded = %d, want 150 (100 base + full 50 speed bonus)", qr.PointsAwarded["alice"])
 	}
 	if _, wrongPlayerScored := qr.PointsAwarded["bob"]; wrongPlayerScored {
 		t.Errorf("bob should not appear in PointsAwarded, got %d", qr.PointsAwarded["bob"])
 	}
 }
 
-func TestRoom_Reveal_answeringLaterDoesNotCostPoints(t *testing.T) {
+func TestRoom_Reveal_slowerCorrectAnswerStillGetsTheBaseGuarantee(t *testing.T) {
 	players, questions := twoPlayerQuiz()
 	r := NewRoom(players, questions)
 	now := time.Date(2026, 1, 1, 0, 0, 0, 0, time.UTC)
 	r.Start(now)
-	r.SubmitAnswer("alice", 1, now) // correct, first
+	r.SubmitAnswer("alice", 1, now) // instant -> full bonus
 
-	events := r.SubmitAnswer("bob", 1, now.Add(5*time.Second)) // correct, much later
+	// Question duration is 10s; answering at the 5s mark leaves half the
+	// window, so bob should earn half the speed bonus on top of the base.
+	events := r.SubmitAnswer("bob", 1, now.Add(5*time.Second))
 
 	qr := findEvent[QuestionRevealed](t, events)
-	if qr.PointsAwarded["alice"] != 100 || qr.PointsAwarded["bob"] != 100 {
-		t.Errorf("PointsAwarded = %+v, want both at 100 — per-question scoring no longer depends on speed", qr.PointsAwarded)
+	if qr.PointsAwarded["alice"] != 150 {
+		t.Errorf("alice PointsAwarded = %d, want 150", qr.PointsAwarded["alice"])
+	}
+	if qr.PointsAwarded["bob"] != 125 {
+		t.Errorf("bob PointsAwarded = %d, want 125 (100 base + half the speed bonus)", qr.PointsAwarded["bob"])
 	}
 }
 
@@ -123,12 +128,13 @@ func TestRoom_GameFinished_awardsFastestPlayerBonusToBestAverageResponder(t *tes
 	if !gf.HasFastestPlayer || gf.FastestPlayerID != "alice" {
 		t.Fatalf("FastestPlayerID = %q (has=%v), want alice", gf.FastestPlayerID, gf.HasFastestPlayer)
 	}
-	// alice: 2 correct * 100 + FastestPlayerBonus; bob: 2 correct * 100, no bonus.
-	if gf.FinalScores["alice"] != 200+FastestPlayerBonus {
-		t.Errorf("alice final score = %d, want %d", gf.FinalScores["alice"], 200+FastestPlayerBonus)
+	// alice: two answers at the 90%-of-window mark (145 each) + FastestPlayerBonus.
+	// bob: two answers at the 10%-of-window mark (105 each), no bonus.
+	if gf.FinalScores["alice"] != 145+145+FastestPlayerBonus {
+		t.Errorf("alice final score = %d, want %d", gf.FinalScores["alice"], 145+145+FastestPlayerBonus)
 	}
-	if gf.FinalScores["bob"] != 200 {
-		t.Errorf("bob final score = %d, want 200 (no bonus, slower on average)", gf.FinalScores["bob"])
+	if gf.FinalScores["bob"] != 105+105 {
+		t.Errorf("bob final score = %d, want %d (no bonus, slower on average)", gf.FinalScores["bob"], 105+105)
 	}
 }
 
@@ -238,8 +244,8 @@ func TestRoom_NextQuestion_afterLastQuestionFinishesGame(t *testing.T) {
 	// Both answered at the exact same instant, so it's a genuine tie; the
 	// fastest-player bonus tiebreak falls to whichever PlayerID sorts first.
 	gf := findEvent[GameFinished](t, events)
-	if gf.FinalScores["alice"] != 100+FastestPlayerBonus {
-		t.Errorf("alice final score = %d, want %d (correct, wins the tiebreak)", gf.FinalScores["alice"], 100+FastestPlayerBonus)
+	if gf.FinalScores["alice"] != 150+FastestPlayerBonus {
+		t.Errorf("alice final score = %d, want %d (instant answer, wins the tiebreak)", gf.FinalScores["alice"], 150+FastestPlayerBonus)
 	}
 }
 

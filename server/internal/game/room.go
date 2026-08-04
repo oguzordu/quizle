@@ -189,7 +189,7 @@ func (r *Room) reveal() []Event {
 			continue
 		}
 		player := r.players[id]
-		points := Score(true, a.streakBefore)
+		points := Score(true, q.Duration, r.questionEnds.Sub(a.at), a.streakBefore)
 		pointsAwarded[id] = points
 		player.Score += points
 		player.totalElapsedCorrect += a.at.Sub(r.questionStarted)
