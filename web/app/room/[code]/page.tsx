@@ -9,6 +9,7 @@ import { Avatar } from "@/components/Avatar";
 import { CountdownBar } from "@/components/CountdownBar";
 import { AnimatedScore } from "@/components/AnimatedScore";
 import { FlagImage } from "@/components/FlagImage";
+import { Confetti } from "@/components/Confetti";
 import { finalTitleFor, randomEveryoneWrongQuip, randomLobbyQuip } from "@/lib/quips";
 import { useLocale } from "@/lib/i18n";
 import { playCorrect, playTick, playWrong } from "@/lib/sound";
@@ -106,7 +107,10 @@ function RoomScreen() {
         )}
 
         {state.phase === "lobby" && (
-          <section className="flex flex-col items-center gap-4 rounded-2xl border border-zinc-200/80 bg-white p-6 shadow-xl shadow-indigo-950/5 dark:border-zinc-800 dark:bg-zinc-900 sm:p-8">
+          <section
+            style={{ animation: "fadeSlideIn 0.35s ease-out" }}
+            className="flex flex-col items-center gap-4 rounded-2xl border border-zinc-200/80 bg-white p-6 shadow-xl shadow-indigo-950/5 dark:border-zinc-800 dark:bg-zinc-900 sm:p-8"
+          >
             <p className="text-sm text-zinc-500">{t("shareCode")}</p>
             <p className="bg-gradient-to-br from-indigo-600 to-fuchsia-600 bg-clip-text text-4xl font-extrabold tracking-[0.3em] text-transparent">
               {code}
@@ -133,7 +137,11 @@ function RoomScreen() {
         )}
 
         {state.phase === "question" && state.question && (
-          <section className="flex flex-col gap-4 rounded-2xl border border-zinc-200/80 bg-white p-5 shadow-xl shadow-indigo-950/5 dark:border-zinc-800 dark:bg-zinc-900 sm:p-6">
+          <section
+            key={state.question.question_id}
+            style={{ animation: "fadeSlideIn 0.35s ease-out" }}
+            className="flex flex-col gap-4 rounded-2xl border border-zinc-200/80 bg-white p-5 shadow-xl shadow-indigo-950/5 dark:border-zinc-800 dark:bg-zinc-900 sm:p-6"
+          >
             <div className="flex items-center justify-between">
               <span className="rounded-full bg-indigo-100 px-2.5 py-1 text-xs font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 {t("question")} {state.question.index}/{state.question.total}
@@ -146,14 +154,21 @@ function RoomScreen() {
               {state.question.choices.map((choice, i) => {
                 const picked = state.myAnswerChoice === i;
                 const answered = state.myAnswerChoice !== null;
+                const isRevealedCorrect = state.correctChoice === i;
                 let style =
                   "border-zinc-200 hover:border-indigo-300 hover:bg-indigo-50/50 active:scale-[0.98] dark:border-zinc-700 dark:hover:border-indigo-800 dark:hover:bg-indigo-950/30";
                 if (picked && state.myAnswerCorrect === true) {
-                  style = "border-emerald-600 bg-emerald-600 text-white shadow-md shadow-emerald-600/25";
+                  style =
+                    "border-emerald-600 bg-emerald-600 text-white shadow-md shadow-emerald-600/25 animate-[pop_0.3s_ease-out]";
                 } else if (picked && state.myAnswerCorrect === false) {
-                  style = "border-red-600 bg-red-600 text-white shadow-md shadow-red-600/25";
+                  style = "border-red-600 bg-red-600 text-white shadow-md shadow-red-600/25 animate-[shake_0.4s_ease-in-out]";
                 } else if (picked) {
                   style = "border-indigo-600 bg-indigo-600 text-white shadow-md shadow-indigo-600/25";
+                } else if (isRevealedCorrect) {
+                  // We got it wrong (or the timer ran out) — show the right
+                  // answer instead of leaving the player guessing.
+                  style =
+                    "border-emerald-600 bg-emerald-50 text-emerald-700 shadow-md dark:bg-emerald-950/40 dark:text-emerald-400 animate-[pop_0.3s_ease-out]";
                 } else if (answered) {
                   style = "border-zinc-200 opacity-50 dark:border-zinc-700";
                 }
@@ -182,7 +197,10 @@ function RoomScreen() {
         )}
 
         {state.phase === "reveal" && (
-          <section className="flex flex-col gap-4">
+          <section
+            style={{ animation: "fadeSlideIn 0.35s ease-out" }}
+            className="flex flex-col gap-4"
+          >
             <div className="rounded-2xl border border-zinc-200/80 bg-white p-5 text-center shadow-xl shadow-indigo-950/5 dark:border-zinc-800 dark:bg-zinc-900">
               <p className="text-sm text-zinc-500">
                 {t("correctAnswer")}:{" "}
@@ -203,7 +221,11 @@ function RoomScreen() {
         )}
 
         {state.phase === "finished" && (
-          <section className="flex flex-col gap-4">
+          <section
+            style={{ animation: "fadeSlideIn 0.35s ease-out" }}
+            className="relative flex flex-col gap-4"
+          >
+            <Confetti />
             <p className="text-center text-3xl font-extrabold">{t("gameOver")}</p>
             <ul className="flex flex-col gap-2">
               {sortedScores.map(([id, score], i) => {
