@@ -2,7 +2,9 @@
 
 Çok oyunculu, gerçek zamanlı bilgi yarışması. Oda kodu ile arkadaşlarınla katıl, 4 şıklı sorulara hızlı ve doğru cevap ver, puan topla.
 
-Türkçe ve İngilizce. 2–20 oyuncu. Kayıt gerektirmez.
+Türkçe ve İngilizce arayüz. 2–20 oyuncu. Kayıt gerektirmez.
+
+**Canlı:** https://web-ruddy-ten-69.vercel.app (backend: https://quizle-api.fly.dev)
 
 ## Neden bu proje?
 
@@ -14,9 +16,11 @@ Piyasadaki çok oyunculu bilgi yarışması sitelerinin çoğu ya kalitesiz soru
 ## Mimari
 
 ```
-server/   Go — WebSocket hub + saf oyun motoru (internal/game) + PostgreSQL + Redis
+server/   Go — WebSocket hub + saf oyun motoru (internal/game), tamamen bellek içi (v1)
 web/      Next.js 15 (App Router) + TypeScript + Tailwind
 ```
+
+Soru bankası JSON dosyaları olarak tutuluyor (`server/data/questions`); PostgreSQL/Redis henüz eklenmedi — v1 kapsamında gerek duyulmadı (bkz. design doc'taki YAGNI notu).
 
 `internal/game` paketi ağdan, veritabanından ve Redis'ten tamamen izole saf bir Go paketidir: girdi komut + zaman damgası, çıktı yeni durum + yayılacak event listesi. Bu sayede tüm oyun mantığı sahte saatle deterministik olarak test edilir.
 
@@ -36,11 +40,10 @@ npm install
 npm run dev
 ```
 
-Tam ortam (Postgres + Redis dahil) için:
+## Yayına alma
 
-```bash
-docker compose up
-```
+- Backend: Fly.io (`cd server && flyctl deploy`)
+- Frontend: Vercel (`cd web && vercel --prod`), `NEXT_PUBLIC_API_BASE` ortam değişkeni backend URL'ini gösterir
 
 ## Durum
 
