@@ -32,7 +32,10 @@ function applyMessage(state: GameState, msg: ServerMessage): GameState {
     case "player_joined": {
       const p = msg.payload as PlayerJoinedPayload;
       if (state.roster.some((r) => r.id === p.player_id)) return state;
-      return { ...state, roster: [...state.roster, { id: p.player_id, name: p.name }] };
+      return {
+        ...state,
+        roster: [...state.roster, { id: p.player_id, name: p.name, avatar: p.avatar }],
+      };
     }
     case "question_started": {
       const p = msg.payload as QuestionStartedPayload;
@@ -76,7 +79,7 @@ function applyMessage(state: GameState, msg: ServerMessage): GameState {
   }
 }
 
-export function useGameConnection(code: string, name: string) {
+export function useGameConnection(code: string, name: string, avatar: string) {
   const [state, setState] = useState<GameState>(initialGameState);
   const wsRef = useRef<WebSocket | null>(null);
 
@@ -88,7 +91,7 @@ export function useGameConnection(code: string, name: string) {
     function connect() {
       if (cancelled) return;
       const token = sessionStorage.getItem(tokenKey(code)) ?? "";
-      const params = new URLSearchParams({ code, name });
+      const params = new URLSearchParams({ code, name, avatar });
       if (token) params.set("token", token);
       const ws = new WebSocket(`${config.wsBase}/ws?${params.toString()}`);
       wsRef.current = ws;
@@ -105,7 +108,7 @@ export function useGameConnection(code: string, name: string) {
           setState((prev) => {
             const next = applyMessage(prev, msg);
             if (next.roster.some((r) => r.id === p.player_id)) return next;
-            return { ...next, roster: [...next.roster, { id: p.player_id, name }] };
+            return { ...next, roster: [...next.roster, { id: p.player_id, name, avatar }] };
           });
           return;
         }
@@ -137,7 +140,7 @@ export function useGameConnection(code: string, name: string) {
       if (retryTimer) clearTimeout(retryTimer);
       wsRef.current?.close();
     };
-  }, [code, name]);
+  }, [code, name, avatar]);
 
   const submitAnswer = useCallback((choice: number) => {
     const ws = wsRef.current;

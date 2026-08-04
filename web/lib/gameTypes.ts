@@ -13,6 +13,7 @@ export interface JoinedPayload {
 export interface PlayerJoinedPayload {
   player_id: PlayerId;
   name: string;
+  avatar?: string;
 }
 
 export interface QuestionStartedPayload {
@@ -43,6 +44,7 @@ export type GamePhase = "connecting" | "lobby" | "question" | "reveal" | "finish
 export interface Player {
   id: PlayerId;
   name: string;
+  avatar?: string;
 }
 
 export interface GameState {
