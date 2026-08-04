@@ -1,21 +1,21 @@
 "use client";
 
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
-import { useParams, useSearchParams } from "next/navigation";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { useGameConnection } from "@/lib/useGameConnection";
 import { config } from "@/lib/config";
 import { Player } from "@/lib/gameTypes";
 import { Avatar } from "@/components/Avatar";
 import { CountdownBar } from "@/components/CountdownBar";
 import { AnimatedScore } from "@/components/AnimatedScore";
+import { FlagImage } from "@/components/FlagImage";
 import { finalTitleFor, randomEveryoneWrongQuip, randomLobbyQuip } from "@/lib/quips";
 import { useLocale } from "@/lib/i18n";
 import { playCorrect, playTick, playWrong } from "@/lib/sound";
-import { flagFromImageHint } from "@/lib/flag";
 
-function nameFor(id: string | null, roster: Player[], selfId: string | null) {
+function nameFor(id: string | null, roster: Player[], selfId: string | null, you: string) {
   if (!id) return "?";
-  if (id === selfId) return "Sen";
+  if (id === selfId) return you;
   return roster.find((p) => p.id === id)?.name ?? id.slice(0, 6);
 }
 
@@ -26,12 +26,14 @@ function avatarFor(id: string, roster: Player[]) {
 function RoomScreen() {
   const params = useParams<{ code: string }>();
   const searchParams = useSearchParams();
+  const router = useRouter();
   const name = searchParams.get("name") ?? "Oyuncu";
   const avatar = searchParams.get("avatar") ?? "";
   const code = params.code.toUpperCase();
-  const { state, submitAnswer } = useGameConnection(code, name, avatar);
+  const { state, submitAnswer, rematch } = useGameConnection(code, name, avatar);
   const { t } = useLocale();
   const [starting, setStarting] = useState(false);
+  const [rematching, setRematching] = useState(false);
 
   const lobbyQuip = useMemo(() => randomLobbyQuip(), []);
   const revealQuip = useMemo(() => {
@@ -57,11 +59,29 @@ function RoomScreen() {
     }
   }
 
+  async function handleRematch() {
+    setRematching(true);
+    try {
+      await rematch();
+    } finally {
+      setRematching(false);
+    }
+  }
+
   const sortedScores = Object.entries(state.scores).sort(([, a], [, b]) => b - a);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-50 via-white to-white px-4 py-6 dark:from-zinc-950 dark:via-black dark:to-black sm:py-10">
-      <div className="mx-auto flex max-w-lg flex-col gap-5">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-indigo-50 via-white to-white px-4 py-6 dark:from-zinc-950 dark:via-black dark:to-black sm:py-10">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-fuchsia-300/20 blur-3xl dark:bg-fuchsia-800/10"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-indigo-300/20 blur-3xl dark:bg-indigo-800/10"
+      />
+
+      <div className="relative mx-auto flex max-w-lg flex-col gap-5">
         <header className="flex items-center justify-between rounded-xl bg-white/70 px-4 py-2.5 shadow-sm backdrop-blur dark:bg-zinc-900/70">
           <span className="text-sm text-zinc-500">
             {t("roomCode")}{" "}
@@ -114,16 +134,29 @@ function RoomScreen() {
 
         {state.phase === "question" && state.question && (
           <section className="flex flex-col gap-4 rounded-2xl border border-zinc-200/80 bg-white p-5 shadow-xl shadow-indigo-950/5 dark:border-zinc-800 dark:bg-zinc-900 sm:p-6">
+            <div className="flex items-center justify-between">
+              <span className="rounded-full bg-indigo-100 px-2.5 py-1 text-xs font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
+                {t("question")} {state.question.index}/{state.question.total}
+              </span>
+            </div>
             <CountdownBar deadline={state.question.deadline} />
-            {flagFromImageHint(state.question.image) && (
-              <p className="text-center text-7xl leading-none">
-                {flagFromImageHint(state.question.image)}
-              </p>
-            )}
-            <p className="text-lg font-semibold">{state.question.text}</p>
+            <FlagImage image={state.question.image} />
+            <p className="text-center text-lg font-semibold">{state.question.text}</p>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {state.question.choices.map((choice, i) => {
                 const picked = state.myAnswerChoice === i;
+                const answered = state.myAnswerChoice !== null;
+                let style =
+                  "border-zinc-200 hover:border-indigo-300 hover:bg-indigo-50/50 active:scale-[0.98] dark:border-zinc-700 dark:hover:border-indigo-800 dark:hover:bg-indigo-950/30";
+                if (picked && state.myAnswerCorrect === true) {
+                  style = "border-emerald-600 bg-emerald-600 text-white shadow-md shadow-emerald-600/25";
+                } else if (picked && state.myAnswerCorrect === false) {
+                  style = "border-red-600 bg-red-600 text-white shadow-md shadow-red-600/25";
+                } else if (picked) {
+                  style = "border-indigo-600 bg-indigo-600 text-white shadow-md shadow-indigo-600/25";
+                } else if (answered) {
+                  style = "border-zinc-200 opacity-50 dark:border-zinc-700";
+                }
                 return (
                   <button
                     key={i}
@@ -131,12 +164,8 @@ function RoomScreen() {
                       playTick();
                       submitAnswer(i);
                     }}
-                    disabled={state.myAnswerChoice !== null}
-                    className={`rounded-xl border-2 px-4 py-4 text-left text-base font-medium transition disabled:opacity-60 ${
-                      picked
-                        ? "border-indigo-600 bg-indigo-600 text-white shadow-md shadow-indigo-600/25"
-                        : "border-zinc-200 hover:border-indigo-300 hover:bg-indigo-50/50 active:scale-[0.98] dark:border-zinc-700 dark:hover:border-indigo-800 dark:hover:bg-indigo-950/30"
-                    }`}
+                    disabled={answered}
+                    className={`rounded-xl border-2 px-4 py-4 text-left text-base font-medium transition disabled:cursor-default ${style}`}
                   >
                     {choice}
                   </button>
@@ -168,6 +197,7 @@ function RoomScreen() {
               pointsAwarded={state.pointsAwarded}
               roster={state.roster}
               selfId={state.selfId}
+              you={t("you")}
             />
           </section>
         )}
@@ -198,7 +228,7 @@ function RoomScreen() {
                       <Avatar avatar={avatarFor(id, state.roster)} size={32} />
                       <span className="flex flex-col">
                         <span className="font-medium">
-                          #{i + 1} {nameFor(id, state.roster, state.selfId)}
+                          #{i + 1} {nameFor(id, state.roster, state.selfId, t("you"))}
                         </span>
                         <span className="text-xs text-zinc-500">
                           {title.emoji} {title.title}
@@ -210,6 +240,22 @@ function RoomScreen() {
                 );
               })}
             </ul>
+
+            <div className="mt-2 flex flex-col gap-2 sm:flex-row">
+              <button
+                className="w-full rounded-xl bg-gradient-to-br from-indigo-600 to-fuchsia-600 px-4 py-3 font-semibold text-white shadow-lg shadow-indigo-600/25 transition hover:brightness-110 active:scale-[0.98] disabled:opacity-50"
+                onClick={handleRematch}
+                disabled={rematching}
+              >
+                {t("playAgain")}
+              </button>
+              <button
+                className="w-full rounded-xl border border-zinc-300 px-4 py-3 font-medium transition hover:bg-zinc-100 active:scale-[0.98] dark:border-zinc-700 dark:hover:bg-zinc-800"
+                onClick={() => router.push("/")}
+              >
+                {t("backToHome")}
+              </button>
+            </div>
           </section>
         )}
       </div>
@@ -222,11 +268,13 @@ function ScoreTable({
   pointsAwarded,
   roster,
   selfId,
+  you,
 }: {
   sortedScores: [string, number][];
   pointsAwarded: Record<string, number>;
   roster: Player[];
   selfId: string | null;
+  you: string;
 }) {
   return (
     <ul className="flex flex-col gap-2">
@@ -238,7 +286,7 @@ function ScoreTable({
           <span className="flex items-center gap-2.5">
             <Avatar avatar={avatarFor(id, roster)} size={30} />
             <span className="font-medium">
-              #{i + 1} {nameFor(id, roster, selfId)}
+              #{i + 1} {nameFor(id, roster, selfId, you)}
             </span>
           </span>
           <AnimatedScore
