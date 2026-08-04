@@ -24,6 +24,7 @@ type playerJoinedPayload struct {
 type questionStartedPayload struct {
 	QuestionID string    `json:"question_id"`
 	Text       string    `json:"text"`
+	Image      string    `json:"image,omitempty"`
 	Choices    []string  `json:"choices"`
 	Deadline   time.Time `json:"deadline"`
 }
@@ -74,6 +75,7 @@ func EncodeEvent(ev game.Event) []byte {
 		payload = questionStartedPayload{
 			QuestionID: e.Question.ID,
 			Text:       e.Question.Text,
+			Image:      e.Question.Image,
 			Choices:    e.Question.Choices,
 			Deadline:   e.Deadline,
 		}

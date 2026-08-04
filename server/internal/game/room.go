@@ -62,9 +62,12 @@ type Player struct {
 }
 
 // Question is one round of the quiz. Correct is the index into Choices.
+// Image is an opaque hint the frontend knows how to render (e.g.
+// "flag:TR") — the server never interprets it, just relays it.
 type Question struct {
 	ID       string
 	Text     string
+	Image    string
 	Choices  []string
 	Correct  int
 	Duration time.Duration

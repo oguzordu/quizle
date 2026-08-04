@@ -87,6 +87,7 @@ func loadQuestionPack(path string) ([]game.Question, error) {
 	var raw []struct {
 		ID      string `json:"id"`
 		Correct int    `json:"correct"`
+		Image   string `json:"image"`
 		TR      struct {
 			Text    string   `json:"text"`
 			Choices []string `json:"choices"`
@@ -101,6 +102,7 @@ func loadQuestionPack(path string) ([]game.Question, error) {
 		questions = append(questions, game.Question{
 			ID:       q.ID,
 			Text:     q.TR.Text,
+			Image:    q.Image,
 			Choices:  q.TR.Choices,
 			Correct:  q.Correct,
 			Duration: 15 * time.Second,
