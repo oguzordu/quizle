@@ -73,7 +73,7 @@ func TestRoom_SubmitAnswer_incorrectResetsStreakImmediately(t *testing.T) {
 	}
 }
 
-func TestRoom_Reveal_soleCorrectAnswererGetsTopRankPoints(t *testing.T) {
+func TestRoom_Reveal_soleCorrectAnswererGetsFlatPoints(t *testing.T) {
 	players, questions := twoPlayerQuiz()
 	r := NewRoom(players, questions)
 	now := time.Date(2026, 1, 1, 0, 0, 0, 0, time.UTC)
@@ -83,46 +83,69 @@ func TestRoom_Reveal_soleCorrectAnswererGetsTopRankPoints(t *testing.T) {
 	events := r.SubmitAnswer("bob", 2, now) // wrong, and last player -> triggers reveal
 
 	qr := findEvent[QuestionRevealed](t, events)
-	if qr.PointsAwarded["alice"] != 110 {
-		t.Errorf("alice PointsAwarded = %d, want 110 (sole correct answerer, also fastest)", qr.PointsAwarded["alice"])
+	if qr.PointsAwarded["alice"] != 100 {
+		t.Errorf("alice PointsAwarded = %d, want 100", qr.PointsAwarded["alice"])
 	}
 	if _, wrongPlayerScored := qr.PointsAwarded["bob"]; wrongPlayerScored {
 		t.Errorf("bob should not appear in PointsAwarded, got %d", qr.PointsAwarded["bob"])
 	}
 }
 
-func TestRoom_Reveal_firstCorrectAnswererGetsBonusButKnowledgeDominates(t *testing.T) {
+func TestRoom_Reveal_answeringLaterDoesNotCostPoints(t *testing.T) {
 	players, questions := twoPlayerQuiz()
 	r := NewRoom(players, questions)
 	now := time.Date(2026, 1, 1, 0, 0, 0, 0, time.UTC)
 	r.Start(now)
 	r.SubmitAnswer("alice", 1, now) // correct, first
 
-	events := r.SubmitAnswer("bob", 1, now.Add(time.Second)) // correct, a full second later
+	events := r.SubmitAnswer("bob", 1, now.Add(5*time.Second)) // correct, much later
 
 	qr := findEvent[QuestionRevealed](t, events)
-	if qr.PointsAwarded["alice"] != 110 {
-		t.Errorf("alice PointsAwarded = %d, want 110 (answered first, gets small bonus)", qr.PointsAwarded["alice"])
-	}
-	// Being slower never costs Bob the base points — knowing the answer is
-	// what mostly counts. The gap between them is only the small speed bonus.
-	if qr.PointsAwarded["bob"] != 100 {
-		t.Errorf("bob PointsAwarded = %d, want 100 (answered second, still correct, no bonus)", qr.PointsAwarded["bob"])
+	if qr.PointsAwarded["alice"] != 100 || qr.PointsAwarded["bob"] != 100 {
+		t.Errorf("PointsAwarded = %+v, want both at 100 — per-question scoring no longer depends on speed", qr.PointsAwarded)
 	}
 }
 
-func TestRoom_Reveal_nearSimultaneousCorrectAnswersBothGetTheBonus(t *testing.T) {
+func TestRoom_GameFinished_awardsFastestPlayerBonusToBestAverageResponder(t *testing.T) {
 	players, questions := twoPlayerQuiz()
 	r := NewRoom(players, questions)
 	now := time.Date(2026, 1, 1, 0, 0, 0, 0, time.UTC)
 	r.Start(now)
-	r.SubmitAnswer("alice", 1, now)
+	r.SubmitAnswer("alice", 1, now.Add(1*time.Second)) // correct, answered quickly
+	r.SubmitAnswer("bob", 1, now.Add(9*time.Second))   // correct, answered slowly
+	r.NextQuestion(now.Add(10 * time.Second))
 
-	events := r.SubmitAnswer("bob", 1, now.Add(100*time.Millisecond)) // within the tie window
+	events := r.SubmitAnswer("alice", 0, now.Add(11*time.Second)) // correct again, quickly
+	events = append(events, r.SubmitAnswer("bob", 0, now.Add(19*time.Second))...)
+	events = append(events, r.NextQuestion(now.Add(20*time.Second))...)
 
-	qr := findEvent[QuestionRevealed](t, events)
-	if qr.PointsAwarded["alice"] != 110 || qr.PointsAwarded["bob"] != 110 {
-		t.Errorf("PointsAwarded = %+v, want both at 110 (tied for fastest)", qr.PointsAwarded)
+	gf := findEvent[GameFinished](t, events)
+	if !gf.HasFastestPlayer || gf.FastestPlayerID != "alice" {
+		t.Fatalf("FastestPlayerID = %q (has=%v), want alice", gf.FastestPlayerID, gf.HasFastestPlayer)
+	}
+	// alice: 2 correct * 100 + FastestPlayerBonus; bob: 2 correct * 100, no bonus.
+	if gf.FinalScores["alice"] != 200+FastestPlayerBonus {
+		t.Errorf("alice final score = %d, want %d", gf.FinalScores["alice"], 200+FastestPlayerBonus)
+	}
+	if gf.FinalScores["bob"] != 200 {
+		t.Errorf("bob final score = %d, want 200 (no bonus, slower on average)", gf.FinalScores["bob"])
+	}
+}
+
+func TestRoom_GameFinished_noFastestBonusIfNobodyAnsweredCorrectly(t *testing.T) {
+	players, questions := twoPlayerQuiz()
+	questions = questions[:1]
+	r := NewRoom(players, questions)
+	now := time.Date(2026, 1, 1, 0, 0, 0, 0, time.UTC)
+	r.Start(now)
+	r.SubmitAnswer("alice", 3, now) // wrong
+	r.SubmitAnswer("bob", 3, now)   // wrong
+
+	events := r.NextQuestion(now.Add(1 * time.Second))
+
+	gf := findEvent[GameFinished](t, events)
+	if gf.HasFastestPlayer {
+		t.Errorf("HasFastestPlayer = true, want false when nobody answered correctly")
 	}
 }
 
@@ -212,9 +235,11 @@ func TestRoom_NextQuestion_afterLastQuestionFinishesGame(t *testing.T) {
 	if r.Phase() != PhaseFinished {
 		t.Fatalf("Phase() = %v, want PhaseFinished", r.Phase())
 	}
+	// Both answered at the exact same instant, so it's a genuine tie; the
+	// fastest-player bonus tiebreak falls to whichever PlayerID sorts first.
 	gf := findEvent[GameFinished](t, events)
-	if gf.FinalScores["alice"] != 110 {
-		t.Errorf("alice final score = %d, want 110 (correct, tied for fastest)", gf.FinalScores["alice"])
+	if gf.FinalScores["alice"] != 100+FastestPlayerBonus {
+		t.Errorf("alice final score = %d, want %d (correct, wins the tiebreak)", gf.FinalScores["alice"], 100+FastestPlayerBonus)
 	}
 }
 

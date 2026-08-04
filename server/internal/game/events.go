@@ -10,8 +10,7 @@ type QuestionStarted struct {
 
 // AnswerAccepted is emitted in direct response to a player's SubmitAnswer
 // call, confirming correctness immediately. Points aren't included here:
-// they depend on this round's final answer order, which isn't known until
-// QuestionRevealed.
+// they're computed at QuestionRevealed.
 type AnswerAccepted struct {
 	PlayerID PlayerID
 	Correct  bool
@@ -28,7 +27,11 @@ type QuestionRevealed struct {
 }
 
 // GameFinished is emitted when the last question has been revealed and
-// NextQuestion is called with no questions remaining.
+// NextQuestion is called with no questions remaining. If HasFastestPlayer is
+// true, FastestPlayerID already received FastestPlayerBonus and that bonus
+// is reflected in FinalScores.
 type GameFinished struct {
-	FinalScores map[PlayerID]int
+	FinalScores      map[PlayerID]int
+	HasFastestPlayer bool
+	FastestPlayerID  PlayerID
 }

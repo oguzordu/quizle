@@ -8,16 +8,8 @@ package game
 
 import (
 	"errors"
-	"sort"
 	"time"
 )
-
-// answerTieWindow is how close to the earliest correct answer another
-// correct answer must land to also count as "fastest" for the small speed
-// bonus. It exists so a few milliseconds of network jitter between two
-// players who both answered right away doesn't arbitrarily hand the bonus
-// to just one of them.
-const answerTieWindow = 300 * time.Millisecond
 
 // ErrGameAlreadyStarted is returned by AddPlayer once the Room has left
 // PhaseLobby.
@@ -57,6 +49,13 @@ type Player struct {
 	Name   string
 	Score  int
 	Streak int
+
+	// totalElapsedCorrect and correctAnswerCount track response speed only
+	// for the end-of-game FastestPlayerBonus award — they never affect
+	// per-question scoring, so a slower player never loses points to a
+	// faster one.
+	totalElapsedCorrect time.Duration
+	correctAnswerCount  int
 }
 
 // Question is one round of the quiz. Correct is the index into Choices.
@@ -80,12 +79,13 @@ type answer struct {
 // Room is the state machine for one game. Zero value is not usable; create
 // with NewRoom.
 type Room struct {
-	phase        Phase
-	questions    []Question
-	currentIdx   int
-	players      map[PlayerID]*Player
-	answers      map[PlayerID]answer
-	questionEnds time.Time
+	phase           Phase
+	questions       []Question
+	currentIdx      int
+	players         map[PlayerID]*Player
+	answers         map[PlayerID]answer
+	questionStarted time.Time
+	questionEnds    time.Time
 }
 
 // NewRoom creates a Room in PhaseLobby, ready for Start.
@@ -129,6 +129,7 @@ func (r *Room) beginQuestion(idx int, now time.Time) []Event {
 	r.phase = PhaseQuestion
 	r.answers = make(map[PlayerID]answer)
 	q := r.questions[idx]
+	r.questionStarted = now
 	r.questionEnds = now.Add(q.Duration)
 	return []Event{QuestionStarted{Question: q, Deadline: r.questionEnds}}
 }
@@ -182,28 +183,17 @@ func (r *Room) reveal() []Event {
 	r.phase = PhaseReveal
 	q := r.questions[r.currentIdx]
 
-	type correctAnswer struct {
-		id           PlayerID
-		at           time.Time
-		streakBefore int
-	}
-	var correctAnswers []correctAnswer
+	pointsAwarded := make(map[PlayerID]int)
 	for id, a := range r.answers {
-		if a.choice == q.Correct {
-			correctAnswers = append(correctAnswers, correctAnswer{id: id, at: a.at, streakBefore: a.streakBefore})
+		if a.choice != q.Correct {
+			continue
 		}
-	}
-	sort.Slice(correctAnswers, func(i, j int) bool { return correctAnswers[i].at.Before(correctAnswers[j].at) })
-
-	pointsAwarded := make(map[PlayerID]int, len(correctAnswers))
-	if len(correctAnswers) > 0 {
-		earliest := correctAnswers[0].at
-		for _, ca := range correctAnswers {
-			fastest := ca.at.Sub(earliest) <= answerTieWindow
-			points := Score(true, fastest, ca.streakBefore)
-			pointsAwarded[ca.id] = points
-			r.players[ca.id].Score += points
-		}
+		player := r.players[id]
+		points := Score(true, a.streakBefore)
+		pointsAwarded[id] = points
+		player.Score += points
+		player.totalElapsedCorrect += a.at.Sub(r.questionStarted)
+		player.correctAnswerCount++
 	}
 
 	scores := make(map[PlayerID]int, len(r.players))
@@ -223,11 +213,43 @@ func (r *Room) NextQuestion(now time.Time) []Event {
 	next := r.currentIdx + 1
 	if next >= len(r.questions) {
 		r.phase = PhaseFinished
+
+		fastestID, hasFastest := r.fastestPlayer()
+		if hasFastest {
+			r.players[fastestID].Score += FastestPlayerBonus
+		}
+
 		scores := make(map[PlayerID]int, len(r.players))
 		for id, p := range r.players {
 			scores[id] = p.Score
 		}
-		return []Event{GameFinished{FinalScores: scores}}
+		return []Event{GameFinished{
+			FinalScores:      scores,
+			HasFastestPlayer: hasFastest,
+			FastestPlayerID:  fastestID,
+		}}
 	}
 	return r.beginQuestion(next, now)
+}
+
+// fastestPlayer finds whoever had the lowest average response time among
+// their correct answers. Players with no correct answers don't qualify.
+// Exact ties are broken by PlayerID so the result is deterministic
+// regardless of Go's randomized map iteration order.
+func (r *Room) fastestPlayer() (PlayerID, bool) {
+	var bestID PlayerID
+	var bestAvg time.Duration
+	found := false
+
+	for id, p := range r.players {
+		if p.correctAnswerCount == 0 {
+			continue
+		}
+		avg := p.totalElapsedCorrect / time.Duration(p.correctAnswerCount)
+		if !found || avg < bestAvg || (avg == bestAvg && id < bestID) {
+			bestID, bestAvg, found = id, avg, true
+		}
+	}
+
+	return bestID, found
 }
