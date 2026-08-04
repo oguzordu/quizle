@@ -12,11 +12,11 @@ import (
 	"time"
 )
 
-// answerTieWindow is how close together two correct answers must land to be
-// treated as the same rank. It exists so that on a question everyone knows,
-// a few milliseconds of network jitter between players doesn't produce a
-// harsh, arbitrary-feeling point gap — only a genuinely earlier answer moves
-// you up in rank.
+// answerTieWindow is how close to the earliest correct answer another
+// correct answer must land to also count as "fastest" for the small speed
+// bonus. It exists so a few milliseconds of network jitter between two
+// players who both answered right away doesn't arbitrarily hand the bonus
+// to just one of them.
 const answerTieWindow = 300 * time.Millisecond
 
 // ErrGameAlreadyStarted is returned by AddPlayer once the Room has left
@@ -197,18 +197,10 @@ func (r *Room) reveal() []Event {
 
 	pointsAwarded := make(map[PlayerID]int, len(correctAnswers))
 	if len(correctAnswers) > 0 {
-		ranks := make(map[PlayerID]int, len(correctAnswers))
-		rank := 1
-		for i, ca := range correctAnswers {
-			if i > 0 && ca.at.Sub(correctAnswers[i-1].at) > answerTieWindow {
-				rank++
-			}
-			ranks[ca.id] = rank
-		}
-		totalRanks := rank
-
+		earliest := correctAnswers[0].at
 		for _, ca := range correctAnswers {
-			points := RankScore(ranks[ca.id], totalRanks, ca.streakBefore)
+			fastest := ca.at.Sub(earliest) <= answerTieWindow
+			points := Score(true, fastest, ca.streakBefore)
 			pointsAwarded[ca.id] = points
 			r.players[ca.id].Score += points
 		}
