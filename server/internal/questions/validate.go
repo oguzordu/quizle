@@ -15,7 +15,13 @@ type Localized struct {
 	Choices []string `json:"choices"`
 }
 
-// Question is one round, fully bilingual, with a mandatory source citation.
+// isEmpty reports whether this language block was omitted entirely.
+func (l Localized) isEmpty() bool {
+	return strings.TrimSpace(l.Text) == "" && len(l.Choices) == 0
+}
+
+// Question is one round with a mandatory source citation. EN is required;
+// TR is optional, and a question without it is served only to English rooms.
 type Question struct {
 	ID        string    `json:"id"`
 	Category  string    `json:"category"`
@@ -55,8 +61,14 @@ func ValidatePack(qs []Question) []error {
 			errs = append(errs, fmt.Errorf("%s: missing source_url", label))
 		}
 
-		errs = append(errs, validateLocalized(label, "tr", q.TR, q.Correct)...)
+		// English is mandatory; Turkish is optional so English-only imports
+		// (OpenTDB) can ship and be served to English rooms. A TR block that
+		// is present must still be complete — optional means "may be
+		// absent", not "may be broken".
 		errs = append(errs, validateLocalized(label, "en", q.EN, q.Correct)...)
+		if !q.TR.isEmpty() {
+			errs = append(errs, validateLocalized(label, "tr", q.TR, q.Correct)...)
+		}
 	}
 
 	return errs

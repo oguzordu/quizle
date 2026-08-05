@@ -32,7 +32,10 @@ func TestServer_PickQuestions_NeverExceedsMaxPerCategory(t *testing.T) {
 	srv.SetQuestionPool(buildUnbalancedPool(), 10, time.Second)
 
 	for round := 0; round < 500; round++ {
-		picked := srv.pickQuestions()
+		picked, err := srv.pickQuestions("", "")
+		if err != nil {
+			t.Fatalf("round %d: pickQuestions: %v", round, err)
+		}
 		if len(picked) != 10 {
 			t.Fatalf("round %d: got %d questions, want 10", round, len(picked))
 		}

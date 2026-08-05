@@ -1,0 +1,322 @@
+[
+  {
+    "id": "cel-tr-einstein-field",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Albert_Einstein",
+    "tr": { "text": "Albert Einstein hangi alanda ünlenmiştir?", "choices": ["Ressamlık", "Fizik", "Bestecilik", "Siyaset"] },
+    "en": { "text": "In which field did Albert Einstein become famous?", "choices": ["Painting", "Physics", "Composing", "Politics"] }
+  },
+  {
+    "id": "cel-tr-messi-sport",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Lionel_Messi",
+    "tr": { "text": "Lionel Messi hangi sporla tanınır?", "choices": ["Basketbol", "Futbol", "Tenis", "Golf"] },
+    "en": { "text": "Which sport is Lionel Messi known for?", "choices": ["Basketball", "Football", "Tennis", "Golf"] }
+  },
+  {
+    "id": "cel-tr-ronaldo-country",
+    "category": "celebrities",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Cristiano_Ronaldo",
+    "tr": { "text": "Cristiano Ronaldo hangi ülkenin millî takımında oynar?", "choices": ["İspanya", "Brezilya", "Portekiz", "Arjantin"] },
+    "en": { "text": "Cristiano Ronaldo plays for which national team?", "choices": ["Spain", "Brazil", "Portugal", "Argentina"] }
+  },
+  {
+    "id": "cel-tr-oprah-profession",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Oprah_Winfrey",
+    "tr": { "text": "Oprah Winfrey hangi alanda ünlenmiştir?", "choices": ["Şarkıcılık", "Talk show sunuculuğu", "Modacılık", "Dansçılık"] },
+    "en": { "text": "In which field did Oprah Winfrey become famous?", "choices": ["Singing", "Talk show hosting", "Fashion design", "Dancing"] }
+  },
+  {
+    "id": "cel-tr-elon-musk-company",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Elon_Musk",
+    "tr": { "text": "Elon Musk aşağıdaki şirketlerden hangisinin kurucularındandır?", "choices": ["Amazon", "Tesla", "Meta", "Netflix"] },
+    "en": { "text": "Elon Musk is a co-founder of which company?", "choices": ["Amazon", "Tesla", "Meta", "Netflix"] }
+  },
+  {
+    "id": "cel-tr-bill-gates-company",
+    "category": "celebrities",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Bill_Gates",
+    "tr": { "text": "Bill Gates hangi şirketin kurucu ortağıdır?", "choices": ["Apple", "Oracle", "Microsoft", "IBM"] },
+    "en": { "text": "Bill Gates is a co-founder of which company?", "choices": ["Apple", "Oracle", "Microsoft", "IBM"] }
+  },
+  {
+    "id": "cel-tr-steve-jobs-company",
+    "category": "celebrities",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Steve_Jobs",
+    "tr": { "text": "Steve Jobs hangi şirketin kurucu ortağıdır?", "choices": ["Apple", "Microsoft", "Google", "Dell"] },
+    "en": { "text": "Steve Jobs is a co-founder of which company?", "choices": ["Apple", "Microsoft", "Google", "Dell"] }
+  },
+  {
+    "id": "cel-tr-shakespeare-profession",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/William_Shakespeare",
+    "tr": { "text": "William Shakespeare hangi alanda ünlenmiştir?", "choices": ["Ressamlık", "Oyun yazarlığı", "Denizcilik", "Mimarlık"] },
+    "en": { "text": "In which field did William Shakespeare become famous?", "choices": ["Painting", "Playwriting", "Sailing", "Architecture"] }
+  },
+  {
+    "id": "cel-tr-mozart-instrument",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart",
+    "tr": { "text": "Mozart hangi alanda dünyaca ünlüdür?", "choices": ["Heykeltıraşlık", "Bestecilik", "Şairlik", "Bilim"] },
+    "en": { "text": "In which field is Mozart world famous?", "choices": ["Sculpture", "Composing", "Poetry", "Science"] }
+  },
+  {
+    "id": "cel-tr-marie-curie-prize",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Marie_Curie",
+    "tr": { "text": "Marie Curie hangi başarısıyla tarihe geçmiştir?", "choices": ["İlk kadın astronot", "İki farklı dalda Nobel kazanan ilk kişi", "İlk kadın başbakan", "İlk kadın pilot"] },
+    "en": { "text": "What historic achievement is Marie Curie known for?", "choices": ["First woman astronaut", "First person to win Nobels in two different sciences", "First woman prime minister", "First woman pilot"] }
+  },
+  {
+    "id": "cel-tr-mandela-country",
+    "category": "celebrities",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Nelson_Mandela",
+    "tr": { "text": "Nelson Mandela hangi ülkenin devlet başkanı olmuştur?", "choices": ["Nijerya", "Kenya", "Güney Afrika", "Gana"] },
+    "en": { "text": "Nelson Mandela became president of which country?", "choices": ["Nigeria", "Kenya", "South Africa", "Ghana"] }
+  },
+  {
+    "id": "cel-tr-gandhi-method",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Mahatma_Gandhi",
+    "tr": { "text": "Mahatma Gandhi hangi yöntemiyle tanınır?", "choices": ["Silahlı direniş", "Şiddetsiz direniş", "Ekonomik ambargo", "Diplomatik pazarlık"] },
+    "en": { "text": "Mahatma Gandhi is known for which method?", "choices": ["Armed resistance", "Nonviolent resistance", "Economic embargo", "Diplomatic bargaining"] }
+  },
+  {
+    "id": "cel-tr-beyonce-field",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Beyonc%C3%A9",
+    "tr": { "text": "Beyoncé hangi alanda ünlüdür?", "choices": ["Oyunculuk", "Şarkıcılık", "Modacılık", "Sporculuk"] },
+    "en": { "text": "In which field is Beyoncé famous?", "choices": ["Acting", "Singing", "Fashion design", "Sports"] }
+  },
+  {
+    "id": "cel-tr-federer-sport",
+    "category": "celebrities",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Roger_Federer",
+    "tr": { "text": "Roger Federer hangi sporun efsanelerindendir?", "choices": ["Golf", "Yüzme", "Tenis", "Bisiklet"] },
+    "en": { "text": "Roger Federer is a legend of which sport?", "choices": ["Golf", "Swimming", "Tennis", "Cycling"] }
+  },
+  {
+    "id": "cel-tr-jordan-sport",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Michael_Jordan",
+    "tr": { "text": "Michael Jordan hangi sporla özdeşleşmiştir?", "choices": ["Beyzbol", "Basketbol", "Amerikan futbolu", "Boks"] },
+    "en": { "text": "Which sport is Michael Jordan identified with?", "choices": ["Baseball", "Basketball", "American football", "Boxing"] }
+  },
+  {
+    "id": "cel-tr-ali-sport",
+    "category": "celebrities",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Muhammad_Ali",
+    "tr": { "text": "Muhammed Ali hangi sporun efsanevi ismidir?", "choices": ["Güreş", "Halter", "Boks", "Atletizm"] },
+    "en": { "text": "Muhammad Ali is a legendary figure in which sport?", "choices": ["Wrestling", "Weightlifting", "Boxing", "Athletics"] }
+  },
+  {
+    "id": "cel-tr-chaplin-era",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Charlie_Chaplin",
+    "tr": { "text": "Charlie Chaplin hangi tür filmlerle ünlenmiştir?", "choices": ["Bilim kurgu", "Sessiz komedi", "Korku", "Belgesel"] },
+    "en": { "text": "Charlie Chaplin became famous for which kind of films?", "choices": ["Science fiction", "Silent comedy", "Horror", "Documentary"] }
+  },
+  {
+    "id": "cel-tr-da-vinci-field",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Leonardo_da_Vinci",
+    "tr": { "text": "Leonardo da Vinci için en doğru tanım hangisidir?", "choices": ["Sadece ressam", "Ressam, mucit ve bilim insanı", "Sadece mimar", "Sadece heykeltıraş"] },
+    "en": { "text": "Which best describes Leonardo da Vinci?", "choices": ["Only a painter", "Painter, inventor and scientist", "Only an architect", "Only a sculptor"] }
+  },
+  {
+    "id": "cel-tr-newton-discovery",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Isaac_Newton",
+    "tr": { "text": "Isaac Newton hangi konudaki çalışmalarıyla bilinir?", "choices": ["Evrim teorisi", "Yerçekimi ve hareket yasaları", "Görelilik", "Genetik"] },
+    "en": { "text": "Isaac Newton is known for work on which subject?", "choices": ["Theory of evolution", "Gravity and laws of motion", "Relativity", "Genetics"] }
+  },
+  {
+    "id": "cel-tr-darwin-theory",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Charles_Darwin",
+    "tr": { "text": "Charles Darwin hangi teoriyle tanınır?", "choices": ["Görelilik", "Evrim", "Kuantum", "Büyük Patlama"] },
+    "en": { "text": "Charles Darwin is known for which theory?", "choices": ["Relativity", "Evolution", "Quantum theory", "Big Bang"] }
+  },
+  {
+    "id": "cel-tr-tesla-field",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Nikola_Tesla",
+    "tr": { "text": "Nikola Tesla hangi alandaki buluşlarıyla tanınır?", "choices": ["Tıp", "Elektrik", "Kimya", "Astronomi"] },
+    "en": { "text": "Nikola Tesla is known for inventions in which field?", "choices": ["Medicine", "Electricity", "Chemistry", "Astronomy"] }
+  },
+  {
+    "id": "cel-tr-armstrong-first",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Neil_Armstrong",
+    "tr": { "text": "Neil Armstrong hangi başarısıyla tanınır?", "choices": ["Everest'e ilk tırmanan", "Ay'a ayak basan ilk insan", "Atlantik'i ilk geçen pilot", "Uzaya çıkan ilk insan"] },
+    "en": { "text": "What is Neil Armstrong known for?", "choices": ["First to climb Everest", "First person to walk on the Moon", "First pilot to cross the Atlantic", "First human in space"] }
+  },
+  {
+    "id": "cel-tr-gagarin-first",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Yuri_Gagarin",
+    "tr": { "text": "Yuri Gagarin hangi başarısıyla tarihe geçmiştir?", "choices": ["Ay'a inen ilk insan", "Uzaya çıkan ilk insan", "Mars'a giden ilk insan", "Uzayda yürüyen ilk insan"] },
+    "en": { "text": "What historic first is Yuri Gagarin known for?", "choices": ["First to land on the Moon", "First human in space", "First to travel to Mars", "First spacewalk"] }
+  },
+  {
+    "id": "cel-tr-spielberg-role",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Steven_Spielberg",
+    "tr": { "text": "Steven Spielberg sinemada hangi rolüyle tanınır?", "choices": ["Oyuncu", "Yönetmen", "Besteci", "Görüntü yönetmeni"] },
+    "en": { "text": "Steven Spielberg is known for which role in cinema?", "choices": ["Actor", "Director", "Composer", "Cinematographer"] }
+  },
+  {
+    "id": "cel-tr-picasso-movement",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Pablo_Picasso",
+    "tr": { "text": "Pablo Picasso hangi sanat akımının öncülerindendir?", "choices": ["İzlenimcilik", "Kübizm", "Barok", "Rönesans"] },
+    "en": { "text": "Pablo Picasso was a pioneer of which art movement?", "choices": ["Impressionism", "Cubism", "Baroque", "Renaissance"] }
+  },
+  {
+    "id": "cel-tr-frida-country",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Frida_Kahlo",
+    "tr": { "text": "Frida Kahlo hangi ülkenin ünlü ressamıdır?", "choices": ["İspanya", "Meksika", "Arjantin", "Brezilya"] },
+    "en": { "text": "Frida Kahlo is a famous painter from which country?", "choices": ["Spain", "Mexico", "Argentina", "Brazil"] }
+  },
+  {
+    "id": "cel-tr-hawking-field",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Stephen_Hawking",
+    "tr": { "text": "Stephen Hawking hangi alanda çalışmıştır?", "choices": ["Genetik", "Teorik fizik", "Ekonomi", "Psikoloji"] },
+    "en": { "text": "In which field did Stephen Hawking work?", "choices": ["Genetics", "Theoretical physics", "Economics", "Psychology"] }
+  },
+  {
+    "id": "cel-tr-jk-rowling-work",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/J._K._Rowling",
+    "tr": { "text": "J.K. Rowling hangi seriyle ünlenmiştir?", "choices": ["Yüzüklerin Efendisi", "Harry Potter", "Açlık Oyunları", "Narnia"] },
+    "en": { "text": "J.K. Rowling became famous for which series?", "choices": ["The Lord of the Rings", "Harry Potter", "The Hunger Games", "Narnia"] }
+  },
+  {
+    "id": "cel-tr-tolkien-work",
+    "category": "celebrities",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/J._R._R._Tolkien",
+    "tr": { "text": "J.R.R. Tolkien hangi eseriyle tanınır?", "choices": ["Yüzüklerin Efendisi", "Harry Potter", "Dune", "Game of Thrones"] },
+    "en": { "text": "J.R.R. Tolkien is known for which work?", "choices": ["The Lord of the Rings", "Harry Potter", "Dune", "Game of Thrones"] }
+  },
+  {
+    "id": "cel-tr-bolt-sport",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Usain_Bolt",
+    "tr": { "text": "Usain Bolt hangi dalda dünya rekorlarına sahiptir?", "choices": ["Yüzme", "Kısa mesafe koşu", "Uzun atlama", "Halter"] },
+    "en": { "text": "In which discipline does Usain Bolt hold world records?", "choices": ["Swimming", "Sprinting", "Long jump", "Weightlifting"] }
+  },
+  {
+    "id": "cel-tr-phelps-sport",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Michael_Phelps",
+    "tr": { "text": "Michael Phelps hangi sporda olimpiyat rekoru kırmıştır?", "choices": ["Atletizm", "Yüzme", "Jimnastik", "Kürek"] },
+    "en": { "text": "In which sport did Michael Phelps set Olympic records?", "choices": ["Athletics", "Swimming", "Gymnastics", "Rowing"] }
+  },
+  {
+    "id": "cel-tr-zuckerberg-company",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Mark_Zuckerberg",
+    "tr": { "text": "Mark Zuckerberg hangi platformun kurucusudur?", "choices": ["Twitter", "Facebook", "LinkedIn", "Snapchat"] },
+    "en": { "text": "Mark Zuckerberg founded which platform?", "choices": ["Twitter", "Facebook", "LinkedIn", "Snapchat"] }
+  },
+  {
+    "id": "cel-tr-bezos-company",
+    "category": "celebrities",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Jeff_Bezos",
+    "tr": { "text": "Jeff Bezos hangi şirketin kurucusudur?", "choices": ["eBay", "Alibaba", "Amazon", "Walmart"] },
+    "en": { "text": "Jeff Bezos founded which company?", "choices": ["eBay", "Alibaba", "Amazon", "Walmart"] }
+  },
+  {
+    "id": "cel-tr-van-gogh-nationality",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Vincent_van_Gogh",
+    "tr": { "text": "Vincent van Gogh hangi ülkenin ressamıdır?", "choices": ["Belçika", "Hollanda", "Almanya", "Avusturya"] },
+    "en": { "text": "Vincent van Gogh was a painter from which country?", "choices": ["Belgium", "Netherlands", "Germany", "Austria"] }
+  },
+  {
+    "id": "cel-tr-beethoven-condition",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Ludwig_van_Beethoven",
+    "tr": { "text": "Beethoven hayatının sonlarına doğru hangi durumu yaşamıştır?", "choices": ["Görme kaybı", "İşitme kaybı", "Konuşma kaybı", "Hafıza kaybı"] },
+    "en": { "text": "What condition did Beethoven experience later in life?", "choices": ["Loss of sight", "Loss of hearing", "Loss of speech", "Memory loss"] }
+  },
+  {
+    "id": "cel-tr-teresa-work",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Mother_Teresa",
+    "tr": { "text": "Rahibe Teresa hangi şehirdeki hayır çalışmalarıyla tanınır?", "choices": ["Mumbai", "Kalküta", "Delhi", "Dakka"] },
+    "en": { "text": "Mother Teresa is known for charity work in which city?", "choices": ["Mumbai", "Calcutta", "Delhi", "Dhaka"] }
+  },
+  {
+    "id": "cel-tr-turing-field",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Alan_Turing",
+    "tr": { "text": "Alan Turing hangi alanın öncülerindendir?", "choices": ["Tıp", "Bilgisayar bilimi", "Mimarlık", "Ekonomi"] },
+    "en": { "text": "Alan Turing was a pioneer of which field?", "choices": ["Medicine", "Computer science", "Architecture", "Economics"] }
+  },
+  {
+    "id": "cel-tr-columbus-nationality",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Christopher_Columbus",
+    "tr": { "text": "Kristof Kolomb hangi ülkenin desteğiyle keşif seferlerine çıkmıştır?", "choices": ["Portekiz", "İspanya", "İngiltere", "Fransa"] },
+    "en": { "text": "Christopher Columbus sailed with the backing of which country?", "choices": ["Portugal", "Spain", "England", "France"] }
+  },
+  {
+    "id": "cel-tr-cleopatra-country",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Cleopatra",
+    "tr": { "text": "Kleopatra hangi ülkenin son firavunlarındandır?", "choices": ["Yunanistan", "Mısır", "Pers", "Roma"] },
+    "en": { "text": "Cleopatra was one of the last pharaohs of which country?", "choices": ["Greece", "Egypt", "Persia", "Rome"] }
+  },
+  {
+    "id": "cel-tr-napoleon-country",
+    "category": "celebrities",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Napoleon",
+    "tr": { "text": "Napolyon Bonapart hangi ülkenin imparatoru olmuştur?", "choices": ["İtalya", "Fransa", "İspanya", "Avusturya"] },
+    "en": { "text": "Napoleon Bonaparte became emperor of which country?", "choices": ["Italy", "France", "Spain", "Austria"] }
+  }
+]

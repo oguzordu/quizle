@@ -1,0 +1,242 @@
+[
+  {
+    "id": "mus-tr-guitar-strings-electric",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Electric_guitar",
+    "tr": { "text": "Standart bir elektro gitarda kaç tel bulunur?", "choices": ["4", "6", "8", "12"] },
+    "en": { "text": "How many strings does a standard electric guitar have?", "choices": ["4", "6", "8", "12"] }
+  },
+  {
+    "id": "mus-tr-violin-family",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Violin",
+    "tr": { "text": "Keman hangi çalgı ailesine aittir?", "choices": ["Üflemeli", "Yaylı", "Vurmalı", "Klavyeli"] },
+    "en": { "text": "Which instrument family does the violin belong to?", "choices": ["Wind", "String", "Percussion", "Keyboard"] }
+  },
+  {
+    "id": "mus-tr-drum-family",
+    "category": "music",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Drum",
+    "tr": { "text": "Davul hangi çalgı ailesine aittir?", "choices": ["Yaylı", "Üflemeli", "Vurmalı", "Telli"] },
+    "en": { "text": "Which instrument family does the drum belong to?", "choices": ["String", "Wind", "Percussion", "Plucked"] }
+  },
+  {
+    "id": "mus-tr-octave-notes",
+    "category": "music",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Octave",
+    "tr": { "text": "Batı müziğinde bir oktavda kaç temel nota vardır?", "choices": ["5", "6", "7", "8"] },
+    "en": { "text": "How many basic notes are there in an octave in Western music?", "choices": ["5", "6", "7", "8"] }
+  },
+  {
+    "id": "mus-tr-abba-country",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/ABBA",
+    "tr": { "text": "ABBA grubu hangi ülkedendir?", "choices": ["Norveç", "İsveç", "Danimarka", "Finlandiya"] },
+    "en": { "text": "Which country is the band ABBA from?", "choices": ["Norway", "Sweden", "Denmark", "Finland"] }
+  },
+  {
+    "id": "mus-tr-eurovision-type",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Eurovision_Song_Contest",
+    "tr": { "text": "Eurovision nedir?", "choices": ["Bir film festivali", "Bir şarkı yarışması", "Bir dans turnuvası", "Bir sanat bienali"] },
+    "en": { "text": "What is Eurovision?", "choices": ["A film festival", "A song contest", "A dance tournament", "An art biennial"] }
+  },
+  {
+    "id": "mus-tr-rolling-stones-country",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/The_Rolling_Stones",
+    "tr": { "text": "The Rolling Stones hangi ülkenin grubudur?", "choices": ["ABD", "İngiltere", "Avustralya", "Kanada"] },
+    "en": { "text": "The Rolling Stones are a band from which country?", "choices": ["USA", "United Kingdom", "Australia", "Canada"] }
+  },
+  {
+    "id": "mus-tr-jazz-origin",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Jazz",
+    "tr": { "text": "Caz müziği hangi ülkede doğmuştur?", "choices": ["Küba", "ABD", "Brezilya", "Fransa"] },
+    "en": { "text": "In which country did jazz music originate?", "choices": ["Cuba", "USA", "Brazil", "France"] }
+  },
+  {
+    "id": "mus-tr-reggae-origin",
+    "category": "music",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Reggae",
+    "tr": { "text": "Reggae müziği hangi ülkede ortaya çıkmıştır?", "choices": ["Küba", "Brezilya", "Jamaika", "Haiti"] },
+    "en": { "text": "In which country did reggae music originate?", "choices": ["Cuba", "Brazil", "Jamaica", "Haiti"] }
+  },
+  {
+    "id": "mus-tr-bob-marley-genre",
+    "category": "music",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Bob_Marley",
+    "tr": { "text": "Bob Marley hangi müzik türüyle özdeşleşmiştir?", "choices": ["Blues", "Salsa", "Reggae", "Rock"] },
+    "en": { "text": "Which genre is Bob Marley identified with?", "choices": ["Blues", "Salsa", "Reggae", "Rock"] }
+  },
+  {
+    "id": "mus-tr-opera-language",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Opera",
+    "tr": { "text": "Opera sanatı hangi ülkede doğmuştur?", "choices": ["Fransa", "İtalya", "Almanya", "Avusturya"] },
+    "en": { "text": "In which country did opera originate?", "choices": ["France", "Italy", "Germany", "Austria"] }
+  },
+  {
+    "id": "mus-tr-tempo-meaning",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Tempo",
+    "tr": { "text": "Müzikte \"tempo\" neyi ifade eder?", "choices": ["Ses yüksekliği", "Hız", "Ton", "Armoni"] },
+    "en": { "text": "In music, what does \"tempo\" refer to?", "choices": ["Volume", "Speed", "Pitch", "Harmony"] }
+  },
+  {
+    "id": "mus-tr-conductor-role",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Conducting",
+    "tr": { "text": "Orkestra şefinin temel görevi nedir?", "choices": ["Solo çalmak", "Orkestrayı yönetmek", "Bilet satmak", "Beste yapmak"] },
+    "en": { "text": "What is the conductor's main role?", "choices": ["Playing a solo", "Directing the orchestra", "Selling tickets", "Composing"] }
+  },
+  {
+    "id": "mus-tr-a-cappella",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/A_cappella",
+    "tr": { "text": "\"A cappella\" ne demektir?", "choices": ["Çok hızlı çalmak", "Çalgısız, sadece sesle söylemek", "Solo enstrüman", "Doğaçlama"] },
+    "en": { "text": "What does \"a cappella\" mean?", "choices": ["Playing very fast", "Singing without instruments", "A solo instrument", "Improvisation"] }
+  },
+  {
+    "id": "mus-tr-saz-turkey",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Ba%C4%9Flama",
+    "tr": { "text": "Türk halk müziğinin simgesi olan telli çalgı hangisidir?", "choices": ["Ney", "Bağlama", "Kanun", "Darbuka"] },
+    "en": { "text": "Which stringed instrument symbolizes Turkish folk music?", "choices": ["Ney", "Bağlama", "Qanun", "Darbuka"] }
+  },
+  {
+    "id": "mus-tr-ney-type",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Ney",
+    "tr": { "text": "Ney hangi tür bir çalgıdır?", "choices": ["Telli", "Üflemeli", "Vurmalı", "Klavyeli"] },
+    "en": { "text": "What kind of instrument is the ney?", "choices": ["String", "Wind", "Percussion", "Keyboard"] }
+  },
+  {
+    "id": "mus-tr-nirvana-genre",
+    "category": "music",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Nirvana_(band)",
+    "tr": { "text": "Nirvana grubu hangi müzik akımıyla anılır?", "choices": ["Disko", "Punk", "Grunge", "Funk"] },
+    "en": { "text": "Which music movement is the band Nirvana associated with?", "choices": ["Disco", "Punk", "Grunge", "Funk"] }
+  },
+  {
+    "id": "mus-tr-pink-floyd-album",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/The_Dark_Side_of_the_Moon",
+    "tr": { "text": "\"The Dark Side of the Moon\" hangi grubun albümüdür?", "choices": ["Led Zeppelin", "Pink Floyd", "The Who", "Genesis"] },
+    "en": { "text": "\"The Dark Side of the Moon\" is an album by which band?", "choices": ["Led Zeppelin", "Pink Floyd", "The Who", "Genesis"] }
+  },
+  {
+    "id": "mus-tr-hiphop-origin",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Hip_hop_music",
+    "tr": { "text": "Hip hop müziği hangi şehirde doğmuştur?", "choices": ["Los Angeles", "New York", "Chicago", "Detroit"] },
+    "en": { "text": "In which city did hip hop music originate?", "choices": ["Los Angeles", "New York", "Chicago", "Detroit"] }
+  },
+  {
+    "id": "mus-tr-vinyl-format",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Phonograph_record",
+    "tr": { "text": "\"Plak\" hangi tür bir müzik kayıt ortamıdır?", "choices": ["Dijital dosya", "Vinil disk", "Manyetik kaset", "Optik disk"] },
+    "en": { "text": "What kind of music medium is a \"record\"?", "choices": ["Digital file", "Vinyl disc", "Magnetic tape", "Optical disc"] }
+  },
+  {
+    "id": "mus-tr-symphony-parts",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Symphony",
+    "tr": { "text": "Klasik bir senfoni genellikle kaç bölümden oluşur?", "choices": ["2", "4", "6", "8"] },
+    "en": { "text": "A classical symphony typically has how many movements?", "choices": ["2", "4", "6", "8"] }
+  },
+  {
+    "id": "mus-tr-bach-era",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Johann_Sebastian_Bach",
+    "tr": { "text": "Johann Sebastian Bach hangi müzik döneminin bestecisidir?", "choices": ["Romantik", "Barok", "Klasik", "Modern"] },
+    "en": { "text": "Johann Sebastian Bach composed in which musical era?", "choices": ["Romantic", "Baroque", "Classical", "Modern"] }
+  },
+  {
+    "id": "mus-tr-guitar-hero-instrument",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Saxophone",
+    "tr": { "text": "Saksafon hangi çalgı ailesine girer?", "choices": ["Yaylı", "Üflemeli", "Vurmalı", "Telli"] },
+    "en": { "text": "Which family does the saxophone belong to?", "choices": ["String", "Wind", "Percussion", "Plucked"] }
+  },
+  {
+    "id": "mus-tr-dj-role",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Disc_jockey",
+    "tr": { "text": "DJ kısaltması neyi ifade eder?", "choices": ["Dans jürisi", "Disk jokey", "Dijital jenerasyon", "Davul jokeyi"] },
+    "en": { "text": "What does the abbreviation DJ stand for?", "choices": ["Dance judge", "Disc jockey", "Digital generation", "Drum jockey"] }
+  },
+  {
+    "id": "mus-tr-choir-meaning",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Choir",
+    "tr": { "text": "\"Koro\" ne anlama gelir?", "choices": ["Tek kişilik gösteri", "Birlikte şarkı söyleyen topluluk", "Enstrümantal grup", "Dans grubu"] },
+    "en": { "text": "What does \"choir\" mean?", "choices": ["A solo performance", "A group singing together", "An instrumental band", "A dance troupe"] }
+  },
+  {
+    "id": "mus-tr-metronome-purpose",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Metronome",
+    "tr": { "text": "Metronom ne işe yarar?", "choices": ["Sesi yükseltir", "Sabit tempo tutar", "Akort yapar", "Kayıt alır"] },
+    "en": { "text": "What is a metronome used for?", "choices": ["Amplifying sound", "Keeping steady tempo", "Tuning", "Recording"] }
+  },
+  {
+    "id": "mus-tr-beatles-member-count",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/The_Beatles",
+    "tr": { "text": "The Beatles kaç üyeden oluşuyordu?", "choices": ["3", "4", "5", "6"] },
+    "en": { "text": "How many members did The Beatles have?", "choices": ["3", "4", "5", "6"] }
+  },
+  {
+    "id": "mus-tr-tango-country",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Tango_music",
+    "tr": { "text": "Tango müziği hangi ülkeyle özdeşleşmiştir?", "choices": ["İspanya", "Arjantin", "Meksika", "Portekiz"] },
+    "en": { "text": "Tango music is identified with which country?", "choices": ["Spain", "Argentina", "Mexico", "Portugal"] }
+  },
+  {
+    "id": "mus-tr-kpop-country",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/K-pop",
+    "tr": { "text": "K-pop hangi ülkenin popüler müzik türüdür?", "choices": ["Japonya", "Güney Kore", "Çin", "Tayland"] },
+    "en": { "text": "K-pop is the popular music of which country?", "choices": ["Japan", "South Korea", "China", "Thailand"] }
+  },
+  {
+    "id": "mus-tr-acoustic-vs-electric",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Acoustic_guitar",
+    "tr": { "text": "Akustik gitar elektro gitardan hangi yönüyle ayrılır?", "choices": ["Daha çok teli vardır", "Amfi olmadan ses verir", "Sadece stüdyoda çalınır", "Telsizdir"] },
+    "en": { "text": "How does an acoustic guitar differ from an electric one?", "choices": ["It has more strings", "It projects sound without an amplifier", "It is studio-only", "It has no strings"] }
+  }
+]

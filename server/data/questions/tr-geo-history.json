@@ -1,0 +1,418 @@
+[
+  {
+    "id": "geo-tr-largest-country",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Russia",
+    "tr": { "text": "Yüzölçümü en büyük ülke hangisidir?", "choices": ["Kanada", "Rusya", "Çin", "ABD"] },
+    "en": { "text": "Which is the largest country by area?", "choices": ["Canada", "Russia", "China", "USA"] }
+  },
+  {
+    "id": "geo-tr-two-continents-city",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Istanbul",
+    "tr": { "text": "İki kıtaya yayılan ünlü şehir hangisidir?", "choices": ["Kahire", "İstanbul", "Atina", "Moskova"] },
+    "en": { "text": "Which famous city spans two continents?", "choices": ["Cairo", "Istanbul", "Athens", "Moscow"] }
+  },
+  {
+    "id": "geo-tr-turkey-highest",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Mount_Ararat",
+    "tr": { "text": "Türkiye'nin en yüksek dağı hangisidir?", "choices": ["Erciyes", "Ağrı Dağı", "Kaçkar", "Uludağ"] },
+    "en": { "text": "What is the highest mountain in Turkey?", "choices": ["Mount Erciyes", "Mount Ararat", "Kaçkar", "Uludağ"] }
+  },
+  {
+    "id": "geo-tr-turkey-largest-lake",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Lake_Van",
+    "tr": { "text": "Türkiye'nin en büyük gölü hangisidir?", "choices": ["Tuz Gölü", "Van Gölü", "Beyşehir Gölü", "Eğirdir Gölü"] },
+    "en": { "text": "What is the largest lake in Turkey?", "choices": ["Lake Tuz", "Lake Van", "Lake Beyşehir", "Lake Eğirdir"] }
+  },
+  {
+    "id": "geo-tr-sea-around-turkey",
+    "category": "geography",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Black_Sea",
+    "tr": { "text": "Türkiye'nin kuzeyindeki deniz hangisidir?", "choices": ["Ege Denizi", "Akdeniz", "Karadeniz", "Marmara Denizi"] },
+    "en": { "text": "Which sea lies to the north of Turkey?", "choices": ["Aegean Sea", "Mediterranean", "Black Sea", "Sea of Marmara"] }
+  },
+  {
+    "id": "geo-tr-equator-meaning",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Equator",
+    "tr": { "text": "Ekvator neyi ifade eder?", "choices": ["Kutuplardan geçen çizgi", "Dünyayı kuzey ve güney olarak ikiye ayıran çizgi", "Zaman dilimi sınırı", "Deniz seviyesi"] },
+    "en": { "text": "What does the equator represent?", "choices": ["A line through the poles", "The line dividing Earth into north and south", "A time zone boundary", "Sea level"] }
+  },
+  {
+    "id": "geo-tr-coldest-continent",
+    "category": "geography",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Antarctica",
+    "tr": { "text": "Dünyanın en soğuk kıtası hangisidir?", "choices": ["Avrupa", "Asya", "Antarktika", "Kuzey Amerika"] },
+    "en": { "text": "Which is the coldest continent on Earth?", "choices": ["Europe", "Asia", "Antarctica", "North America"] }
+  },
+  {
+    "id": "geo-tr-nile-continent",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Nile",
+    "tr": { "text": "Nil Nehri hangi kıtadadır?", "choices": ["Asya", "Afrika", "Güney Amerika", "Avrupa"] },
+    "en": { "text": "On which continent is the Nile River?", "choices": ["Asia", "Africa", "South America", "Europe"] }
+  },
+  {
+    "id": "geo-tr-most-countries-continent",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Africa",
+    "tr": { "text": "En fazla ülkeye sahip kıta hangisidir?", "choices": ["Asya", "Afrika", "Avrupa", "Güney Amerika"] },
+    "en": { "text": "Which continent has the most countries?", "choices": ["Asia", "Africa", "Europe", "South America"] }
+  },
+  {
+    "id": "geo-tr-venice-feature",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Venice",
+    "tr": { "text": "Venedik hangi özelliğiyle ünlüdür?", "choices": ["Çölleriyle", "Kanallarıyla", "Volkanlarıyla", "Buzullarıyla"] },
+    "en": { "text": "What is Venice famous for?", "choices": ["Its deserts", "Its canals", "Its volcanoes", "Its glaciers"] }
+  },
+  {
+    "id": "geo-tr-machu-picchu-country",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Machu_Picchu",
+    "tr": { "text": "Machu Picchu hangi ülkededir?", "choices": ["Bolivya", "Peru", "Şili", "Ekvador"] },
+    "en": { "text": "In which country is Machu Picchu?", "choices": ["Bolivia", "Peru", "Chile", "Ecuador"] }
+  },
+  {
+    "id": "geo-tr-taj-mahal-country",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Taj_Mahal",
+    "tr": { "text": "Tac Mahal hangi ülkededir?", "choices": ["Pakistan", "Hindistan", "Bangladeş", "İran"] },
+    "en": { "text": "In which country is the Taj Mahal?", "choices": ["Pakistan", "India", "Bangladesh", "Iran"] }
+  },
+  {
+    "id": "geo-tr-niagara-location",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Niagara_Falls",
+    "tr": { "text": "Niagara Şelalesi hangi iki ülkenin sınırındadır?", "choices": ["ABD ve Meksika", "ABD ve Kanada", "Kanada ve Grönland", "Brezilya ve Arjantin"] },
+    "en": { "text": "Niagara Falls lies on the border of which two countries?", "choices": ["USA and Mexico", "USA and Canada", "Canada and Greenland", "Brazil and Argentina"] }
+  },
+  {
+    "id": "geo-tr-alps-continent",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Alps",
+    "tr": { "text": "Alp Dağları hangi kıtadadır?", "choices": ["Asya", "Avrupa", "Güney Amerika", "Afrika"] },
+    "en": { "text": "On which continent are the Alps?", "choices": ["Asia", "Europe", "South America", "Africa"] }
+  },
+  {
+    "id": "geo-tr-himalaya-range",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Himalayas",
+    "tr": { "text": "Himalayalar hangi kıtadadır?", "choices": ["Afrika", "Asya", "Avrupa", "Okyanusya"] },
+    "en": { "text": "On which continent are the Himalayas?", "choices": ["Africa", "Asia", "Europe", "Oceania"] }
+  },
+  {
+    "id": "geo-tr-suez-connects",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Suez_Canal",
+    "tr": { "text": "Süveyş Kanalı hangi iki denizi birbirine bağlar?", "choices": ["Karadeniz ve Akdeniz", "Akdeniz ve Kızıldeniz", "Baltık ve Kuzey Denizi", "Hazar ve Karadeniz"] },
+    "en": { "text": "Which two seas does the Suez Canal connect?", "choices": ["Black Sea and Mediterranean", "Mediterranean and Red Sea", "Baltic and North Sea", "Caspian and Black Sea"] }
+  },
+  {
+    "id": "geo-tr-iceland-capital",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Reykjav%C3%ADk",
+    "tr": { "text": "İzlanda'nın başkenti neresidir?", "choices": ["Oslo", "Reykjavík", "Helsinki", "Kopenhag"] },
+    "en": { "text": "What is the capital of Iceland?", "choices": ["Oslo", "Reykjavík", "Helsinki", "Copenhagen"] }
+  },
+  {
+    "id": "geo-tr-brazil-language",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Brazil",
+    "tr": { "text": "Brezilya'nın resmî dili nedir?", "choices": ["İspanyolca", "Portekizce", "Fransızca", "İngilizce"] },
+    "en": { "text": "What is the official language of Brazil?", "choices": ["Spanish", "Portuguese", "French", "English"] }
+  },
+  {
+    "id": "geo-tr-sahara-continent",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Sahara",
+    "tr": { "text": "Sahra Çölü hangi kıtadadır?", "choices": ["Asya", "Afrika", "Avustralya", "Güney Amerika"] },
+    "en": { "text": "On which continent is the Sahara Desert?", "choices": ["Asia", "Africa", "Australia", "South America"] }
+  },
+  {
+    "id": "geo-tr-timezones-count",
+    "category": "geography",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Time_zone",
+    "tr": { "text": "Dünya kabaca kaç saat dilimine ayrılmıştır?", "choices": ["12", "18", "24", "36"] },
+    "en": { "text": "Roughly how many time zones is the world divided into?", "choices": ["12", "18", "24", "36"] }
+  },
+  {
+    "id": "geo-tr-atacama-feature",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Atacama_Desert",
+    "tr": { "text": "Atacama Çölü hangi özelliğiyle bilinir?", "choices": ["En büyük çöl", "Dünyanın en kurak çöllerinden biri", "En soğuk çöl", "En kalabalık çöl"] },
+    "en": { "text": "What is the Atacama Desert known for?", "choices": ["Being the largest desert", "Being one of the driest places on Earth", "Being the coldest desert", "Being the most populated desert"] }
+  },
+  {
+    "id": "geo-tr-dead-sea-feature",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Dead_Sea",
+    "tr": { "text": "Ölü Deniz hangi özelliğiyle ünlüdür?", "choices": ["En derin göl olmasıyla", "Çok tuzlu olup insanı yüzeyde tutmasıyla", "Donmuş olmasıyla", "Tatlı su içermesiyle"] },
+    "en": { "text": "What is the Dead Sea famous for?", "choices": ["Being the deepest lake", "Being so salty that people float", "Being frozen", "Containing fresh water"] }
+  },
+  {
+    "id": "geo-tr-greenwich-line",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Prime_meridian",
+    "tr": { "text": "Başlangıç meridyeni (0 derece) hangi şehirden geçer?", "choices": ["Paris", "Londra (Greenwich)", "Roma", "New York"] },
+    "en": { "text": "The prime meridian (0 degrees) passes through which city?", "choices": ["Paris", "London (Greenwich)", "Rome", "New York"] }
+  },
+  {
+    "id": "geo-tr-monsoon-region",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Monsoon",
+    "tr": { "text": "Muson yağmurları en çok hangi bölgede görülür?", "choices": ["Kuzey Avrupa", "Güney Asya", "Orta Afrika", "Patagonya"] },
+    "en": { "text": "In which region are monsoon rains most common?", "choices": ["Northern Europe", "South Asia", "Central Africa", "Patagonia"] }
+  },
+  {
+    "id": "geo-tr-fjord-country",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Fjord",
+    "tr": { "text": "Fiyortlarıyla ünlü ülke hangisidir?", "choices": ["İsveç", "Norveç", "Finlandiya", "İzlanda"] },
+    "en": { "text": "Which country is famous for its fjords?", "choices": ["Sweden", "Norway", "Finland", "Iceland"] }
+  },
+  {
+    "id": "geo-tr-great-barrier-reef",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Great_Barrier_Reef",
+    "tr": { "text": "Büyük Set Resifi hangi ülkenin kıyısındadır?", "choices": ["Yeni Zelanda", "Avustralya", "Endonezya", "Filipinler"] },
+    "en": { "text": "The Great Barrier Reef lies off the coast of which country?", "choices": ["New Zealand", "Australia", "Indonesia", "Philippines"] }
+  },
+  {
+    "id": "geo-tr-landlocked-meaning",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Landlocked_country",
+    "tr": { "text": "\"Denize kıyısı olmayan ülke\" ne anlama gelir?", "choices": ["Nehri olmayan ülke", "Hiçbir denize kıyısı bulunmayan ülke", "Adalardan oluşan ülke", "Dağlık ülke"] },
+    "en": { "text": "What does \"landlocked country\" mean?", "choices": ["A country with no rivers", "A country with no sea coast", "A country made of islands", "A mountainous country"] }
+  },
+  {
+    "id": "his-tr-ataturk-role",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+    "tr": { "text": "Mustafa Kemal Atatürk Türkiye Cumhuriyeti'nin kaçıncı cumhurbaşkanıdır?", "choices": ["İkinci", "Birinci", "Üçüncü", "Dördüncü"] },
+    "en": { "text": "Mustafa Kemal Atatürk was which president of the Republic of Turkey?", "choices": ["Second", "First", "Third", "Fourth"] }
+  },
+  {
+    "id": "his-tr-ottoman-founder",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Osman_I",
+    "tr": { "text": "Osmanlı Devleti'nin kurucusu kimdir?", "choices": ["Orhan Gazi", "Osman Bey", "Fatih Sultan Mehmet", "Yavuz Sultan Selim"] },
+    "en": { "text": "Who founded the Ottoman State?", "choices": ["Orhan Gazi", "Osman I", "Mehmed the Conqueror", "Selim I"] }
+  },
+  {
+    "id": "his-tr-printing-press",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Johannes_Gutenberg",
+    "tr": { "text": "Matbaayı Avrupa'da yaygınlaştıran kişi kimdir?", "choices": ["Leonardo da Vinci", "Johannes Gutenberg", "Galileo Galilei", "Isaac Newton"] },
+    "en": { "text": "Who popularized the printing press in Europe?", "choices": ["Leonardo da Vinci", "Johannes Gutenberg", "Galileo Galilei", "Isaac Newton"] }
+  },
+  {
+    "id": "his-tr-renaissance-country",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Renaissance",
+    "tr": { "text": "Rönesans hangi ülkede başlamıştır?", "choices": ["Fransa", "İtalya", "İngiltere", "Almanya"] },
+    "en": { "text": "In which country did the Renaissance begin?", "choices": ["France", "Italy", "England", "Germany"] }
+  },
+  {
+    "id": "his-tr-cold-war-sides",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Cold_War",
+    "tr": { "text": "Soğuk Savaş hangi iki güç arasında yaşanmıştır?", "choices": ["İngiltere ve Fransa", "ABD ve Sovyetler Birliği", "Almanya ve Japonya", "Çin ve Hindistan"] },
+    "en": { "text": "The Cold War was between which two powers?", "choices": ["Britain and France", "USA and the Soviet Union", "Germany and Japan", "China and India"] }
+  },
+  {
+    "id": "his-tr-roman-empire-capital",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Ancient_Rome",
+    "tr": { "text": "Roma İmparatorluğu'nun ilk başkenti neresidir?", "choices": ["Atina", "Roma", "Kartaca", "İskenderiye"] },
+    "en": { "text": "What was the original capital of the Roman Empire?", "choices": ["Athens", "Rome", "Carthage", "Alexandria"] }
+  },
+  {
+    "id": "his-tr-industrial-revolution",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Industrial_Revolution",
+    "tr": { "text": "Sanayi Devrimi ilk olarak hangi ülkede başlamıştır?", "choices": ["Fransa", "İngiltere", "Almanya", "ABD"] },
+    "en": { "text": "In which country did the Industrial Revolution begin?", "choices": ["France", "Britain", "Germany", "USA"] }
+  },
+  {
+    "id": "his-tr-hiroshima-year",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Atomic_bombings_of_Hiroshima_and_Nagasaki",
+    "tr": { "text": "Hiroşima'ya atom bombası hangi yıl atılmıştır?", "choices": ["1941", "1945", "1948", "1950"] },
+    "en": { "text": "In which year was the atomic bomb dropped on Hiroshima?", "choices": ["1941", "1945", "1948", "1950"] }
+  },
+  {
+    "id": "his-tr-ussr-dissolution",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Dissolution_of_the_Soviet_Union",
+    "tr": { "text": "Sovyetler Birliği hangi yıl dağılmıştır?", "choices": ["1989", "1991", "1993", "1995"] },
+    "en": { "text": "In which year was the Soviet Union dissolved?", "choices": ["1989", "1991", "1993", "1995"] }
+  },
+  {
+    "id": "his-tr-pyramids-purpose",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Egyptian_pyramids",
+    "tr": { "text": "Mısır piramitleri esasen ne amaçla yapılmıştır?", "choices": ["Tapınak olarak", "Mezar olarak", "Depo olarak", "Kale olarak"] },
+    "en": { "text": "What were the Egyptian pyramids primarily built as?", "choices": ["Temples", "Tombs", "Storehouses", "Fortresses"] }
+  },
+  {
+    "id": "his-tr-troy-location",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Troy",
+    "tr": { "text": "Antik Troya şehri bugün hangi ülkenin sınırları içindedir?", "choices": ["Yunanistan", "Türkiye", "İtalya", "Bulgaristan"] },
+    "en": { "text": "The ancient city of Troy lies within which modern country?", "choices": ["Greece", "Turkey", "Italy", "Bulgaria"] }
+  },
+  {
+    "id": "his-tr-ephesus-country",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Ephesus",
+    "tr": { "text": "Antik Efes kenti bugün hangi ülkededir?", "choices": ["Yunanistan", "Türkiye", "İtalya", "Mısır"] },
+    "en": { "text": "The ancient city of Ephesus is in which modern country?", "choices": ["Greece", "Turkey", "Italy", "Egypt"] }
+  },
+  {
+    "id": "his-tr-hagia-sophia-city",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Hagia_Sophia",
+    "tr": { "text": "Ayasofya hangi şehirdedir?", "choices": ["İzmir", "İstanbul", "Ankara", "Bursa"] },
+    "en": { "text": "In which city is Hagia Sophia?", "choices": ["İzmir", "Istanbul", "Ankara", "Bursa"] }
+  },
+  {
+    "id": "his-tr-mongol-leader",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Genghis_Khan",
+    "tr": { "text": "Moğol İmparatorluğu'nun kurucusu kimdir?", "choices": ["Kubilay Han", "Cengiz Han", "Timur", "Atilla"] },
+    "en": { "text": "Who founded the Mongol Empire?", "choices": ["Kublai Khan", "Genghis Khan", "Timur", "Attila"] }
+  },
+  {
+    "id": "his-tr-american-independence",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence",
+    "tr": { "text": "ABD Bağımsızlık Bildirgesi hangi yıl ilan edilmiştir?", "choices": ["1765", "1776", "1789", "1800"] },
+    "en": { "text": "In which year was the US Declaration of Independence adopted?", "choices": ["1765", "1776", "1789", "1800"] }
+  },
+  {
+    "id": "his-tr-berlin-wall-built",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Berlin_Wall",
+    "tr": { "text": "Berlin Duvarı hangi iki bölgeyi ayırıyordu?", "choices": ["Kuzey ve Güney Almanya", "Doğu ve Batı Berlin", "Almanya ve Polonya", "Avusturya ve Almanya"] },
+    "en": { "text": "What did the Berlin Wall separate?", "choices": ["North and South Germany", "East and West Berlin", "Germany and Poland", "Austria and Germany"] }
+  },
+  {
+    "id": "his-tr-black-death",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Black_Death",
+    "tr": { "text": "\"Kara Ölüm\" olarak bilinen salgın hangi yüzyılda Avrupa'yı vurmuştur?", "choices": ["12. yüzyıl", "14. yüzyıl", "16. yüzyıl", "18. yüzyıl"] },
+    "en": { "text": "In which century did the Black Death strike Europe?", "choices": ["12th century", "14th century", "16th century", "18th century"] }
+  },
+  {
+    "id": "his-tr-hammurabi-code",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Code_of_Hammurabi",
+    "tr": { "text": "Hammurabi Kanunları hangi uygarlığa aittir?", "choices": ["Mısır", "Babil", "Hitit", "Pers"] },
+    "en": { "text": "The Code of Hammurabi belongs to which civilization?", "choices": ["Egypt", "Babylon", "Hittite", "Persia"] }
+  },
+  {
+    "id": "his-tr-first-olympics-ancient",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Ancient_Olympic_Games",
+    "tr": { "text": "Antik Olimpiyat Oyunları hangi uygarlıkta düzenlenirdi?", "choices": ["Roma", "Yunan", "Mısır", "Pers"] },
+    "en": { "text": "The ancient Olympic Games were held in which civilization?", "choices": ["Roman", "Greek", "Egyptian", "Persian"] }
+  },
+  {
+    "id": "his-tr-magellan-feat",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Ferdinand_Magellan",
+    "tr": { "text": "Macellan hangi başarısıyla tanınır?", "choices": ["Amerika'yı keşfetmek", "Dünyayı dolaşan ilk seferi başlatmak", "Kuzey Kutbu'na ulaşmak", "Everest'e tırmanmak"] },
+    "en": { "text": "What is Magellan known for?", "choices": ["Discovering America", "Launching the first circumnavigation of the globe", "Reaching the North Pole", "Climbing Everest"] }
+  },
+  {
+    "id": "his-tr-tulip-era",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Tulip_period",
+    "tr": { "text": "Osmanlı tarihindeki \"Lale Devri\" hangi yüzyılda yaşanmıştır?", "choices": ["17. yüzyıl", "18. yüzyıl", "19. yüzyıl", "16. yüzyıl"] },
+    "en": { "text": "In which century did the Ottoman \"Tulip Period\" take place?", "choices": ["17th century", "18th century", "19th century", "16th century"] }
+  },
+  {
+    "id": "his-tr-canakkale-year",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Gallipoli_campaign",
+    "tr": { "text": "Çanakkale Savaşı hangi savaş sırasında yaşanmıştır?", "choices": ["Balkan Savaşları", "Birinci Dünya Savaşı", "İkinci Dünya Savaşı", "Kurtuluş Savaşı"] },
+    "en": { "text": "The Gallipoli campaign took place during which war?", "choices": ["Balkan Wars", "World War I", "World War II", "Turkish War of Independence"] }
+  },
+  {
+    "id": "his-tr-french-revolution-slogan",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Libert%C3%A9,_%C3%A9galit%C3%A9,_fraternit%C3%A9",
+    "tr": { "text": "Fransız Devrimi'nin ünlü sloganı nedir?", "choices": ["Ekmek, barış, toprak", "Özgürlük, eşitlik, kardeşlik", "Birlik ve ilerleme", "Kan ve demir"] },
+    "en": { "text": "What was the famous slogan of the French Revolution?", "choices": ["Bread, peace, land", "Liberty, equality, fraternity", "Union and progress", "Blood and iron"] }
+  },
+  {
+    "id": "his-tr-wright-brothers",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Wright_brothers",
+    "tr": { "text": "Wright Kardeşler hangi buluşla tanınır?", "choices": ["Otomobil", "Motorlu uçak", "Telefon", "Ampul"] },
+    "en": { "text": "What are the Wright brothers known for inventing?", "choices": ["The automobile", "The powered airplane", "The telephone", "The light bulb"] }
+  },
+  {
+    "id": "his-tr-cuneiform-people",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Cuneiform",
+    "tr": { "text": "Çivi yazısını geliştiren uygarlık hangisidir?", "choices": ["Mısırlılar", "Sümerler", "Fenikeliler", "Hititler"] },
+    "en": { "text": "Which civilization developed cuneiform writing?", "choices": ["Egyptians", "Sumerians", "Phoenicians", "Hittites"] }
+  }
+]

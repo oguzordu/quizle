@@ -16,17 +16,18 @@ import (
 )
 
 func main() {
-	pool, err := loadQuestionPool("data/questions")
+	pools, err := loadQuestionPools("data/questions")
 	if err != nil {
 		log.Fatalf("soru paketi yüklenemedi: %v", err)
 	}
 
 	h := hub.NewHub()
 	srv := hub.NewServer(h)
-	srv.SetQuestionPool(pool, 10, 4*time.Second)
+	srv.SetQuestionPools(pools, 10, 4*time.Second)
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("/rooms", srv.CreateRoomHandler)
+	mux.HandleFunc("/categories", srv.CategoriesHandler)
 	mux.HandleFunc("POST /rooms/{code}/start", srv.StartRoomHandler)
 	mux.HandleFunc("POST /rooms/{code}/rematch", srv.RematchRoomHandler)
 	mux.HandleFunc("/ws", srv.ServeWS)
@@ -37,7 +38,7 @@ func main() {
 		port = "8080"
 	}
 	addr := ":" + port
-	log.Printf("Quizle sunucusu %s portunda çalışıyor (%d soru havuzda)", addr, len(pool))
+	log.Printf("Quizle sunucusu %s portunda çalışıyor (TR: %d soru, EN: %d soru)", addr, len(pools["tr"]), len(pools["en"]))
 	log.Fatal(http.ListenAndServe(addr, withCORS(mux)))
 }
 
@@ -58,60 +59,69 @@ func withCORS(next http.Handler) http.Handler {
 	})
 }
 
-// loadQuestionPool reads every *.json pack in dir into one combined pool.
-// CreateRoomHandler draws a random sample from this pool for each new room.
-func loadQuestionPool(dir string) ([]game.Question, error) {
+// loadQuestionPools reads every *.json pack in dir into one pool per
+// language. A question joins a language's pool only if it has been written
+// in that language, so English-only imports (OpenTDB) never surface in a
+// Turkish room and vice versa.
+func loadQuestionPools(dir string) (map[string][]game.Question, error) {
 	entries, err := os.ReadDir(dir)
 	if err != nil {
 		return nil, err
 	}
 
-	var pool []game.Question
+	pools := map[string][]game.Question{"tr": {}, "en": {}}
 	for _, entry := range entries {
 		if entry.IsDir() || filepath.Ext(entry.Name()) != ".json" {
 			continue
 		}
-		qs, err := loadQuestionPack(filepath.Join(dir, entry.Name()))
-		if err != nil {
+		if err := loadQuestionPack(filepath.Join(dir, entry.Name()), pools); err != nil {
 			return nil, err
 		}
-		pool = append(pool, qs...)
 	}
-	return pool, nil
+	return pools, nil
 }
 
-func loadQuestionPack(path string) ([]game.Question, error) {
+// localizedPack mirrors the on-disk question format. Only the fields the
+// game engine needs are decoded.
+type localizedPack struct {
+	Text    string   `json:"text"`
+	Choices []string `json:"choices"`
+}
+
+func loadQuestionPack(path string, pools map[string][]game.Question) error {
 	b, err := os.ReadFile(path)
 	if err != nil {
-		return nil, err
+		return err
 	}
 	var raw []struct {
-		ID       string `json:"id"`
-		Category string `json:"category"`
-		Correct  int    `json:"correct"`
-		Image    string `json:"image"`
-		TR       struct {
-			Text    string   `json:"text"`
-			Choices []string `json:"choices"`
-		} `json:"tr"`
+		ID       string        `json:"id"`
+		Category string        `json:"category"`
+		Correct  int           `json:"correct"`
+		Image    string        `json:"image"`
+		TR       localizedPack `json:"tr"`
+		EN       localizedPack `json:"en"`
 	}
 	if err := json.Unmarshal(b, &raw); err != nil {
-		return nil, err
+		return err
 	}
 
-	questions := make([]game.Question, 0, len(raw))
 	for _, q := range raw {
-		questions = append(questions, game.Question{
-			ID:       q.ID,
-			Category: q.Category,
-			Text:     q.TR.Text,
-			Image:    q.Image,
-			Choices:  q.TR.Choices,
-			Correct:  q.Correct,
-			Duration: 15 * time.Second,
-		})
+		for lang, l := range map[string]localizedPack{"tr": q.TR, "en": q.EN} {
+			if l.Text == "" || len(l.Choices) == 0 {
+				continue // not written in this language
+			}
+			pools[lang] = append(pools[lang], game.Question{
+				ID:       q.ID,
+				Category: q.Category,
+				Text:     l.Text,
+				Image:    q.Image,
+				Choices:  l.Choices,
+				Correct:  q.Correct,
+				Duration: 15 * time.Second,
+			})
+		}
 	}
-	return questions, nil
+	return nil
 }
 
 func healthCheck(w http.ResponseWriter, r *http.Request) {

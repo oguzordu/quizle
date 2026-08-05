@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { config } from "@/lib/config";
 import { randomAvatar, randomNickname } from "@/lib/quips";
 import { AvatarPicker } from "@/components/AvatarPicker";
+import { CategoryPicker } from "@/components/CategoryPicker";
+import { MIXED } from "@/lib/categories";
 import { useLocale } from "@/lib/i18n";
 
 const NAME_KEY = "quizle:profile:name";
@@ -25,6 +27,7 @@ export default function Home() {
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
   const [joinCode, setJoinCode] = useState("");
+  const [category, setCategory] = useState(MIXED);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -59,7 +62,12 @@ export default function Home() {
     setBusy(true);
     setError(null);
     try {
-      const res = await fetch(`${config.apiBase}/rooms`, { method: "POST" });
+      // "mixed" is the client's name for "no category filter" — the server
+      // expects the parameter to simply be absent.
+      const params = new URLSearchParams({ lang: locale });
+      if (category !== MIXED) params.set("category", category);
+
+      const res = await fetch(`${config.apiBase}/rooms?${params}`, { method: "POST" });
       if (!res.ok) throw new Error("create failed");
       const data = (await res.json()) as { code: string };
       router.push(`/room/${data.code}?${profileQuery()}`);
@@ -135,6 +143,10 @@ export default function Home() {
           className="rounded-3xl bg-white/95 p-6 shadow-2xl backdrop-blur sm:p-7"
         >
           <AvatarPicker value={avatar} onChange={saveAvatar} />
+
+          <div className="mt-5">
+            <CategoryPicker value={category} onChange={setCategory} />
+          </div>
 
           <div className="mt-5 flex gap-2">
             <input

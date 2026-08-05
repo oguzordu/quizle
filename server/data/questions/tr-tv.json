@@ -1,0 +1,322 @@
+[
+  {
+    "id": "tv-tr-got-house-stark",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/House_Stark",
+    "tr": { "text": "Game of Thrones'ta Stark Hanesi'nin sözü nedir?", "choices": ["Ateş ve Kan", "Kış Geliyor", "Duymalıyız Bizi", "Aile, Görev, Onur"] },
+    "en": { "text": "In Game of Thrones, what is House Stark's motto?", "choices": ["Fire and Blood", "Winter Is Coming", "Hear Me Roar", "Family, Duty, Honor"] }
+  },
+  {
+    "id": "tv-tr-breaking-bad-profession",
+    "category": "tv",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Walter_White_(Breaking_Bad)",
+    "tr": { "text": "Breaking Bad'de Walter White'ın ilk mesleği nedir?", "choices": ["Doktor", "Avukat", "Kimya öğretmeni", "Polis"] },
+    "en": { "text": "In Breaking Bad, what is Walter White's original profession?", "choices": ["Doctor", "Lawyer", "Chemistry teacher", "Police officer"] }
+  },
+  {
+    "id": "tv-tr-friends-coffee",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Friends",
+    "tr": { "text": "Friends dizisinde arkadaşların sürekli takıldığı kafenin adı nedir?", "choices": ["Central Park", "Central Perk", "Coffee Bean", "The Grind"] },
+    "en": { "text": "In Friends, what is the name of the coffee shop the group hangs out at?", "choices": ["Central Park", "Central Perk", "Coffee Bean", "The Grind"] }
+  },
+  {
+    "id": "tv-tr-stranger-things-town",
+    "category": "tv",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Stranger_Things",
+    "tr": { "text": "Stranger Things hangi kurgusal kasabada geçer?", "choices": ["Derry", "Twin Peaks", "Hawkins", "Riverdale"] },
+    "en": { "text": "In which fictional town is Stranger Things set?", "choices": ["Derry", "Twin Peaks", "Hawkins", "Riverdale"] }
+  },
+  {
+    "id": "tv-tr-simpsons-town",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/The_Simpsons",
+    "tr": { "text": "Simpsonlar ailesi hangi kasabada yaşar?", "choices": ["Shelbyville", "Springfield", "Quahog", "South Park"] },
+    "en": { "text": "In which town does the Simpson family live?", "choices": ["Shelbyville", "Springfield", "Quahog", "South Park"] }
+  },
+  {
+    "id": "tv-tr-sherlock-address",
+    "category": "tv",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/221B_Baker_Street",
+    "tr": { "text": "Sherlock Holmes'un ünlü adresi nedir?", "choices": ["221B Baker Sokağı", "10 Downing Sokağı", "4 Privet Drive", "742 Evergreen Terrace"] },
+    "en": { "text": "What is Sherlock Holmes's famous address?", "choices": ["221B Baker Street", "10 Downing Street", "4 Privet Drive", "742 Evergreen Terrace"] }
+  },
+  {
+    "id": "tv-tr-money-heist-country",
+    "category": "tv",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Money_Heist",
+    "tr": { "text": "\"La Casa de Papel\" (Money Heist) hangi ülkenin dizisidir?", "choices": ["İtalya", "Meksika", "İspanya", "Arjantin"] },
+    "en": { "text": "\"Money Heist\" (La Casa de Papel) is a series from which country?", "choices": ["Italy", "Mexico", "Spain", "Argentina"] }
+  },
+  {
+    "id": "tv-tr-squid-game-country",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Squid_Game",
+    "tr": { "text": "Squid Game hangi ülkenin yapımıdır?", "choices": ["Japonya", "Güney Kore", "Çin", "Tayland"] },
+    "en": { "text": "Squid Game is a production from which country?", "choices": ["Japan", "South Korea", "China", "Thailand"] }
+  },
+  {
+    "id": "tv-tr-the-office-paper",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/The_Office_(American_TV_series)",
+    "tr": { "text": "The Office (ABD) dizisi hangi sektörde geçer?", "choices": ["Sigortacılık", "Kâğıt satışı", "Reklamcılık", "Bankacılık"] },
+    "en": { "text": "The Office (US) is set in which industry?", "choices": ["Insurance", "Paper sales", "Advertising", "Banking"] }
+  },
+  {
+    "id": "tv-tr-doctor-who-vehicle",
+    "category": "tv",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/TARDIS",
+    "tr": { "text": "Doctor Who'da Doktor'un zaman makinesinin adı nedir?", "choices": ["Enterprise", "Millennium Falcon", "TARDIS", "Serenity"] },
+    "en": { "text": "In Doctor Who, what is the Doctor's time machine called?", "choices": ["Enterprise", "Millennium Falcon", "TARDIS", "Serenity"] }
+  },
+  {
+    "id": "tv-tr-star-trek-captain",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/James_T._Kirk",
+    "tr": { "text": "Orijinal Star Trek dizisinde Atılgan'ın kaptanı kimdir?", "choices": ["Jean-Luc Picard", "James T. Kirk", "Benjamin Sisko", "Kathryn Janeway"] },
+    "en": { "text": "In the original Star Trek series, who captains the Enterprise?", "choices": ["Jean-Luc Picard", "James T. Kirk", "Benjamin Sisko", "Kathryn Janeway"] }
+  },
+  {
+    "id": "tv-tr-westworld-theme",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Westworld_(TV_series)",
+    "tr": { "text": "Westworld dizisi ağırlıklı olarak neyi konu alır?", "choices": ["Uzay yolculuğu", "Yapay zekâ ve androidler", "Zaman yolculuğu", "Zombiler"] },
+    "en": { "text": "What is the TV series Westworld mainly about?", "choices": ["Space travel", "Artificial intelligence and androids", "Time travel", "Zombies"] }
+  },
+  {
+    "id": "tv-tr-walking-dead-genre",
+    "category": "tv",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/The_Walking_Dead_(TV_series)",
+    "tr": { "text": "The Walking Dead dizisinde hayatta kalanlar neye karşı mücadele eder?", "choices": ["Vampirler", "Uzaylılar", "Zombiler", "Robotlar"] },
+    "en": { "text": "In The Walking Dead, what do the survivors fight against?", "choices": ["Vampires", "Aliens", "Zombies", "Robots"] }
+  },
+  {
+    "id": "tv-tr-chernobyl-event",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Chernobyl_(miniseries)",
+    "tr": { "text": "Chernobyl mini dizisi hangi olayı anlatır?", "choices": ["Bir deprem", "Bir nükleer santral kazası", "Bir salgın", "Bir uçak kazası"] },
+    "en": { "text": "Which event does the miniseries Chernobyl depict?", "choices": ["An earthquake", "A nuclear plant disaster", "An epidemic", "A plane crash"] }
+  },
+  {
+    "id": "tv-tr-black-mirror-theme",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Black_Mirror",
+    "tr": { "text": "Black Mirror dizisi ağırlıklı olarak neyi eleştirir?", "choices": ["Spor endüstrisini", "Teknolojinin karanlık yüzünü", "Moda dünyasını", "Eğitim sistemini"] },
+    "en": { "text": "What does Black Mirror mainly critique?", "choices": ["The sports industry", "The dark side of technology", "The fashion world", "The education system"] }
+  },
+  {
+    "id": "tv-tr-peaky-blinders-city",
+    "category": "tv",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Peaky_Blinders_(TV_series)",
+    "tr": { "text": "Peaky Blinders dizisi hangi İngiliz şehrinde geçer?", "choices": ["Londra", "Manchester", "Birmingham", "Liverpool"] },
+    "en": { "text": "In which English city is Peaky Blinders set?", "choices": ["London", "Manchester", "Birmingham", "Liverpool"] }
+  },
+  {
+    "id": "tv-tr-narcos-subject",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Narcos",
+    "tr": { "text": "Narcos dizisinin ilk sezonları kimin hikâyesini anlatır?", "choices": ["Al Capone", "Pablo Escobar", "John Gotti", "El Chapo"] },
+    "en": { "text": "The first seasons of Narcos tell whose story?", "choices": ["Al Capone", "Pablo Escobar", "John Gotti", "El Chapo"] }
+  },
+  {
+    "id": "tv-tr-house-md-specialty",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/House_(TV_series)",
+    "tr": { "text": "House dizisinin ana karakteri hangi meslektendir?", "choices": ["Avukat", "Doktor", "Dedektif", "Mühendis"] },
+    "en": { "text": "What is the profession of the main character in House?", "choices": ["Lawyer", "Doctor", "Detective", "Engineer"] }
+  },
+  {
+    "id": "tv-tr-lost-setting",
+    "category": "tv",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Lost_(TV_series)",
+    "tr": { "text": "Lost dizisi ağırlıklı olarak nerede geçer?", "choices": ["Bir uzay istasyonunda", "Bir denizaltında", "Issız bir adada", "Bir çölde"] },
+    "en": { "text": "Where is the TV series Lost mainly set?", "choices": ["A space station", "A submarine", "A remote island", "A desert"] }
+  },
+  {
+    "id": "tv-tr-crown-subject",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/The_Crown_(TV_series)",
+    "tr": { "text": "The Crown dizisi kimin saltanatını konu alır?", "choices": ["Kraliçe Victoria", "II. Elizabeth", "I. Elizabeth", "Kral George V"] },
+    "en": { "text": "Whose reign does The Crown depict?", "choices": ["Queen Victoria", "Elizabeth II", "Elizabeth I", "King George V"] }
+  },
+  {
+    "id": "tv-tr-mr-robot-field",
+    "category": "tv",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Mr._Robot",
+    "tr": { "text": "Mr. Robot dizisinin ana karakteri hangi alanda çalışır?", "choices": ["Tıp", "Hukuk", "Siber güvenlik", "Gazetecilik"] },
+    "en": { "text": "In which field does the main character of Mr. Robot work?", "choices": ["Medicine", "Law", "Cybersecurity", "Journalism"] }
+  },
+  {
+    "id": "tv-tr-dark-country",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Dark_(TV_series)",
+    "tr": { "text": "Zaman yolculuğunu konu alan \"Dark\" dizisi hangi ülkenin yapımıdır?", "choices": ["Hollanda", "Almanya", "Avusturya", "Danimarka"] },
+    "en": { "text": "The time-travel series \"Dark\" is a production from which country?", "choices": ["Netherlands", "Germany", "Austria", "Denmark"] }
+  },
+  {
+    "id": "tv-tr-sopranos-topic",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/The_Sopranos",
+    "tr": { "text": "The Sopranos dizisi hangi konuyu işler?", "choices": ["Opera dünyası", "Mafya ailesi", "Hastane hayatı", "Uzay keşfi"] },
+    "en": { "text": "What is The Sopranos about?", "choices": ["The opera world", "A mafia family", "Hospital life", "Space exploration"] }
+  },
+  {
+    "id": "tv-tr-how-i-met-narrator",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/How_I_Met_Your_Mother",
+    "tr": { "text": "How I Met Your Mother dizisinde hikâyeyi çocuklarına anlatan karakter kimdir?", "choices": ["Barney", "Ted", "Marshall", "Lily"] },
+    "en": { "text": "In How I Met Your Mother, who narrates the story to his children?", "choices": ["Barney", "Ted", "Marshall", "Lily"] }
+  },
+  {
+    "id": "tv-tr-big-bang-field",
+    "category": "tv",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/The_Big_Bang_Theory",
+    "tr": { "text": "The Big Bang Theory dizisindeki ana karakterlerin çoğu hangi alanda çalışır?", "choices": ["Hukuk", "Tıp", "Bilim", "Finans"] },
+    "en": { "text": "Most main characters in The Big Bang Theory work in which field?", "choices": ["Law", "Medicine", "Science", "Finance"] }
+  },
+  {
+    "id": "tv-tr-emmy-award",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Emmy_Awards",
+    "tr": { "text": "Televizyon dünyasının en prestijli ödülü hangisidir?", "choices": ["Oscar", "Emmy", "Grammy", "Tony"] },
+    "en": { "text": "Which is the most prestigious award in television?", "choices": ["Oscar", "Emmy", "Grammy", "Tony"] }
+  },
+  {
+    "id": "tv-tr-netflix-type",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Netflix",
+    "tr": { "text": "Netflix ilk olarak hangi hizmetle başlamıştır?", "choices": ["Canlı TV yayını", "Posta yoluyla DVD kiralama", "Müzik yayını", "Video oyunu satışı"] },
+    "en": { "text": "What service did Netflix originally start with?", "choices": ["Live TV broadcasting", "DVD rental by mail", "Music streaming", "Video game sales"] }
+  },
+  {
+    "id": "tv-tr-sitcom-meaning",
+    "category": "tv",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Sitcom",
+    "tr": { "text": "\"Sitcom\" terimi neyin kısaltmasıdır?", "choices": ["Durum komedisi", "Bilim kurgu", "Belgesel", "Talk show"] },
+    "en": { "text": "What is the term \"sitcom\" short for?", "choices": ["Situation comedy", "Science fiction", "Documentary", "Talk show"] }
+  },
+  {
+    "id": "tv-tr-got-dragon-mother",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Daenerys_Targaryen",
+    "tr": { "text": "Game of Thrones'ta \"Ejderhaların Annesi\" olarak anılan karakter kimdir?", "choices": ["Cersei", "Daenerys", "Arya", "Sansa"] },
+    "en": { "text": "In Game of Thrones, who is called \"Mother of Dragons\"?", "choices": ["Cersei", "Daenerys", "Arya", "Sansa"] }
+  },
+  {
+    "id": "tv-tr-x-files-slogan",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/The_X-Files",
+    "tr": { "text": "The X-Files dizisinin ünlü sloganı nedir?", "choices": ["Winter Is Coming", "The Truth Is Out There", "Live Long and Prosper", "Wake Up, Neo"] },
+    "en": { "text": "What is the famous tagline of The X-Files?", "choices": ["Winter Is Coming", "The Truth Is Out There", "Live Long and Prosper", "Wake Up, Neo"] }
+  },
+  {
+    "id": "tv-tr-mandalorian-universe",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/The_Mandalorian",
+    "tr": { "text": "The Mandalorian hangi evrende geçer?", "choices": ["Star Trek", "Star Wars", "Dune", "Marvel"] },
+    "en": { "text": "In which universe is The Mandalorian set?", "choices": ["Star Trek", "Star Wars", "Dune", "Marvel"] }
+  },
+  {
+    "id": "tv-tr-vikings-people",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Vikings_(2013_TV_series)",
+    "tr": { "text": "Vikings dizisi hangi halkı konu alır?", "choices": ["Keltler", "İskandinav Vikingleri", "Romalılar", "Moğollar"] },
+    "en": { "text": "Which people does the series Vikings depict?", "choices": ["Celts", "Norse Vikings", "Romans", "Mongols"] }
+  },
+  {
+    "id": "tv-tr-prison-break-goal",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Prison_Break",
+    "tr": { "text": "Prison Break dizisinin ilk sezonundaki ana amaç nedir?", "choices": ["Bir banka soymak", "Hapishaneden kaçmak", "Bir seçim kazanmak", "Bir hazine bulmak"] },
+    "en": { "text": "What is the main goal in the first season of Prison Break?", "choices": ["Robbing a bank", "Escaping from prison", "Winning an election", "Finding a treasure"] }
+  },
+  {
+    "id": "tv-tr-suits-profession",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Suits_(American_TV_series)",
+    "tr": { "text": "Suits dizisi hangi meslek grubunu konu alır?", "choices": ["Doktorlar", "Avukatlar", "Polisler", "Öğretmenler"] },
+    "en": { "text": "Which profession does the series Suits focus on?", "choices": ["Doctors", "Lawyers", "Police officers", "Teachers"] }
+  },
+  {
+    "id": "tv-tr-rick-morty-type",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Rick_and_Morty",
+    "tr": { "text": "Rick and Morty ne tür bir yapımdır?", "choices": ["Belgesel", "Animasyon dizi", "Realite şovu", "Haber programı"] },
+    "en": { "text": "What kind of production is Rick and Morty?", "choices": ["Documentary", "Animated series", "Reality show", "News program"] }
+  },
+  {
+    "id": "tv-tr-pilot-episode",
+    "category": "tv",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Television_pilot",
+    "tr": { "text": "Bir dizinin ilk bölümüne ne ad verilir?", "choices": ["Pilot bölüm", "Final bölüm", "Ara bölüm", "Özel bölüm"] },
+    "en": { "text": "What is a TV series' first episode called?", "choices": ["Pilot episode", "Finale", "Interlude", "Special"] }
+  },
+  {
+    "id": "tv-tr-anime-country",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Anime",
+    "tr": { "text": "Anime hangi ülkeye özgü bir animasyon tarzıdır?", "choices": ["Güney Kore", "Japonya", "Çin", "Tayvan"] },
+    "en": { "text": "Anime is an animation style from which country?", "choices": ["South Korea", "Japan", "China", "Taiwan"] }
+  },
+  {
+    "id": "tv-tr-binge-watching",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Binge-watching",
+    "tr": { "text": "\"Binge-watching\" ne anlama gelir?", "choices": ["Diziyi tek bölüm izlemek", "Arka arkaya çok sayıda bölüm izlemek", "Diziyi sessiz izlemek", "Diziyi hızlandırarak izlemek"] },
+    "en": { "text": "What does \"binge-watching\" mean?", "choices": ["Watching a single episode", "Watching many episodes back to back", "Watching muted", "Watching at higher speed"] }
+  },
+  {
+    "id": "tv-tr-spinoff-meaning",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Spin-off_(media)",
+    "tr": { "text": "Bir dizinin yan karakterinden yola çıkarak yapılan yeni diziye ne denir?", "choices": ["Remake", "Spin-off", "Reboot", "Crossover"] },
+    "en": { "text": "What is a new series built around a side character of an existing one called?", "choices": ["Remake", "Spin-off", "Reboot", "Crossover"] }
+  },
+  {
+    "id": "tv-tr-better-call-saul-origin",
+    "category": "tv",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Better_Call_Saul",
+    "tr": { "text": "Better Call Saul hangi dizinin yan yapımıdır?", "choices": ["The Wire", "Breaking Bad", "Ozark", "Fargo"] },
+    "en": { "text": "Better Call Saul is a spin-off of which series?", "choices": ["The Wire", "Breaking Bad", "Ozark", "Fargo"] }
+  }
+]

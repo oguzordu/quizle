@@ -56,6 +56,37 @@ func TestValidatePack_rejectsMissingTranslation(t *testing.T) {
 	}
 }
 
+// Questions imported from English-only sources (OpenTDB) ship without a TR
+// block; they're served only to English rooms rather than blocked entirely.
+func TestValidatePack_acceptsEnglishOnlyQuestion(t *testing.T) {
+	q := validQuestion()
+	q.TR = Localized{}
+	errs := ValidatePack([]Question{q})
+	if len(errs) != 0 {
+		t.Fatalf("errs = %v, want none for an English-only question", errs)
+	}
+}
+
+func TestValidatePack_rejectsMissingEnglish(t *testing.T) {
+	q := validQuestion()
+	q.EN = Localized{}
+	errs := ValidatePack([]Question{q})
+	if len(errs) == 0 {
+		t.Fatal("expected error for a question with no EN block, got none")
+	}
+}
+
+// A present-but-malformed TR block is still a hard error: optional means
+// "may be absent", not "may be broken".
+func TestValidatePack_rejectsMalformedPresentTurkishBlock(t *testing.T) {
+	q := validQuestion()
+	q.TR.Choices = []string{"Almanya", "Türkiye"}
+	errs := ValidatePack([]Question{q})
+	if len(errs) == 0 {
+		t.Fatal("expected error for a TR block with 2 choices, got none")
+	}
+}
+
 func TestValidatePack_rejectsMissingSourceURL(t *testing.T) {
 	q := validQuestion()
 	q.SourceURL = ""

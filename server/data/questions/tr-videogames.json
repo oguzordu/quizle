@@ -1,0 +1,322 @@
+[
+  {
+    "id": "vg-tr-minecraft-creator",
+    "category": "videogames",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Minecraft",
+    "tr": { "text": "Minecraft'ın yaratıcısı olan stüdyo hangisidir?", "choices": ["Valve", "Mojang", "Epic Games", "Ubisoft"] },
+    "en": { "text": "Which studio created Minecraft?", "choices": ["Valve", "Mojang", "Epic Games", "Ubisoft"] }
+  },
+  {
+    "id": "vg-tr-mario-company",
+    "category": "videogames",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Mario",
+    "tr": { "text": "Süper Mario karakteri hangi şirkete aittir?", "choices": ["Sega", "Sony", "Nintendo", "Microsoft"] },
+    "en": { "text": "Which company owns the Super Mario character?", "choices": ["Sega", "Sony", "Nintendo", "Microsoft"] }
+  },
+  {
+    "id": "vg-tr-tetris-country",
+    "category": "videogames",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Tetris",
+    "tr": { "text": "Tetris hangi ülkede geliştirilmiştir?", "choices": ["Japonya", "Sovyetler Birliği", "ABD", "Polonya"] },
+    "en": { "text": "In which country was Tetris developed?", "choices": ["Japan", "Soviet Union", "USA", "Poland"] }
+  },
+  {
+    "id": "vg-tr-gta-publisher",
+    "category": "videogames",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Grand_Theft_Auto",
+    "tr": { "text": "Grand Theft Auto serisini hangi stüdyo geliştirir?", "choices": ["Rockstar Games", "Bethesda", "Activision", "EA"] },
+    "en": { "text": "Which studio develops the Grand Theft Auto series?", "choices": ["Rockstar Games", "Bethesda", "Activision", "EA"] }
+  },
+  {
+    "id": "vg-tr-sonic-animal",
+    "category": "videogames",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Sonic_the_Hedgehog",
+    "tr": { "text": "Sonic hangi hayvandır?", "choices": ["Tilki", "Sincap", "Kirpi", "Kunduz"] },
+    "en": { "text": "What kind of animal is Sonic?", "choices": ["Fox", "Squirrel", "Hedgehog", "Beaver"] }
+  },
+  {
+    "id": "vg-tr-pacman-year",
+    "category": "videogames",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Pac-Man",
+    "tr": { "text": "Pac-Man hangi yıl piyasaya çıktı?", "choices": ["1975", "1980", "1985", "1990"] },
+    "en": { "text": "In which year was Pac-Man released?", "choices": ["1975", "1980", "1985", "1990"] }
+  },
+  {
+    "id": "vg-tr-zelda-hero",
+    "category": "videogames",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/The_Legend_of_Zelda",
+    "tr": { "text": "The Legend of Zelda serisinde oynanan ana karakterin adı nedir?", "choices": ["Zelda", "Link", "Ganon", "Navi"] },
+    "en": { "text": "What is the name of the playable hero in The Legend of Zelda?", "choices": ["Zelda", "Link", "Ganon", "Navi"] }
+  },
+  {
+    "id": "vg-tr-cs-genre",
+    "category": "videogames",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Counter-Strike",
+    "tr": { "text": "Counter-Strike hangi oyun türüne girer?", "choices": ["Birinci şahıs nişancı", "Yarış", "Strateji", "Spor"] },
+    "en": { "text": "Which genre does Counter-Strike belong to?", "choices": ["First-person shooter", "Racing", "Strategy", "Sports"] }
+  },
+  {
+    "id": "vg-tr-playstation-company",
+    "category": "videogames",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/PlayStation",
+    "tr": { "text": "PlayStation konsolu hangi şirkete aittir?", "choices": ["Nintendo", "Sony", "Microsoft", "Sega"] },
+    "en": { "text": "Which company makes the PlayStation console?", "choices": ["Nintendo", "Sony", "Microsoft", "Sega"] }
+  },
+  {
+    "id": "vg-tr-xbox-company",
+    "category": "videogames",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Xbox",
+    "tr": { "text": "Xbox konsolu hangi şirkete aittir?", "choices": ["Sony", "Nintendo", "Microsoft", "Atari"] },
+    "en": { "text": "Which company makes the Xbox console?", "choices": ["Sony", "Nintendo", "Microsoft", "Atari"] }
+  },
+  {
+    "id": "vg-tr-pokemon-first",
+    "category": "videogames",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Pikachu",
+    "tr": { "text": "Pokémon serisinin simgesi hâline gelen sarı karakter hangisidir?", "choices": ["Charmander", "Pikachu", "Bulbasaur", "Squirtle"] },
+    "en": { "text": "Which yellow character became the mascot of the Pokémon series?", "choices": ["Charmander", "Pikachu", "Bulbasaur", "Squirtle"] }
+  },
+  {
+    "id": "vg-tr-among-us-role",
+    "category": "videogames",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Among_Us",
+    "tr": { "text": "Among Us oyununda mürettebatı gizlice eleyen role ne denir?", "choices": ["Crewmate", "Ghost", "Impostor", "Captain"] },
+    "en": { "text": "In Among Us, what is the role that secretly eliminates the crew called?", "choices": ["Crewmate", "Ghost", "Impostor", "Captain"] }
+  },
+  {
+    "id": "vg-tr-fortnite-developer",
+    "category": "videogames",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Fortnite",
+    "tr": { "text": "Fortnite'ı hangi şirket geliştirmiştir?", "choices": ["Valve", "Epic Games", "Riot Games", "Blizzard"] },
+    "en": { "text": "Which company developed Fortnite?", "choices": ["Valve", "Epic Games", "Riot Games", "Blizzard"] }
+  },
+  {
+    "id": "vg-tr-lol-developer",
+    "category": "videogames",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/League_of_Legends",
+    "tr": { "text": "League of Legends'ı hangi şirket geliştirmiştir?", "choices": ["Valve", "Blizzard", "Riot Games", "Epic Games"] },
+    "en": { "text": "Which company developed League of Legends?", "choices": ["Valve", "Blizzard", "Riot Games", "Epic Games"] }
+  },
+  {
+    "id": "vg-tr-steam-platform",
+    "category": "videogames",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Steam_(service)",
+    "tr": { "text": "Steam dijital oyun platformu hangi şirkete aittir?", "choices": ["Valve", "Epic Games", "EA", "Ubisoft"] },
+    "en": { "text": "Which company owns the Steam digital game platform?", "choices": ["Valve", "Epic Games", "EA", "Ubisoft"] }
+  },
+  {
+    "id": "vg-tr-fifa-genre",
+    "category": "videogames",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/EA_Sports_FC",
+    "tr": { "text": "FIFA oyun serisi hangi spor dalı üzerinedir?", "choices": ["Basketbol", "Tenis", "Amerikan futbolu", "Futbol"] },
+    "en": { "text": "Which sport is the FIFA game series about?", "choices": ["Basketball", "Tennis", "American football", "Association football"] }
+  },
+  {
+    "id": "vg-tr-mario-brother",
+    "category": "videogames",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Luigi",
+    "tr": { "text": "Mario'nun yeşil kıyafetli kardeşinin adı nedir?", "choices": ["Wario", "Luigi", "Toad", "Yoshi"] },
+    "en": { "text": "What is the name of Mario's green-clad brother?", "choices": ["Wario", "Luigi", "Toad", "Yoshi"] }
+  },
+  {
+    "id": "vg-tr-witcher-hero",
+    "category": "videogames",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Geralt_of_Rivia",
+    "tr": { "text": "The Witcher serisinin ana karakteri kimdir?", "choices": ["Geralt", "Ciri", "Yennefer", "Dandelion"] },
+    "en": { "text": "Who is the main character of The Witcher series?", "choices": ["Geralt", "Ciri", "Yennefer", "Dandelion"] }
+  },
+  {
+    "id": "vg-tr-angry-birds-country",
+    "category": "videogames",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Angry_Birds",
+    "tr": { "text": "Angry Birds hangi ülkenin stüdyosu tarafından geliştirilmiştir?", "choices": ["İsveç", "Norveç", "Finlandiya", "Danimarka"] },
+    "en": { "text": "Angry Birds was developed by a studio from which country?", "choices": ["Sweden", "Norway", "Finland", "Denmark"] }
+  },
+  {
+    "id": "vg-tr-mineraft-block",
+    "category": "videogames",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Minecraft",
+    "tr": { "text": "Minecraft'ta düşmanlara yaklaşınca patlayan yeşil yaratığın adı nedir?", "choices": ["Zombie", "Creeper", "Enderman", "Skeleton"] },
+    "en": { "text": "In Minecraft, what is the green creature that explodes near players called?", "choices": ["Zombie", "Creeper", "Enderman", "Skeleton"] }
+  },
+  {
+    "id": "vg-tr-portal-device",
+    "category": "videogames",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Portal_(video_game)",
+    "tr": { "text": "Portal oyununda oyuncunun kullandığı ana alet nedir?", "choices": ["Kanca", "Portal tabancası", "Kılıç", "Jetpack"] },
+    "en": { "text": "What is the main tool the player uses in Portal?", "choices": ["Grappling hook", "Portal gun", "Sword", "Jetpack"] }
+  },
+  {
+    "id": "vg-tr-mortal-kombat-genre",
+    "category": "videogames",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Mortal_Kombat",
+    "tr": { "text": "Mortal Kombat hangi oyun türüne girer?", "choices": ["Yarış", "Bulmaca", "Dövüş", "Simülasyon"] },
+    "en": { "text": "Which genre does Mortal Kombat belong to?", "choices": ["Racing", "Puzzle", "Fighting", "Simulation"] }
+  },
+  {
+    "id": "vg-tr-nintendo-country",
+    "category": "videogames",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Nintendo",
+    "tr": { "text": "Nintendo hangi ülkenin şirketidir?", "choices": ["Güney Kore", "Japonya", "Çin", "ABD"] },
+    "en": { "text": "Nintendo is a company from which country?", "choices": ["South Korea", "Japan", "China", "USA"] }
+  },
+  {
+    "id": "vg-tr-sims-genre",
+    "category": "videogames",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/The_Sims",
+    "tr": { "text": "The Sims oyunu neyi simüle eder?", "choices": ["Uçak uçurmayı", "Şehir savunmasını", "Araba yarışını", "Gündelik yaşamı"] },
+    "en": { "text": "What does The Sims simulate?", "choices": ["Flying planes", "Tower defense", "Car racing", "Everyday life"] }
+  },
+  {
+    "id": "vg-tr-halo-console",
+    "category": "videogames",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Halo_(franchise)",
+    "tr": { "text": "Halo serisi öncelikle hangi konsolla özdeşleşmiştir?", "choices": ["PlayStation", "Nintendo Switch", "Xbox", "Sega Genesis"] },
+    "en": { "text": "Which console is the Halo series most associated with?", "choices": ["PlayStation", "Nintendo Switch", "Xbox", "Sega Genesis"] }
+  },
+  {
+    "id": "vg-tr-candy-crush-genre",
+    "category": "videogames",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Candy_Crush_Saga",
+    "tr": { "text": "Candy Crush Saga hangi oyun türüne girer?", "choices": ["Nişancı", "Bulmaca", "Yarış", "Strateji"] },
+    "en": { "text": "Which genre does Candy Crush Saga belong to?", "choices": ["Shooter", "Puzzle", "Racing", "Strategy"] }
+  },
+  {
+    "id": "vg-tr-assassins-creed-publisher",
+    "category": "videogames",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Assassin%27s_Creed",
+    "tr": { "text": "Assassin's Creed serisini hangi şirket yayınlar?", "choices": ["EA", "Ubisoft", "Rockstar", "Capcom"] },
+    "en": { "text": "Which company publishes the Assassin's Creed series?", "choices": ["EA", "Ubisoft", "Rockstar", "Capcom"] }
+  },
+  {
+    "id": "vg-tr-resident-evil-genre",
+    "category": "videogames",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Resident_Evil",
+    "tr": { "text": "Resident Evil serisi hangi türle bilinir?", "choices": ["Spor", "Yarış", "Hayatta kalma korku", "Bulmaca"] },
+    "en": { "text": "Which genre is the Resident Evil series known for?", "choices": ["Sports", "Racing", "Survival horror", "Puzzle"] }
+  },
+  {
+    "id": "vg-tr-mario-kart-type",
+    "category": "videogames",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Mario_Kart",
+    "tr": { "text": "Mario Kart hangi oyun türüdür?", "choices": ["Yarış", "Dövüş", "Bulmaca", "Nişancı"] },
+    "en": { "text": "What genre is Mario Kart?", "choices": ["Racing", "Fighting", "Puzzle", "Shooter"] }
+  },
+  {
+    "id": "vg-tr-space-invaders-year",
+    "category": "videogames",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Space_Invaders",
+    "tr": { "text": "Space Invaders hangi on yılda çıkmıştır?", "choices": ["1960'lar", "1970'ler", "1980'ler", "1990'lar"] },
+    "en": { "text": "In which decade was Space Invaders released?", "choices": ["1960s", "1970s", "1980s", "1990s"] }
+  },
+  {
+    "id": "vg-tr-overwatch-developer",
+    "category": "videogames",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Overwatch_(video_game)",
+    "tr": { "text": "Overwatch'ı hangi şirket geliştirmiştir?", "choices": ["Valve", "Riot Games", "Blizzard", "Bungie"] },
+    "en": { "text": "Which company developed Overwatch?", "choices": ["Valve", "Riot Games", "Blizzard", "Bungie"] }
+  },
+  {
+    "id": "vg-tr-red-dead-setting",
+    "category": "videogames",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Red_Dead_Redemption_2",
+    "tr": { "text": "Red Dead Redemption 2 hangi dönemde geçer?", "choices": ["Orta Çağ", "Vahşi Batı", "Uzak gelecek", "Antik Roma"] },
+    "en": { "text": "In which setting does Red Dead Redemption 2 take place?", "choices": ["Medieval era", "The Wild West", "Far future", "Ancient Rome"] }
+  },
+  {
+    "id": "vg-tr-dark-souls-difficulty",
+    "category": "videogames",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Dark_Souls",
+    "tr": { "text": "Dark Souls serisi en çok hangi özelliğiyle bilinir?", "choices": ["Kolaylığıyla", "Zorluğuyla", "Komikliğiyle", "Kısalığıyla"] },
+    "en": { "text": "What is the Dark Souls series best known for?", "choices": ["Being easy", "Being difficult", "Being funny", "Being short"] }
+  },
+  {
+    "id": "vg-tr-wow-genre",
+    "category": "videogames",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/World_of_Warcraft",
+    "tr": { "text": "World of Warcraft hangi oyun türüne girer?", "choices": ["Yarış", "Dövüş", "MMORPG", "Bulmaca"] },
+    "en": { "text": "Which genre does World of Warcraft belong to?", "choices": ["Racing", "Fighting", "MMORPG", "Puzzle"] }
+  },
+  {
+    "id": "vg-tr-street-fighter-hadouken",
+    "category": "videogames",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Ryu_(Street_Fighter)",
+    "tr": { "text": "Street Fighter'da \"Hadouken\" hareketiyle bilinen karakter kimdir?", "choices": ["Blanka", "Ryu", "Zangief", "Dhalsim"] },
+    "en": { "text": "Which Street Fighter character is known for the \"Hadouken\" move?", "choices": ["Blanka", "Ryu", "Zangief", "Dhalsim"] }
+  },
+  {
+    "id": "vg-tr-cyberpunk-city",
+    "category": "videogames",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Cyberpunk_2077",
+    "tr": { "text": "Cyberpunk 2077 hangi kurgusal şehirde geçer?", "choices": ["Los Santos", "Night City", "Rapture", "Gotham"] },
+    "en": { "text": "In which fictional city is Cyberpunk 2077 set?", "choices": ["Los Santos", "Night City", "Rapture", "Gotham"] }
+  },
+  {
+    "id": "vg-tr-console-generation-switch",
+    "category": "videogames",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Nintendo_Switch",
+    "tr": { "text": "Nintendo Switch'in en belirgin özelliği nedir?", "choices": ["Sadece elde taşınması", "Sadece televizyona bağlanması", "Hem elde hem televizyonda oynanabilmesi", "Sanal gerçeklik desteği"] },
+    "en": { "text": "What is the defining feature of the Nintendo Switch?", "choices": ["Handheld only", "TV only", "Plays both handheld and on TV", "Virtual reality support"] }
+  },
+  {
+    "id": "vg-tr-esports-meaning",
+    "category": "videogames",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Esports",
+    "tr": { "text": "\"E-spor\" terimi neyi ifade eder?", "choices": ["Rekabetçi video oyunculuğu", "Elektrikli bisiklet yarışı", "Sanal gerçeklik egzersizi", "Online satranç"] },
+    "en": { "text": "What does the term \"esports\" refer to?", "choices": ["Competitive video gaming", "Electric bike racing", "VR exercise", "Online chess"] }
+  },
+  {
+    "id": "vg-tr-mario-princess",
+    "category": "videogames",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Princess_Peach",
+    "tr": { "text": "Mario oyunlarında sık sık kurtarılan prensesin adı nedir?", "choices": ["Daisy", "Peach", "Rosalina", "Zelda"] },
+    "en": { "text": "What is the name of the princess often rescued in Mario games?", "choices": ["Daisy", "Peach", "Rosalina", "Zelda"] }
+  },
+  {
+    "id": "vg-tr-battle-royale-meaning",
+    "category": "videogames",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Battle_royale_game",
+    "tr": { "text": "\"Battle royale\" türündeki oyunlarda amaç nedir?", "choices": ["En çok altın toplamak", "En hızlı bitirmek", "Hayatta kalan son kişi olmak", "En çok bina yapmak"] },
+    "en": { "text": "What is the goal in a \"battle royale\" game?", "choices": ["Collect the most gold", "Finish fastest", "Be the last one standing", "Build the most structures"] }
+  }
+]

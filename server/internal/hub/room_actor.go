@@ -26,6 +26,32 @@ type RoomActor struct {
 
 	tokenMu sync.Mutex
 	tokens  map[string]game.PlayerID
+
+	sourceMu sync.Mutex
+	source   QuestionSource
+}
+
+// QuestionSource records which slice of the question bank a room was built
+// from, so "play again" draws a fresh set from the same language and
+// category instead of silently switching the game out from under everyone.
+type QuestionSource struct {
+	Lang     string
+	Category string // empty means a mixed round
+}
+
+// SetSource records the room's question source. Called once, right after the
+// room is created.
+func (a *RoomActor) SetSource(src QuestionSource) {
+	a.sourceMu.Lock()
+	defer a.sourceMu.Unlock()
+	a.source = src
+}
+
+// Source returns the room's recorded question source.
+func (a *RoomActor) Source() QuestionSource {
+	a.sourceMu.Lock()
+	defer a.sourceMu.Unlock()
+	return a.source
 }
 
 // NewRoomActor creates an actor for the given players and question set.

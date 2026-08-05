@@ -1,0 +1,322 @@
+[
+  {
+    "id": "gen-tr-longest-river-europe",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Volga",
+    "tr": { "text": "Avrupa'nın en uzun nehri hangisidir?", "choices": ["Tuna", "Volga", "Ren", "Elbe"] },
+    "en": { "text": "What is the longest river in Europe?", "choices": ["Danube", "Volga", "Rhine", "Elbe"] }
+  },
+  {
+    "id": "gen-tr-rainbow-colors",
+    "category": "general",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Rainbow",
+    "tr": { "text": "Gökkuşağında geleneksel olarak kaç renk sayılır?", "choices": ["5", "6", "7", "8"] },
+    "en": { "text": "How many colors are traditionally counted in a rainbow?", "choices": ["5", "6", "7", "8"] }
+  },
+  {
+    "id": "gen-tr-chess-pieces",
+    "category": "general",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Chess",
+    "tr": { "text": "Satrançta her oyuncu kaç taşla başlar?", "choices": ["12", "14", "16", "18"] },
+    "en": { "text": "How many pieces does each player start with in chess?", "choices": ["12", "14", "16", "18"] }
+  },
+  {
+    "id": "gen-tr-week-seconds",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Hour",
+    "tr": { "text": "Bir günde kaç saniye vardır?", "choices": ["3.600", "86.400", "1.440", "604.800"] },
+    "en": { "text": "How many seconds are there in a day?", "choices": ["3,600", "86,400", "1,440", "604,800"] }
+  },
+  {
+    "id": "gen-tr-morse-sos",
+    "category": "general",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/SOS",
+    "tr": { "text": "Mors alfabesinde \"SOS\" sinyali nasıl gösterilir?", "choices": ["... --- ...", "--- ... ---", ".. -- ..", "- - -"] },
+    "en": { "text": "How is the \"SOS\" signal written in Morse code?", "choices": ["... --- ...", "--- ... ---", ".. -- ..", "- - -"] }
+  },
+  {
+    "id": "gen-tr-un-founded",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/United_Nations",
+    "tr": { "text": "Birleşmiş Milletler hangi yıl kuruldu?", "choices": ["1919", "1945", "1950", "1960"] },
+    "en": { "text": "In which year was the United Nations founded?", "choices": ["1919", "1945", "1950", "1960"] }
+  },
+  {
+    "id": "gen-tr-currency-japan",
+    "category": "general",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Japanese_yen",
+    "tr": { "text": "Japonya'nın para birimi nedir?", "choices": ["Won", "Yuan", "Yen", "Ringgit"] },
+    "en": { "text": "What is the currency of Japan?", "choices": ["Won", "Yuan", "Yen", "Ringgit"] }
+  },
+  {
+    "id": "gen-tr-braille-purpose",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Braille",
+    "tr": { "text": "Braille alfabesi kimler için geliştirilmiştir?", "choices": ["İşitme engelliler", "Görme engelliler", "Konuşma engelliler", "Denizciler"] },
+    "en": { "text": "Who was the Braille system developed for?", "choices": ["Deaf people", "Blind people", "Mute people", "Sailors"] }
+  },
+  {
+    "id": "gen-tr-olympic-motto",
+    "category": "general",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Olympic_symbols",
+    "tr": { "text": "Olimpiyat sloganı \"Citius, Altius, Fortius\" ne anlama gelir?", "choices": ["Daha hızlı, daha yüksek, daha güçlü", "Birlik, barış, dostluk", "Onur, cesaret, zafer", "Bir, hep beraber"] },
+    "en": { "text": "What does the Olympic motto \"Citius, Altius, Fortius\" mean?", "choices": ["Faster, higher, stronger", "Unity, peace, friendship", "Honor, courage, victory", "One, all together"] }
+  },
+  {
+    "id": "gen-tr-continents-count",
+    "category": "general",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Continent",
+    "tr": { "text": "Dünya üzerinde kaç kıta vardır?", "choices": ["5", "6", "7", "8"] },
+    "en": { "text": "How many continents are there on Earth?", "choices": ["5", "6", "7", "8"] }
+  },
+  {
+    "id": "gen-tr-nobel-country",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Nobel_Prize",
+    "tr": { "text": "Nobel Ödülleri hangi ülkede verilir?", "choices": ["Danimarka", "İsveç", "Norveç", "Finlandiya"] },
+    "en": { "text": "In which country are most Nobel Prizes awarded?", "choices": ["Denmark", "Sweden", "Norway", "Finland"] }
+  },
+  {
+    "id": "gen-tr-keyboard-layout",
+    "category": "general",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/QWERTY",
+    "tr": { "text": "En yaygın klavye düzeninin adı nedir?", "choices": ["QWERTY", "ASDFGH", "ABCDEF", "ZXCVBN"] },
+    "en": { "text": "What is the most common keyboard layout called?", "choices": ["QWERTY", "ASDFGH", "ABCDEF", "ZXCVBN"] }
+  },
+  {
+    "id": "gen-tr-tallest-building",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Burj_Khalifa",
+    "tr": { "text": "Dünyanın en yüksek binası hangisidir?", "choices": ["Shanghai Tower", "Burç Halife", "Taipei 101", "One World Trade Center"] },
+    "en": { "text": "What is the tallest building in the world?", "choices": ["Shanghai Tower", "Burj Khalifa", "Taipei 101", "One World Trade Center"] }
+  },
+  {
+    "id": "gen-tr-alphabet-turkish",
+    "category": "general",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Turkish_alphabet",
+    "tr": { "text": "Türk alfabesinde kaç harf vardır?", "choices": ["26", "27", "29", "31"] },
+    "en": { "text": "How many letters are in the Turkish alphabet?", "choices": ["26", "27", "29", "31"] }
+  },
+  {
+    "id": "gen-tr-deck-cards",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Standard_52-card_deck",
+    "tr": { "text": "Standart bir iskambil destesinde jokerler hariç kaç kart vardır?", "choices": ["48", "52", "54", "60"] },
+    "en": { "text": "How many cards are in a standard deck, excluding jokers?", "choices": ["48", "52", "54", "60"] }
+  },
+  {
+    "id": "gen-tr-eiffel-city",
+    "category": "general",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Eiffel_Tower",
+    "tr": { "text": "Eyfel Kulesi hangi şehirdedir?", "choices": ["Paris", "Roma", "Viyana", "Brüksel"] },
+    "en": { "text": "In which city is the Eiffel Tower?", "choices": ["Paris", "Rome", "Vienna", "Brussels"] }
+  },
+  {
+    "id": "gen-tr-emergency-turkey",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/112_(emergency_telephone_number)",
+    "tr": { "text": "Türkiye'de tüm acil durumlar için kullanılan tek numara nedir?", "choices": ["911", "112", "155", "110"] },
+    "en": { "text": "Which single number is used for all emergencies in Turkey?", "choices": ["911", "112", "155", "110"] }
+  },
+  {
+    "id": "gen-tr-leap-year",
+    "category": "general",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Leap_year",
+    "tr": { "text": "Artık yıl kaç yılda bir gelir?", "choices": ["2", "3", "4", "5"] },
+    "en": { "text": "How often does a leap year occur?", "choices": ["Every 2 years", "Every 3 years", "Every 4 years", "Every 5 years"] }
+  },
+  {
+    "id": "gen-tr-www-inventor",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Tim_Berners-Lee",
+    "tr": { "text": "World Wide Web'i kim icat etmiştir?", "choices": ["Bill Gates", "Tim Berners-Lee", "Steve Jobs", "Alan Turing"] },
+    "en": { "text": "Who invented the World Wide Web?", "choices": ["Bill Gates", "Tim Berners-Lee", "Steve Jobs", "Alan Turing"] }
+  },
+  {
+    "id": "gen-tr-pizza-origin",
+    "category": "general",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Pizza",
+    "tr": { "text": "Pizza hangi ülkeye özgü bir yemektir?", "choices": ["Yunanistan", "İspanya", "İtalya", "Fransa"] },
+    "en": { "text": "Which country is pizza originally from?", "choices": ["Greece", "Spain", "Italy", "France"] }
+  },
+  {
+    "id": "gen-tr-compass-directions",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Cardinal_direction",
+    "tr": { "text": "Pusulada güneşin doğduğu ana yön hangisidir?", "choices": ["Batı", "Doğu", "Kuzey", "Güney"] },
+    "en": { "text": "In which cardinal direction does the sun rise?", "choices": ["West", "East", "North", "South"] }
+  },
+  {
+    "id": "gen-tr-piano-vs-guitar",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Classical_guitar",
+    "tr": { "text": "Klasik bir gitarda kaç tel bulunur?", "choices": ["4", "6", "7", "12"] },
+    "en": { "text": "How many strings does a classical guitar have?", "choices": ["4", "6", "7", "12"] }
+  },
+  {
+    "id": "gen-tr-marathon-distance",
+    "category": "general",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Marathon",
+    "tr": { "text": "Bir maraton koşusu yaklaşık kaç kilometredir?", "choices": ["21 km", "32 km", "42 km", "50 km"] },
+    "en": { "text": "About how long is a marathon?", "choices": ["21 km", "32 km", "42 km", "50 km"] }
+  },
+  {
+    "id": "gen-tr-oscar-statue",
+    "category": "general",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Academy_Awards",
+    "tr": { "text": "Sinema dünyasının en bilinen ödülü hangisidir?", "choices": ["Oscar", "Grammy", "Emmy", "Tony"] },
+    "en": { "text": "Which is the best-known award in the film industry?", "choices": ["Oscar", "Grammy", "Emmy", "Tony"] }
+  },
+  {
+    "id": "gen-tr-binary-digits",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Binary_number",
+    "tr": { "text": "İkili (binary) sayı sisteminde hangi rakamlar kullanılır?", "choices": ["0-9", "0 ve 1", "1 ve 2", "A'dan F'ye"] },
+    "en": { "text": "Which digits are used in the binary number system?", "choices": ["0-9", "0 and 1", "1 and 2", "A to F"] }
+  },
+  {
+    "id": "gen-tr-great-pyramid",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza",
+    "tr": { "text": "Dünyanın Yedi Harikası'ndan günümüze ulaşan tek yapı hangisidir?", "choices": ["Babil'in Asma Bahçeleri", "Giza Piramidi", "Rodos Heykeli", "İskenderiye Feneri"] },
+    "en": { "text": "Which of the Seven Wonders of the Ancient World still stands?", "choices": ["Hanging Gardens of Babylon", "Great Pyramid of Giza", "Colossus of Rhodes", "Lighthouse of Alexandria"] }
+  },
+  {
+    "id": "gen-tr-language-most-speakers",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/List_of_languages_by_total_number_of_speakers",
+    "tr": { "text": "Dünyada en çok ana dil olarak konuşulan dil hangisidir?", "choices": ["İngilizce", "Mandarin Çincesi", "İspanyolca", "Hintçe"] },
+    "en": { "text": "Which language has the most native speakers in the world?", "choices": ["English", "Mandarin Chinese", "Spanish", "Hindi"] }
+  },
+  {
+    "id": "gen-tr-traffic-light",
+    "category": "general",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Traffic_light",
+    "tr": { "text": "Trafik lambasında \"geç\" anlamına gelen renk hangisidir?", "choices": ["Kırmızı", "Sarı", "Yeşil", "Mavi"] },
+    "en": { "text": "Which traffic light color means \"go\"?", "choices": ["Red", "Yellow", "Green", "Blue"] }
+  },
+  {
+    "id": "gen-tr-titanic-ocean",
+    "category": "general",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/RMS_Titanic",
+    "tr": { "text": "Titanic hangi okyanusta batmıştır?", "choices": ["Atlas Okyanusu", "Pasifik Okyanusu", "Hint Okyanusu", "Arktik Okyanus"] },
+    "en": { "text": "In which ocean did the Titanic sink?", "choices": ["Atlantic Ocean", "Pacific Ocean", "Indian Ocean", "Arctic Ocean"] }
+  },
+  {
+    "id": "gen-tr-blood-types",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Blood_type",
+    "tr": { "text": "ABO sisteminde kaç ana kan grubu vardır?", "choices": ["3", "4", "5", "6"] },
+    "en": { "text": "How many main blood groups are there in the ABO system?", "choices": ["3", "4", "5", "6"] }
+  },
+  {
+    "id": "gen-tr-mount-everest-country",
+    "category": "general",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Mount_Everest",
+    "tr": { "text": "Everest Dağı hangi iki ülkenin sınırındadır?", "choices": ["Hindistan ve Çin", "Pakistan ve Çin", "Nepal ve Çin", "Nepal ve Hindistan"] },
+    "en": { "text": "Mount Everest sits on the border of which two countries?", "choices": ["India and China", "Pakistan and China", "Nepal and China", "Nepal and India"] }
+  },
+  {
+    "id": "gen-tr-euro-currency",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Euro",
+    "tr": { "text": "Euro hangi yıl fiziksel para olarak tedavüle girdi?", "choices": ["1999", "2002", "2005", "2010"] },
+    "en": { "text": "In which year did euro banknotes and coins enter circulation?", "choices": ["1999", "2002", "2005", "2010"] }
+  },
+  {
+    "id": "gen-tr-guinness-record",
+    "category": "general",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Guinness_World_Records",
+    "tr": { "text": "Dünya rekorlarını derleyen ünlü kitap hangisidir?", "choices": ["Guinness Rekorlar Kitabı", "Forbes Listesi", "Fortune 500", "Almanak"] },
+    "en": { "text": "Which famous book compiles world records?", "choices": ["Guinness World Records", "Forbes List", "Fortune 500", "Almanac"] }
+  },
+  {
+    "id": "gen-tr-red-cross",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/International_Committee_of_the_Red_Cross",
+    "tr": { "text": "Kızılhaç'ın Türkiye'deki karşılığı olan kuruluşun adı nedir?", "choices": ["Yeşilay", "Kızılay", "AKUT", "AFAD"] },
+    "en": { "text": "What is the Turkish equivalent organization of the Red Cross called?", "choices": ["Yeşilay", "Kızılay", "AKUT", "AFAD"] }
+  },
+  {
+    "id": "gen-tr-dozen",
+    "category": "general",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Dozen",
+    "tr": { "text": "Bir düzine kaç tanedir?", "choices": ["6", "10", "12", "20"] },
+    "en": { "text": "How many items are in a dozen?", "choices": ["6", "10", "12", "20"] }
+  },
+  {
+    "id": "gen-tr-solar-eclipse",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Solar_eclipse",
+    "tr": { "text": "Güneş tutulması nasıl gerçekleşir?", "choices": ["Dünya, Ay ile Güneş arasına girer", "Ay, Dünya ile Güneş arasına girer", "Güneş, Dünya ile Ay arasına girer", "Dünya kendi etrafında döner"] },
+    "en": { "text": "How does a solar eclipse happen?", "choices": ["Earth passes between the Moon and Sun", "The Moon passes between Earth and the Sun", "The Sun passes between Earth and the Moon", "Earth rotates on its axis"] }
+  },
+  {
+    "id": "gen-tr-passport-color",
+    "category": "general",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Vatican_City",
+    "tr": { "text": "Nüfusu en az olan ülke hangisidir?", "choices": ["Vatikan", "Nauru", "Tuvalu", "San Marino"] },
+    "en": { "text": "Which country has the smallest population?", "choices": ["Vatican City", "Nauru", "Tuvalu", "San Marino"] }
+  },
+  {
+    "id": "gen-tr-nato-founded",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/NATO",
+    "tr": { "text": "NATO hangi yıl kurulmuştur?", "choices": ["1945", "1949", "1955", "1961"] },
+    "en": { "text": "In which year was NATO founded?", "choices": ["1945", "1949", "1955", "1961"] }
+  },
+  {
+    "id": "gen-tr-hot-air-balloon-turkey",
+    "category": "general",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Cappadocia",
+    "tr": { "text": "Türkiye'de sıcak hava balonlarıyla ünlü bölge neresidir?", "choices": ["Pamukkale", "Efes", "Kapadokya", "Nemrut"] },
+    "en": { "text": "Which region of Turkey is famous for hot air balloons?", "choices": ["Pamukkale", "Ephesus", "Cappadocia", "Mount Nemrut"] }
+  },
+  {
+    "id": "gen-tr-recycling-symbol",
+    "category": "general",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Recycling_symbol",
+    "tr": { "text": "Birbirini takip eden üç okla gösterilen sembol neyi ifade eder?", "choices": ["Tehlike", "Geri dönüşüm", "Radyasyon", "Yangın çıkışı"] },
+    "en": { "text": "What does the symbol of three chasing arrows represent?", "choices": ["Danger", "Recycling", "Radiation", "Fire exit"] }
+  }
+]
