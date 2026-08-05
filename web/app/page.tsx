@@ -10,6 +10,15 @@ import { useLocale } from "@/lib/i18n";
 const NAME_KEY = "quizle:profile:name";
 const AVATAR_KEY = "quizle:profile:avatar";
 
+const FLOATERS = [
+  { emoji: "🎓", top: "6%", left: "8%", size: 40, delay: "0s" },
+  { emoji: "⭐", top: "12%", left: "82%", size: 28, delay: "0.4s" },
+  { emoji: "🪙", top: "24%", left: "88%", size: 32, delay: "0.8s" },
+  { emoji: "📚", top: "78%", left: "10%", size: 34, delay: "0.2s" },
+  { emoji: "🪙", top: "70%", left: "85%", size: 26, delay: "1s" },
+  { emoji: "✨", top: "40%", left: "4%", size: 24, delay: "0.6s" },
+];
+
 export default function Home() {
   const router = useRouter();
   const { locale, setLocale, t } = useLocale();
@@ -73,46 +82,57 @@ export default function Home() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-indigo-50 via-white to-white px-4 py-10 dark:from-zinc-950 dark:via-black dark:to-black">
-      <div className="w-full max-w-sm">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-violet-700 via-purple-800 to-purple-950 px-4 py-10">
+      {FLOATERS.map((f, i) => (
+        <span
+          key={i}
+          aria-hidden
+          className="absolute select-none opacity-70"
+          style={{
+            top: f.top,
+            left: f.left,
+            fontSize: f.size,
+            animation: `float 3.5s ease-in-out ${f.delay} infinite`,
+          }}
+        >
+          {f.emoji}
+        </span>
+      ))}
+
+      <div className="relative mx-auto w-full max-w-sm">
         <div className="mb-3 flex justify-end gap-1 text-xs">
           <button
             onClick={() => setLocale("tr")}
-            className={`rounded px-2 py-1 transition ${
-              locale === "tr"
-                ? "bg-indigo-600 font-semibold text-white"
-                : "text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+            className={`rounded-full px-2.5 py-1 transition ${
+              locale === "tr" ? "bg-white font-semibold text-purple-800" : "text-purple-200"
             }`}
           >
             TR
           </button>
           <button
             onClick={() => setLocale("en")}
-            className={`rounded px-2 py-1 transition ${
-              locale === "en"
-                ? "bg-indigo-600 font-semibold text-white"
-                : "text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+            className={`rounded-full px-2.5 py-1 transition ${
+              locale === "en" ? "bg-white font-semibold text-purple-800" : "text-purple-200"
             }`}
           >
             EN
           </button>
         </div>
 
-        <div className="rounded-2xl border border-zinc-200/80 bg-white p-6 shadow-xl shadow-indigo-950/5 dark:border-zinc-800 dark:bg-zinc-900 sm:p-8">
-          <h1 className="text-center text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 to-fuchsia-600">
-            {t("appTitle")}
+        <div className="flex flex-col items-center pb-4 pt-6 text-center">
+          <span className="text-6xl">🏆</span>
+          <h1 className="mt-3 text-4xl font-extrabold text-white">
+            {t("appTitle")} <span className="text-amber-300">Academy</span>
           </h1>
-          <p className="mt-2 text-center text-sm text-zinc-500 dark:text-zinc-400">
-            {t("tagline")}
-          </p>
+          <p className="mt-2 text-sm font-medium text-purple-200">{t("tagline")}</p>
+        </div>
 
-          <div className="mt-6">
-            <AvatarPicker value={avatar} onChange={saveAvatar} />
-          </div>
+        <div className="rounded-3xl bg-white/95 p-6 shadow-2xl backdrop-blur sm:p-7">
+          <AvatarPicker value={avatar} onChange={saveAvatar} />
 
           <div className="mt-5 flex gap-2">
             <input
-              className="w-full rounded-xl border border-zinc-300 px-4 py-3 text-base outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 dark:border-zinc-700 dark:bg-zinc-800"
+              className="w-full rounded-full border-2 border-purple-100 bg-purple-50/60 px-5 py-3 text-base outline-none transition focus:border-purple-400 dark:border-purple-900 dark:bg-purple-950/40"
               placeholder={t("namePlaceholder")}
               value={name}
               onChange={(e) => saveName(e.target.value)}
@@ -121,7 +141,7 @@ export default function Home() {
             <button
               type="button"
               title={t("randomName")}
-              className="shrink-0 rounded-xl border border-zinc-300 px-3 text-lg transition hover:bg-zinc-100 active:scale-95 dark:border-zinc-700 dark:hover:bg-zinc-800"
+              className="shrink-0 rounded-full border-2 border-purple-100 px-3.5 text-lg transition hover:bg-purple-50 active:scale-90 dark:border-purple-900"
               onClick={() => saveName(randomNickname())}
             >
               🎲
@@ -129,29 +149,29 @@ export default function Home() {
           </div>
 
           <button
-            className="mt-4 w-full rounded-xl bg-gradient-to-br from-indigo-600 to-fuchsia-600 px-4 py-3.5 text-base font-semibold text-white shadow-lg shadow-indigo-600/25 transition hover:brightness-110 active:scale-[0.98] disabled:opacity-50"
+            className="mt-4 w-full rounded-full bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-3.5 text-base font-bold text-white shadow-lg shadow-purple-600/30 transition hover:brightness-110 active:scale-[0.97] disabled:opacity-50"
             onClick={createRoom}
             disabled={busy}
           >
             {t("createRoom")}
           </button>
 
-          <div className="my-5 flex items-center gap-3 text-xs text-zinc-400">
-            <div className="h-px flex-1 bg-zinc-200 dark:bg-zinc-800" />
+          <div className="my-5 flex items-center gap-3 text-xs font-medium text-purple-300">
+            <div className="h-px flex-1 bg-purple-100 dark:bg-purple-900" />
             {t("orJoin")}
-            <div className="h-px flex-1 bg-zinc-200 dark:bg-zinc-800" />
+            <div className="h-px flex-1 bg-purple-100 dark:bg-purple-900" />
           </div>
 
           <div className="flex gap-2">
             <input
-              className="w-full rounded-xl border border-zinc-300 px-4 py-3 text-base uppercase tracking-widest outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 dark:border-zinc-700 dark:bg-zinc-800"
+              className="w-full rounded-full border-2 border-purple-100 bg-purple-50/60 px-5 py-3 text-base uppercase tracking-widest outline-none transition focus:border-purple-400 dark:border-purple-900 dark:bg-purple-950/40"
               placeholder={t("roomCodePlaceholder")}
               value={joinCode}
               onChange={(e) => setJoinCode(e.target.value)}
               maxLength={6}
             />
             <button
-              className="shrink-0 rounded-xl border border-zinc-300 px-5 py-3 text-base font-medium transition hover:bg-zinc-100 active:scale-95 dark:border-zinc-700 dark:hover:bg-zinc-800"
+              className="shrink-0 rounded-full border-2 border-purple-200 px-5 py-3 text-base font-bold text-purple-700 transition hover:bg-purple-50 active:scale-95 dark:border-purple-800 dark:text-purple-300"
               onClick={joinRoom}
             >
               {t("join")}
