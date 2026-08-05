@@ -87,3 +87,37 @@ func TestHub_JoinRoom_unknownCodeErrors(t *testing.T) {
 		t.Fatal("expected error joining unknown room code, got nil")
 	}
 }
+
+func TestHub_JoinRoom_rejectsOverlongName(t *testing.T) {
+	h := NewHub()
+	questions := []game.Question{{ID: "q1", Choices: []string{"a", "b", "c", "d"}, Correct: 0, Duration: time.Second}}
+	code, actor := h.CreateRoom(questions, 3*time.Second)
+	t.Cleanup(actor.Stop)
+
+	overlong := make([]byte, maxNameLength+1)
+	for i := range overlong {
+		overlong[i] = 'a'
+	}
+
+	_, _, err := h.JoinRoom(code, string(overlong), "")
+	if err == nil {
+		t.Fatal("expected error joining with an overlong name, got nil")
+	}
+}
+
+func TestHub_JoinRoom_rejectsOverlongAvatar(t *testing.T) {
+	h := NewHub()
+	questions := []game.Question{{ID: "q1", Choices: []string{"a", "b", "c", "d"}, Correct: 0, Duration: time.Second}}
+	code, actor := h.CreateRoom(questions, 3*time.Second)
+	t.Cleanup(actor.Stop)
+
+	overlong := make([]byte, maxAvatarLength+1)
+	for i := range overlong {
+		overlong[i] = 'a'
+	}
+
+	_, _, err := h.JoinRoom(code, "Alice", string(overlong))
+	if err == nil {
+		t.Fatal("expected error joining with an overlong avatar, got nil")
+	}
+}

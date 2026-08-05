@@ -21,6 +21,8 @@ type Server struct {
 	questionPool       []game.Question
 	sampleSize         int // 0 means "use the whole pool, no sampling"
 	defaultRevealDelay time.Duration
+
+	roomLimiter *rateLimiter
 }
 
 // NewServer creates a Server backed by h.
@@ -33,6 +35,10 @@ func NewServer(h *Hub) *Server {
 			// doesn't expose anything a same-origin policy would protect.
 			CheckOrigin: func(r *http.Request) bool { return true },
 		},
+		// A real player creates at most a handful of rooms per session
+		// (rematch reuses the existing room); 10 per minute leaves headroom
+		// for that while still stopping a scripted flood.
+		roomLimiter: newRateLimiter(10, time.Minute),
 	}
 }
 
@@ -65,11 +71,19 @@ func (s *Server) CreateRoomHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if !s.roomLimiter.Allow(clientIP(r)) {
+		http.Error(w, "too many rooms created, try again later", http.StatusTooManyRequests)
+		return
+	}
+
 	code, _ := s.hub.CreateRoom(s.pickQuestions(), s.defaultRevealDelay)
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(createRoomResponse{Code: code})
 }
+
+// wsMaxMessageBytes bounds how large a single client WebSocket frame may be.
+const wsMaxMessageBytes = 4096
 
 // maxQuestionsPerCategory caps how many questions from the same category can
 // land in a single round, so a category that dominates the pool by sheer
@@ -178,6 +192,10 @@ func (s *Server) ServeWS(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer conn.Close()
+	// Client messages are tiny ({"type":"submit_answer","choice":N}); cap
+	// frame size well above that so a malicious client can't force the
+	// server to buffer an unbounded amount of memory per connection.
+	conn.SetReadLimit(wsMaxMessageBytes)
 
 	if err := conn.WriteMessage(gorilla.TextMessage, encodeJoined(playerID, token)); err != nil {
 		return

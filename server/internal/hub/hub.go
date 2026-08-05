@@ -15,6 +15,15 @@ const roomCodeAlphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
 
 const roomCodeLength = 6
 
+// maxNameLength and maxAvatarLength cap what a client can claim as identity
+// fields. The Next.js client already limits the name input to 20 runes, but
+// that's UI-only — anyone can call this endpoint directly, so the server
+// enforces its own (slightly more generous) limit rather than trusting it.
+const (
+	maxNameLength   = 32
+	maxAvatarLength = 32
+)
+
 // Hub is the process-wide registry of active rooms, keyed by their
 // human-shareable join code.
 type Hub struct {
@@ -57,6 +66,13 @@ func (h *Hub) GetRoom(code string) (*RoomActor, bool) {
 // their assigned PlayerID and a reconnect token the client must present to
 // resume the same identity after a dropped connection.
 func (h *Hub) JoinRoom(code string, name, avatar string) (game.PlayerID, string, error) {
+	if len(name) > maxNameLength {
+		return "", "", fmt.Errorf("name exceeds %d bytes", maxNameLength)
+	}
+	if len(avatar) > maxAvatarLength {
+		return "", "", fmt.Errorf("avatar exceeds %d bytes", maxAvatarLength)
+	}
+
 	actor, ok := h.GetRoom(code)
 	if !ok {
 		return "", "", fmt.Errorf("room %q not found", code)

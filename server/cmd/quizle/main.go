@@ -1,6 +1,6 @@
-// Command quizle runs the Quizle game server: a WebSocket endpoint, a room
-// creation endpoint, and (until the real Next.js frontend in Faz 4 exists) a
-// bare-bones manual test page so the game can actually be played end to end.
+// Command quizle runs the Quizle game server: a WebSocket endpoint and a
+// room creation endpoint. The real client is the Next.js app; this binary
+// only serves the API.
 package main
 
 import (
@@ -30,7 +30,7 @@ func main() {
 	mux.HandleFunc("POST /rooms/{code}/start", srv.StartRoomHandler)
 	mux.HandleFunc("POST /rooms/{code}/rematch", srv.RematchRoomHandler)
 	mux.HandleFunc("/ws", srv.ServeWS)
-	mux.HandleFunc("/", serveTestPage)
+	mux.HandleFunc("/", healthCheck)
 
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -114,11 +114,11 @@ func loadQuestionPack(path string) ([]game.Question, error) {
 	return questions, nil
 }
 
-func serveTestPage(w http.ResponseWriter, r *http.Request) {
+func healthCheck(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
 		http.NotFound(w, r)
 		return
 	}
-	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	w.Write([]byte(testPageHTML))
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+	w.Write([]byte("Quizle API"))
 }
