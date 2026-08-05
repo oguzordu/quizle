@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://quizle.example";
+const siteUrl = "https://quizleapp.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     alternateLocale: "en_US",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Quizle — Çok Oyunculu Bilgi Yarışması",
     description: "Arkadaşlarınla oda kodu ile katıldığın, gerçek zamanlı bilgi yarışması.",
   },

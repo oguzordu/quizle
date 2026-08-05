@@ -126,9 +126,7 @@ export default function Home() {
           >
             🏆
           </span>
-          <h1 className="mt-3 text-4xl font-extrabold text-white">
-            {t("appTitle")} <span className="text-amber-300">Academy</span>
-          </h1>
+          <h1 className="mt-3 text-4xl font-extrabold text-white">{t("appTitle")}</h1>
           <p className="mt-2 text-sm font-medium text-purple-200">{t("tagline")}</p>
         </div>
 
