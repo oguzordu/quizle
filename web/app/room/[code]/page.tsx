@@ -6,7 +6,7 @@ import { useGameConnection } from "@/lib/useGameConnection";
 import { config } from "@/lib/config";
 import { Player } from "@/lib/gameTypes";
 import { Avatar } from "@/components/Avatar";
-import { CountdownBar } from "@/components/CountdownBar";
+import { CountdownRing } from "@/components/CountdownRing";
 import { AnimatedScore } from "@/components/AnimatedScore";
 import { FlagImage } from "@/components/FlagImage";
 import { Confetti } from "@/components/Confetti";
@@ -22,6 +22,14 @@ function nameFor(id: string | null, roster: Player[], selfId: string | null, you
 
 function avatarFor(id: string, roster: Player[]) {
   return roster.find((p) => p.id === id)?.avatar;
+}
+
+function CoinBadge({ score }: { score: number }) {
+  return (
+    <span className="flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1.5 text-sm font-bold text-white backdrop-blur">
+      {score} <span className="text-base">🪙</span>
+    </span>
+  );
 }
 
 function RoomScreen() {
@@ -70,64 +78,51 @@ function RoomScreen() {
   }
 
   const sortedScores = Object.entries(state.scores).sort(([, a], [, b]) => b - a);
+  const myScore = state.selfId ? (state.scores[state.selfId] ?? 0) : 0;
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-indigo-50 via-white to-white px-4 py-6 dark:from-zinc-950 dark:via-black dark:to-black sm:py-10">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-fuchsia-300/20 blur-3xl dark:bg-fuchsia-800/10"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-indigo-300/20 blur-3xl dark:bg-indigo-800/10"
-      />
-
-      <div className="relative mx-auto flex max-w-lg flex-col gap-5">
-        <header className="flex items-center justify-between rounded-xl bg-white/70 px-4 py-2.5 shadow-sm backdrop-blur dark:bg-zinc-900/70">
-          <span className="text-sm text-zinc-500">
-            {t("roomCode")}{" "}
-            <b className="tracking-widest text-zinc-900 dark:text-zinc-50">{code}</b>
-          </span>
-          <span
-            className={`flex items-center gap-1.5 text-xs font-medium ${
-              state.connected ? "text-emerald-600" : "text-amber-600"
-            }`}
+    <div className="min-h-screen bg-gradient-to-b from-violet-700 via-purple-800 to-purple-950 px-4 py-6 sm:py-10">
+      <div className="mx-auto flex max-w-lg flex-col gap-5">
+        <header className="flex items-center justify-between">
+          <button
+            onClick={() => router.push("/")}
+            aria-label={t("backToHome")}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/30 text-white transition hover:bg-white/10"
           >
-            <span
-              className={`h-1.5 w-1.5 rounded-full ${
-                state.connected ? "bg-emerald-500" : "animate-pulse bg-amber-500"
-              }`}
-            />
-            {state.connected ? t("connected") : t("connecting")}
+            ✕
+          </button>
+          <span className="text-sm font-medium text-purple-200">
+            {t("roomCode")} <b className="tracking-widest text-white">{code}</b>
           </span>
+          <CoinBadge score={myScore} />
         </header>
 
         {state.phase === "connecting" && (
-          <p className="py-10 text-center text-zinc-500">{t("connectingToRoom")}</p>
+          <p className="py-10 text-center text-purple-200">{t("connectingToRoom")}</p>
         )}
 
         {state.phase === "lobby" && (
           <section
             style={{ animation: "fadeSlideIn 0.35s ease-out" }}
-            className="flex flex-col items-center gap-4 rounded-2xl border border-zinc-200/80 bg-white p-6 shadow-xl shadow-indigo-950/5 dark:border-zinc-800 dark:bg-zinc-900 sm:p-8"
+            className="flex flex-col items-center gap-4 rounded-3xl bg-white/95 p-6 shadow-2xl backdrop-blur sm:p-8"
           >
-            <p className="text-sm text-zinc-500">{t("shareCode")}</p>
-            <p className="bg-gradient-to-br from-indigo-600 to-fuchsia-600 bg-clip-text text-4xl font-extrabold tracking-[0.3em] text-transparent">
+            <p className="text-sm text-purple-500">{t("shareCode")}</p>
+            <p className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-4xl font-extrabold tracking-[0.3em] text-transparent">
               {code}
             </p>
             <ul className="flex flex-wrap justify-center gap-4 py-2">
               {state.roster.map((p) => (
                 <li key={p.id} className="flex flex-col items-center gap-1.5">
                   <Avatar avatar={p.avatar} size={44} />
-                  <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400">
+                  <span className="text-xs font-medium text-purple-700">
                     {p.id === state.selfId ? `${p.name} (${t("you")})` : p.name}
                   </span>
                 </li>
               ))}
             </ul>
-            <p className="text-center text-xs italic text-zinc-400">{lobbyQuip}</p>
+            <p className="text-center text-xs italic text-purple-400">{lobbyQuip}</p>
             <button
-              className="w-full rounded-xl bg-gradient-to-br from-indigo-600 to-fuchsia-600 px-4 py-3.5 font-semibold text-white shadow-lg shadow-indigo-600/25 transition hover:brightness-110 active:scale-[0.98] disabled:opacity-50"
+              className="w-full rounded-full bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-3.5 font-bold text-white shadow-lg shadow-purple-600/30 transition hover:brightness-110 active:scale-[0.98] disabled:opacity-50"
               onClick={startGame}
               disabled={starting}
             >
@@ -140,37 +135,41 @@ function RoomScreen() {
           <section
             key={state.question.question_id}
             style={{ animation: "fadeSlideIn 0.35s ease-out" }}
-            className="flex flex-col gap-4 rounded-2xl border border-zinc-200/80 bg-white p-5 shadow-xl shadow-indigo-950/5 dark:border-zinc-800 dark:bg-zinc-900 sm:p-6"
+            className="flex flex-col gap-4"
           >
             <div className="flex items-center justify-between">
-              <span className="rounded-full bg-indigo-100 px-2.5 py-1 text-xs font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
+              <span className="rounded-full bg-white/15 px-3 py-1.5 text-xs font-bold text-white backdrop-blur">
                 {t("question")} {state.question.index}/{state.question.total}
               </span>
+              <CountdownRing deadline={state.question.deadline} />
             </div>
-            <CountdownBar deadline={state.question.deadline} />
-            <FlagImage image={state.question.image} />
-            <p className="text-center text-lg font-semibold">{state.question.text}</p>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+
+            {state.question.image && (
+              <div className="flex justify-center rounded-2xl bg-white/10 p-6 backdrop-blur">
+                <FlagImage image={state.question.image} size={88} />
+              </div>
+            )}
+
+            <p className="text-center text-xl font-bold text-white">{state.question.text}</p>
+
+            <div className="flex flex-col gap-3">
               {state.question.choices.map((choice, i) => {
                 const picked = state.myAnswerChoice === i;
                 const answered = state.myAnswerChoice !== null;
                 const isRevealedCorrect = state.correctChoice === i;
-                let style =
-                  "border-zinc-200 hover:border-indigo-300 hover:bg-indigo-50/50 active:scale-[0.98] dark:border-zinc-700 dark:hover:border-indigo-800 dark:hover:bg-indigo-950/30";
+                let style = "bg-white text-purple-900 hover:bg-purple-50 active:scale-[0.98]";
                 if (picked && state.myAnswerCorrect === true) {
-                  style =
-                    "border-emerald-600 bg-emerald-600 text-white shadow-md shadow-emerald-600/25 animate-[pop_0.3s_ease-out]";
+                  style = "bg-emerald-500 text-white shadow-lg shadow-emerald-500/30 animate-[pop_0.3s_ease-out]";
                 } else if (picked && state.myAnswerCorrect === false) {
-                  style = "border-red-600 bg-red-600 text-white shadow-md shadow-red-600/25 animate-[shake_0.4s_ease-in-out]";
+                  style = "bg-red-500 text-white shadow-lg shadow-red-500/30 animate-[shake_0.4s_ease-in-out]";
                 } else if (picked) {
-                  style = "border-indigo-600 bg-indigo-600 text-white shadow-md shadow-indigo-600/25";
+                  style = "bg-white text-purple-900 shadow-lg";
                 } else if (isRevealedCorrect) {
                   // We got it wrong (or the timer ran out) — show the right
                   // answer instead of leaving the player guessing.
-                  style =
-                    "border-emerald-600 bg-emerald-50 text-emerald-700 shadow-md dark:bg-emerald-950/40 dark:text-emerald-400 animate-[pop_0.3s_ease-out]";
+                  style = "bg-emerald-500 text-white shadow-lg shadow-emerald-500/30 animate-[pop_0.3s_ease-out]";
                 } else if (answered) {
-                  style = "border-zinc-200 opacity-50 dark:border-zinc-700";
+                  style = "bg-white/40 text-purple-900/50";
                 }
                 return (
                   <button
@@ -180,15 +179,16 @@ function RoomScreen() {
                       submitAnswer(i);
                     }}
                     disabled={answered}
-                    className={`rounded-xl border-2 px-4 py-4 text-left text-base font-medium transition disabled:cursor-default ${style}`}
+                    className={`w-full rounded-full px-6 py-4 text-center text-base font-bold uppercase tracking-wide transition disabled:cursor-default ${style}`}
                   >
                     {choice}
                   </button>
                 );
               })}
             </div>
+
             {state.myAnswerCorrect !== null && (
-              <p className="text-center text-sm font-medium text-zinc-500">
+              <p className="text-center text-sm font-medium text-purple-200">
                 {state.myAnswerCorrect ? t("correctFeedback") : t("wrongFeedback")}{" "}
                 {t("waitingForResult")}
               </p>
@@ -201,14 +201,14 @@ function RoomScreen() {
             style={{ animation: "fadeSlideIn 0.35s ease-out" }}
             className="flex flex-col gap-4"
           >
-            <div className="rounded-2xl border border-zinc-200/80 bg-white p-5 text-center shadow-xl shadow-indigo-950/5 dark:border-zinc-800 dark:bg-zinc-900">
-              <p className="text-sm text-zinc-500">
+            <div className="rounded-3xl bg-white/95 p-5 text-center shadow-2xl backdrop-blur">
+              <p className="text-sm text-purple-500">
                 {t("correctAnswer")}:{" "}
-                <b className="text-emerald-600 dark:text-emerald-400">
+                <b className="text-emerald-600">
                   {state.question?.choices[state.correctChoice ?? -1]}
                 </b>
               </p>
-              {revealQuip && <p className="mt-1 text-xs italic text-zinc-400">{revealQuip}</p>}
+              {revealQuip && <p className="mt-1 text-xs italic text-purple-400">{revealQuip}</p>}
             </div>
             <ScoreTable
               sortedScores={sortedScores}
@@ -226,7 +226,7 @@ function RoomScreen() {
             className="relative flex flex-col gap-4"
           >
             <Confetti />
-            <p className="text-center text-3xl font-extrabold">{t("gameOver")}</p>
+            <p className="text-center text-3xl font-extrabold text-white">🏆 {t("gameOver")}</p>
             <ul className="flex flex-col gap-2">
               {sortedScores.map(([id, score], i) => {
                 const title = finalTitleFor(
@@ -240,24 +240,24 @@ function RoomScreen() {
                 return (
                   <li
                     key={id}
-                    className={`flex items-center justify-between rounded-xl border px-4 py-3 shadow-sm ${
-                      isFirst
-                        ? "border-amber-300 bg-gradient-to-r from-amber-50 to-white dark:border-amber-800 dark:from-amber-950/40 dark:to-zinc-900"
-                        : "border-zinc-200/80 bg-white dark:border-zinc-800 dark:bg-zinc-900"
+                    className={`flex items-center justify-between rounded-2xl px-4 py-3 shadow-lg ${
+                      isFirst ? "bg-gradient-to-r from-amber-300 to-amber-400" : "bg-white/95"
                     }`}
                   >
                     <span className="flex items-center gap-2.5">
                       <Avatar avatar={avatarFor(id, state.roster)} size={32} />
                       <span className="flex flex-col">
-                        <span className="font-medium">
+                        <span className={`font-bold ${isFirst ? "text-amber-950" : "text-purple-900"}`}>
                           #{i + 1} {nameFor(id, state.roster, state.selfId, t("you"))}
                         </span>
-                        <span className="text-xs text-zinc-500">
+                        <span className={`text-xs ${isFirst ? "text-amber-900" : "text-purple-500"}`}>
                           {title.emoji} {title.title}
                         </span>
                       </span>
                     </span>
-                    <span className="text-lg font-bold">{score}</span>
+                    <span className={`text-lg font-extrabold ${isFirst ? "text-amber-950" : "text-purple-900"}`}>
+                      {score}
+                    </span>
                   </li>
                 );
               })}
@@ -265,14 +265,14 @@ function RoomScreen() {
 
             <div className="mt-2 flex flex-col gap-2 sm:flex-row">
               <button
-                className="w-full rounded-xl bg-gradient-to-br from-indigo-600 to-fuchsia-600 px-4 py-3 font-semibold text-white shadow-lg shadow-indigo-600/25 transition hover:brightness-110 active:scale-[0.98] disabled:opacity-50"
+                className="w-full rounded-full bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-3 font-bold text-white shadow-lg shadow-purple-600/30 transition hover:brightness-110 active:scale-[0.98] disabled:opacity-50"
                 onClick={handleRematch}
                 disabled={rematching}
               >
                 {t("playAgain")}
               </button>
               <button
-                className="w-full rounded-xl border border-zinc-300 px-4 py-3 font-medium transition hover:bg-zinc-100 active:scale-[0.98] dark:border-zinc-700 dark:hover:bg-zinc-800"
+                className="w-full rounded-full border-2 border-white/40 px-4 py-3 font-bold text-white transition hover:bg-white/10 active:scale-[0.98]"
                 onClick={() => router.push("/")}
               >
                 {t("backToHome")}
@@ -303,11 +303,11 @@ function ScoreTable({
       {sortedScores.map(([id, score], i) => (
         <li
           key={id}
-          className="flex items-center justify-between rounded-xl border border-zinc-200/80 bg-white px-4 py-3 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
+          className="flex items-center justify-between rounded-2xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur"
         >
           <span className="flex items-center gap-2.5">
             <Avatar avatar={avatarFor(id, roster)} size={30} />
-            <span className="font-medium">
+            <span className="font-bold text-purple-900">
               #{i + 1} {nameFor(id, roster, selfId, you)}
             </span>
           </span>
@@ -325,7 +325,11 @@ function ScoreTable({
 export default function RoomPage() {
   return (
     <Suspense
-      fallback={<p className="p-10 text-center text-zinc-500">Yükleniyor...</p>}
+      fallback={
+        <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-violet-700 via-purple-800 to-purple-950">
+          <p className="text-center text-purple-200">Yükleniyor...</p>
+        </div>
+      }
     >
       <RoomScreen />
     </Suspense>
