@@ -79,5 +79,5 @@ export function AnimatedScore({
     );
   }
 
-  return <span className="font-bold tabular-nums">{display}</span>;
+  return <span className="font-bold tabular-nums text-purple-900">{display}</span>;
 }
