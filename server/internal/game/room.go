@@ -66,6 +66,7 @@ type Player struct {
 // "flag:TR") — the server never interprets it, just relays it.
 type Question struct {
 	ID       string
+	Category string
 	Text     string
 	Image    string
 	Choices  []string

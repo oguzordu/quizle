@@ -86,10 +86,11 @@ func loadQuestionPack(path string) ([]game.Question, error) {
 		return nil, err
 	}
 	var raw []struct {
-		ID      string `json:"id"`
-		Correct int    `json:"correct"`
-		Image   string `json:"image"`
-		TR      struct {
+		ID       string `json:"id"`
+		Category string `json:"category"`
+		Correct  int    `json:"correct"`
+		Image    string `json:"image"`
+		TR       struct {
 			Text    string   `json:"text"`
 			Choices []string `json:"choices"`
 		} `json:"tr"`
@@ -102,6 +103,7 @@ func loadQuestionPack(path string) ([]game.Question, error) {
 	for _, q := range raw {
 		questions = append(questions, game.Question{
 			ID:       q.ID,
+			Category: q.Category,
 			Text:     q.TR.Text,
 			Image:    q.Image,
 			Choices:  q.TR.Choices,

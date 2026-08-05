@@ -158,5 +158,261 @@
     "source_url": "https://en.wikipedia.org/wiki/Great_Wall_of_China",
     "tr": { "text": "Büyük Çin Seddi hangi kıtada bulunur?", "choices": ["Avrupa", "Asya", "Afrika", "Okyanusya"] },
     "en": { "text": "On which continent is the Great Wall of China located?", "choices": ["Europe", "Asia", "Africa", "Oceania"] }
+  },
+  {
+    "id": "geo-longest-river",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Nile",
+    "tr": { "text": "Dünyanın en uzun nehri hangisidir?", "choices": ["Amazon", "Nil", "Mississippi", "Yangtze"] },
+    "en": { "text": "What is the longest river in the world?", "choices": ["Amazon", "Nile", "Mississippi", "Yangtze"] }
+  },
+  {
+    "id": "geo-most-populous",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)",
+    "tr": { "text": "Dünyanın nüfusu en kalabalık ülkesi hangisidir?", "choices": ["Çin", "Hindistan", "ABD", "Endonezya"] },
+    "en": { "text": "Which country has the largest population in the world?", "choices": ["China", "India", "USA", "Indonesia"] }
+  },
+  {
+    "id": "geo-largest-african-country",
+    "category": "geography",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Algeria",
+    "tr": { "text": "Yüzölçümü bakımından Afrika'nın en büyük ülkesi hangisidir?", "choices": ["Nijerya", "Mısır", "Cezayir", "Güney Afrika"] },
+    "en": { "text": "Which is the largest African country by area?", "choices": ["Nigeria", "Egypt", "Algeria", "South Africa"] }
+  },
+  {
+    "id": "geo-canberra-capital",
+    "category": "geography",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Canberra",
+    "tr": { "text": "Avustralya'nın başkenti neresidir?", "choices": ["Sidney", "Melbourne", "Canberra", "Perth"] },
+    "en": { "text": "What is the capital of Australia?", "choices": ["Sydney", "Melbourne", "Canberra", "Perth"] }
+  },
+  {
+    "id": "geo-smallest-continent",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Australia_(continent)",
+    "tr": { "text": "Dünyanın en küçük kıtası hangisidir?", "choices": ["Avrupa", "Avustralya", "Antarktika", "Güney Amerika"] },
+    "en": { "text": "What is the smallest continent in the world?", "choices": ["Europe", "Australia", "Antarctica", "South America"] }
+  },
+  {
+    "id": "geo-amazon-country",
+    "category": "geography",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Amazon_rainforest",
+    "tr": { "text": "Amazon Yağmur Ormanları'nın büyük bölümü hangi ülkededir?", "choices": ["Peru", "Kolombiya", "Brezilya", "Venezuela"] },
+    "en": { "text": "Most of the Amazon rainforest lies within which country?", "choices": ["Peru", "Colombia", "Brazil", "Venezuela"] }
+  },
+  {
+    "id": "geo-mariana-trench",
+    "category": "geography",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Mariana_Trench",
+    "tr": { "text": "Dünyanın en derin okyanus çukuru hangisidir?", "choices": ["Mariana Çukuru", "Puerto Riko Çukuru", "Java Çukuru", "Tonga Çukuru"] },
+    "en": { "text": "What is the deepest oceanic trench in the world?", "choices": ["Mariana Trench", "Puerto Rico Trench", "Java Trench", "Tonga Trench"] }
+  },
+  {
+    "id": "geo-largest-island",
+    "category": "geography",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Greenland",
+    "tr": { "text": "Dünyanın en büyük adası hangisidir?", "choices": ["Madagaskar", "Grönland", "Borneo", "Yeni Gine"] },
+    "en": { "text": "What is the largest island in the world?", "choices": ["Madagascar", "Greenland", "Borneo", "New Guinea"] }
+  },
+  {
+    "id": "sports-wimbledon",
+    "category": "sports",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Wimbledon_Championships",
+    "tr": { "text": "Wimbledon turnuvası hangi spor dalında düzenlenir?", "choices": ["Golf", "Tenis", "Badminton", "Squash"] },
+    "en": { "text": "In which sport is the Wimbledon tournament held?", "choices": ["Golf", "Tennis", "Badminton", "Squash"] }
+  },
+  {
+    "id": "sports-volleyball-players",
+    "category": "sports",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Volleyball",
+    "tr": { "text": "Bir voleybol takımı sahada aynı anda kaç oyuncu bulundurur?", "choices": ["5", "6", "7", "9"] },
+    "en": { "text": "How many players does a volleyball team have on the court at once?", "choices": ["5", "6", "7", "9"] }
+  },
+  {
+    "id": "sports-f1-first-championship",
+    "category": "sports",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Formula_One",
+    "tr": { "text": "İlk Formula 1 Dünya Şampiyonası hangi yıl düzenlendi?", "choices": ["1946", "1950", "1955", "1960"] },
+    "en": { "text": "In which year was the first Formula One World Championship held?", "choices": ["1946", "1950", "1955", "1960"] }
+  },
+  {
+    "id": "sports-checkered-flag",
+    "category": "sports",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Racing_flags",
+    "tr": { "text": "Bir yarışın bittiğini gösteren bayrak hangisidir?", "choices": ["Kırmızı bayrak", "Sarı bayrak", "Yeşil bayrak", "Damalı bayrak"] },
+    "en": { "text": "Which flag signals the end of a race?", "choices": ["Red flag", "Yellow flag", "Green flag", "Checkered flag"] }
+  },
+  {
+    "id": "music-bohemian-rhapsody",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Bohemian_Rhapsody",
+    "tr": { "text": "\"Bohemian Rhapsody\" şarkısını hangi grup seslendirmiştir?", "choices": ["The Beatles", "Queen", "Pink Floyd", "Led Zeppelin"] },
+    "en": { "text": "Which band performed \"Bohemian Rhapsody\"?", "choices": ["The Beatles", "Queen", "Pink Floyd", "Led Zeppelin"] }
+  },
+  {
+    "id": "music-thriller-artist",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Thriller_(album)",
+    "tr": { "text": "\"Thriller\" albümünün sanatçısı kimdir?", "choices": ["Prince", "Michael Jackson", "Stevie Wonder", "Elvis Presley"] },
+    "en": { "text": "Who is the artist behind the album \"Thriller\"?", "choices": ["Prince", "Michael Jackson", "Stevie Wonder", "Elvis Presley"] }
+  },
+  {
+    "id": "music-piano-keys",
+    "category": "music",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Piano",
+    "tr": { "text": "Standart bir piyanoda kaç tuş bulunur?", "choices": ["76", "82", "88", "96"] },
+    "en": { "text": "How many keys does a standard piano have?", "choices": ["76", "82", "88", "96"] }
+  },
+  {
+    "id": "music-beatles-city",
+    "category": "music",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/The_Beatles",
+    "tr": { "text": "The Beatles hangi İngiliz şehrinden çıkmıştır?", "choices": ["Londra", "Manchester", "Liverpool", "Birmingham"] },
+    "en": { "text": "Which English city did The Beatles come from?", "choices": ["London", "Manchester", "Liverpool", "Birmingham"] }
+  },
+  {
+    "id": "music-mozart-nationality",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart",
+    "tr": { "text": "Wolfgang Amadeus Mozart'ın milliyeti neydi?", "choices": ["Alman", "Avusturyalı", "İtalyan", "İsviçreli"] },
+    "en": { "text": "What was Wolfgang Amadeus Mozart's nationality?", "choices": ["German", "Austrian", "Italian", "Swiss"] }
+  },
+  {
+    "id": "music-despacito-language",
+    "category": "music",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Despacito",
+    "tr": { "text": "\"Despacito\" şarkısı hangi dilde söylenmektedir?", "choices": ["Portekizce", "Fransızca", "İspanyolca", "İtalyanca"] },
+    "en": { "text": "In which language is the song \"Despacito\" sung?", "choices": ["Portuguese", "French", "Spanish", "Italian"] }
+  },
+  {
+    "id": "music-orchestra-strings",
+    "category": "music",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/String_section",
+    "tr": { "text": "Bir senfoni orkestrasında en kalabalık yaylı çalgı grubu hangisidir?", "choices": ["Kontrbas", "Viyola", "Çello", "Keman"] },
+    "en": { "text": "Which string instrument group is the largest in a symphony orchestra?", "choices": ["Double bass", "Viola", "Cello", "Violin"] }
+  },
+  {
+    "id": "music-elvis-genre",
+    "category": "music",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Elvis_Presley",
+    "tr": { "text": "Elvis Presley en çok hangi müzik türüyle tanınır?", "choices": ["Caz", "Rock and roll", "Opera", "Blues"] },
+    "en": { "text": "Which music genre is Elvis Presley best known for?", "choices": ["Jazz", "Rock and roll", "Opera", "Blues"] }
+  },
+  {
+    "id": "music-grammy-country",
+    "category": "music",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Grammy_Awards",
+    "tr": { "text": "Grammy Ödülleri hangi ülkede verilir?", "choices": ["İngiltere", "Kanada", "ABD", "Avustralya"] },
+    "en": { "text": "In which country are the Grammy Awards presented?", "choices": ["United Kingdom", "Canada", "United States", "Australia"] }
+  },
+  {
+    "id": "music-anthem-term",
+    "category": "music",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/National_anthem",
+    "tr": { "text": "Bir ülkenin resmi olarak kabul ettiği övgü şarkısına ne denir?", "choices": ["Marş", "Senfoni", "Opera", "Konçerto"] },
+    "en": { "text": "What is a country's official patriotic song called?", "choices": ["Anthem", "Symphony", "Opera", "Concerto"] }
+  },
+  {
+    "id": "animals-blue-whale",
+    "category": "animals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Blue_whale",
+    "tr": { "text": "Dünyanın en büyük memelisi hangisidir?", "choices": ["Fil", "Mavi balina", "Zürafa", "Gergedan"] },
+    "en": { "text": "What is the largest mammal in the world?", "choices": ["Elephant", "Blue whale", "Giraffe", "Rhino"] }
+  },
+  {
+    "id": "animals-octopus-arms",
+    "category": "animals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Octopus",
+    "tr": { "text": "Bir ahtapotun kaç kolu vardır?", "choices": ["6", "8", "10", "12"] },
+    "en": { "text": "How many arms does an octopus have?", "choices": ["6", "8", "10", "12"] }
+  },
+  {
+    "id": "animals-camel-nickname",
+    "category": "animals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Camel",
+    "tr": { "text": "Çöl ortamına uyumuyla bilinen ve \"çölün gemisi\" olarak anılan hayvan hangisidir?", "choices": ["At", "Deve", "Eşek", "Katır"] },
+    "en": { "text": "Which desert-adapted animal is nicknamed \"the ship of the desert\"?", "choices": ["Horse", "Camel", "Donkey", "Mule"] }
+  },
+  {
+    "id": "animals-fastest-land",
+    "category": "animals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Cheetah",
+    "tr": { "text": "Dünyanın en hızlı kara hayvanı hangisidir?", "choices": ["Aslan", "Antilop", "Çita", "At"] },
+    "en": { "text": "What is the fastest land animal in the world?", "choices": ["Lion", "Antelope", "Cheetah", "Horse"] }
+  },
+  {
+    "id": "animals-queen-bee",
+    "category": "animals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Queen_bee",
+    "tr": { "text": "Bir arı kovanında üreyebilen tek dişi bireye ne denir?", "choices": ["İşçi arı", "Erkek arı", "Kraliçe arı", "Bal arısı"] },
+    "en": { "text": "What is the only fertile female in a beehive called?", "choices": ["Worker bee", "Drone", "Queen bee", "Honey bee"] }
+  },
+  {
+    "id": "animals-penguin-habitat",
+    "category": "animals",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Penguin",
+    "tr": { "text": "Penguenler doğal olarak hangi bölgede yaşamaz?", "choices": ["Antarktika", "Güney Amerika", "Afrika", "Kuzey Kutbu"] },
+    "en": { "text": "In which region do penguins NOT live naturally?", "choices": ["Antarctica", "South America", "Africa", "The Arctic"] }
+  },
+  {
+    "id": "animals-chameleon-trait",
+    "category": "animals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Chameleon",
+    "tr": { "text": "Bukalemunlar en çok hangi özellikleriyle bilinir?", "choices": ["Uçabilmeleri", "Renk değiştirmeleri", "Zehirli olmaları", "Çok hızlı koşmaları"] },
+    "en": { "text": "What are chameleons best known for?", "choices": ["Flying", "Changing color", "Being venomous", "Running fast"] }
+  },
+  {
+    "id": "animals-largest-land",
+    "category": "animals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/African_bush_elephant",
+    "tr": { "text": "Dünyanın en büyük kara hayvanı hangisidir?", "choices": ["Zürafa", "Beyaz gergedan", "Afrika fili", "Suaygırı"] },
+    "en": { "text": "What is the largest land animal in the world?", "choices": ["Giraffe", "White rhino", "African elephant", "Hippopotamus"] }
+  },
+  {
+    "id": "animals-spider-legs",
+    "category": "animals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Spider",
+    "tr": { "text": "Bir örümceğin kaç bacağı vardır?", "choices": ["6", "8", "10", "4"] },
+    "en": { "text": "How many legs does a spider have?", "choices": ["6", "8", "10", "4"] }
+  },
+  {
+    "id": "animals-koala-diet",
+    "category": "animals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Koala",
+    "tr": { "text": "Koalaların ana besin kaynağı nedir?", "choices": ["Bambu", "Okaliptüs yaprakları", "Meyve", "Ot"] },
+    "en": { "text": "What is the main food source of koalas?", "choices": ["Bamboo", "Eucalyptus leaves", "Fruit", "Grass"] }
   }
 ]

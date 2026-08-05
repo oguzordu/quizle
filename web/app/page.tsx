@@ -11,12 +11,12 @@ const NAME_KEY = "quizle:profile:name";
 const AVATAR_KEY = "quizle:profile:avatar";
 
 const FLOATERS = [
-  { emoji: "🎓", top: "6%", left: "8%", size: 40, delay: "0s" },
-  { emoji: "⭐", top: "12%", left: "82%", size: 28, delay: "0.4s" },
-  { emoji: "🪙", top: "24%", left: "88%", size: 32, delay: "0.8s" },
-  { emoji: "📚", top: "78%", left: "10%", size: 34, delay: "0.2s" },
-  { emoji: "🪙", top: "70%", left: "85%", size: 26, delay: "1s" },
-  { emoji: "✨", top: "40%", left: "4%", size: 24, delay: "0.6s" },
+  { emoji: "🎓", top: "6%", left: "8%", size: 40, delay: "0s", duration: "3.5s" },
+  { emoji: "⭐", top: "12%", left: "82%", size: 28, delay: "0.4s", duration: "2.8s" },
+  { emoji: "🪙", top: "24%", left: "88%", size: 32, delay: "0.8s", duration: "4.2s" },
+  { emoji: "📚", top: "78%", left: "10%", size: 34, delay: "0.2s", duration: "3.1s" },
+  { emoji: "🪙", top: "70%", left: "85%", size: 26, delay: "1s", duration: "3.9s" },
+  { emoji: "✨", top: "40%", left: "4%", size: 24, delay: "0.6s", duration: "2.5s" },
 ];
 
 export default function Home() {
@@ -92,7 +92,7 @@ export default function Home() {
             top: f.top,
             left: f.left,
             fontSize: f.size,
-            animation: `float 3.5s ease-in-out ${f.delay} infinite`,
+            animation: `float ${f.duration} ease-in-out ${f.delay} infinite`,
           }}
         >
           {f.emoji}
@@ -120,14 +120,22 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col items-center pb-4 pt-6 text-center">
-          <span className="text-6xl">🏆</span>
+          <span
+            className="inline-block text-6xl"
+            style={{ animation: "wobble 2.6s ease-in-out infinite" }}
+          >
+            🏆
+          </span>
           <h1 className="mt-3 text-4xl font-extrabold text-white">
             {t("appTitle")} <span className="text-amber-300">Academy</span>
           </h1>
           <p className="mt-2 text-sm font-medium text-purple-200">{t("tagline")}</p>
         </div>
 
-        <div className="rounded-3xl bg-white/95 p-6 shadow-2xl backdrop-blur sm:p-7">
+        <div
+          style={{ animation: "fadeSlideIn 0.4s ease-out" }}
+          className="rounded-3xl bg-white/95 p-6 shadow-2xl backdrop-blur sm:p-7"
+        >
           <AvatarPicker value={avatar} onChange={saveAvatar} />
 
           <div className="mt-5 flex gap-2">
@@ -149,7 +157,7 @@ export default function Home() {
           </div>
 
           <button
-            className="mt-4 w-full rounded-full bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-3.5 text-base font-bold text-white shadow-lg shadow-purple-600/30 transition hover:brightness-110 active:scale-[0.97] disabled:opacity-50"
+            className="mt-4 w-full rounded-full bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-3.5 text-base font-bold text-white shadow-lg shadow-purple-600/30 transition hover:brightness-110 hover:[animation:wiggle_0.4s_ease-in-out] active:scale-[0.97] disabled:opacity-50"
             onClick={createRoom}
             disabled={busy}
           >
@@ -171,7 +179,7 @@ export default function Home() {
               maxLength={6}
             />
             <button
-              className="shrink-0 rounded-full border-2 border-purple-200 px-5 py-3 text-base font-bold text-purple-700 transition hover:bg-purple-50 active:scale-95"
+              className="shrink-0 rounded-full border-2 border-purple-200 px-5 py-3 text-base font-bold text-purple-700 transition hover:bg-purple-50 hover:[animation:wiggle_0.4s_ease-in-out] active:scale-95"
               onClick={joinRoom}
             >
               {t("join")}

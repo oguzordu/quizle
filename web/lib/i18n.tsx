@@ -7,8 +7,9 @@ export type Locale = "tr" | "en";
 const dict = {
   tr: {
     appTitle: "Quizle",
-    tagline: "Arkadaşlarınla çok oyunculu bilgi yarışması",
+    tagline: "Arkadaşlarını topla, kim daha hızlı cevaplayacak?",
     pickAvatar: "Avatarını seç",
+    randomAvatar: "Rastgele avatar",
     namePlaceholder: "İsmin",
     randomName: "Rastgele takma ad",
     createRoom: "Yeni Oda Oluştur",
@@ -36,8 +37,9 @@ const dict = {
   },
   en: {
     appTitle: "Quizle",
-    tagline: "Multiplayer trivia with your friends",
+    tagline: "Gather your friends — who'll answer first?",
     pickAvatar: "Pick your avatar",
+    randomAvatar: "Random avatar",
     namePlaceholder: "Your name",
     randomName: "Random nickname",
     createRoom: "Create New Room",

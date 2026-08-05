@@ -222,5 +222,397 @@
       "text": "Who directed the 1997 movie \"Titanic\"?",
       "choices": ["Steven Spielberg", "James Cameron", "Peter Jackson", "Christopher Nolan"]
     }
+  },
+  {
+    "id": "science-human-organ",
+    "category": "science",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Skin",
+    "tr": {
+      "text": "İnsan vücudundaki en büyük organ hangisidir?",
+      "choices": ["Karaciğer", "Deri", "Akciğer", "Kalp"]
+    },
+    "en": {
+      "text": "What is the largest organ in the human body?",
+      "choices": ["Liver", "Skin", "Lungs", "Heart"]
+    }
+  },
+  {
+    "id": "science-light-speed",
+    "category": "science",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Speed_of_light",
+    "tr": {
+      "text": "Işık, boşlukta saniyede yaklaşık kaç kilometre yol alır?",
+      "choices": ["150.000 km", "300.000 km", "500.000 km", "1.000.000 km"]
+    },
+    "en": {
+      "text": "About how many kilometers per second does light travel in a vacuum?",
+      "choices": ["150,000 km", "300,000 km", "500,000 km", "1,000,000 km"]
+    }
+  },
+  {
+    "id": "science-dna-full",
+    "category": "science",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/DNA",
+    "tr": {
+      "text": "DNA'nın açılımı nedir?",
+      "choices": ["Deoksiribonükleik asit", "Ribonükleik asit", "Adenozin trifosfat", "Amino asit"]
+    },
+    "en": {
+      "text": "What does DNA stand for?",
+      "choices": ["Deoxyribonucleic acid", "Ribonucleic acid", "Adenosine triphosphate", "Amino acid"]
+    }
+  },
+  {
+    "id": "science-lightest-element",
+    "category": "science",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Hydrogen",
+    "tr": {
+      "text": "Periyodik tabloda en hafif element hangisidir?",
+      "choices": ["Helyum", "Karbon", "Hidrojen", "Lityum"]
+    },
+    "en": {
+      "text": "Which is the lightest element on the periodic table?",
+      "choices": ["Helium", "Carbon", "Hydrogen", "Lithium"]
+    }
+  },
+  {
+    "id": "science-moon-orbit",
+    "category": "science",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Moon",
+    "tr": {
+      "text": "Ay, Dünya'nın etrafında ortalama kaç günde bir tam tur atar?",
+      "choices": ["7 gün", "14 gün", "27 gün", "365 gün"]
+    },
+    "en": {
+      "text": "About how many days does the Moon take to orbit the Earth once?",
+      "choices": ["7 days", "14 days", "27 days", "365 days"]
+    }
+  },
+  {
+    "id": "science-heart-function",
+    "category": "science",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Heart",
+    "tr": {
+      "text": "Vücutta kanı pompalayan organ hangisidir?",
+      "choices": ["Akciğer", "Kalp", "Böbrek", "Karaciğer"]
+    },
+    "en": {
+      "text": "Which organ pumps blood through the body?",
+      "choices": ["Lungs", "Heart", "Kidney", "Liver"]
+    }
+  },
+  {
+    "id": "science-exhaled-gas",
+    "category": "science",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Carbon_dioxide",
+    "tr": {
+      "text": "İnsanlar nefes verirken hangi gazı dışarı atar?",
+      "choices": ["Oksijen", "Azot", "Karbondioksit", "Hidrojen"]
+    },
+    "en": {
+      "text": "Which gas do humans exhale?",
+      "choices": ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"]
+    }
+  },
+  {
+    "id": "science-newton-laws",
+    "category": "science",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion",
+    "tr": {
+      "text": "Newton'un hareket yasaları kaç tanedir?",
+      "choices": ["2", "3", "4", "5"]
+    },
+    "en": {
+      "text": "How many laws of motion did Newton formulate?",
+      "choices": ["2", "3", "4", "5"]
+    }
+  },
+  {
+    "id": "history-ancient-egypt",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Ancient_Egypt",
+    "tr": {
+      "text": "Piramitleriyle ünlü antik uygarlık hangisidir?",
+      "choices": ["Antik Yunan", "Antik Mısır", "Antik Roma", "Mezopotamya"]
+    },
+    "en": {
+      "text": "Which ancient civilization is famous for its pyramids?",
+      "choices": ["Ancient Greece", "Ancient Egypt", "Ancient Rome", "Mesopotamia"]
+    }
+  },
+  {
+    "id": "history-moon-landing",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Apollo_11",
+    "tr": {
+      "text": "İlk insanlı Ay inişi hangi yıl gerçekleşti?",
+      "choices": ["1965", "1969", "1972", "1958"]
+    },
+    "en": {
+      "text": "In which year did the first crewed Moon landing take place?",
+      "choices": ["1965", "1969", "1972", "1958"]
+    }
+  },
+  {
+    "id": "history-titanic-sink",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/RMS_Titanic",
+    "tr": {
+      "text": "Titanic gemisi hangi yıl battı?",
+      "choices": ["1905", "1912", "1920", "1931"]
+    },
+    "en": {
+      "text": "In which year did the Titanic sink?",
+      "choices": ["1905", "1912", "1920", "1931"]
+    }
+  },
+  {
+    "id": "history-istanbul-conquest",
+    "category": "history",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Fall_of_Constantinople",
+    "tr": {
+      "text": "İstanbul'un fethi hangi yıl gerçekleşmiştir?",
+      "choices": ["1453", "1401", "1520", "1389"]
+    },
+    "en": {
+      "text": "In which year did the conquest of Constantinople take place?",
+      "choices": ["1453", "1401", "1520", "1389"]
+    }
+  },
+  {
+    "id": "history-ww1-start",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/World_War_I",
+    "tr": {
+      "text": "Birinci Dünya Savaşı hangi yıl başladı?",
+      "choices": ["1912", "1914", "1916", "1918"]
+    },
+    "en": {
+      "text": "In which year did World War I begin?",
+      "choices": ["1912", "1914", "1916", "1918"]
+    }
+  },
+  {
+    "id": "history-alexander-empire",
+    "category": "history",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Alexander_the_Great",
+    "tr": {
+      "text": "Büyük İskender hangi krallığın hükümdarıydı?",
+      "choices": ["Pers", "Makedonya", "Roma", "Mısır"]
+    },
+    "en": {
+      "text": "Alexander the Great was king of which kingdom?",
+      "choices": ["Persia", "Macedonia", "Rome", "Egypt"]
+    }
+  },
+  {
+    "id": "history-magna-carta",
+    "category": "history",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Magna_Carta",
+    "tr": {
+      "text": "Magna Carta hangi ülkede imzalanmıştır?",
+      "choices": ["Fransa", "İspanya", "İngiltere", "Almanya"]
+    },
+    "en": {
+      "text": "In which country was the Magna Carta signed?",
+      "choices": ["France", "Spain", "England", "Germany"]
+    }
+  },
+  {
+    "id": "history-silk-road",
+    "category": "history",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Silk_Road",
+    "tr": {
+      "text": "Büyük İpek Yolu hangi kıtaları birbirine bağlardı?",
+      "choices": ["Asya ve Avrupa", "Afrika ve Avustralya", "Kuzey ve Güney Amerika", "Avrupa ve Amerika"]
+    },
+    "en": {
+      "text": "Which continents did the Silk Road connect?",
+      "choices": ["Asia and Europe", "Africa and Australia", "North and South America", "Europe and America"]
+    }
+  },
+  {
+    "id": "arts-guernica",
+    "category": "arts",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Guernica_(Picasso)",
+    "tr": {
+      "text": "\"Guernica\" tablosunu kim yapmıştır?",
+      "choices": ["Salvador Dalí", "Pablo Picasso", "Joan Miró", "Diego Rivera"]
+    },
+    "en": {
+      "text": "Who painted \"Guernica\"?",
+      "choices": ["Salvador Dalí", "Pablo Picasso", "Joan Miró", "Diego Rivera"]
+    }
+  },
+  {
+    "id": "arts-sistine-chapel",
+    "category": "arts",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Sistine_Chapel_ceiling",
+    "tr": {
+      "text": "Sistine Şapeli'nin tavanını kim boyamıştır?",
+      "choices": ["Leonardo da Vinci", "Rafael", "Michelangelo", "Donatello"]
+    },
+    "en": {
+      "text": "Who painted the ceiling of the Sistine Chapel?",
+      "choices": ["Leonardo da Vinci", "Raphael", "Michelangelo", "Donatello"]
+    }
+  },
+  {
+    "id": "arts-1984-author",
+    "category": "arts",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Nineteen_Eighty-Four",
+    "tr": {
+      "text": "\"1984\" romanının yazarı kimdir?",
+      "choices": ["Aldous Huxley", "George Orwell", "Ray Bradbury", "Franz Kafka"]
+    },
+    "en": {
+      "text": "Who wrote the novel \"1984\"?",
+      "choices": ["Aldous Huxley", "George Orwell", "Ray Bradbury", "Franz Kafka"]
+    }
+  },
+  {
+    "id": "arts-harry-potter-author",
+    "category": "arts",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Harry_Potter",
+    "tr": {
+      "text": "Harry Potter serisinin yazarı kimdir?",
+      "choices": ["J.R.R. Tolkien", "Suzanne Collins", "J.K. Rowling", "C.S. Lewis"]
+    },
+    "en": {
+      "text": "Who wrote the Harry Potter series?",
+      "choices": ["J.R.R. Tolkien", "Suzanne Collins", "J.K. Rowling", "C.S. Lewis"]
+    }
+  },
+  {
+    "id": "arts-the-thinker",
+    "category": "arts",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/The_Thinker",
+    "tr": {
+      "text": "\"Düşünen Adam\" heykelinin sanatçısı kimdir?",
+      "choices": ["Auguste Rodin", "Michelangelo", "Antonio Canova", "Constantin Brâncuși"]
+    },
+    "en": {
+      "text": "Who sculpted \"The Thinker\"?",
+      "choices": ["Auguste Rodin", "Michelangelo", "Antonio Canova", "Constantin Brâncuși"]
+    }
+  },
+  {
+    "id": "arts-broadway-city",
+    "category": "arts",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Broadway_theatre",
+    "tr": {
+      "text": "Broadway tiyatroları hangi şehirde bulunur?",
+      "choices": ["Londra", "Paris", "New York", "Chicago"]
+    },
+    "en": {
+      "text": "In which city are the Broadway theatres located?",
+      "choices": ["London", "Paris", "New York", "Chicago"]
+    }
+  },
+  {
+    "id": "arts-don-quixote-author",
+    "category": "arts",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Don_Quixote",
+    "tr": {
+      "text": "\"Don Kişot\" romanının yazarı kimdir?",
+      "choices": ["Miguel de Cervantes", "Gabriel García Márquez", "Jorge Luis Borges", "Pablo Neruda"]
+    },
+    "en": {
+      "text": "Who wrote \"Don Quixote\"?",
+      "choices": ["Miguel de Cervantes", "Gabriel García Márquez", "Jorge Luis Borges", "Pablo Neruda"]
+    }
+  },
+  {
+    "id": "arts-louvre-country",
+    "category": "arts",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Louvre",
+    "tr": {
+      "text": "Louvre Müzesi hangi ülkededir?",
+      "choices": ["İtalya", "Fransa", "İspanya", "Almanya"]
+    },
+    "en": {
+      "text": "In which country is the Louvre Museum located?",
+      "choices": ["Italy", "France", "Spain", "Germany"]
+    }
+  },
+  {
+    "id": "sports-tennis-love",
+    "category": "sports",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Tennis_score",
+    "tr": {
+      "text": "Tenis skorlamasında \"love\" ne anlama gelir?",
+      "choices": ["1 puan", "Berabere", "Sıfır puan", "Maç sayısı"]
+    },
+    "en": {
+      "text": "What does \"love\" mean in tennis scoring?",
+      "choices": ["1 point", "A tie", "Zero points", "Match point"]
+    }
+  },
+  {
+    "id": "sports-olympics-frequency",
+    "category": "sports",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Olympic_Games",
+    "tr": {
+      "text": "Yaz Olimpiyatları kaç yılda bir düzenlenir?",
+      "choices": ["2", "3", "4", "5"]
+    },
+    "en": {
+      "text": "How often are the Summer Olympics held?",
+      "choices": ["Every 2 years", "Every 3 years", "Every 4 years", "Every 5 years"]
+    }
+  },
+  {
+    "id": "sports-boxing-round",
+    "category": "sports",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Boxing",
+    "tr": {
+      "text": "Profesyonel bir boks maçında standart bir raunt kaç dakikadır?",
+      "choices": ["2 dakika", "3 dakika", "4 dakika", "5 dakika"]
+    },
+    "en": {
+      "text": "How long is a standard round in professional boxing?",
+      "choices": ["2 minutes", "3 minutes", "4 minutes", "5 minutes"]
+    }
+  },
+  {
+    "id": "sports-golf-par",
+    "category": "sports",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Par_(score)",
+    "tr": {
+      "text": "Golfte bir delik için belirlenen standart vuruş sayısına ne denir?",
+      "choices": ["Par", "Birdie", "Bogey", "Eagle"]
+    },
+    "en": {
+      "text": "What is the standard number of strokes for a golf hole called?",
+      "choices": ["Par", "Birdie", "Bogey", "Eagle"]
+    }
   }
 ]

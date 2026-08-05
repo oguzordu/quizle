@@ -74,3 +74,20 @@ body {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-14px) rotate(6deg); }
 }
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-8deg) scale(1.05); }
+  75% { transform: rotate(8deg) scale(1.05); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+@keyframes ringPulse {
+  0% { box-shadow: 0 0 0 0 rgba(147, 51, 234, 0.45); }
+  100% { box-shadow: 0 0 0 8px rgba(147, 51, 234, 0); }
+}

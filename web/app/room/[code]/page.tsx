@@ -116,8 +116,12 @@ function RoomScreen() {
               {code}
             </p>
             <ul className="flex flex-wrap justify-center gap-4 py-2">
-              {state.roster.map((p) => (
-                <li key={p.id} className="flex flex-col items-center gap-1.5">
+              {state.roster.map((p, i) => (
+                <li
+                  key={p.id}
+                  className="flex flex-col items-center gap-1.5"
+                  style={{ animation: `pop 0.3s ease-out ${i * 0.06}s both` }}
+                >
                   <Avatar avatar={p.avatar} size={44} />
                   <span className="text-xs font-medium text-purple-700">
                     {p.id === state.selfId ? `${p.name} (${t("you")})` : p.name}
@@ -127,7 +131,7 @@ function RoomScreen() {
             </ul>
             <p className="text-center text-xs italic text-purple-500">{lobbyQuip}</p>
             <button
-              className="w-full rounded-full bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-3.5 font-bold text-white shadow-lg shadow-purple-600/30 transition hover:brightness-110 active:scale-[0.98] disabled:opacity-50"
+              className="w-full rounded-full bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-3.5 font-bold text-white shadow-lg shadow-purple-600/30 transition hover:brightness-110 hover:[animation:wiggle_0.4s_ease-in-out] active:scale-[0.98] disabled:opacity-50"
               onClick={startGame}
               disabled={starting}
             >
@@ -231,7 +235,12 @@ function RoomScreen() {
             className="relative flex flex-col gap-4"
           >
             <Confetti />
-            <p className="text-center text-3xl font-extrabold text-white">🏆 {t("gameOver")}</p>
+            <p className="text-center text-3xl font-extrabold text-white">
+              <span className="inline-block" style={{ animation: "wobble 2.6s ease-in-out infinite" }}>
+                🏆
+              </span>{" "}
+              {t("gameOver")}
+            </p>
             <ul className="flex flex-col gap-2">
               {sortedScores.map(([id, score], i) => {
                 const title = finalTitleFor(
@@ -270,7 +279,7 @@ function RoomScreen() {
 
             <div className="mt-2 flex flex-col gap-2 sm:flex-row">
               <button
-                className="w-full rounded-full bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-3 font-bold text-white shadow-lg shadow-purple-600/30 transition hover:brightness-110 active:scale-[0.98] disabled:opacity-50"
+                className="w-full rounded-full bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-3 font-bold text-white shadow-lg shadow-purple-600/30 transition hover:brightness-110 hover:[animation:wiggle_0.4s_ease-in-out] active:scale-[0.98] disabled:opacity-50"
                 onClick={handleRematch}
                 disabled={rematching}
               >

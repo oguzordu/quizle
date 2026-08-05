@@ -71,8 +71,16 @@ func (s *Server) CreateRoomHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(createRoomResponse{Code: code})
 }
 
+// maxQuestionsPerCategory caps how many questions from the same category can
+// land in a single round, so a category that dominates the pool by sheer
+// question count (e.g. "movies") doesn't dominate every game too.
+const maxQuestionsPerCategory = 4
+
 // pickQuestions returns the configured question set, or a random sample of
-// it when a sampleSize smaller than the pool has been configured.
+// it when a sampleSize smaller than the pool has been configured. The sample
+// is drawn so no category contributes more than maxQuestionsPerCategory
+// questions, falling back to filling remaining slots from any category if
+// the pool doesn't have enough variety to honor that cap.
 func (s *Server) pickQuestions() []game.Question {
 	n := s.sampleSize
 	if n <= 0 || n >= len(s.questionPool) {
@@ -82,7 +90,28 @@ func (s *Server) pickQuestions() []game.Question {
 	shuffled := make([]game.Question, len(s.questionPool))
 	copy(shuffled, s.questionPool)
 	rand.Shuffle(len(shuffled), func(i, j int) { shuffled[i], shuffled[j] = shuffled[j], shuffled[i] })
-	return shuffled[:n]
+
+	picked := make([]game.Question, 0, n)
+	counts := make(map[string]int)
+	var leftover []game.Question
+
+	for _, q := range shuffled {
+		if len(picked) == n {
+			break
+		}
+		if counts[q.Category] < maxQuestionsPerCategory {
+			picked = append(picked, q)
+			counts[q.Category]++
+		} else {
+			leftover = append(leftover, q)
+		}
+	}
+
+	for i := 0; len(picked) < n && i < len(leftover); i++ {
+		picked = append(picked, leftover[i])
+	}
+
+	return picked
 }
 
 // StartRoomHandler handles POST /rooms/{code}/start, moving the named room
