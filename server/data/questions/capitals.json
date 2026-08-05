@@ -1186,7 +1186,7 @@
         "Lima",
         "Santiago",
         "Havana",
-        "Ankara"
+        "Prag"
       ]
     },
     "en": {
@@ -1195,7 +1195,7 @@
         "Lima",
         "Santiago",
         "Havana",
-        "Ankara"
+        "Prague"
       ]
     }
   },
@@ -1208,18 +1208,18 @@
       "text": "Peru ülkesinin başkenti neresidir?",
       "choices": [
         "Havana",
-        "Ankara",
+        "Prag",
         "Lima",
-        "Berlin"
+        "Budapeşte"
       ]
     },
     "en": {
       "text": "What is the capital of Peru?",
       "choices": [
         "Havana",
-        "Ankara",
+        "Prague",
         "Lima",
-        "Berlin"
+        "Budapest"
       ]
     }
   },
@@ -1231,19 +1231,451 @@
     "tr": {
       "text": "Küba ülkesinin başkenti neresidir?",
       "choices": [
-        "Ankara",
-        "Berlin",
-        "Paris",
+        "Prag",
+        "Budapeşte",
+        "Bükreş",
         "Havana"
       ]
     },
     "en": {
       "text": "What is the capital of Cuba?",
       "choices": [
-        "Ankara",
-        "Berlin",
-        "Paris",
+        "Prague",
+        "Budapest",
+        "Bucharest",
         "Havana"
+      ]
+    }
+  },
+  {
+    "id": "capital-CZ",
+    "category": "capitals",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Czech_Republic",
+    "tr": {
+      "text": "Çekya ülkesinin başkenti neresidir?",
+      "choices": [
+        "Prag",
+        "Budapeşte",
+        "Bükreş",
+        "Sofya"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Czechia?",
+      "choices": [
+        "Prague",
+        "Budapest",
+        "Bucharest",
+        "Sofia"
+      ]
+    }
+  },
+  {
+    "id": "capital-HU",
+    "category": "capitals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Hungary",
+    "tr": {
+      "text": "Macaristan ülkesinin başkenti neresidir?",
+      "choices": [
+        "Bükreş",
+        "Budapeşte",
+        "Sofya",
+        "Zagreb"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Hungary?",
+      "choices": [
+        "Bucharest",
+        "Budapest",
+        "Sofia",
+        "Zagreb"
+      ]
+    }
+  },
+  {
+    "id": "capital-RO",
+    "category": "capitals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Romania",
+    "tr": {
+      "text": "Romanya ülkesinin başkenti neresidir?",
+      "choices": [
+        "Sofya",
+        "Zagreb",
+        "Bükreş",
+        "Belgrad"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Romania?",
+      "choices": [
+        "Sofia",
+        "Zagreb",
+        "Bucharest",
+        "Belgrade"
+      ]
+    }
+  },
+  {
+    "id": "capital-BG",
+    "category": "capitals",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Bulgaria",
+    "tr": {
+      "text": "Bulgaristan ülkesinin başkenti neresidir?",
+      "choices": [
+        "Zagreb",
+        "Belgrad",
+        "Bakü",
+        "Sofya"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Bulgaria?",
+      "choices": [
+        "Zagreb",
+        "Belgrade",
+        "Baku",
+        "Sofia"
+      ]
+    }
+  },
+  {
+    "id": "capital-HR",
+    "category": "capitals",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Croatia",
+    "tr": {
+      "text": "Hırvatistan ülkesinin başkenti neresidir?",
+      "choices": [
+        "Zagreb",
+        "Belgrad",
+        "Bakü",
+        "Tiflis"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Croatia?",
+      "choices": [
+        "Zagreb",
+        "Belgrade",
+        "Baku",
+        "Tbilisi"
+      ]
+    }
+  },
+  {
+    "id": "capital-RS",
+    "category": "capitals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Serbia",
+    "tr": {
+      "text": "Sırbistan ülkesinin başkenti neresidir?",
+      "choices": [
+        "Bakü",
+        "Belgrad",
+        "Tiflis",
+        "Astana"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Serbia?",
+      "choices": [
+        "Baku",
+        "Belgrade",
+        "Tbilisi",
+        "Astana"
+      ]
+    }
+  },
+  {
+    "id": "capital-AZ",
+    "category": "capitals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Azerbaijan",
+    "tr": {
+      "text": "Azerbaycan ülkesinin başkenti neresidir?",
+      "choices": [
+        "Tiflis",
+        "Astana",
+        "Bakü",
+        "Doha"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Azerbaijan?",
+      "choices": [
+        "Tbilisi",
+        "Astana",
+        "Baku",
+        "Doha"
+      ]
+    }
+  },
+  {
+    "id": "capital-GE",
+    "category": "capitals",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Georgia_(country)",
+    "tr": {
+      "text": "Gürcistan ülkesinin başkenti neresidir?",
+      "choices": [
+        "Astana",
+        "Doha",
+        "Kuveyt",
+        "Tiflis"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Georgia?",
+      "choices": [
+        "Astana",
+        "Doha",
+        "Kuwait City",
+        "Tbilisi"
+      ]
+    }
+  },
+  {
+    "id": "capital-KZ",
+    "category": "capitals",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Kazakhstan",
+    "tr": {
+      "text": "Kazakistan ülkesinin başkenti neresidir?",
+      "choices": [
+        "Astana",
+        "Doha",
+        "Kuveyt",
+        "Tunus"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Kazakhstan?",
+      "choices": [
+        "Astana",
+        "Doha",
+        "Kuwait City",
+        "Tunis"
+      ]
+    }
+  },
+  {
+    "id": "capital-QA",
+    "category": "capitals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Qatar",
+    "tr": {
+      "text": "Katar ülkesinin başkenti neresidir?",
+      "choices": [
+        "Kuveyt",
+        "Doha",
+        "Tunus",
+        "Cezayir"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Qatar?",
+      "choices": [
+        "Kuwait City",
+        "Doha",
+        "Tunis",
+        "Algiers"
+      ]
+    }
+  },
+  {
+    "id": "capital-KW",
+    "category": "capitals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Kuwait",
+    "tr": {
+      "text": "Kuveyt ülkesinin başkenti neresidir?",
+      "choices": [
+        "Tunus",
+        "Cezayir",
+        "Kuveyt",
+        "Addis Ababa"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Kuwait?",
+      "choices": [
+        "Tunis",
+        "Algiers",
+        "Kuwait City",
+        "Addis Ababa"
+      ]
+    }
+  },
+  {
+    "id": "capital-TN",
+    "category": "capitals",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Tunisia",
+    "tr": {
+      "text": "Tunus ülkesinin başkenti neresidir?",
+      "choices": [
+        "Cezayir",
+        "Addis Ababa",
+        "Akra",
+        "Tunus"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Tunisia?",
+      "choices": [
+        "Algiers",
+        "Addis Ababa",
+        "Accra",
+        "Tunis"
+      ]
+    }
+  },
+  {
+    "id": "capital-DZ",
+    "category": "capitals",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Algeria",
+    "tr": {
+      "text": "Cezayir ülkesinin başkenti neresidir?",
+      "choices": [
+        "Cezayir",
+        "Addis Ababa",
+        "Akra",
+        "Quito"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Algeria?",
+      "choices": [
+        "Algiers",
+        "Addis Ababa",
+        "Accra",
+        "Quito"
+      ]
+    }
+  },
+  {
+    "id": "capital-ET",
+    "category": "capitals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Ethiopia",
+    "tr": {
+      "text": "Etiyopya ülkesinin başkenti neresidir?",
+      "choices": [
+        "Akra",
+        "Addis Ababa",
+        "Quito",
+        "Montevideo"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Ethiopia?",
+      "choices": [
+        "Accra",
+        "Addis Ababa",
+        "Quito",
+        "Montevideo"
+      ]
+    }
+  },
+  {
+    "id": "capital-GH",
+    "category": "capitals",
+    "correct": 2,
+    "source_url": "https://en.wikipedia.org/wiki/Ghana",
+    "tr": {
+      "text": "Gana ülkesinin başkenti neresidir?",
+      "choices": [
+        "Quito",
+        "Montevideo",
+        "Akra",
+        "Sucre"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Ghana?",
+      "choices": [
+        "Quito",
+        "Montevideo",
+        "Accra",
+        "Sucre"
+      ]
+    }
+  },
+  {
+    "id": "capital-EC",
+    "category": "capitals",
+    "correct": 3,
+    "source_url": "https://en.wikipedia.org/wiki/Ecuador",
+    "tr": {
+      "text": "Ekvador ülkesinin başkenti neresidir?",
+      "choices": [
+        "Montevideo",
+        "Sucre",
+        "Ankara",
+        "Quito"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Ecuador?",
+      "choices": [
+        "Montevideo",
+        "Sucre",
+        "Ankara",
+        "Quito"
+      ]
+    }
+  },
+  {
+    "id": "capital-UY",
+    "category": "capitals",
+    "correct": 0,
+    "source_url": "https://en.wikipedia.org/wiki/Uruguay",
+    "tr": {
+      "text": "Uruguay ülkesinin başkenti neresidir?",
+      "choices": [
+        "Montevideo",
+        "Sucre",
+        "Ankara",
+        "Berlin"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Uruguay?",
+      "choices": [
+        "Montevideo",
+        "Sucre",
+        "Ankara",
+        "Berlin"
+      ]
+    }
+  },
+  {
+    "id": "capital-BO",
+    "category": "capitals",
+    "correct": 1,
+    "source_url": "https://en.wikipedia.org/wiki/Bolivia",
+    "tr": {
+      "text": "Bolivya ülkesinin başkenti neresidir?",
+      "choices": [
+        "Ankara",
+        "Sucre",
+        "Berlin",
+        "Paris"
+      ]
+    },
+    "en": {
+      "text": "What is the capital of Bolivia?",
+      "choices": [
+        "Ankara",
+        "Sucre",
+        "Berlin",
+        "Paris"
       ]
     }
   }
