@@ -132,7 +132,7 @@ export default function Home() {
 
           <div className="mt-5 flex gap-2">
             <input
-              className="w-full rounded-full border-2 border-purple-100 bg-purple-50/60 px-5 py-3 text-base outline-none transition focus:border-purple-400 dark:border-purple-900 dark:bg-purple-950/40"
+              className="w-full rounded-full border-2 border-purple-100 bg-purple-50/60 px-5 py-3 text-base text-purple-900 outline-none transition focus:border-purple-400"
               placeholder={t("namePlaceholder")}
               value={name}
               onChange={(e) => saveName(e.target.value)}
@@ -141,7 +141,7 @@ export default function Home() {
             <button
               type="button"
               title={t("randomName")}
-              className="shrink-0 rounded-full border-2 border-purple-100 px-3.5 text-lg transition hover:bg-purple-50 active:scale-90 dark:border-purple-900"
+              className="shrink-0 rounded-full border-2 border-purple-100 px-3.5 text-lg transition hover:bg-purple-50 active:scale-90"
               onClick={() => saveName(randomNickname())}
             >
               🎲
@@ -157,21 +157,21 @@ export default function Home() {
           </button>
 
           <div className="my-5 flex items-center gap-3 text-xs font-medium text-purple-300">
-            <div className="h-px flex-1 bg-purple-100 dark:bg-purple-900" />
+            <div className="h-px flex-1 bg-purple-100" />
             {t("orJoin")}
-            <div className="h-px flex-1 bg-purple-100 dark:bg-purple-900" />
+            <div className="h-px flex-1 bg-purple-100" />
           </div>
 
           <div className="flex gap-2">
             <input
-              className="w-full rounded-full border-2 border-purple-100 bg-purple-50/60 px-5 py-3 text-base uppercase tracking-widest outline-none transition focus:border-purple-400 dark:border-purple-900 dark:bg-purple-950/40"
+              className="w-full rounded-full border-2 border-purple-100 bg-purple-50/60 px-5 py-3 text-base uppercase tracking-widest text-purple-900 outline-none transition focus:border-purple-400"
               placeholder={t("roomCodePlaceholder")}
               value={joinCode}
               onChange={(e) => setJoinCode(e.target.value)}
               maxLength={6}
             />
             <button
-              className="shrink-0 rounded-full border-2 border-purple-200 px-5 py-3 text-base font-bold text-purple-700 transition hover:bg-purple-50 active:scale-95 dark:border-purple-800 dark:text-purple-300"
+              className="shrink-0 rounded-full border-2 border-purple-200 px-5 py-3 text-base font-bold text-purple-700 transition hover:bg-purple-50 active:scale-95"
               onClick={joinRoom}
             >
               {t("join")}

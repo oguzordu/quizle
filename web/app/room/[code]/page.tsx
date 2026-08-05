@@ -91,7 +91,12 @@ function RoomScreen() {
           >
             ✕
           </button>
-          <span className="text-sm font-medium text-purple-200">
+          <span className="flex items-center gap-1.5 text-sm font-medium text-purple-100">
+            <span
+              className={`h-1.5 w-1.5 rounded-full ${
+                state.connected ? "bg-emerald-400" : "animate-pulse bg-amber-400"
+              }`}
+            />
             {t("roomCode")} <b className="tracking-widest text-white">{code}</b>
           </span>
           <CoinBadge score={myScore} />
@@ -106,7 +111,7 @@ function RoomScreen() {
             style={{ animation: "fadeSlideIn 0.35s ease-out" }}
             className="flex flex-col items-center gap-4 rounded-3xl bg-white/95 p-6 shadow-2xl backdrop-blur sm:p-8"
           >
-            <p className="text-sm text-purple-500">{t("shareCode")}</p>
+            <p className="text-sm text-purple-600">{t("shareCode")}</p>
             <p className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-4xl font-extrabold tracking-[0.3em] text-transparent">
               {code}
             </p>
@@ -120,7 +125,7 @@ function RoomScreen() {
                 </li>
               ))}
             </ul>
-            <p className="text-center text-xs italic text-purple-400">{lobbyQuip}</p>
+            <p className="text-center text-xs italic text-purple-500">{lobbyQuip}</p>
             <button
               className="w-full rounded-full bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-3.5 font-bold text-white shadow-lg shadow-purple-600/30 transition hover:brightness-110 active:scale-[0.98] disabled:opacity-50"
               onClick={startGame}
@@ -169,7 +174,7 @@ function RoomScreen() {
                   // answer instead of leaving the player guessing.
                   style = "bg-emerald-500 text-white shadow-lg shadow-emerald-500/30 animate-[pop_0.3s_ease-out]";
                 } else if (answered) {
-                  style = "bg-white/40 text-purple-900/50";
+                  style = "bg-white/60 text-purple-700";
                 }
                 return (
                   <button
@@ -202,13 +207,13 @@ function RoomScreen() {
             className="flex flex-col gap-4"
           >
             <div className="rounded-3xl bg-white/95 p-5 text-center shadow-2xl backdrop-blur">
-              <p className="text-sm text-purple-500">
+              <p className="text-sm text-purple-600">
                 {t("correctAnswer")}:{" "}
                 <b className="text-emerald-600">
                   {state.question?.choices[state.correctChoice ?? -1]}
                 </b>
               </p>
-              {revealQuip && <p className="mt-1 text-xs italic text-purple-400">{revealQuip}</p>}
+              {revealQuip && <p className="mt-1 text-xs italic text-purple-500">{revealQuip}</p>}
             </div>
             <ScoreTable
               sortedScores={sortedScores}
@@ -250,7 +255,7 @@ function RoomScreen() {
                         <span className={`font-bold ${isFirst ? "text-amber-950" : "text-purple-900"}`}>
                           #{i + 1} {nameFor(id, state.roster, state.selfId, t("you"))}
                         </span>
-                        <span className={`text-xs ${isFirst ? "text-amber-900" : "text-purple-500"}`}>
+                        <span className={`text-xs ${isFirst ? "text-amber-900" : "text-purple-600"}`}>
                           {title.emoji} {title.title}
                         </span>
                       </span>
