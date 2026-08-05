@@ -1,14 +1,17 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLocale } from "@/lib/i18n";
 
 const BASE_POINTS = 100;
 
 /**
  * Shows a score that just changed as two chips — "+100" then, a beat later,
- * "+45 hız" — before counting up from the previous total to the new one.
- * When nothing was awarded this round (pointsThisRound is 0/undefined), it
- * just renders the flat number.
+ * a labeled "+45 ⏱️ Hız Bonusu" chip — before counting up from the previous
+ * total to the new one. The second chip spells out that the extra points
+ * came from answering fast, rather than relying on a bare "+45" that reads
+ * as an unexplained bonus. When nothing was awarded this round
+ * (pointsThisRound is 0/undefined), it just renders the flat number.
  */
 export function AnimatedScore({
   previousTotal,
@@ -24,6 +27,7 @@ export function AnimatedScore({
   );
   const [display, setDisplay] = useState(pointsThisRound ? previousTotal : newTotal);
   const raf = useRef<number>(0);
+  const { t } = useLocale();
 
   useEffect(() => {
     // This effect drives a staged animation timeline (chip -> chip -> count
@@ -71,8 +75,9 @@ export function AnimatedScore({
           +{BASE_POINTS}
         </span>
         {step === "bonus" && bonus > 0 && (
-          <span className="animate-[pop_0.25s_ease-out] rounded-md bg-amber-100 px-1.5 py-0.5 text-sm font-bold text-amber-700 dark:bg-amber-950 dark:text-amber-400">
-            +{bonus} ⚡
+          <span className="flex animate-[pop_0.25s_ease-out] items-center gap-1 rounded-md bg-amber-100 px-1.5 py-0.5 text-sm font-bold text-amber-700 dark:bg-amber-950 dark:text-amber-400">
+            <span>+{bonus}</span>
+            <span className="text-xs font-semibold">⏱️ {t("speedBonus")}</span>
           </span>
         )}
       </span>

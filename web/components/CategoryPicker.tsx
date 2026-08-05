@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { config } from "@/lib/config";
 import { useLocale } from "@/lib/i18n";
-import { MIXED, categoryEmoji, categoryLabel } from "@/lib/categories";
+import { MIXED, categoryEmoji, categoryGradient, categoryLabel } from "@/lib/categories";
 
 type ApiCategory = { slug: string; count: number };
 
@@ -45,7 +45,7 @@ export function CategoryPicker({
   return (
     <div className="flex flex-col gap-2">
       <span className="text-sm font-semibold text-purple-800">{t("pickCategory")}</span>
-      <div className="flex max-h-40 flex-wrap gap-1.5 overflow-y-auto pr-1">
+      <div className="grid max-h-64 grid-cols-3 gap-2 overflow-y-auto p-1 sm:grid-cols-4">
         {options.map((slug) => {
           const selected = slug === value;
           return (
@@ -53,14 +53,29 @@ export function CategoryPicker({
               key={slug}
               type="button"
               onClick={() => onChange(slug)}
-              className={`flex items-center gap-1 rounded-full border-2 px-3 py-1.5 text-xs font-bold transition active:scale-95 ${
+              className={`group relative flex aspect-square flex-col items-center justify-center gap-1 overflow-hidden rounded-2xl bg-gradient-to-br p-2 text-center shadow-md transition active:scale-95 ${categoryGradient(
+                slug
+              )} ${
                 selected
-                  ? "border-purple-600 bg-purple-600 text-white"
-                  : "border-purple-100 bg-purple-50/60 text-purple-700 hover:border-purple-300"
+                  ? "ring-4 ring-purple-700 ring-offset-2"
+                  : "opacity-90 hover:opacity-100 hover:shadow-lg"
               }`}
             >
-              <span aria-hidden>{categoryEmoji(slug)}</span>
-              {categoryLabel(slug, locale)}
+              <span
+                className="text-3xl drop-shadow sm:text-4xl"
+                style={selected ? { animation: "pop 0.3s ease-out" } : undefined}
+                aria-hidden
+              >
+                {categoryEmoji(slug)}
+              </span>
+              <span className="line-clamp-2 text-[11px] font-bold leading-tight text-white drop-shadow-sm sm:text-xs">
+                {categoryLabel(slug, locale)}
+              </span>
+              {selected && (
+                <span className="absolute right-1.5 top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-white text-xs font-bold text-purple-700 shadow">
+                  ✓
+                </span>
+              )}
             </button>
           );
         })}
