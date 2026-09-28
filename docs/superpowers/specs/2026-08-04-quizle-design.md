@@ -2,7 +2,7 @@
 
 ## Context
 
-Oğuz ve kız arkadaşı internette Kahoot tarzı çok oyunculu bilgi yarışması aradıklarında kalitesiz sitelerle karşılaştılar. Bu proje hem doğru bir ürün (kaynaklı sorular, kopunca ölmeyen oyun) hem de CV değeri olan gerçek bir mühendislik problemi (Go ile oda başına state machine, sunucu-otoriteli senkron timer) hedefliyor.
+İnternetteki Kahoot tarzı çok oyunculu bilgi yarışması sitelerinin çoğu ya kalitesiz sorular içeriyor ya da bağlantı koptuğunda oyunu öldürüyor. Bu proje hem doğru bir ürün (kaynaklı sorular, kopunca ölmeyen oyun) hem de gerçek bir mühendislik problemi (Go ile oda başına state machine, sunucu-otoriteli senkron timer) hedefliyor.
 
 ## Kararlar
 
